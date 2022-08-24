@@ -12,7 +12,7 @@ export default function Testpost() {
   //https://desolate-hollows-16342.herokuapp.com/addpost
 
   const addPost = () => {
-    Axios.post("http://localhost:8080/addpost", {
+    Axios.post("https://desolate-hollows-16342.herokuapp.com/addpost", {
       title: title,
       description: description,
     }).then((response) => {
@@ -27,7 +27,7 @@ export default function Testpost() {
     const newTitle = prompt("Enter new Title:");
     const newDesc = prompt("Enter new Desc:");
 
-    Axios.put("http://localhost:8080/update", {
+    Axios.put("https://desolate-hollows-16342.herokuapp.com/update", {
       newTitle: newTitle,
       id: id,
       newDesc: newDesc,
@@ -43,7 +43,9 @@ export default function Testpost() {
   };
 
   const deletePost = (id) => {
-    Axios.delete(`http://localhost:8080/delete/${id}`).then(() => {
+    Axios.delete(
+      `https://desolate-hollows-16342.herokuapp.com/delete/${id}`
+    ).then(() => {
       setListOfPosts(
         listOfPosts.filter((val) => {
           return val._id != id;
@@ -53,7 +55,7 @@ export default function Testpost() {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:8080/read")
+    Axios.get("https://desolate-hollows-16342.herokuapp.com/read")
       .then((response) => {
         setListOfPosts(response.data);
         // const update = prompt("enter val:");
