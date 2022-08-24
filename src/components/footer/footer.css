@@ -1,0 +1,90 @@
+ul li {
+  list-style-type: none;
+}
+.FooterColor {
+  background-color: #175892;
+  color: white;
+  padding-bottom: 0.5rem;
+}
+.FooterDiv {
+  padding: 0rem 4rem;
+}
+/* .footertitle {
+  padding: 2rem 0 1.5rem 0;
+} */
+.spiderImg img {
+  width: 150px;
+  height: 150px;
+}
+
+.footerWapper {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  padding: 2rem;
+}
+.footerWapper a {
+  color: azure;
+}
+.fotaddress {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.lineheight {
+  line-height: 2.5rem;
+}
+.TagInfo span {
+  margin-left: 1rem;
+}
+.fotpayment {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+.fotpayment img {
+  display: block;
+  object-fit: contain;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+}
+
+.footerunderline {
+  margin-top: 16px;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+}
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.copyright span {
+  color: rgb(244, 234, 234);
+  font-size: 18px;
+  font-weight: 500;
+}
+.inputbox {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+.inputbox .inputfooter {
+  padding: 16px 5px;
+  line-height: 0;
+}
+.inputbox i {
+  display: block;
+  padding: 4px 15px;
+  font-size: 20px;
+  background: #95b1b8;
+}
+.CategoryInfo,
+.AboutInfo,
+.TagInfo {
+  padding-top: 2rem;
+}

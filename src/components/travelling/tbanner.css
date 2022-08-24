@@ -1,0 +1,36 @@
+.trvel-ban {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  height: 25rem;
+}
+.ban-travel {
+  position: relative;
+  height: 25rem;
+}
+.t-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.642);
+  cursor: pointer;
+}
+.t-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  /* text-align: center; */
+}
+.t-content p {
+  font-size: 12px;
+}
+.ban-travel:hover .t-info {
+  opacity: 0.8;
+}

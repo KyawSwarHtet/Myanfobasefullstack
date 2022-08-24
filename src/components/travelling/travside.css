@@ -1,0 +1,31 @@
+.Trav-main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.postTrav {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+.Trav_img {
+  position: relative;
+}
+.Trav_img img {
+  width: 250px;
+  height: 180px;
+}
+.postTrav_info {
+  width: 90%;
+}
+.postTrav_info h4 {
+  margin-bottom: 0;
+}
+.postTrav_info p {
+  margin-bottom: 0;
+}
+.Travel1 {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}

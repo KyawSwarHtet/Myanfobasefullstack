@@ -1,0 +1,76 @@
+.postbg {
+  background-color: #cdddffdb;
+}
+.postbg .firstdesc {
+  /* padding: 5rem 0; */
+  /* color: white; */
+}
+.formBody {
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.firstdesc h2 {
+  padding-top: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.firstdesc p {
+  padding-bottom: 4rem;
+  font-size: 18px;
+}
+
+.firstdesc p::first-letter {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+}
+.formDiv {
+  width: 100%;
+  height: fit-content;
+  margin: auto;
+  background-color: #609cd536;
+  padding-bottom: 5rem;
+}
+.postForm {
+  padding: 2rem 0;
+}
+.postForm .titleArea {
+  width: 80%;
+  height: 59px;
+  display: block;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  border-color: #bfbfbf;
+  margin-top: 20px;
+}
+
+textarea:is(:focus, :valid) {
+  border-width: 2px;
+  border-color: #4671ea;
+  padding: 14px;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0px;
+}
+
+.postButton {
+  margin-top: 20px;
+  padding: 0.5rem 2.5rem;
+  border-radius: 5px;
+  font-size: 1.3em;
+  text-align: center;
+  /* align-items; */
+  text-transform: capitalize;
+  font-weight: 500;
+  background-color: #3256cfc2;
+  color: white;
+  position: absolute;
+  bottom: 48px;
+  right: 140px;
+}
