@@ -62,7 +62,7 @@ export default function Testpost() {
         // console.log(update);
       })
       .catch(() => {
-        alert("Awww, it didn't work");
+        alert("Awww, it didn't work at getting data");
       });
   }, []);
 
