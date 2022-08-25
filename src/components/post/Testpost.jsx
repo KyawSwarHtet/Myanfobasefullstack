@@ -13,9 +13,11 @@ export default function Testpost() {
 
   const addPost = () => {
     Axios.post("https://desolate-hollows-16342.herokuapp.com/addpost", {
+      //https://desolate-hollows-16342.herokuapp.com
       title: title,
       description: description,
     }).then((response) => {
+      // alert("hello it is working");
       setListOfPosts([
         ...listOfPosts,
         { _id: response.data._id, title: title, description: description },
@@ -106,11 +108,10 @@ export default function Testpost() {
           <h3>Upload Image:</h3>
           <input type="file" multiple />
         </div>
-
-        <button onClick={addPost} className="postButton">
-          Post
-        </button>
       </form>
+      <button onClick={addPost} className="postButton">
+        Post
+      </button>
       {listOfPosts.map((val) => {
         return (
           <div className="Dataresult">
