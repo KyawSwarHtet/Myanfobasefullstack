@@ -3,24 +3,42 @@ import { useRef } from "react";
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import "./textform.css";
+import "./dropdowncate.css";
 
-export default function Testpost() {
+export default function Testpost({
+  selected,
+  setSelected,
+  selectedId,
+  setSelectedId,
+}) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [postImg, setPostimg] = useState();
   const [listOfPosts, setListOfPosts] = useState([]);
+
+  const [isActive, setIsActive] = useState(false);
+  const [listOfCate, setListOfCate] = useState([]);
+  // const [selectedId, setSelectedId] = useState(0);
   //https://desolate-hollows-16342.herokuapp.com/addpost
 
   const addPost = () => {
     Axios.post("https://desolate-hollows-16342.herokuapp.com/addpost", {
       //https://desolate-hollows-16342.herokuapp.com
+      cateId: selectedId,
+      cateName: selected,
       title: title,
       description: description,
     }).then((response) => {
       // alert("hello it is working");
       setListOfPosts([
         ...listOfPosts,
-        { _id: response.data._id, title: title, description: description },
+        {
+          _id: response.data._id,
+          cateId: selectedId,
+          cateName: selected,
+          title: title,
+          description: description,
+        },
       ]);
     });
   };
@@ -68,6 +86,17 @@ export default function Testpost() {
       });
   }, []);
 
+  useEffect(() => {
+    Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
+      .then((response) => {
+        setListOfCate(response.data);
+        console.log("categories inside", response.data);
+      })
+      .catch(() => {
+        alert("Awww, it didn't work at getting data");
+      });
+  }, []);
+
   return (
     <>
       <form
@@ -109,6 +138,7 @@ export default function Testpost() {
           <input type="file" multiple />
         </div>
       </form>
+
       <button onClick={addPost} className="postButton">
         Post
       </button>
@@ -117,6 +147,8 @@ export default function Testpost() {
           <div className="Dataresult">
             <h5>title is "{val.title}"</h5>
             <h5>description is " {val.description}"</h5>
+            <h5>Selected category is " {val.cateName}"</h5>
+            <h5>selected id is " {val.cateId}"</h5>
             <button
               className="updatedata"
               onClick={() => {

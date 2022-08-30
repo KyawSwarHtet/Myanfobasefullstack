@@ -9,6 +9,7 @@ import Testpost from "./Testpost";
 
 export default function Postform() {
   const [selected, setSelected] = useState("Choose One");
+  const [selectedId, setSelectedId] = useState(0);
 
   return (
     <>
@@ -26,9 +27,22 @@ export default function Postform() {
         </div>
       </section>
       <div className="container formBody">
-        <DropdownCate selected={selected} setSelected={setSelected} />
+        <DropdownCate
+          selected={selected}
+          setSelected={setSelected}
+          selectedId={selectedId}
+          setSelectedId={setSelectedId}
+        />
+        {console.log("data from form data is", selected)}
+        {console.log("id from form data is", selectedId)}
+
         <div className="formDiv">
-          <Testpost />
+          <Testpost
+            selected={selected}
+            setSelected={setSelected}
+            selectedId={selectedId}
+            setSelectedId={setSelectedId}
+          />
         </div>
       </div>
     </>
