@@ -1,25 +1,22 @@
 import React from "react";
-import { useRef } from "react";
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import "./textform.css";
 import "./dropdowncate.css";
 
-export default function Testpost({
-  selected,
-  setSelected,
-  selectedId,
-  setSelectedId,
-}) {
+
+export default function Testpost() {
+  const [selected, setSelected] = useState("Choose One");
+  const [selectedId, setSelectedId] = useState(0);
+  const [isActive, setIsActive] = useState(false);
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [postImg, setPostimg] = useState();
+
   const [listOfPosts, setListOfPosts] = useState([]);
 
-  const [isActive, setIsActive] = useState(false);
   const [listOfCate, setListOfCate] = useState([]);
-  // const [selectedId, setSelectedId] = useState(0);
-  //https://desolate-hollows-16342.herokuapp.com/addpost
 
   const addPost = () => {
     Axios.post("https://desolate-hollows-16342.herokuapp.com/addpost", {
@@ -29,6 +26,9 @@ export default function Testpost({
       title: title,
       description: description,
     }).then((response) => {
+      // if (response.data.selectedId == "0") {
+      //   prompt("here you dat is equal 0");
+      // }
       // alert("hello it is working");
       setListOfPosts([
         ...listOfPosts,
@@ -51,11 +51,19 @@ export default function Testpost({
       newTitle: newTitle,
       id: id,
       newDesc: newDesc,
+      // cateId: cateId,
+      // cateName: cateName,
     }).then(() => {
       setListOfPosts(
         listOfPosts.map((val) => {
-          return val._id == id
-            ? { _id: id, title: newTitle, description: newDesc }
+          return val._id === id
+            ? {
+                _id: id,
+                title: newTitle,
+                description: newDesc,
+                cateId: val.cateId,
+                cateName: val.cateName,
+              }
             : val;
         })
       );
@@ -68,7 +76,7 @@ export default function Testpost({
     ).then(() => {
       setListOfPosts(
         listOfPosts.filter((val) => {
-          return val._id != id;
+          return val._id !== id;
         })
       );
     });
@@ -105,6 +113,38 @@ export default function Testpost({
         method=""
         enctype="multipart/form-data"
       >
+        <div className="dropdown cateflex">
+          <h3 className="catechoose">Choose Category:</h3>
+          <div>
+            <div
+              className="dropdown-btn"
+              onClick={(e) => setIsActive(!isActive)}
+            >
+              {selected}
+              <i class="fa-solid fa-square-caret-down"></i>
+            </div>
+            {isActive && (
+              <div className="dropdown-content">
+                {listOfCate.map((option) => (
+                  <div
+                    onClick={(e) =>
+                      setSelectedId(option._id)(
+                        setSelected(option.catename)(setIsActive(false))
+                      )
+                    }
+                    className="dropdown-item"
+                  >
+                    {option.catename}
+                  </div>
+                ))}
+                {/* {listOfCate.map((data) => {
+              console.log("data of listCate are", data.catename);
+            })} */}
+              </div>
+            )}
+          </div>
+        </div>
+
         <div className="titleDiv">
           <h3>Title:</h3>
           <textarea
