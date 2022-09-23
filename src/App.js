@@ -88,6 +88,8 @@ import InfodoctorPage from "./pages/healthpage/InfodoctorPage";
 import MedicinePage from "./pages/healthpage/MedicinePage";
 import Yogapage from "./pages/healthpage/YogaPage";
 import LoginandRegister from "./pages/loginPage/LoginPage";
+import UpdateForm from "./components/post/UpdateForm";
+import UpdateformPage from "./pages/post/UpdateformPage";
 function App() {
   return (
     <div className="App">
@@ -193,6 +195,7 @@ function App() {
         <Route path="/yoga" element={<Yogapage />} />
 
         <Route path="/post" element={<PostformPage />} />
+        <Route path="/update/:id" element={<UpdateformPage />} />
 
         <Route path="/detail/:id" element={<DetailPage />} />
         <Route path="/login" element={<LoginandRegister />} />
