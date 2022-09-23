@@ -2,100 +2,120 @@ import React from "react";
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import "./textform.css";
+import "./postform.css";
 import "./dropdowncate.css";
+import { multipleFilesUpload } from "../../data/api";
 
-
-export default function Testpost() {
+export default function Testpost(props) {
   const [selected, setSelected] = useState("Choose One");
+  console.log("selected data is", selected);
   const [selectedId, setSelectedId] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [postImg, setPostimg] = useState();
-
-  const [listOfPosts, setListOfPosts] = useState([]);
-
+  const [postImg, setPostimg] = useState("");
   const [listOfCate, setListOfCate] = useState([]);
 
-  const addPost = () => {
-    Axios.post("https://desolate-hollows-16342.herokuapp.com/addpost", {
-      //https://desolate-hollows-16342.herokuapp.com
-      cateId: selectedId,
-      cateName: selected,
-      title: title,
-      description: description,
-    }).then((response) => {
-      // if (response.data.selectedId == "0") {
-      //   prompt("here you dat is equal 0");
-      // }
-      // alert("hello it is working");
-      setListOfPosts([
-        ...listOfPosts,
-        {
-          _id: response.data._id,
-          cateId: selectedId,
-          cateName: selected,
-          title: title,
-          description: description,
-        },
-      ]);
-    });
-  };
+  const addPost = async () => {
+    if (
+      postImg === [] ||
+      postImg.length === 0 ||
+      description.length === 0 ||
+      selectedId == 0 ||
+      title.length == 0
+    ) {
+      return alert("please fill all data");
+    }
 
-  const updatePost = (id) => {
-    const newTitle = prompt("Enter new Title:");
-    const newDesc = prompt("Enter new Desc:");
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("cateId", selectedId);
+    formData.append("cateName", selected);
+    formData.append("description", description);
+    for (let i = 0; i < postImg.length; i++) {
+      formData.append("files", postImg[i]);
+    }
 
-    Axios.put("https://desolate-hollows-16342.herokuapp.com/update", {
-      newTitle: newTitle,
-      id: id,
-      newDesc: newDesc,
-      // cateId: cateId,
-      // cateName: cateName,
-    }).then(() => {
-      setListOfPosts(
-        listOfPosts.map((val) => {
-          return val._id === id
-            ? {
-                _id: id,
-                title: newTitle,
-                description: newDesc,
-                cateId: val.cateId,
-                cateName: val.cateName,
-              }
-            : val;
-        })
-      );
-    });
+    await multipleFilesUpload(formData);
+    props.getMultipleFile();
   };
+  //   Axios.post("https://desolate-hollows-16342.herokuapp.com/addpost", {
+  //     //https://desolate-hollows-16342.herokuapp.com
+  //     cateId: selectedId,
+  //     cateName: selected,
+  //     title: title,
+  //     description: description,
+  //     postImg: postImg,
+  //   }).then((response) => {
+  //     setListOfPosts([
+  //       ...listOfPosts,
+  //       {
+  //         _id: response.data._id,
+  //         cateId: selectedId,
+  //         cateName: selected,
+  //         title: title,
+  //         description: description,
+  //         postImg: postImg,
+  //       },
+  //     ]);
+  //   });
+  // };
 
-  const deletePost = (id) => {
-    Axios.delete(
-      `https://desolate-hollows-16342.herokuapp.com/delete/${id}`
-    ).then(() => {
-      setListOfPosts(
-        listOfPosts.filter((val) => {
-          return val._id !== id;
-        })
-      );
-    });
-  };
+  // const updatePost = (id) => {
+  //   const newTitle = prompt("Enter new Title:");
+  //   const newDesc = prompt("Enter new Desc:");
+
+  //   Axios.put("https://desolate-hollows-16342.herokuapp.com/update", {
+  //     newTitle: newTitle,
+  //     id: id,
+  //     newDesc: newDesc,
+  //     // cateId: cateId,
+  //     // cateName: cateName,
+  //   }).then(() => {
+  //     setListOfPosts(
+  //       listOfPosts.map((val) => {
+  //         return val._id === id
+  //           ? {
+  //               _id: id,
+  //               title: newTitle,
+  //               description: newDesc,
+  //               cateId: val.cateId,
+  //               cateName: val.cateName,
+  //             }
+  //           : val;
+  //       })
+  //     );
+  //   });
+  // };
+
+  // const deletePost = (id) => {
+  //   Axios.delete(
+  //     `https://desolate-hollows-16342.herokuapp.com/delete/${id}`
+  //   ).then(() => {
+  //     setListOfPosts(
+  //       listOfPosts.filter((val) => {
+  //         return val._id !== id;
+  //       })
+  //     );
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   Axios.get("https://desolate-hollows-16342.herokuapp.com/read")
+  //     .then((response) => {
+  //       setListOfPosts(response.data);
+  //       // const update = prompt("enter val:");
+  //       // console.log(update);
+  //     })
+  //     .catch(() => {
+  //       alert("Awww, it didn't work at getting data");
+  //     });
+  // }, []);
 
   useEffect(() => {
-    Axios.get("https://desolate-hollows-16342.herokuapp.com/read")
-      .then((response) => {
-        setListOfPosts(response.data);
-        // const update = prompt("enter val:");
-        // console.log(update);
-      })
-      .catch(() => {
-        alert("Awww, it didn't work at getting data");
-      });
-  }, []);
-
-  useEffect(() => {
-    Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
+    // Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
+    Axios.get("http://localhost:8080/readcate")
       .then((response) => {
         setListOfCate(response.data);
         console.log("categories inside", response.data);
@@ -106,11 +126,11 @@ export default function Testpost() {
   }, []);
 
   return (
-    <>
+    <div className="formDiv">
       <form
         className="postForm"
         action=""
-        method=""
+        method="POST"
         enctype="multipart/form-data"
       >
         <div className="dropdown cateflex">
@@ -146,8 +166,9 @@ export default function Testpost() {
         </div>
 
         <div className="titleDiv">
-          <h3>Title:</h3>
+          <label for="titleFormid">Title:</label>
           <textarea
+            id="titleFormid"
             className="titleForm"
             placeholder="Type title here..."
             onChange={(event) => {
@@ -159,8 +180,9 @@ export default function Testpost() {
           />
         </div>
         <div className="titleDiv">
-          <h3>Description:</h3>
+          <label for="descformid">Description:</label>
           <textarea
+            id="descformid"
             className="titleForm"
             placeholder="Type Description here..."
             onChange={(event) => {
@@ -174,15 +196,22 @@ export default function Testpost() {
         <br />
         <br />
         <div className="imgDiv">
-          <h3>Upload Image:</h3>
-          <input type="file" multiple />
+          <label>Upload Image:</label>
+          <input
+            type="file"
+            multiple
+            onChange={(event) => {
+              setPostimg(event.target.files);
+            }}
+          />
         </div>
       </form>
 
       <button onClick={addPost} className="postButton">
         Post
       </button>
-      {listOfPosts.map((val) => {
+
+      {/* {listOfPosts.map((val) => {
         return (
           <div className="Dataresult">
             <h5>title is "{val.title}"</h5>
@@ -207,7 +236,7 @@ export default function Testpost() {
             </button>
           </div>
         );
-      })}
-    </>
+      })} */}
+    </div>
   );
 }
