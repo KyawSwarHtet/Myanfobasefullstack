@@ -90,6 +90,7 @@ import Yogapage from "./pages/healthpage/YogaPage";
 import LoginandRegister from "./pages/loginPage/LoginPage";
 import UpdateForm from "./components/post/UpdateForm";
 import UpdateformPage from "./pages/post/UpdateformPage";
+import Aboutpage from "./pages/aboutus/Aboutpage";
 function App() {
   return (
     <div className="App">
@@ -199,6 +200,9 @@ function App() {
 
         <Route path="/detail/:id" element={<DetailPage />} />
         <Route path="/login" element={<LoginandRegister />} />
+
+
+        <Route path="/aboutus" element={<Aboutpage/>} />
       </Routes>
     </div>
   );
