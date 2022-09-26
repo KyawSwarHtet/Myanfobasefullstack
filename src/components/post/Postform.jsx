@@ -6,6 +6,7 @@ import Testpost from "./Testpost";
 import { getMultipleFiles, deletePosts } from "../../data/api";
 import "./textform.css";
 import "./dropdowncate.css";
+import "./postform.css";
 import { useParams } from "react-router-dom";
 
 export default function Postform() {

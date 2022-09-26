@@ -7,7 +7,6 @@ import "./textform.css";
 import "./postform.css";
 import "./dropdowncate.css";
 const fs = require("fs");
-// const mainPath = require("../../../../../react-app/routes/");
 
 export default function UpdateForm() {
   const [editpost, setEditpost] = useState({
@@ -199,12 +198,6 @@ export default function UpdateForm() {
             );
           })}
         </div>
-
-        <button className="">DeleteImage</button>
-
-        {/* <button onClick={updatepost} className="postButton">
-        Update
-      </button> */}
       </div>
     </>
   );
