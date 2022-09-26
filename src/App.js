@@ -94,6 +94,7 @@ import AdminPage from "./pages/adminPage/AdminPage";
 import AdmindetailPage from "./pages/adminDetail/AdminDetailPage";
 import SearchPage from "./pages/searchpage/SearchPage";
 import Profile from "./pages/profile/Profile";
+import Aboutpage from "./pages/aboutus/Aboutpage";
 function App() {
   return (
     <div className="App">
@@ -209,6 +210,9 @@ function App() {
         <Route path="/requestform" element={<RequestFormPage />} />
         <Route path="/admindetail" element={<AdmindetailPage />} />
         <Route path="/search" element={<SearchPage />} />
+
+
+        <Route path="/aboutus" element={<Aboutpage/>} />
       </Routes>
     </div>
   );
