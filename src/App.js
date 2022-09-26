@@ -89,16 +89,21 @@ import MedicinePage from "./pages/healthpage/MedicinePage";
 import Yogapage from "./pages/healthpage/YogaPage";
 import LoginandRegister from "./pages/loginPage/LoginPage";
 import UpdateformPage from "./pages/post/UpdateformPage";
+<<<<<<< HEAD
 import RequestFormPage from "./pages/adminPage/RequestFormPage";
 import AdminPage from "./pages/adminPage/AdminPage";
 import AdmindetailPage from "./pages/adminDetail/AdminDetailPage";
 import SearchPage from "./pages/searchpage/SearchPage";
+=======
+import Profile from "./pages/profile/Profile";
+>>>>>>> master
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/technology" element={<TecnologyPages />} />
 
         <Route path="/travel" element={<Travel />} />
