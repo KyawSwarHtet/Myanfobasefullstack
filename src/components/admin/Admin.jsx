@@ -1,9 +1,15 @@
+import react from "react"
 import { Link } from "react-router-dom";
 import Table from "react-bootstrap/Table";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown"
+  import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-export default function AdminChue() {
+
+
+
+export default function Admin() {
     return (
       <>
         <div>
@@ -24,7 +30,9 @@ export default function AdminChue() {
 
           {/* block user */}
           <div className="user-list">
-            <h3>USERS LIST </h3>(Active, Tem - block, Per - block)
+        
+              <h3>USERS LIST </h3>(Active, Tem - block, Per - block)
+            
           </div>
 
           <div className="search-user">
