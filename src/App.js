@@ -90,12 +90,14 @@ import Yogapage from "./pages/healthpage/YogaPage";
 import LoginandRegister from "./pages/loginPage/LoginPage";
 import UpdateForm from "./components/post/UpdateForm";
 import UpdateformPage from "./pages/post/UpdateformPage";
+import Profile from "./pages/profile/Profile";
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/technology" element={<TecnologyPages />} />
 
         <Route path="/travel" element={<Travel />} />
