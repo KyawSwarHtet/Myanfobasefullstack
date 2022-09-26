@@ -89,14 +89,11 @@ import MedicinePage from "./pages/healthpage/MedicinePage";
 import Yogapage from "./pages/healthpage/YogaPage";
 import LoginandRegister from "./pages/loginPage/LoginPage";
 import UpdateformPage from "./pages/post/UpdateformPage";
-<<<<<<< HEAD
 import RequestFormPage from "./pages/adminPage/RequestFormPage";
 import AdminPage from "./pages/adminPage/AdminPage";
 import AdmindetailPage from "./pages/adminDetail/AdminDetailPage";
 import SearchPage from "./pages/searchpage/SearchPage";
-=======
 import Profile from "./pages/profile/Profile";
->>>>>>> master
 function App() {
   return (
     <div className="App">
@@ -207,7 +204,7 @@ function App() {
 
         <Route path="/detail/:id" element={<DetailPage />} />
         <Route path="/login" element={<LoginandRegister />} />
-        <Route path="/admin"    element={<AdminPage/>}   /> 
+        <Route path="/admin" element={<AdminPage />} />
 
         <Route path="/requestform" element={<RequestFormPage />} />
         <Route path="/admindetail" element={<AdmindetailPage />} />
