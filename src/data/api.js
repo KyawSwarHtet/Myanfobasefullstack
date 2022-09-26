@@ -5,7 +5,7 @@ const apiUrl = "http://localhost:8080/api/";
 
 export const multipleFilesUpload = async (data) => {
   try {
-    await axios.post(apiUrl + "addpost", data);
+    await axios.post(apiUrl + "post", data);
   } catch (error) {
     throw error;
   }
@@ -13,7 +13,7 @@ export const multipleFilesUpload = async (data) => {
 
 export const getMultipleFiles = async () => {
   try {
-    const { data } = await axios.get(apiUrl + "getposts");
+    const { data } = await axios.get(apiUrl + "post");
     return data;
   } catch (error) {
     throw error;
@@ -31,7 +31,7 @@ export const getPostDetail = async (id) => {
 
 export const updatePosts = async (id, data) => {
   try {
-    await axios.put(apiUrl + `updatepost/${id}`, data);
+    await axios.put(apiUrl + `post/${id}`, data);
   } catch (error) {
     throw error;
   }
@@ -39,7 +39,7 @@ export const updatePosts = async (id, data) => {
 
 export const deletePosts = async (id) => {
   try {
-    await axios.delete(apiUrl + `deletepost/${id}`);
+    await axios.delete(apiUrl + `post/${id}`);
   } catch (error) {
     throw error;
   }

@@ -157,9 +157,6 @@ export default function Testpost(props) {
                     {option.catename}
                   </div>
                 ))}
-                {/* {listOfCate.map((data) => {
-              console.log("data of listCate are", data.catename);
-            })} */}
               </div>
             )}
           </div>
@@ -210,33 +207,6 @@ export default function Testpost(props) {
       <button onClick={addPost} className="postButton">
         Post
       </button>
-
-      {/* {listOfPosts.map((val) => {
-        return (
-          <div className="Dataresult">
-            <h5>title is "{val.title}"</h5>
-            <h5>description is " {val.description}"</h5>
-            <h5>Selected category is " {val.cateName}"</h5>
-            <h5>selected id is " {val.cateId}"</h5>
-            <button
-              className="updatedata"
-              onClick={() => {
-                updatePost(val._id);
-              }}
-            >
-              update
-            </button>
-            <button
-              className="closedata"
-              onClick={() => {
-                deletePost(val._id);
-              }}
-            >
-              X
-            </button>
-          </div>
-        );
-      })} */}
     </div>
   );
 }

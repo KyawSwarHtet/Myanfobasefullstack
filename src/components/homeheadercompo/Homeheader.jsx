@@ -13,13 +13,14 @@ const HomeHeader = () => {
             <h1>MyanfobasE</h1>
             <h3>MYANMAR INFORMATION BASE</h3>
             <div className="search-banner">
-              <input
-                type="text"
-                placeholder="Search in here...."
-                id="searchinput"
-              />
-              <Link to="./search" className="search-button">
-                <i className="uil uil-search"></i>
+              <Link to="/search">
+                <input
+                  type="text"
+                  placeholder="Search in here...."
+                  id="searchinput"
+                />
+
+                <i className="search-button uil uil-search"></i>
               </Link>
             </div>
             <div className="banner-botton">
