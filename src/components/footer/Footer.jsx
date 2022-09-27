@@ -72,9 +72,7 @@ export default function Footer() {
                 <li>
                   <h4>About</h4>
                 </li>
-                <Link to="/aboutus">
-                  <li>About Us</li>
-                </Link>
+                <li>About Us</li>
                 <li>Carrers</li>
                 <li>Where to Buy</li>
                 <li>investor Relation</li>

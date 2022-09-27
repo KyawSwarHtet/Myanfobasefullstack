@@ -93,15 +93,12 @@ import RequestFormPage from "./pages/adminPage/RequestFormPage";
 import AdminPage from "./pages/adminPage/AdminPage";
 import AdmindetailPage from "./pages/adminDetail/AdminDetailPage";
 import SearchPage from "./pages/searchpage/SearchPage";
-import Profile from "./pages/profile/Profile";
-import Aboutpage from "./pages/aboutus/Aboutpage";
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/technology" element={<TecnologyPages />} />
 
         <Route path="/travel" element={<Travel />} />
@@ -205,14 +202,11 @@ function App() {
 
         <Route path="/detail/:id" element={<DetailPage />} />
         <Route path="/login" element={<LoginandRegister />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin"    element={<AdminPage/>}   /> 
 
         <Route path="/requestform" element={<RequestFormPage />} />
         <Route path="/admindetail" element={<AdmindetailPage />} />
         <Route path="/search" element={<SearchPage />} />
-
-
-        <Route path="/aboutus" element={<Aboutpage/>} />
       </Routes>
     </div>
   );
