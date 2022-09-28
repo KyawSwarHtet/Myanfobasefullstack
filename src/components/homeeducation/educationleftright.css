@@ -1,0 +1,37 @@
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.wrapper .wrapperimg {
+  width: 100%;
+  height: 160px;
+}
+.wrapperinfo h4 {
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+}
+.wrapperinfo h4:hover {
+  color: #00a79d;
+}
+.wrapperinfo span {
+  display: inline-block;
+  margin: 0.8rem 0;
+  /* background-color: aqua; */
+}
+.wrapperinfo span:hover {
+  background-color: #00a79d;
+  color: black;
+}
+.wrapperinfo h5 {
+  font-weight: 700;
+}
+/* .wrapperinfo h5:hover {
+  color: #00a79d;
+} */

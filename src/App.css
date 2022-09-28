@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+  /* max-width: 1600px; */
+}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap");
+:root {
+  --background-main: #fff;
+  --entertainment-bg: rgb(245, 188, 213, 0.948);
+  --technology-bg: rgb(211 153 7);
+  --beauty-bg: rgb(211 128 166);
+  --history-bg: rgb(163 69 28);
+  --government-bg: rgb(159 65 136);
+  --science-bg: rgb(29 210 221 / 78%);
+  --travel-bg: rgb(116, 104, 213);
+  --business-bg: rgb(225, 76, 76);
+  --sports-bg: rgb(36, 9, 9, 0.94);
+  --arts-bg: rgb(12, 47, 105);
+  --literature-bg: rgb(131 106 55);
+  --health-bg: rgb(60 211 134);
+  --lifestyles-bg: rgb(163, 184, 250);
+  --education-bg: rgb(144, 240, 18);
+  --container-width-lg: 80%;
+  --container-width-md: 90%;
+  --container-width-sm: 96%;
+}
+.App {
+  /* overflow: hidden; */
+}
+body {
+  font-family: "Roboto", sans-serif !important;
+  line-height: 1.7;
+  color: var(--color-black);
+  background: var(--background-main) !important;
+}
+/* .body-color {
+  background: var(--background-main) !important;
+} */
+a {
+  text-decoration: none;
+}
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+.capital {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+section {
+  padding: 3rem 0 0 0;
+}
+section.nav-section {
+  padding: 0rem !important;
+}
+/* section h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+} */
+
+h1 {
+  font-size: 2.4rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.6rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+h5 {
+  font-size: 0.9rem;
+}
+.second-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+}
+
+/* a {
+  color: var(--color-white);
+} */
+
+.btn {
+  display: inline-block;
+  /* background: var(--color-white); */
+  color: var(--color-black);
+  padding: 0.5rem 0.5rem;
+  border: 1px solid transparent;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.cateEntertainment {
+  background-color: var(--entertainment-bg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  text-transform: capitalize;
+}
+.cateTechnology {
+  background-color: var(--technology-bg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  text-transform: capitalize;
+}
+.cateHistory {
+  background-color: var(--history-bg);
+  text-transform: capitalize;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+}
+.cateTravel {
+  background-color: var(--travel-bg);
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+.cateBusiness {
+  background-color: var(--business-bg);
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+.cateBeauty {
+  background-color: var(--beauty-bg);
+  text-transform: capitalize;
+  font-weight: 500;
+  color: #fff;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+}
+.cateHealth {
+  background-color: var(--health-bg);
+  text-transform: capitalize;
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+}
+.cateGovernment {
+  background-color: var(--government-bg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  text-transform: capitalize;
+}
+.cateScience {
+  background-color: var(--science-bg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  padding: 1px 12px;
+  text-transform: capitalize;
+}
+.cateLiterature {
+  background-color: var(--literature-bg);
+  text-transform: capitalize;
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+}
+.cateSports {
+  background-color: var(--sports-bg);
+  text-transform: capitalize;
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+}
+.cateLifestyles {
+  background-color: var(--lifestyles-bg);
+  text-transform: capitalize;
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+}
+.cateArts {
+  background-color: var(--arts-bg);
+  text-transform: capitalize;
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+}
+.cateEducation {
+  background-color: var(--education-bg);
+  text-transform: capitalize;
+  font-weight: 500;
+  color: white;
+  padding: 1px 8px;
+  font-size: 0.9rem;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0 !important;
+  font-size: 16px;
+}
+.justify {
+  text-align: justify;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0 !important;
+}
+
+ul,
+ol,
+dl {
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+.sidebar {
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
+  position: sticky;
+  top: 50px;
+}
+.sidebar1 {
+  height: calc(60vh - 50px);
+  overflow-y: scroll;
+  position: sticky;
+  top: 50px;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(179, 179, 179);
+}
+
+.btnactive {
+  background-color: var(--technology-bg) !important;
+  color: black !important;
+}

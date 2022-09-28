@@ -1,0 +1,111 @@
+.headerwrap a {
+  color: white;
+}
+
+.headerPadding {
+  padding: 0;
+}
+.nav-logo img {
+  width: 100px;
+  height: 90px;
+}
+.headercolor {
+  width: 100%;
+  background-color: #15568e;
+  position: fixed;
+  z-index: 11;
+  height: 5.5rem;
+}
+.headerwrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 3rem;
+  /* padding: 1rem 0; */
+  color: white;
+}
+.headerfirst {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+}
+.headerfirst li {
+  padding: 0 2rem;
+}
+.headersecond {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.headersecond img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.headersecond .subscribebtn {
+  border: 2px solid white;
+  padding: 8px 17px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.headersecond .subscribebtn:hover {
+  background-color: rgb(255, 174, 0);
+  color: black;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  /* gap: 0.5rem; */
+}
+nav .flex {
+  display: flex;
+  align-items: center;
+  height: 4.5rem;
+}
+nav .hoverclor:hover {
+  color: rgb(239, 145, 13);
+
+  border-radius: 4px;
+}
+.login {
+  display: flex;
+  align-items: center;
+
+  /* gap: 0.5rem; */
+}
+.headerwrap i {
+  font-size: 20px;
+}
+.headerwrap span {
+  margin-left: 0.5rem;
+  font-size: 17px;
+}
+.headerwrap .loginicon {
+  display: block;
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid white;
+  border-radius: 50%;
+  position: relative;
+}
+.uil-user:before {
+  content: "\ea0d";
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 27px;
+
+  margin: auto;
+}
+.homeMenu {
+  position: relative;
+}

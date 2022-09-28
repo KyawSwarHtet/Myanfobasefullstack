@@ -1,0 +1,122 @@
+.mainetn {
+  display: grid;
+  grid-template-columns: 33% 33% 34%;
+}
+.firstetn {
+  position: relative;
+  width: 80%;
+ left: 3rem;
+ overflow: hidden;
+}
+.hansoetn {
+  width: 100%;
+  height: 520px;
+  padding-right: 2rem;
+  transition: all 0.5s;
+}
+.hansoetn_P{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translate(-100%);
+  transition: all 0.5s;
+}
+.hansoetn_P p{
+  text-transform: capitalize;
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+}
+.firstetn:hover .hansoetn_P{
+    transform: translate(0%);
+}
+.firstetn:hover .hansoetn{
+  transform: scale(1.4) rotate(-15deg);
+}
+.secetn{
+  width: 80%;
+  position: relative;
+  overflow: hidden;
+}
+
+.moneyheist {
+  width: 100%;
+  height: 520px;
+  padding-right: 2rem;
+  transition: all 0.5s;
+}
+.moneyheist_P{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translate(-100%);
+  transition: all 0.5s;
+}
+.moneyheist_P p{
+  text-transform: capitalize;
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+}
+.secetn:hover .moneyheist_P{
+  transform: translate(0%);
+}
+.secetn:hover .moneyheist{
+  transform: scale(1.4) rotate(-15deg);
+}
+
+
+.thirdetn{
+  width: 80%;
+  position: relative;
+  overflow: hidden;
+}
+.jurassic {
+  width: 100%;
+  height: 520px;
+  padding-right: 2rem;
+  transition: all 0.5s;
+}
+.jurassic_P{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translate(-100%);
+  transition: all 0.5s;
+}
+.jurassic_P p{
+  text-transform: capitalize;
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+}
+.thirdetn:hover .jurassic_P{
+    transform: translate(0%);
+}
+.thirdetn:hover .jurassic{
+    transform: scale(1.4) rotate(-15deg);
+}

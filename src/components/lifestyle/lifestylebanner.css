@@ -1,0 +1,19 @@
+.lifestyle-banner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+.lifebanner-img{
+    padding: 0.5rem;
+    transition: 1s;
+   
+}
+.lifebanner-img img{
+  border-radius: 15px;
+}
+.lifebanner-img:hover{
+background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+transform: scale(1.1);
+    z-index: 2;
+}
+
