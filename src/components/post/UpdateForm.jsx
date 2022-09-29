@@ -28,7 +28,7 @@ export default function UpdateForm() {
       setEditpost(await res);
     };
     editpostid();
-  }, []);
+  }, [id]);
 
   console.log("description default is", editpost.description);
   console.log("cate name default is", editpost.cateName);
