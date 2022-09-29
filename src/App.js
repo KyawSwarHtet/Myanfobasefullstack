@@ -94,6 +94,7 @@ import AdminPage from "./pages/adminPage/AdminPage";
 import AdmindetailPage from "./pages/adminDetail/AdminDetailPage";
 import SearchPage from "./pages/searchpage/SearchPage";
 import Profile from "./pages/profile/Profile";
+import Aboutpage from "./pages/aboutus/Aboutpage";
 function App() {
   return (
     <div className="App">
@@ -202,13 +203,16 @@ function App() {
         <Route path="/post" element={<PostformPage />} />
         <Route path="/update/:id" element={<UpdateformPage />} />
 
-        <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="/detail" element={<DetailPage />} />
         <Route path="/login" element={<LoginandRegister />} />
         <Route path="/admin" element={<AdminPage />} />
 
         <Route path="/requestform" element={<RequestFormPage />} />
         <Route path="/admindetail/:id" element={<AdmindetailPage />} />
         <Route path="/search" element={<SearchPage />} />
+
+
+        <Route path="/aboutus" element={<Aboutpage/>} />
       </Routes>
     </div>
   );

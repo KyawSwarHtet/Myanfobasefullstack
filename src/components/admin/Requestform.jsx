@@ -69,7 +69,7 @@ export default function RequestForm() {
               <div className="admin-button">
                 <button className="button1">Accept</button>
                 <button className="button2">Delete</button>
-                <Link to={`detail/${element._id}`}>
+                <Link to={`/admindetail/${element._id}`}>
                   <button className="button3">view</button>
                 </Link>
               </div>

@@ -1,28 +1,37 @@
 import "./admin.css";
 import { Link } from "react-router-dom";
-import { getMultipleFiles } from "../../data/api";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Axios from "axios";
 
 export default function AdminDetail() {
   const [postDetail, setPostDetail] = useState([]);
-    const [multipleFiles, setMultipleFiles] = useState([]);
+  // const [multipleFiles, setMultipleFiles] = useState([]);
 
-  const { postid } = useParams();
+  const { id } = useParams();
+  console.log("hhh", id);
+  console.log("vvv", postDetail);
 
-const getMultipleFilesList = async () => {
-  try {
-    const fileslist = await getMultipleFiles();
-    setMultipleFiles(fileslist);
-    console.log(multipleFiles);
-  } catch (error) {
-    console.log(error);
-  }
-};
-useEffect(() => {
-  getMultipleFilesList();
-}, []);
+  useEffect(() => {
+    const adminDetailId = async () => {
+      const reqpost = await fetch(`http://localhost:8080/editpost/${id}`);
+      const res = await reqpost.json();
+      setPostDetail(await res);
+    };
+    adminDetailId();
+  }, []);
+
+  // const getMultipleFilesList = async () => {
+  //   try {
+  //     const fileslist = await getMultipleFiles();
+  //     setMultipleFiles(fileslist);
+  //     console.log(multipleFiles);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   getMultipleFilesList();
+  // }, []);
 
   return (
     <>
@@ -37,33 +46,38 @@ useEffect(() => {
           </span>
           <span>detail page</span>
         </div>
-        {multipleFiles.map((element, index) => (
-          <div key={element._id}>
-            <div className="admindetailimg">
-              <img
-                className="detailimg"
-                src={`http://localhost:8080/${element.files[0].filePath}`}
-                alt=" "
-              />
-            </div>
-            <div className="postdetail">
-              <h3 className="admindetail-title">{element.title} </h3>
-              <button className="admindetail-cate cateTravel">
-                {element.cateName}
-              </button>
-              <div className="postman1">
-                <img src="./images/homeimgs/viedo4.jpg" alt="" />
-                <span className="profileName1">Paina Ta Kon</span>
-                <span className="profileDate1">20.3.2022</span>
-              </div>
-              <p className="user-desc">{element.description}</p>
-            </div>
-            <div className="admindetail-button">
-              <button className="detail-button1">Accept</button>
-              <button className="detail-button2">Delete</button>
-            </div>
+
+        <div className="postdetail">
+          <h3 className="admindetail-title">{postDetail.title} </h3>
+          <button className="admindetail-cate cateTravel">
+            {postDetail.cateName}
+          </button>
+          <div className="postman1">
+            <img src="../images/homeimgs/viedo4.jpg" alt="" />
+            <span className="profileName1">Paina Ta Kon</span>
+            <span className="profileDate1">20.3.2022</span>
           </div>
-        ))}
+          <p className="user-desc">{postDetail.description}</p>
+        </div>
+        <div className="admindetail-button">
+          <button className="detail-button1">Accept</button>
+          <button className="detail-button2">Delete</button>
+        </div>
+
+        <div>
+          {postDetail.files.map((file, index) => {
+            return (
+              <div className="admindetailimg">
+                {console.log("filePath is", file.filePath)}
+                <img
+                  className="detailimg"
+                  src={`http://localhost:8080/${file.filePath}`}
+                  alt=" "
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
