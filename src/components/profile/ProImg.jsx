@@ -5,7 +5,7 @@ const ProImg = () => {
     <>
       <div className="ProHead">
         <div className="ProImg1">
-          <img src="../images/profile/profile.jpg" alt="" />
+          <img src="../../../public/images/art/art4.jpg" alt="" />
           <i className="editPro uil uil-edit"></i>
         </div>
         <div className="ProData">
