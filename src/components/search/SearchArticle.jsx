@@ -82,7 +82,7 @@ function SearchArticle() {
                 </div>
                 <div className="title_desc">
                   <h4>Title: {element.title}</h4>
-                  <h6>Descriptions: {element.desc}</h6>
+                  <h6>Descriptions: {element.description}</h6>
                 </div>
               </div>
             ))}
