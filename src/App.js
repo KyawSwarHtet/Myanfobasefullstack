@@ -202,12 +202,12 @@ function App() {
         <Route path="/post" element={<PostformPage />} />
         <Route path="/update/:id" element={<UpdateformPage />} />
 
-        <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="/detail" element={<DetailPage />} />
         <Route path="/login" element={<LoginandRegister />} />
         <Route path="/admin" element={<AdminPage />} />
 
         <Route path="/requestform" element={<RequestFormPage />} />
-        <Route path="/admindetail" element={<AdmindetailPage />} />
+        <Route path="/admindetail/:id" element={<AdmindetailPage />} />
         <Route path="/search" element={<SearchPage />} />
       </Routes>
     </div>
