@@ -13,17 +13,17 @@ input {
 }
 
 .login-con:before {
-    content: "";
-    position: absolute;
-    width: 2000px;
-    height: 2000px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #273c61, #58cbf5);
-    top: -10%;
-    right: 48%;
-    transform: translateY(-50%);
-    z-index: 6;
-    transition: all 0.8s ease-in-out;
+  content: "";
+  position: absolute;
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #273c61, #58cbf5);
+  top: -10%;
+  right: 48%;
+  transform: translateY(-50%);
+  z-index: 6;
+  transition: all 0.8s ease-in-out;
 }
 
 .forms-con {

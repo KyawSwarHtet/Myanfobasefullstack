@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Header from "./components/header/Header";
 import Animepage from "./pages/art/Animepage";
@@ -95,6 +97,7 @@ import AdmindetailPage from "./pages/adminDetail/AdminDetailPage";
 import SearchPage from "./pages/searchpage/SearchPage";
 import Profile from "./pages/profile/Profile";
 import Aboutpage from "./pages/aboutus/Aboutpage";
+
 function App() {
   return (
     <div className="App">
@@ -205,15 +208,16 @@ function App() {
 
         <Route path="/detail" element={<DetailPage />} />
         <Route path="/login" element={<LoginandRegister />} />
+
         <Route path="/admin" element={<AdminPage />} />
 
         <Route path="/requestform" element={<RequestFormPage />} />
         <Route path="/admindetail/:id" element={<AdmindetailPage />} />
         <Route path="/search" element={<SearchPage />} />
 
-
-        <Route path="/aboutus" element={<Aboutpage/>} />
+        <Route path="/aboutus" element={<Aboutpage />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

@@ -77,7 +77,6 @@ export default function AdminDetail() {
               </div>
             );
           })}
-         
         </div>
       </div>
     </>
