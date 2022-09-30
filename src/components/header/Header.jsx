@@ -1,12 +1,24 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Dropdown from "./dropdown/Dropdown";
 import Language from "./dropdown/Language";
-
+import { useSelector, useDispatch } from "react-redux";
+import { logout, reset } from "../../features/auth/authSlice";
 import "./header.css";
 
 export default function Header() {
   const [dropdown, setDropdown] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+  const [open, setOpen] = useState(false);
+
+  const onLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+    navigate("/");
+  };
+
   return (
     <div className="headercolor">
       <nav className="headerwrap ">
@@ -57,14 +69,73 @@ export default function Header() {
               <span>Eng</span> */}
             <Language label="choose an language" />
           </li>
-          <li>
-            <Link to="/login" className="login">
-              <i class="uil uil-user loginicon"></i>
-              <span className="capitalize">Login</span>
-            </Link>
-          </li>
+          {user ? (
+            <>
+              <li>
+                <div className="dorpmenu-container">
+                  <div className="login">
+                    <div className="profile-img">
+                      <img src="./images/sport/sport1.jpg" alt="" />
+                    </div>
+                    <i
+                      id="loginsetting"
+                      class="fa-solid fa-bars"
+                      onClick={() => {
+                        setOpen(!open);
+                      }}
+                    ></i>
+                  </div>
+                  <div
+                    id="dropdown-menu"
+                    className={` ${open ? "active" : "inactive"}`}
+                  >
+                    <h3>kyaw swar</h3>
+                    <ul>
+                      <DropdownItem
+                        data={"fa-solid fa-user"}
+                        text={"My Profile"}
+                        pathLink={"/profile"}
+                      />
+                      <DropdownItem
+                        data={"fa-solid fa-user-pen"}
+                        text={"Edit Profile"}
+                      />
+                      <DropdownItem
+                        data={"fa-solid fa-circle-half-stroke"}
+                        text={"Dark Mode"}
+                      />
+
+                      <li className="dropdownItem">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <button onClick={onLogout}>Logout</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/login" className="login">
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                  <span className="capitalize">Login</span>
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </div>
+  );
+}
+
+function DropdownItem(props) {
+  return (
+    <li className="dropdownItem">
+      {/* <img src={props.img}></img> */}
+      <i class={props.data}></i>
+      <Link to={`${props.pathLink}`}>{props.text}</Link>
+    </li>
   );
 }

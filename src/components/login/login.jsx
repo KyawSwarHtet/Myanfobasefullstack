@@ -1,5 +1,11 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./login.css";
+import { login, register, reset } from "../../features/auth/authSlice";
+import { useEffect } from "react";
+import Spinner from "./Spinner";
 
 const LoginCompo = (props) => {
   const [isContainerActive, setIsContainerActive] = useState(false);
@@ -19,6 +25,25 @@ const LoginCompo = (props) => {
     password2: "",
   });
   const { username, email, password, password2 } = formData;
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+
+    if (isSuccess || user) {
+      navigate("/");
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
   /* Register data onchange */
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -29,6 +54,17 @@ const LoginCompo = (props) => {
   /* Register data onsubmit */
   const onSubmit = (e) => {
     e.preventDefault();
+
+    if (password !== password2) {
+      toast.error("Passwords do not match");
+    } else {
+      const userData = {
+        username,
+        email,
+        password,
+      };
+      dispatch(register(userData));
+    }
   };
 
   /* login data */
@@ -47,8 +83,16 @@ const LoginCompo = (props) => {
   /* login data onsubmit */
   const onSubmitlogin = (e) => {
     e.preventDefault();
+    const userData = {
+      loginemail,
+      loginpassword,
+    };
+    dispatch(login(userData));
   };
 
+  if (isLoading) {
+    return <Spinner />;
+  }
   return (
     <>
       <div className={"login-con " + (isContainerActive ? "signupmode" : " ")}>
@@ -63,6 +107,7 @@ const LoginCompo = (props) => {
                 <input
                   type="text"
                   placeholder="Email"
+                  id="email"
                   name="email"
                   value={loginemail}
                   onChange={onChangelogin}
@@ -73,6 +118,7 @@ const LoginCompo = (props) => {
                 <input
                   type="password"
                   placeholder="Password"
+                  id="password"
                   name="password"
                   value={loginpassword}
                   onChange={onChangelogin}
@@ -109,6 +155,7 @@ const LoginCompo = (props) => {
                   type="text"
                   placeholder="Username"
                   name="username"
+                  id="username"
                   value={username}
                   onChange={onChange}
                 />
@@ -118,6 +165,7 @@ const LoginCompo = (props) => {
                 <input
                   type="text"
                   placeholder="Email"
+                  id="email"
                   name="email"
                   value={email}
                   onChange={onChange}
@@ -127,6 +175,7 @@ const LoginCompo = (props) => {
                 <i className="fas fa-lock"></i>
                 <input
                   type="password"
+                  id="password"
                   placeholder="Password"
                   name="password"
                   value={password}
@@ -138,6 +187,7 @@ const LoginCompo = (props) => {
                 <input
                   type="password"
                   placeholder="Confirm Password"
+                  id="password2"
                   name="password2"
                   value={password2}
                   onChange={onChange}
