@@ -1,63 +1,51 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import Testpost from "./Testpost";
 import { getMultipleFiles, deletePosts } from "../../data/api";
 import "./textform.css";
 import "./dropdowncate.css";
 import "./postform.css";
-import { useParams } from "react-router-dom";
 
 export default function Postform() {
-  const [listofPost, setListofPost] = useState([]);
-  const [editpost, setEditpost] = useState({
-    title: "",
-    description: "",
-    cateName: "",
-    cateId: "",
-    files: [],
-  });
-
-  const [id, setId] = useState();
-
-  const [imgfile, setimgfile] = useState([]);
-
-  const getmultipleFilesList = async () => {
-    try {
-      const filelist = await getMultipleFiles();
-      setListofPost(filelist);
-      console.log("list of post is", listofPost);
-    } catch (error) {
-      alert("Awww, it didn't work at getting data");
-    }
-  };
+  //checking user is Login account or not
+  const navigate = useNavigate();
+  const { user } = useSelector((state) => state.auth);
   useEffect(() => {
-    getmultipleFilesList();
-  }, []);
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
+  /* end of checking */
+  // const [listofPost, setListofPost] = useState([]);
 
+  // const getmultipleFilesList = async () => {
+  //   try {
+  //     const filelist = await getMultipleFiles();
+  //     setListofPost(filelist);
+  //     console.log("list of post is", listofPost);
+  //   } catch (error) {
+  //     // alert("Awww, it didn't work at getting data");
+  //   }
+  // };
   // useEffect(() => {
-  //   const editpostid = async () => {
-  //     const reqdata = await fetch(`http://localhost:8080/editpost/${id}`);
-  //     const res = await reqdata.json(); // JSON.parse(json);
-  //     setEditpost(await res);
-  //   };
-  //   editpostid();
+  //   getmultipleFilesList();
   // }, []);
 
-  const deletePost = (id) => {
-    deletePosts(id)
-      // Axios.delete(
-      // `https://desolate-hollows-16342.herokuapp.com/delete/${id}`
-      // `http://localhost:8080/delete/${id}`
-      .then(() => {
-        setListofPost(
-          listofPost.filter((val) => {
-            return val._id !== id;
-          })
-        );
-      });
-  };
+  // const deletePost = (id) => {
+  //   deletePosts(id)
+  //     // Axios.delete(
+  //     // `https://desolate-hollows-16342.herokuapp.com/delete/${id}`
+  //     // `http://localhost:8080/delete/${id}`
+  //     .then(() => {
+  //       setListofPost(
+  //         listofPost.filter((val) => {
+  //           return val._id !== id;
+  //         })
+  //       );
+  //     });
+  // };
 
   return (
     <>
@@ -76,10 +64,11 @@ export default function Postform() {
       </section>
       <div className="container formBody">
         <div>
-          <Testpost getMultipleFile={() => getmultipleFilesList()} />
+          {/* <Testpost getMultipleFile={() => getmultipleFilesList()} /> */}
+          <Testpost />
         </div>
 
-        <div className="dataShow">
+        {/* <div className="dataShow">
           {listofPost.map((val, index) => {
             return (
               <>
@@ -124,7 +113,7 @@ export default function Postform() {
               </>
             );
           })}
-        </div>
+        </div> */}
       </div>
     </>
   );

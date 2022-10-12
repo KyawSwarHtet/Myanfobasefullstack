@@ -9,7 +9,7 @@ import "./postform.css";
 import "./dropdowncate.css";
 import { editPost, updatePostData } from "../../features/posts/postSlice";
 
-export default function UpdateForm() {
+export default function EditPost() {
   const [editpost, setEditpost] = useState({
     title: "",
     description: "",
@@ -51,8 +51,8 @@ export default function UpdateForm() {
 
   const [postImg, setPostimg] = useState([]);
   console.log("edit post edditpost", editpost);
-  console.log("files before update is", postImg);
-  console.log("files after update is", editpost.files[1]);
+  console.log("files before update PostImg is", postImg[0]);
+  //   console.log("files after update is", editpost.files[1]);
 
   const [listOfCate, setListOfCate] = useState([]);
 
@@ -68,8 +68,8 @@ export default function UpdateForm() {
       });
   }, []);
 
-  const updatePost = (e) => {
-    e.preventDefault();
+  const updateBtn = async (e) => {
+    // e.preventDefault();
 
     const formData = new FormData();
     formData.append("id", id);
@@ -80,12 +80,12 @@ export default function UpdateForm() {
     for (let i = 0; i < postImg.length; i++) {
       formData.append("files", postImg[i]);
     }
-
     console.log("form data is", formData);
-    dispatch(updatePostData(id, formData));
-    // await updatePosts(id, formData)
+    dispatch(updatePostData(formData)).then(() => navigate("/profile"));
+
+    // await updatePosts(id, formData);
     // const reslut2 = await dispatch(editPost(formData))
-    // .then(() => navigate("/profile"));
+    //
     // .then(() => {
     //   setEditpost({
     //     title: title,
@@ -101,7 +101,7 @@ export default function UpdateForm() {
     <>
       <div className="formDiv">
         <form
-          // onSubmit={handleEditpost}
+          //   onSubmit={handleEditpost}
           className="postForm"
           action=""
           method="POST"
@@ -185,12 +185,11 @@ export default function UpdateForm() {
             />
           </div>
         </form>
-
-        <button onClick={updatePost} type="submit" className="postButton">
+        <button onClick={updateBtn} type="submit" className="postButton">
           Update
         </button>
         <div className="imgShow">
-          {/* {editpost.files.forEach((file) => (
+          {editpost.files.map((file) => (
             <div className="Imgarea">
               <div className="imgDiv1">
                 {console.log("file path is", file.filePath)}
@@ -202,20 +201,7 @@ export default function UpdateForm() {
                 />
               </div>
             </div>
-
-            // editpost.files.map((file) => (
-            //   <div className="Imgarea">
-            //     <div className="imgDiv1">
-            //       {console.log("file path is", file.filePath)}
-            //       <img
-            //         src={`http://localhost:8080/${file.filePath}`}
-            //         height="200"
-            //         alt={`${file.cateName}`}
-            //         // src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}
-            //       />
-            //     </div>
-            //   </div>
-          ))} */}
+          ))}
         </div>
       </div>
     </>
