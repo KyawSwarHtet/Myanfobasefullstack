@@ -1,0 +1,27 @@
+.Vedionav {
+  margin-top: 2rem;
+  background: #358da1;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navsect {
+  /* padding-bottom: 2rem; */
+}
+.Vedionav h2 {
+  margin-left: 1rem;
+  width: 20%;
+}
+.Viedo_nav {
+  margin-left: 2rem;
+}
+.Vedionav ul li {
+  display: inline-block;
+  margin-right: 3rem;
+}
+.Vedionav ul li a {
+  color: rgb(248, 245, 245);
+  font-weight: 800;
+  font-size: 1rem;
+}

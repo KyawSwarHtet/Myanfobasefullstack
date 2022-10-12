@@ -1,0 +1,6 @@
+.detailbody {
+  display: grid;
+  grid-template-columns: 65% 32%;
+  gap: 3%;
+  /* max-width: 1600px; */
+}

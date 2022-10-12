@@ -1,0 +1,25 @@
+.EducSect {
+  max-width: 1600px;
+}
+.educationHOme {
+  max-width: 98%;
+}
+.edusection {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 2rem;
+}
+.titleEducation h2 {
+  margin-bottom: 0;
+  line-height: 1.4 !important;
+}
+/* .titleEducation h2:hover {
+  color: #00a79d;
+} */
+.titleEducation span.headerline {
+  display: block;
+  width: 400px;
+  height: 2px;
+  background-color: #f18510;
+  margin-bottom: 1rem;
+}

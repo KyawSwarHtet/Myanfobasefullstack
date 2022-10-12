@@ -1,0 +1,237 @@
+.LastNewSect {
+  max-width: 1600px;
+}
+.NewsSec {
+  width: 100%;
+}
+.lastnew {
+  /* display: flex;
+  justify-content: space-between;
+  flex-wrap: warp;
+  align-items: center; */
+  /* display: flex;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 1rem;
+}
+span.headerline {
+  display: block;
+  width: 200px;
+  height: 2px;
+  background-color: #f18510;
+  margin-bottom: 1rem;
+}
+.newspart {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+.news {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /*
+   margin: 2rem 0; */
+}
+/* .news:hover {
+  color: #7da2df;
+} */
+
+.postbuttom {
+  /* display: flex;
+  justify-content: left; */
+  display: grid;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+  position: relative;
+}
+.posticon {
+  font-size: 18px;
+  margin-left: 0rem;
+  /* position: absolute;
+  bottom: 4px;
+  right: 4px; */
+}
+.postman {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+.profileName {
+  font-size: 15px;
+  font-weight: 500;
+  color: red;
+  margin: 0 25px 0 10px;
+}
+
+.postman img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.profileDate {
+  font-size: 12px;
+}
+.news_info {
+  width: 70%;
+}
+/* .news_info h4:hover {
+  color: var(--entertainment-bg);
+} */
+.news:hover .ent_hover h4 {
+  color: var(--entertainment-bg);
+}
+
+.news_img img {
+  width: 220px;
+  height: 150px;
+  border-radius: 10px;
+  position: relative;
+}
+/* .news_img p {
+  top: 35%;
+  left: 44%;
+} */
+.news_img {
+  position: relative;
+}
+.entertainment {
+  bottom: 24px;
+  left: -20px;
+  position: absolute;
+}
+.science {
+  background: #5d66a0;
+  position: absolute;
+
+  bottom: 20px;
+  left: -20px;
+}
+.news:hover .science_hover h4 {
+  color: var(--science-bg);
+}
+.news:hover .government_hover h4 {
+  color: var(--government-bg);
+}
+.Newsdiv {
+  /* background: #2ea397; */
+  position: absolute;
+
+  bottom: 20px;
+  left: -20px;
+}
+.Technology {
+  /* background: #c07d5d; */
+  position: absolute;
+
+  bottom: 20px;
+  left: -20px;
+}
+.news:hover .technology_hover h4 {
+  color: var(--technology-bg);
+}
+.todaylist {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 1em;
+  align-items: center;
+}
+.CurrencyExchange {
+  border: 2px solid #090e6a;
+  /* background-color: #e0edfd; */
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 1rem;
+  width: 90%;
+  text-align: center;
+}
+.today {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 0 1rem;
+  align-items: center;
+}
+.foreignmoney {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.foreignmoney img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+.foreignmoney span {
+  font-size: 1em;
+}
+.myanmarKyats {
+  font-size: 1em;
+}
+.today:hover {
+  color: #f18510;
+}
+
+.today:hover {
+  background: #5b96f4ef;
+  color: #fff;
+  box-shadow: 0 0 13px #2a75ef;
+}
+
+.Goldprice {
+  border: 2px solid #090e6a;
+  /* background-color: #e0edfd; */
+  padding: 10px 10px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* align-items: center; */
+  gap: 0.3em;
+  /* border-radius: 20px; */
+}
+.goldprices {
+  font-size: 1em;
+  text-align: left;
+  /* padding-left: 1.5rem; */
+}
+.FuelPrice {
+  border: 2px solid #090e6a;
+  /* background-color: #e0edfd; */
+  padding: 10px 10px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 0.3em;
+  text-align: center;
+  /* border-radius: 20px; */
+}
+.btnlast {
+  /* margin: 0 44%; */
+  margin: auto;
+  border: 1px solid #000;
+  border-radius: 10px;
+  color: rgb(4, 55, 99);
+  background-color: rgb(238, 239, 245);
+  font-weight: 800;
+  transition: all 0.5s ease-in-out;
+  padding: 0.5rem 1rem;
+}
+.btnlast:hover {
+  color: rgb(249, 250, 251);
+  background-color: rgb(4, 55, 99);
+}
+/* .underline1 {
+  display: block;
+  width: 280px;
+  height: 2px;
+  background-color: #f18510;
+  margin-bottom: 1rem;
+} */

@@ -1,0 +1,240 @@
+.beauty-firstrow {
+  display: grid;
+  grid-template-rows: 70% 30%;
+  height: 40rem;
+}
+.beauty-banner {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 40rem;
+  width: 100%;
+}
+.low-photos {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.firstrow-firstdiv .blogger-img {
+  width: 100%;
+  height: 100%;
+}
+
+.firstrow-secdiv .skincare-img {
+  width: 100%;
+  height: 190px;
+}
+.firstrow-thirddiv .makeup-img {
+  width: 100%;
+  height: 190px;
+}
+.secrow-firstdiv .beauty-img {
+  width: 100%;
+  height: 100%;
+}
+.secrow-secdiv .clinic-img {
+  width: 100%;
+  height: 100%;
+}
+.secrow-thirddiv .natural-img {
+  width: 100%;
+  height: 100%;
+}
+.skincare-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.beauty-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.clinic-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.natural-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.blogger-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.makeup-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.firstrow-firstdiv {
+  position: relative;
+}
+.blogger-p {
+  position: absolute;
+  bottom: 1rem;
+  left: 2rem;
+}
+
+.firstrow-firstdiv:hover .blogger-para h4{
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+   0 0 20px #fff,
+   0 0 40px #fff,
+   0 0 80px #fff,
+   0 0 120px #fff,
+   0 0 160px #fff;
+}
+.blogger-para {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+    color: white;
+    cursor: pointer;
+background: linear-gradient(20deg, #410cbc8c 0%, #ff6f3161 100%);
+}
+
+.skin-p{
+   position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+     color: white;
+background: linear-gradient(6deg, #ffc10780 0%, #22d3ea99 100%);
+}
+.firstrow-secdiv:hover .skin-p{
+   color: #fff;
+  text-shadow: 0 0 10px #fff,
+   0 0 20px #fff,
+   0 0 40px #fff,
+   0 0 80px #fff,
+   0 0 120px #fff,
+   0 0 160px #fff;
+}
+.makeup-p{
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+     color: white;
+background: linear-gradient(6deg,#bc0c3eb0 0%,#faff3175 100%);
+}
+.firstrow-thirddiv:hover .makeup-p{
+   color: #fff;
+  text-shadow: 0 0 10px #fff,
+   0 0 20px #fff,
+   0 0 40px #fff,
+   0 0 80px #fff,
+   0 0 120px #fff,
+   0 0 160px #fff;
+}
+.beauty-p{
+   position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+    color: white;
+background: linear-gradient(7deg,#970cbca3 0%,#31e4ffb5 100%);
+}
+.secrow-firstdiv:hover .beauty-p{
+   color: #fff;
+  text-shadow: 0 0 10px #fff,
+   0 0 20px #fff,
+   0 0 40px #fff,
+   0 0 80px #fff,
+   0 0 120px #fff,
+   0 0 160px #fff;
+}
+.clinic-p{
+   position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+    color: white;
+background: linear-gradient(6deg,#bc4b0c9c 0%,#8ce04578 100%);
+}
+.secrow-secdiv:hover .clinic-p{
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+   0 0 20px #fff,
+   0 0 40px #fff,
+   0 0 80px #fff,
+   0 0 120px #fff,
+   0 0 160px #fff;
+}
+.natural-p{
+   position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+    color: white;
+background: linear-gradient(6deg,#0cbcb294 0%,#fffc315e 100%);
+}
+
+.secrow-thirddiv:hover .natural-p{
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+   0 0 20px #fff,
+   0 0 40px #fff,
+   0 0 80px #fff,
+   0 0 120px #fff,
+   0 0 160px #fff;
+}
+.firstrow-secdiv {
+  position: relative;
+}
+.skincare-para h4 {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 18px;
+}
+.firstrow-thirddiv {
+  position: relative;
+}
+.makeup-para h4 {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 18px;
+}
+.secrow-firstdiv {
+  position: relative;
+}
+.beauty-para h4 {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 18px;
+}
+.secrow-secdiv {
+  position: relative;
+}
+.clinic-para h4 {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 18px;
+}
+.secrow-thirddiv {
+  position: relative;
+}
+.natural-para h4 {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 18px;
+}
+.ban-secrow {
+  display: grid;
+  grid-template-rows: 70% 30%;
+  height: 40rem;
+}
+.seccol-firstdiv{
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+
