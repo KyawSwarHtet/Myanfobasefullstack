@@ -1,128 +1,229 @@
-.postbg {
-  background-color: #cdddffdb;
-}
-.postbg .firstdesc {
-  /* padding: 5rem 0; */
-  /* color: white; */
-}
-.formBody {
-  padding-bottom: 1rem;
-  position: relative;
-}
+import React from "react";
+import { useState, useEffect } from "react";
+// import { updatePosts, getPostDetail, UpdateData } from "../../data/api";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import Axios from "axios";
+import "./textform.css";
+import "./postform.css";
+import "./dropdowncate.css";
+import { editPost, updatePostData } from "../../features/posts/postSlice";
 
-.firstdesc h2 {
-  padding-top: 2rem;
-  text-align: center;
-  padding-bottom: 1rem;
-}
+export default function UpdateForm() {
+  const [editpost, setEditpost] = useState({
+    title: "",
+    description: "",
+    cateName: "",
+    cateId: "",
+    files: [],
+  });
 
-.firstdesc p {
-  padding-bottom: 4rem;
-  font-size: 18px;
-}
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-.firstdesc p::first-letter {
-  margin-left: 2rem;
-  font-size: 1.5rem;
-}
-.formDiv {
-  width: 100%;
-  height: fit-content;
-  margin: 2rem auto;
-  background-color: #609cd536;
-  padding-bottom: 5rem;
-  position: relative;
-}
-.postForm {
-  padding: 2rem 0;
-}
-.postForm .titleArea {
-  width: 80%;
-  height: 59px;
-  display: block;
-  margin: auto;
-  padding: 1rem;
-  border-radius: 5px;
-  outline: none;
-  resize: none;
-  font-size: 16px;
-  border-color: #bfbfbf;
-  margin-top: 20px;
-}
+  const { id } = useParams();
 
-textarea:is(:focus, :valid) {
-  border-width: 2px;
-  border-color: #4671ea;
-  padding: 14px;
-}
+  useEffect(() => {
+    const editpostid = async () => {
+      const reqdata = await fetch(`http://localhost:8080/editpost/${id}`);
+      const res = await reqdata.json(); // JSON.parse(json);
+      console.log("res data is ", res);
+      setEditpost(await res);
+      // setDescription(await res.description);
+      // setTitle(await res.title);
+      // setSelected(await res.cateName);
+      // setSelectedId(await res.cateId);
+      // setPostimg(await res.files);
+    };
+    editpostid();
+  }, [id]);
 
-textarea::-webkit-scrollbar {
-  width: 0px;
-}
-.dataShow {
-  width: 100%;
-  background-color: #d0ede3;
-}
-.Dataresult {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: auto;
-}
-.textLeft {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.postButton {
-  margin-top: 20px;
-  padding: 0.5rem 2.5rem;
-  border-radius: 5px;
-  font-size: 1.3em;
-  text-align: center;
-  /* align-items; */
-  text-transform: capitalize;
-  font-weight: 500;
-  background-color: #3256cfc2;
-  color: white;
-  position: absolute;
-  bottom: 48px;
-  right: 140px;
-}
-.ImgareaDiv {
-  width: 100%;
-  height: 200px;
-}
+  const [selected, setSelected] = useState();
+  const [selectedId, setSelectedId] = useState();
+  const [isActive, setIsActive] = useState(false);
+  console.log("cate ID default Selected is", selectedId);
+  console.log("cate Name default Selected is", selected);
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
 
-.Imgarea {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.Imgarea .imgDiv1 {
-  width: 250px;
-  height: 100%;
-  position: relative;
-}
-.imgDiv1 img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.imgShow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 3rem;
-  align-content: center;
-}
+  console.log("Id is", id);
+  console.log("title default is", title);
+  console.log("description is", description);
+  const [postImg, setPostimg] = useState([]);
+  console.log("file image is", postImg);
 
-.imgDelete {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 2rem;
-  height: 2rem;
-  background: red;
-  color: white;
+  const [listOfCate, setListOfCate] = useState([]);
+
+  useEffect(() => {
+    // Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
+    Axios.get("http://localhost:8080/readcate")
+      .then((response) => {
+        setListOfCate(response.data);
+        // console.log("categories inside", response.data);
+      })
+      .catch(() => {
+        alert("Awww, it didn't work at getting data");
+      });
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEditpost((prev) => {
+      return { ...prev, [name]: value };
+    });
+  };
+  console.log("previous edit post is", editpost);
+
+  const handleEditpost = (e) => {
+    e.preventDefault();
+    console.log("changes data is", editpost);
+  };
+
+  const updatePost = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("title", title);
+    formData.append("cateId", selectedId);
+    formData.append("cateName", selected);
+    formData.append("description", description);
+    for (let i = 0; i < postImg.length; i++) {
+      formData.append("files", postImg[i]);
+    }
+
+    console.log("form data from update is ", editPost);
+    // await dispatch(updateSlice(id, formData))
+    await dispatch(updatePostData(id, formData))
+      // const reslut2 = await dispatch(editPost(formData))
+      // .then(() => navigate("/profile"));
+      .then(() => {
+        setEditpost({
+          title: title,
+          description: description,
+          cateId: selectedId,
+          cateName: selected,
+          files: postImg,
+        });
+      });
+  };
+
+  return (
+    <>
+      <div className="formDiv">
+        <form
+          onSubmit={handleEditpost}
+          className="postForm"
+          action=""
+          method="POST"
+          encType="multipart/form-data"
+        >
+          <h3>Update your information</h3>
+          <div className="dropdown cateflex">
+            <h3 className="catechoose">Choose Category:</h3>
+            <div>
+              <div
+                className="dropdown-btn"
+                onClick={(e) => setIsActive(!isActive)}
+              >
+                <option value={selected}>
+                  {/* {selected === 0 ? editpost.cateName : selected} */}
+                  {selected}
+                  <i class="fa-solid fa-square-caret-down"></i>
+                </option>
+              </div>
+              {isActive && (
+                <div className="dropdown-content">
+                  {listOfCate.map((option) => (
+                    <div
+                      onClick={(e) =>
+                        setSelectedId(option._id)(
+                          setSelected(option.catename)(setIsActive(false))
+                        )
+                      }
+                      className="dropdown-item"
+                    >
+                      {option.catename}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="titleDiv">
+            <label htmlFor="titleFormid">Title:</label>
+            <textarea
+              id="titleFormid"
+              className="titleForm"
+              placeholder="Type title here..."
+              name="title"
+              rows={1}
+              value={title}
+              // onChange={(event) => {
+              //   setTitle(event.target.value);
+              // }}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="titleDiv">
+            <label htmlFor="descformid">Description:</label>
+            <textarea
+              id="descformid"
+              name="description"
+              className="titleForm"
+              value={description}
+              placeholder="Type Description here..."
+              // onChange={(event) => {
+              //   setDescription(event.target.value);
+              // }}
+              onChange={handleChange}
+              rows={1}
+              required
+            />
+          </div>
+          <br />
+          <br />
+          <div className="imgDiv">
+            <label>Upload Image:</label>
+            <input
+              type="file"
+              // name="files"
+              multiple
+              onChange={(event) => {
+                setPostimg(event.target.files);
+              }}
+              // onChange={handleChange}
+            />
+          </div>
+        </form>
+
+        <button
+          // onClick={updatePost}
+          type="submit"
+          className="postButton"
+        >
+          Update
+        </button>
+        <div className="imgShow">
+          {editpost.files.map((file) => {
+            return (
+              <div className="Imgarea">
+                <div className="imgDiv1">
+                  {console.log("file path is", file.filePath)}
+                  <img
+                    src={`http://localhost:8080/${file.filePath}`}
+                    height="200"
+                    alt={`${file.cateName}`}
+                    // src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
 }

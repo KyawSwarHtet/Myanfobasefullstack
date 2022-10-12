@@ -1,10 +1,13 @@
 import React from "react";
 import Axios from "axios";
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import "./textform.css";
 import "./postform.css";
 import "./dropdowncate.css";
 import { multipleFilesUpload } from "../../data/api";
+import { createPost } from "../../features/posts/postSlice";
 
 export default function Testpost(props) {
   const [selected, setSelected] = useState("Choose One");
@@ -14,8 +17,10 @@ export default function Testpost(props) {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [postImg, setPostimg] = useState("");
+  const [postImg, setPostimg] = useState([]);
   const [listOfCate, setListOfCate] = useState([]);
+
+  const dispatch = useDispatch();
 
   const addPost = async () => {
     if (
@@ -36,9 +41,17 @@ export default function Testpost(props) {
     for (let i = 0; i < postImg.length; i++) {
       formData.append("files", postImg[i]);
     }
+    setTitle("");
+    setDescription("");
+    setPostimg("");
+    setSelectedId(0);
+    setSelected("Choose One");
 
-    await multipleFilesUpload(formData);
-    props.getMultipleFile();
+    console.log("Form data from post is", formData);
+    dispatch(createPost(formData));
+
+    // await multipleFilesUpload(formData);
+    // props.getMultipleFile();
   };
   //   Axios.post("https://desolate-hollows-16342.herokuapp.com/addpost", {
   //     //https://desolate-hollows-16342.herokuapp.com
@@ -121,7 +134,7 @@ export default function Testpost(props) {
         console.log("categories inside", response.data);
       })
       .catch(() => {
-        alert("Awww, it didn't work at getting data");
+        alert("Awww, it didn't work at getting categories data");
       });
   }, []);
 
@@ -131,7 +144,7 @@ export default function Testpost(props) {
         className="postForm"
         action=""
         method="POST"
-        enctype="multipart/form-data"
+        encType="multipart/form-data"
       >
         <div className="dropdown cateflex">
           <h3 className="catechoose">Choose Category:</h3>
@@ -163,7 +176,7 @@ export default function Testpost(props) {
         </div>
 
         <div className="titleDiv">
-          <label for="titleFormid">Title:</label>
+          <label htmlFor="titleFormid">Title:</label>
           <textarea
             id="titleFormid"
             className="titleForm"
@@ -171,13 +184,13 @@ export default function Testpost(props) {
             onChange={(event) => {
               setTitle(event.target.value);
             }}
+            value={title}
             rows={1}
-            defaultValue=""
             required
           />
         </div>
         <div className="titleDiv">
-          <label for="descformid">Description:</label>
+          <label htmlFor="descformid">Description:</label>
           <textarea
             id="descformid"
             className="titleForm"
@@ -186,7 +199,7 @@ export default function Testpost(props) {
               setDescription(event.target.value);
             }}
             rows={1}
-            defaultValue=""
+            value={description}
             required
           />
         </div>
@@ -201,6 +214,7 @@ export default function Testpost(props) {
               setPostimg(event.target.files);
             }}
           />
+          {console.log("daat a falult is ", selectedId)}
         </div>
       </form>
 

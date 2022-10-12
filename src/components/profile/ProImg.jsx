@@ -1,6 +1,8 @@
 import React from "react";
 import "./profile.css";
-const ProImg = () => {
+const ProImg = (props) => {
+  const user = props.user;
+  console.log("user is ", user);
   return (
     <>
       <div className="ProHead">
@@ -9,7 +11,7 @@ const ProImg = () => {
           <i className="editPro uil uil-edit"></i>
         </div>
         <div className="ProData">
-          <span> Thung Htike Htoo</span>
+          <span> {user.username} </span>
           <p>Travelling is very nice.</p>
           <button className="EdiProData">Edit Profile</button>
         </div>
