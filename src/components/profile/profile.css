@@ -24,15 +24,15 @@
   font-weight: 500;
 }
 .editPro {
-  font-size: 25px;
+  /* font-size: 25px;
   left: 54%;
   bottom: 15px;
-  padding: 0 8px;
-  background-color: rgba(5, 16, 172, 0.833);
+  padding: 0 8px; */
+  /* background-color: rgba(5, 16, 172, 0.833); */
   /* border: 1px solid #000; */
-  color: #fff;
+  /* color: #fff;
   border-radius: 50%;
-  position: absolute;
+  position: absolute; */
 }
 .EdiProData {
   font-weight: 500;
@@ -85,4 +85,85 @@
 .About-line {
   margin: auto;
   width: 170px;
+}
+/* editprofile css */
+.editboder{
+  /* border: 1px solid rgb(171, 169, 169); */
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid rgb(171, 169, 169) ;
+  border-top:  1px solid rgb(171, 169, 169);
+  border-right:  1px solid rgb(171, 169, 169);
+}
+
+.editprofile {
+  margin-top: 7rem;
+}
+.App {
+  overflow: hidden;
+}
+.userimgdiv{
+  margin-top: 3rem;
+  margin-left: 30%;
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+  
+}
+.userimgdiv i {
+  position: absolute;
+  margin-left: 8.5rem;
+  top: 8.2rem;
+  color: rgb(24, 31, 106);
+}
+.userimage{
+
+  width: 100%;
+ border-radius: 50%;
+  border: 3px solid black;
+}
+.userimgname{
+  display: flex;
+  gap: 2rem;
+
+}
+    
+.usernameadd{
+  margin-top: 7rem;
+}
+.usernameadd h7 {
+  color: gray;
+}
+
+.namebox .inputboxs {
+  border: 1px solid rgb(227, 223, 223);
+  padding: 5px 20px 5px 20px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.infoform{
+  display: flex;
+  gap: 6rem;
+  margin-left: 30%;
+  margin-top: 3rem;
+}
+.editbutton{
+  padding: 5px 20px 5px 20px;
+  background-color: rgba(46, 122, 229, 0.895);
+}
+
+.editbuttondiv{
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.editsettitle{
+  color:rgb(14, 21, 145);
+}
+.namebox .addresstexta{
+  border: 1px solid rgb(227, 223, 223);
+ padding-right: 2.6rem;
+ padding-top: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
