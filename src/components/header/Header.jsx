@@ -119,7 +119,7 @@ export default function Header() {
             ) : (
               <>
                 <li>
-                  <Link to="/loginfront" className="login">
+                  <Link to="/login" className="login">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     <span className="capitalize">Login</span>
                   </Link>
@@ -129,7 +129,7 @@ export default function Header() {
           ) : (
             <>
               <li>
-                <Link to="/loginfront" className="login">
+                <Link to="/login" className="login">
                   <i class="fa-solid fa-right-to-bracket"></i>
                   <span className="capitalize">Login</span>
                 </Link>

@@ -39,8 +39,8 @@ const LoginCompo = () => {
     }
 
     if (isSuccess || user) {
-      // setIsContainerActive(false);
-      // navigate("/login");
+      setIsContainerActive(false);
+      navigate("/login");
     }
 
     dispatch(reset());
@@ -67,9 +67,6 @@ const LoginCompo = () => {
       dispatch(register(userData));
     }
   };
-  {
-    console.log("i am error happing login");
-  }
   /* login data */
   const [loginData, setLoginData] = useState({
     email: "",

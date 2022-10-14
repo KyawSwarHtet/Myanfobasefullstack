@@ -207,7 +207,7 @@ function App() {
         <Route path="/update/:id" element={<UpdateformPage />} />
 
         <Route path="/detail" element={<DetailPage />} />
-        <Route path="/loginfront" element={<LoginandRegister />} />
+        <Route path="/login" element={<LoginandRegister />} />
 
         <Route path="/admin" element={<AdminPage />} />
 
