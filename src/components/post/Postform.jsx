@@ -7,6 +7,7 @@ import { getMultipleFiles, deletePosts } from "../../data/api";
 import "./textform.css";
 import "./dropdowncate.css";
 import "./postform.css";
+import CreatePost from "./CreatePost";
 
 export default function Postform() {
   //checking user is Login account or not
@@ -65,7 +66,8 @@ export default function Postform() {
       <div className="container formBody">
         <div>
           {/* <Testpost getMultipleFile={() => getmultipleFilesList()} /> */}
-          <Testpost />
+          {/* <Testpost /> */}
+          <CreatePost />
         </div>
 
         {/* <div className="dataShow">

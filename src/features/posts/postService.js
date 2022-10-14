@@ -40,7 +40,8 @@ const deletePosts = async (id, token) => {
 //Edit user post
 const editPosts = async (postData, token) => {
   console.log("Post data Service from API", postData);
-  const id = postData.id;
+  const resultData = Object.fromEntries(postData.entries());
+  const id = resultData.id;
   console.log("id in service is", id);
   const config = {
     headers: {
@@ -48,8 +49,6 @@ const editPosts = async (postData, token) => {
     },
   };
   const response = await axios.put(API_URL + id, postData, config);
-  console.log("resopn data edit is");
-  console.log("post data edit is", postData);
   return response.data;
 };
 

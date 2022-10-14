@@ -69,51 +69,63 @@ export default function Header() {
               <span>Eng</span> */}
             <Language label="choose an language" />
           </li>
-          {user ? (
-            <>
-              <li>
-                <div className="dorpmenu-container">
-                  <div className="login">
-                    <div className="profile-img">
-                      <img src="./images/sport/sport1.jpg" alt="" />
+          {/* {console.log("user in heder is", user.login)} */}
+          {user !== null ? (
+            user.login === true ? (
+              <>
+                <li>
+                  <div className="dorpmenu-container">
+                    <div className="login">
+                      <div className="profile-img">
+                        <img src="./images/sport/sport1.jpg" alt="" />
+                      </div>
+                      <i
+                        id="loginsetting"
+                        class="fa-solid fa-bars"
+                        onClick={() => {
+                          setOpen(!open);
+                        }}
+                      ></i>
                     </div>
-                    <i
-                      id="loginsetting"
-                      class="fa-solid fa-bars"
-                      onClick={() => {
-                        setOpen(!open);
-                      }}
-                    ></i>
-                  </div>
-                  <div
-                    id="dropdown-menu"
-                    className={` ${open ? "active" : "inactive"}`}
-                  >
-                    <h3>kyaw swar</h3>
-                    <ul>
-                      <DropdownItem
-                        data={"fa-solid fa-user"}
-                        text={"My Profile"}
-                        pathLink={"/profile"}
-                      />
-                      <DropdownItem
-                        data={"fa-solid fa-user-pen"}
-                        text={"Edit Profile"}
-                      />
-                      <DropdownItem
-                        data={"fa-solid fa-circle-half-stroke"}
-                        text={"Dark Mode"}
-                      />
+                    <div
+                      id="dropdown-menu"
+                      className={` ${open ? "active" : "inactive"}`}
+                    >
+                      <h3>{user.username}</h3>
+                      <ul>
+                        <DropdownItem
+                          data={"fa-solid fa-user"}
+                          text={"My Profile"}
+                          pathLink={"/profile"}
+                        />
+                        <DropdownItem
+                          data={"fa-solid fa-user-pen"}
+                          text={"Edit Profile"}
+                        />
+                        <DropdownItem
+                          data={"fa-solid fa-circle-half-stroke"}
+                          text={"Dark Mode"}
+                        />
 
-                      <li className="dropdownItem">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <button onClick={onLogout}>Logout</button>
-                      </li>
-                    </ul>
+                        <li className="dropdownItem">
+                          <i class="fa-solid fa-right-from-bracket"></i>
+                          <button onClick={onLogout}>Logout</button>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </li>
-            </>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/login" className="login">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <span className="capitalize">Login</span>
+                  </Link>
+                </li>
+              </>
+            )
           ) : (
             <>
               <li>

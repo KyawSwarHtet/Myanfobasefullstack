@@ -39,7 +39,8 @@ const LoginCompo = (props) => {
     }
 
     if (isSuccess || user) {
-      navigate("/");
+      setIsContainerActive(false);
+      navigate("/login");
     }
 
     dispatch(reset());
@@ -88,6 +89,11 @@ const LoginCompo = (props) => {
       loginpassword,
     };
     dispatch(login(userData));
+    setLoginData({
+      email: "",
+      password: "",
+    });
+    navigate("/");
   };
 
   if (isLoading) {
@@ -193,6 +199,7 @@ const LoginCompo = (props) => {
                   onChange={onChange}
                 />
               </div>
+
               <input type="submit" value="Sign Up" className="logbtn solid" />
               <p className="social-text">Or Sign Up with social platforms</p>
               <div className="social-media">
