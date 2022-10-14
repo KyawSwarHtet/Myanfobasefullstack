@@ -7,7 +7,7 @@ import { login, register, reset } from "../../features/auth/authSlice";
 import { useEffect } from "react";
 import Spinner from "./Spinner";
 
-const LoginCompo = (props) => {
+const LoginCompo = () => {
   const [isContainerActive, setIsContainerActive] = useState(false);
 
   const signUpButton = () => {
@@ -39,8 +39,8 @@ const LoginCompo = (props) => {
     }
 
     if (isSuccess || user) {
-      setIsContainerActive(false);
-      navigate("/login");
+      // setIsContainerActive(false);
+      // navigate("/login");
     }
 
     dispatch(reset());
@@ -67,7 +67,9 @@ const LoginCompo = (props) => {
       dispatch(register(userData));
     }
   };
-
+  {
+    console.log("i am error happing login");
+  }
   /* login data */
   const [loginData, setLoginData] = useState({
     email: "",
@@ -99,6 +101,7 @@ const LoginCompo = (props) => {
   if (isLoading) {
     return <Spinner />;
   }
+
   return (
     <>
       <div className={"login-con " + (isContainerActive ? "signupmode" : " ")}>

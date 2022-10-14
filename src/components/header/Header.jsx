@@ -69,7 +69,7 @@ export default function Header() {
               <span>Eng</span> */}
             <Language label="choose an language" />
           </li>
-          {/* {console.log("user in heder is", user.login)} */}
+          {console.log("user in heder is", user)}
           {user !== null ? (
             user.login === true ? (
               <>
@@ -119,7 +119,7 @@ export default function Header() {
             ) : (
               <>
                 <li>
-                  <Link to="/login" className="login">
+                  <Link to="/loginfront" className="login">
                     <i class="fa-solid fa-right-to-bracket"></i>
                     <span className="capitalize">Login</span>
                   </Link>
@@ -129,7 +129,7 @@ export default function Header() {
           ) : (
             <>
               <li>
-                <Link to="/login" className="login">
+                <Link to="/loginfront" className="login">
                   <i class="fa-solid fa-right-to-bracket"></i>
                   <span className="capitalize">Login</span>
                 </Link>
