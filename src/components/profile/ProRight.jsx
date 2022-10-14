@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "../travelling/travside.css";
 import Spinner from "../login/Spinner";
+import ReactReadMoreReadLess from "react-read-more-read-less";
 import {
   deletePost,
   editPost,
@@ -66,7 +67,16 @@ function ProRight() {
                       </div>
                       <div className="postTrav_info">
                         <h4>{element.title}</h4>
-                        <p>{element.description}</p>
+                        <p>
+                          <ReactReadMoreReadLess
+                            readMoreClassName="readMoreClassName"
+                            charLimit={120}
+                            readMoreText="...Read More"
+                            readLessText="...Read Less"
+                          >
+                            {element.description}
+                          </ReactReadMoreReadLess>
+                        </p>
 
                         <div className="Probuttom">
                           <div className="postman">
