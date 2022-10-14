@@ -5,7 +5,7 @@ const EditProfile = () => {
     <>
       <div className="editprofile container">
         <h2 className="editsettitle">User Information</h2>
-              <div className="editboder">
+              {/* <div className="editboder"> */}
           <div className="userimgname">
             <div className="userimgdiv">
               <img
@@ -21,11 +21,11 @@ const EditProfile = () => {
               <h7>Yangon,Myanmar</h7>
             </div>
           </div>
-          <div className="infoform">
+          {/* <div className="infoform">
             <div className="firstcol">
               <div className="namebox">
                 <h6>Name</h6>
-                <input
+                <FormInput
                   className="inputboxs"
                   type="text"
                   id=""
@@ -83,8 +83,8 @@ const EditProfile = () => {
           </div>
           <div className="editbuttondiv">
             <button className="editbutton">Save Changes</button>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </>
   );

@@ -86,7 +86,12 @@
   margin: auto;
   width: 170px;
 }
+
+
 /* editprofile css */
+
+
+
 .editboder{
   /* border: 1px solid rgb(171, 169, 169); */
   margin-bottom: 2rem;
@@ -97,14 +102,14 @@
 }
 
 .editprofile {
-  margin-top: 7rem;
+  margin-top: 5rem;
 }
 .App {
   overflow: hidden;
 }
 .userimgdiv{
   margin-top: 3rem;
-  margin-left: 30%;
+  margin-left: 25%;
   width: 10rem;
   height: 10rem;
   position: relative;
@@ -143,13 +148,14 @@
 }
 .infoform{
   display: flex;
-  gap: 6rem;
-  margin-left: 30%;
-  margin-top: 3rem;
+  gap: 10rem;
+  /* margin-left: 30%; */
+ 
 }
 .editbutton{
-  padding: 5px 20px 5px 20px;
-  background-color: rgba(46, 122, 229, 0.895);
+  padding: 10px 40px 10px 40px;
+  background-color: rgba(97, 157, 240, 0.895);
+  border-radius: 10px;
 }
 
 .editbuttondiv{
@@ -158,7 +164,9 @@
   margin-bottom: 2rem;
 }
 .editsettitle{
-  color:rgb(14, 21, 145);
+  color:#15568E;
+  padding-top: 2rem;
+
 }
 .namebox .addresstexta{
   border: 1px solid rgb(227, 223, 223);
@@ -166,4 +174,45 @@
  padding-top: 5px;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+
+/* .editformuser{
+  background-image: url(../../../public/images/all/usereditbg.jpg) ;
+  background-size: cover;
+  background-position: center;
+} */
+
+ .formInput{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+
+  
+}
+.formInput input{
+  border: 1px solid gray;
+ padding: 15px 30px;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.smallinput{
+  background-color: transparent;
+  
+}
+.formInput ::placeholder{
+ color: #000;
+}
+.formInput span{
+  padding: 3px;
+  color: red;
+  display: none;
+}
+input:invalid[focused="true"] ~ span{
+  display: block;
+}
+input:invalid[focused="true"] {
+  border: 1px solid red;
 }
