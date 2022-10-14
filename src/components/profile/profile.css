@@ -87,18 +87,15 @@
   width: 170px;
 }
 
-
 /* editprofile css */
 
-
-
-.editboder{
+.editboder {
   /* border: 1px solid rgb(171, 169, 169); */
   margin-bottom: 2rem;
   margin-top: 2rem;
-  border-bottom: 1px solid rgb(171, 169, 169) ;
-  border-top:  1px solid rgb(171, 169, 169);
-  border-right:  1px solid rgb(171, 169, 169);
+  border-bottom: 1px solid rgb(171, 169, 169);
+  border-top: 1px solid rgb(171, 169, 169);
+  border-right: 1px solid rgb(171, 169, 169);
 }
 
 .editprofile {
@@ -107,13 +104,12 @@
 .App {
   overflow: hidden;
 }
-.userimgdiv{
+.userimgdiv {
   margin-top: 3rem;
   margin-left: 25%;
   width: 10rem;
   height: 10rem;
   position: relative;
-  
 }
 .userimgdiv i {
   position: absolute;
@@ -121,19 +117,17 @@
   top: 8.2rem;
   color: rgb(24, 31, 106);
 }
-.userimage{
-
+.userimage {
   width: 100%;
- border-radius: 50%;
+  border-radius: 50%;
   border: 3px solid black;
 }
-.userimgname{
+.userimgname {
   display: flex;
   gap: 2rem;
-
 }
-    
-.usernameadd{
+
+.usernameadd {
   margin-top: 7rem;
 }
 .usernameadd h7 {
@@ -146,36 +140,33 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.infoform{
+.infoform {
   display: flex;
   gap: 10rem;
   /* margin-left: 30%; */
- 
 }
-.editbutton{
+.editbutton {
   padding: 10px 40px 10px 40px;
   background-color: rgba(97, 157, 240, 0.895);
   border-radius: 10px;
 }
 
-.editbuttondiv{
+.editbuttondiv {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.editsettitle{
-  color:#15568E;
+.editsettitle {
+  color: #15568e;
   padding-top: 2rem;
-
 }
-.namebox .addresstexta{
+.namebox .addresstexta {
   border: 1px solid rgb(227, 223, 223);
- padding-right: 2.6rem;
- padding-top: 5px;
+  padding-right: 2.6rem;
+  padding-top: 5px;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
 
 /* .editformuser{
   background-image: url(../../../public/images/all/usereditbg.jpg) ;
@@ -183,34 +174,31 @@
   background-position: center;
 } */
 
- .formInput{
+.formInput {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   width: 280px;
-
-  
 }
-.formInput input{
+.formInput input {
   border: 1px solid gray;
- padding: 15px 30px;
+  padding: 15px 30px;
   background-color: transparent;
   border-radius: 5px;
 }
 
-.smallinput{
+.smallinput {
   background-color: transparent;
-  
 }
-.formInput ::placeholder{
- color: #000;
+.formInput ::placeholder {
+  color: #000;
 }
-.formInput span{
+.formInput span {
   padding: 3px;
   color: red;
   display: none;
 }
-input:invalid[focused="true"] ~ span{
+input:invalid[focused="true"] ~ span {
   display: block;
 }
 input:invalid[focused="true"] {

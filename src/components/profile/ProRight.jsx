@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "../travelling/travside.css";
 import Spinner from "../login/Spinner";
-import ReactReadMoreReadLess from "react-read-more-read-less"
+import ReactReadMoreReadLess from "react-read-more-read-less";
 import {
   deletePost,
   editPost,
