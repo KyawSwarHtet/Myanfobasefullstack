@@ -98,6 +98,7 @@ import SearchPage from "./pages/searchpage/SearchPage";
 import Profile from "./pages/profile/Profile";
 import Aboutpage from "./pages/aboutus/Aboutpage";
 import EditProfile from "./components/profile/editprofile";
+import UsereditForm from "./pages/usereEditform/userEditForm";
 
 function App() {
   return (
@@ -217,7 +218,7 @@ function App() {
         <Route path="/search" element={<SearchPage />} />
 
         <Route path="/aboutus" element={<Aboutpage />} />
-        <Route path="/editprofile" element={<EditProfile />} />
+        <Route path="/editprofile" element={<UsereditForm />} />
       </Routes>
       <ToastContainer />
     </div>
