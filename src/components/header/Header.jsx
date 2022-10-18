@@ -99,6 +99,7 @@ export default function Header() {
                       <DropdownItem
                         data={"fa-solid fa-user-pen"}
                         text={"Edit Profile"}
+                        pathLink={"/editprofile"}
                       />
                       <DropdownItem
                         data={"fa-solid fa-circle-half-stroke"}
