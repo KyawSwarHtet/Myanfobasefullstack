@@ -1,0 +1,89 @@
+.video-container {
+  max-width: 1600px;
+}
+.Vsection {
+  width: 100%;
+  background-color: #eee;
+}
+.Viedosec {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+.main-video {
+  /* min-height: 87%; */
+  max-width: 93%;
+  /* min-width: 93%; */
+  height: 700px;
+  max-height: 87%;
+}
+.NewViedo .firstVideo {
+  display: block;
+  width: 300px;
+  height: 100%;
+}
+.RecentViedo {
+  width: 100%;
+}
+.RecentViedo h4 {
+  padding: 8px;
+  background: #c9dce7;
+}
+.Video {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 5px;
+  /* margin: 10px 0; */
+  /* padding: 10px 3px 10px 4px; */
+  margin: 10px 10px 10px 0;
+  padding: 10px 3px 10px 10px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btnViedo {
+  /* margin: 2rem 34% 0; */
+  display: block;
+  margin: auto;
+  border: 1px solid #000;
+  border-radius: 10px;
+  color: rgb(4, 55, 99);
+  background-color: rgb(238, 239, 245);
+  font-weight: 800;
+  transition: all 0.5s ease-in-out;
+  padding: 0.5rem 1rem;
+}
+.btnViedo:hover {
+  background-color: rgb(4, 55, 99);
+  color: #fff;
+}
+.VideoTitle .minutes {
+  display: block;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: normal;
+  margin: 10px 0;
+}
+.VideoTitle h5 {
+  margin-top: 4px;
+  font-size: 17px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.Video-playlist {
+  height: 570px;
+  overflow-y: scroll;
+  margin-bottom: 1.5rem;
+}
+.Video-playlist::-webkit-scrollbar {
+  width: 6px;
+}
+.Video-playlist::-webkit-scrollbar-track {
+  background-color: rgb(219, 212, 212);
+  border-radius: 50px;
+}
+.Video-playlist::-webkit-scrollbar-thumb {
+  background-color: rgb(186, 179, 179);
+  border-radius: 50px;
+}

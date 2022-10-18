@@ -1,0 +1,26 @@
+.sub-title{
+    margin-top: 2rem;
+}
+.subunderline{
+      display: block;
+  width: 155px;
+  height: 2px;
+  background-color: #f18510;
+}
+
+.subscribe .email-form{
+    margin-top: 1rem;
+    padding: .5rem;
+    border: 1px solid rgb(179, 176, 176);
+}
+.subscribe .email-button{
+    margin-top: 1rem;
+    text-align: center;
+    padding: .5rem;
+    background-color: red;
+}
+.wantit{
+    background-color: red;
+    font-size: 1rem;
+    font-weight: 600;
+}

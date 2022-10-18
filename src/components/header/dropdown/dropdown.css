@@ -1,0 +1,28 @@
+.categoriessub {
+  position: absolute;
+  top: 62px;
+  left: -38px;
+  width: 700px;
+  height: 250px;
+  background-color: #15568e;
+  /* width: fit-content; */
+  justify-items: center;
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+}
+.categoriessub.clicked {
+  display: none;
+}
+.categoriessub .nav-item {
+  display: block;
+  /* margin-left: 3rem; */
+  margin-top: 1rem;
+  padding: 7px 30px;
+
+  align-self: auto;
+}
+
+ul .catgitems:hover h5 {
+  color: rgb(239, 145, 13);
+}

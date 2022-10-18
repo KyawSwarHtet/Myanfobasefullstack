@@ -1,0 +1,73 @@
+.catebannerImg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 25rem;
+}
+.bannerPara {
+  width: 100%;
+  position: absolute;
+  /* left: 20px; */
+  bottom: -80px;
+  padding-top: 1rem;
+  /* box-shadow: inset 10px -123px 51px -28px rgba(16, 15, 15, 0.81); */
+  box-shadow: inset 11px -120px 515px -70px rgb(16 15 15 / 81%);
+  padding-bottom: 1rem;
+  padding-left: 40px;
+  color: white;
+  transition: all 2s;
+}
+.bannerPara h4 {
+  font-size: 18px;
+  color: white;
+  margin-right: 100px;
+  margin-top: 0.5rem;
+}
+.leftBanner,
+.rightBanner {
+  position: relative;
+  overflow: hidden;
+  /* height: 23rem; */
+}
+
+.bannerPara .leftparaText {
+  /* display: none; */
+  opacity: 0;
+  transition-delay: 0.5s;
+}
+.bannerPara .rightparaText {
+  /* display: none; */
+  opacity: 0;
+  transition-delay: 0.5s;
+}
+
+.leftBanner:hover .bannerPara,
+.rightBanner:hover .bannerPara {
+  bottom: 0px;
+  box-shadow: inset 10px -123px 51px -28px rgba(16, 15, 15, 0.81);
+}
+
+.leftBanner:hover .leftparaText,
+.rightBanner:hover .rightparaText {
+  opacity: 1;
+}
+.rightBanner .bannerPara h4,
+.leftBanner .bannerPara h4 {
+  transition: all 1s;
+}
+.rightBanner:hover .bannerPara h4,
+.leftBanner:hover .bannerPara h4 {
+  box-shadow: inset 11px 31px 29px 4px rgb(30 28 28 / 80%);
+  color: rgb(211 153 7);
+  padding: 3px 0;
+  width: 100%;
+}
+
+.leftBanner .catebanner1 img,
+.rightBanner .catebanner2 img {
+  transition: all 2s;
+}
+
+.rightBanner:hover img,
+.leftBanner:hover img {
+  transform: scale(1.2);
+}
