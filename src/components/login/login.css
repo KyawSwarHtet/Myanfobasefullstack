@@ -58,6 +58,7 @@ form {
   grid-row: 1 / 2;
 
   transition: 0.2s 0.7s ease-in-out;
+  gap: 15px;
 }
 
 form.sign-in-form {
@@ -381,4 +382,20 @@ form.sign-up-form {
     bottom: 28%;
     left: 50%;
   }
+}
+
+/* chue  */
+
+.input-field .singupusermsg {
+  padding: 3px 0px 3px 10px;
+  color: red;
+  width: 700px;
+  display: none;
+}
+.input-field input:invalid[focused="true"] ~ span {
+  display: block;
+}
+
+.input-field input:invalid[focused="true"] {
+  border: none;
 }
