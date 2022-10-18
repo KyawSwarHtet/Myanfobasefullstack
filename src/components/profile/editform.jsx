@@ -1,14 +1,15 @@
 import { useState } from "react";
 import FormInput from "./formInput";
+import Select from "react-select";
 
 const EditForm = () => {
   const [values, setValues] = useState({
     username: "",
-    address: "",
+    email: "",
     bio: "",
     dob: "",
-    phone: "",
-    email: "",
+    gender: "",
+    address: "",
   });
 
   const inputs = [
@@ -18,8 +19,8 @@ const EditForm = () => {
       type: "text",
       placeholder: "username",
       errorMessage:
-      "Username should be 3-16 characters and shouldn't include any special character!",
-      pattern: "^[A-Za-z0-9]{3,16}$",
+        "Username should be 3-16 characters and shouldn't include any special character!",
+      pattern: "^[a-zA-Z0-9 ]{3,16}$",
       label: "Username",
       required: true,
     },
@@ -46,21 +47,39 @@ const EditForm = () => {
       placeholder: "Date of birth",
       label: "Birthday",
     },
+
     {
       id: 5,
-      name: "phone",
-      type: "number",
-      placeholder: "phone",
-      label: "phone",
-    },
-    {
-      id: 6,
       name: "address",
       type: "text",
       placeholder: "address",
       label: "address",
     },
+    // {
+    //   id: 6,
+    //   name: "Boy",
+    //   type: "radio",
+
+    //   placeholder: "Boy",
+    //   label: "Gender",
+    // },
   ];
+  // const options = [
+  //   {
+  //     label: "Boy",
+  //     value: "boy",
+  //   },
+  //   {
+
+  //     label: "Girl",
+  //     value: "girl",
+  //   },
+  //   {
+
+  //     label: "Other",
+  //     value: "other",
+  //   },
+  // ];
 
   console.log("re-rendered");
 
@@ -78,14 +97,14 @@ const EditForm = () => {
     <div className="editform">
       <form onSubmit={handleSubmit}>
         {inputs.map((input) => (
-        <div className="infoform">
-          {/* <div className="firstcol"> */}
+          <div className="infoform">
+            {/* <div className="firstcol"> */}
             <FormInput
-                key={input.id}
-                {...input}
-                value={values[input.name]}
-                onChange={onChange}
-              />
+              key={input.id}
+              {...input}
+              value={values[input.name]}
+              onChange={onChange}
+            />
             {/* <FormInput
               className="smallinput"
               name="username"
@@ -107,8 +126,8 @@ const EditForm = () => {
               placeholder="bio"
               onChange={onChange}
             /> */}
-          {/* </div> */}
-          {/* <div className="seccol"> */}
+            {/* </div> */}
+            {/* <div className="seccol"> */}
             {/* <FormInput
                 key={input.id}
                 {...input}
@@ -134,9 +153,40 @@ const EditForm = () => {
               placeholder="email"
               onChange={onChange}
             /> */}
-          {/* </div> */}
+            {/* </div> */}
+          </div>
+        ))}
+        {/* <div className="genderchoose">
+          <div>
+            <span className="gendertitle">Gender</span>
+          </div>
+          <div className="genderbox">
+            <Select
+              className="innerboxgender"
+              name="Gender"
+              placeholder="Gender"
+              onChange={onChangeGender}
+              options={options}
+            />
+          </div>
+        </div> */}
+        <div className="gendertitlediv">
+          <span className="gendertitle">Gender</span>
         </div>
-        ))} 
+        <div className="choosediv">
+          <label>Male : </label>
+          <input type="radio" name="gender" value="male" onChange={onChange} />
+          <label>Female : </label>
+          <input
+            name="gender"
+            value="female"
+            onChange={onChange}
+            type="radio"
+          />
+          <label>Other : </label>
+          <input type="radio" name="gender" value="other" onChange={onChange} />
+        </div>
+
         <div className="editbuttondiv">
           <button className="editbutton">Submit</button>
         </div>
