@@ -61,7 +61,7 @@ function ProRight() {
 
                         <p className="Travel1 cateTravel">{element.cateName}</p>
                       </div>
-                      <div className="postTrav_info">
+                      <div className="postProfile_info">
                         <h4>{element.title}</h4>
                         <p>
                           <ReactReadMoreReadLess
@@ -73,24 +73,32 @@ function ProRight() {
                             {element.description}
                           </ReactReadMoreReadLess>
                         </p>
-
-                        <div className="Probuttom">
-                          <div className="posticon1">
-                            <div className="tooltip1 top">Delete</div>
-                            <button
-                              onClick={() => dispatch(deletePost(element._id))}
-                              className="DeleteP "
-                            >
-                              <i className=" uil uil-trash-alt"></i>
-                            </button>
+                        <div className="proFilebottom">
+                          <div className="postman">
+                            <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                            <span className="profileName">Paina Ta Kon</span>
+                            <span className="profileDate">20.3.2022</span>
                           </div>
-                          <div className="posticon1">
-                            <Link to={`/update/${element._id}`}>
-                              <div className="tooltip1 top">Edit</div>
-                              <button className="EditPost">
-                                <i className=" uil uil-edit"></i>
+                          <div className="Probuttom">
+                            <div className="posticon1">
+                              <div className="tooltip1 top">Delete</div>
+                              <button
+                                onClick={() =>
+                                  dispatch(deletePost(element._id))
+                                }
+                                className="DeleteP "
+                              >
+                                <i className=" uil uil-trash-alt"></i>
                               </button>
-                            </Link>
+                            </div>
+                            <div className="posticon1">
+                              <Link to={`/update/${element._id}`}>
+                                <div className="tooltip1 top">Edit</div>
+                                <button className="EditPost">
+                                  <i className=" uil uil-edit"></i>
+                                </button>
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>
