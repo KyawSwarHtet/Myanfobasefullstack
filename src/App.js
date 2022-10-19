@@ -97,8 +97,7 @@ import AdmindetailPage from "./pages/adminDetail/AdminDetailPage";
 import SearchPage from "./pages/searchpage/SearchPage";
 import Profile from "./pages/profile/Profile";
 import Aboutpage from "./pages/aboutus/Aboutpage";
-import EditProfile from "./components/profile/editprofile";
-import UsereditForm from "./pages/usereEditform/userEditForm";
+import UsereditForm from "./pages/profile/userEditForm";
 
 function App() {
   return (

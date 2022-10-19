@@ -57,6 +57,16 @@ export default function Header() {
               <span className="capitalize">Post</span>
             </Link>
           </li>
+          {user !== null && user.isAdmin === true ? (
+            <li>
+              <Link to="/admin" className="flex hoverclor">
+                <i class="uil uil-user-square"></i>
+                <span className="capitalize">Admin</span>
+              </Link>
+            </li>
+          ) : (
+            " "
+          )}
         </ul>
         <ul className="headersecond">
           <li>
@@ -70,63 +80,52 @@ export default function Header() {
             <Language label="choose an language" />
           </li>
           {console.log("user in heder is", user)}
-          {user !== null ? (
-            user.login === true ? (
-              <>
-                <li>
-                  <div className="dorpmenu-container">
-                    <div className="login">
-                      <div className="profile-img">
-                        <img src="./images/sport/sport1.jpg" alt="" />
-                      </div>
-                      <i
-                        id="loginsetting"
-                        class="fa-solid fa-bars"
-                        onClick={() => {
-                          setOpen(!open);
-                        }}
-                      ></i>
+          {user !== null && user.login === true ? (
+            <>
+              <li>
+                <div className="dorpmenu-container">
+                  <div className="login">
+                    <div className="profile-img">
+                      <img src="./images/sport/sport1.jpg" alt="" />
                     </div>
-                    <div
-                      id="dropdown-menu"
-                      className={` ${open ? "active" : "inactive"}`}
-                    >
-                      <h3>{user.username}</h3>
-                      <ul>
-                        <DropdownItem
-                          data={"fa-solid fa-user"}
-                          text={"My Profile"}
-                          pathLink={"/profile"}
-                        />
-                        <DropdownItem
-                          data={"fa-solid fa-user-pen"}
-                          text={"Edit Profile"}
-                          pathLink={"/editprofile"}
-                        />
-                        <DropdownItem
-                          data={"fa-solid fa-circle-half-stroke"}
-                          text={"Dark Mode"}
-                        />
-
-                        <li className="dropdownItem">
-                          <i class="fa-solid fa-right-from-bracket"></i>
-                          <button onClick={onLogout}>Logout</button>
-                        </li>
-                      </ul>
-                    </div>
+                    <i
+                      id="loginsetting"
+                      class="fa-solid fa-bars"
+                      onClick={() => {
+                        setOpen(!open);
+                      }}
+                    ></i>
                   </div>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <Link to="/login" className="login">
-                    <i class="fa-solid fa-right-to-bracket"></i>
-                    <span className="capitalize">Login</span>
-                  </Link>
-                </li>
-              </>
-            )
+                  <div
+                    id="dropdown-menu"
+                    className={` ${open ? "active" : "inactive"}`}
+                  >
+                    <h3>{user.username}</h3>
+                    <ul>
+                      <DropdownItem
+                        data={"fa-solid fa-user"}
+                        text={"My Profile"}
+                        pathLink={"/profile"}
+                      />
+                      <DropdownItem
+                        data={"fa-solid fa-user-pen"}
+                        text={"Edit Profile"}
+                        pathLink={"/editprofile"}
+                      />
+                      <DropdownItem
+                        data={"fa-solid fa-circle-half-stroke"}
+                        text={"Dark Mode"}
+                      />
+
+                      <li className="dropdownItem">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <button onClick={onLogout}>Logout</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </>
           ) : (
             <>
               <li>

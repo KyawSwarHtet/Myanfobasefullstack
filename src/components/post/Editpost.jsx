@@ -7,7 +7,7 @@ import Axios from "axios";
 import "./textform.css";
 import "./postform.css";
 import "./dropdowncate.css";
-import { editPost, updatePostData } from "../../features/posts/postSlice";
+import { updatePostData } from "../../features/posts/postSlice";
 
 export default function EditPost() {
   const [editpost, setEditpost] = useState();
@@ -59,6 +59,7 @@ export default function EditPost() {
       console.log("res data is ", res);
       return res;
     };
+
     editpostid().then((data) => {
       setEditpost(data);
       setInput({
@@ -85,7 +86,7 @@ export default function EditPost() {
         alert("Awww, it didn't work at getting data");
       });
   }, []);
-  console.log("input before formdata is", input.files[0]);
+  // console.log("input before formdata is", input.files[0]);
   const updateBtn = async (e) => {
     // e.preventDefault();
     const formData = new FormData();
@@ -95,6 +96,7 @@ export default function EditPost() {
     formData.append("cateId", input.cateId);
     formData.append("cateName", input.cateName);
     formData.append("description", input.description);
+    formData.append("postAccept", editpost.postAccept);
     for (let i = 0; i < input.files.length; i++) {
       formData.append("files", input.files[i]);
       console.log("input file wihtin after formdata is", input.files[i]);

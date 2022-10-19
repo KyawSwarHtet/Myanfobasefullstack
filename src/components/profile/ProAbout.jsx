@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useSelector, useDispatch } from "react-redux";
 const ProAbout = () => {
+  const { user } = useSelector((state) => state.auth);
   return (
     <div className="ProAbout">
       <div className="About">
@@ -8,10 +9,12 @@ const ProAbout = () => {
         <span className="lasttitleline About-line"></span>
       </div>
       <div className="ProAData">
-        <h4>Thung Htike Htoo</h4>
-        <p>Web Designer</p>
-        <p>No.6,Ye Road,Wegyun Quat,Dawei</p>
-        <p>09-422731566</p>
+        <h4>{user.username}</h4>
+        <p>{user.bio}</p>
+        <p>{user.email}</p>
+        <p>{user.bod}</p>
+        <p>{user.gender}</p>
+        <p>{user.address}</p>
       </div>
     </div>
   );

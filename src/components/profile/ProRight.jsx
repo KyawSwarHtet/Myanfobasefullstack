@@ -35,7 +35,7 @@ function ProRight() {
     return () => {
       dispatch(reset());
     };
-  }, [user, navigate, isError, message, dispatch]);
+  }, [user._id, navigate, isError, message, dispatch]);
 
   if (isLoading) {
     return <Spinner />;

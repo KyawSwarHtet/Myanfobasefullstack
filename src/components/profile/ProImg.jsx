@@ -8,12 +8,18 @@ const ProImg = (props) => {
     <>
       <div className="ProHead">
         <div className="ProImg1">
-          <img src="../../../public/images/art/art4.jpg" alt="" />
-          {/* <i className="editPro uil uil-edit"></i> */}
+          {user.profilePicture === [] || user.profilePicture.length == 0 ? (
+            <img src="./images/userprofile/defaultuserprofile.png" alt="" />
+          ) : (
+            <img
+              src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
+              alt=""
+            />
+          )}
         </div>
         <div className="ProData">
           <span> {user.username} </span>
-          <p>Travelling is very nice.</p>
+          <p>{user.bio}</p>
           <Link to="/editprofile">
             <button className="EdiProData">Edit Profile</button>
           </Link>
