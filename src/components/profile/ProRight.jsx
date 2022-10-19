@@ -55,13 +55,13 @@ function ProRight() {
                   <div key={element._id}>
                     <div className="postTrav">
                       <div className="Trav_img">
-                        {element.files.map((file) => {
-                          return (
-                            <img
-                              src={`http://localhost:8080/${file.filePath}`}
-                            />
-                          );
-                        })}
+                        {/* {element.files.map((file) => {
+                          return ( */}
+                        <img
+                          src={`http://localhost:8080/${element.files[0].filePath}`}
+                        />
+                        {/* );
+                        })} */}
 
                         <p className="Travel1 cateTravel">{element.cateName}</p>
                       </div>

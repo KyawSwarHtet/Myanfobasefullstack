@@ -1,9 +1,10 @@
 .titleDiv,
 .descDiv {
-  margin-top: 20px;
+  position: relative;
+  margin-top: 2rem;
   width: 80%;
-  display: grid;
-  grid-template-columns: 17% 83%;
+  /* display: grid; */
+  /* grid-template-columns: 17% 83%; */
   align-items: center;
 }
 .descDiv {
@@ -21,8 +22,6 @@
 .titleForm {
   max-height: 250px;
   min-height: 38px;
-  /* box-sizing: border-box; */
-
   width: 100%;
   height: 59px;
   display: block;
@@ -36,12 +35,10 @@
   /* margin-top: 20px; */
 }
 .descForm {
-  max-height: 250px;
-  min-height: 38px;
-  /* box-sizing: border-box; */
-
+  max-height: 200px;
+  min-height: 30px;
   width: 100%;
-  /* height: 79px; */
+  height: 50px;
   display: block;
   margin: auto;
   padding: 1rem;
@@ -70,13 +67,13 @@
   /* margin-top: 1.5rem; */
 }
 
-textarea:is(:focus, :valid) {
+.descForm:is(:focus, :valid) {
   border-width: 2px;
   border-color: #4671ea;
   padding: 14px;
 }
 
-textarea::-webkit-scrollbar {
+.descForm::-webkit-scrollbar {
   width: 1px;
 }
 
@@ -89,4 +86,30 @@ textarea::-webkit-scrollbar {
 .updatedata,
 .closedata {
   padding: 3px 8px;
+}
+.textdesign {
+  background: transparent;
+  border-bottom: 1px solid rgb(40, 205, 245);
+  transition: 0.5s linear;
+}
+.textdesign:focus,
+.textdesign:valid {
+  padding: 20px 10px;
+  background: rgb(40, 205, 245);
+  margin-top: 30px;
+}
+.updateheader {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+.labelDes {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  font-size: 20px;
+  font-weight: bold;
+}
+.labelimg {
+  font-size: 20px;
+  font-weight: bold;
 }

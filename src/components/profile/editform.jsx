@@ -4,6 +4,7 @@ import "./profile.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../../features/auth/authSlice";
+import Select from "react-select";
 
 const EditForm = () => {
   const dispatch = useDispatch();
@@ -64,7 +65,7 @@ const EditForm = () => {
       placeholder: "username",
       errorMessage:
         "Username should be 3-16 characters and shouldn't include any special character!",
-      pattern: "^[A-Za-z0-9]{3,16}$",
+      pattern: "^[a-zA-Z0-9 ]{3,16}$",
       label: "Username",
       required: true,
     },
@@ -92,6 +93,7 @@ const EditForm = () => {
       placeholder: "Date of birth",
       label: "Birthday",
     },
+
     {
       id: 5,
       name: "gender",
@@ -185,7 +187,6 @@ const EditForm = () => {
         </div>
         {inputs.map((input) => (
           <div className="infoform">
-            {/* <div className="firstcol"> */}
             <FormInput
               key={input.id}
               {...input}

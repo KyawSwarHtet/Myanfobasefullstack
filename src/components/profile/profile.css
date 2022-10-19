@@ -161,7 +161,7 @@
 .editbuttondiv {
   text-align: center;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 .editsettitle {
   color: #15568e;
@@ -210,4 +210,56 @@ input:invalid[focused="true"] ~ span {
 }
 input:invalid[focused="true"] {
   border: 1px solid red;
+}
+.genderchoose{
+  color: transparent;
+}
+
+.css-1s2u09g-control{
+  background-color: transparent;
+}
+.genderbox .css-b62m3t-container {
+     position: relative; 
+   /* background: transparent;
+      border: 1px solid gray;
+  border-radius: 5px; */
+right: 5.5rem;
+ padding: 10px 90px;
+    margin-top: 2rem;
+}
+.css-1s2u09g-control input{
+  color: black ;
+}
+
+.innerboxgender .css-1s2u09g-control {
+   border: 1px solid gray;
+    background: transparent;
+}
+
+.innerboxgender .css-1f43avz-a11yText-A11yText{
+  border: 1px solid black;
+}
+.gendertitle{
+ color: black;
+
+}
+
+.gendertitlediv{
+  margin-top: 2rem;
+  position: relative;
+  right: 7.3rem;
+
+}
+.choosediv{
+  position: relative;
+  right: 3rem;
+  margin-top: 1rem;
+}
+.choosediv input{
+  margin-left: 10px;
+}
+.choosediv label{
+  position: relative;
+  bottom: 2px;
+  left: 8px;
 }

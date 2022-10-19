@@ -176,10 +176,12 @@ export default function Testpost(props) {
         </div>
 
         <div className="titleDiv">
-          <label htmlFor="titleFormid">Title:</label>
+          <label htmlFor="titleFormid" className="labelDes">
+            Title:
+          </label>
           <textarea
             id="titleFormid"
-            className="titleForm"
+            className="titleForm textdesign"
             placeholder="Type title here..."
             onChange={(event) => {
               setTitle(event.target.value);
@@ -190,10 +192,12 @@ export default function Testpost(props) {
           />
         </div>
         <div className="titleDiv">
-          <label htmlFor="descformid">Description:</label>
+          <label htmlFor="descformid" className="labelDes">
+            Description:
+          </label>
           <textarea
             id="descformid"
-            className="titleForm"
+            className="titleForm textdesign"
             placeholder="Type Description here..."
             onChange={(event) => {
               setDescription(event.target.value);
@@ -206,7 +210,7 @@ export default function Testpost(props) {
         <br />
         <br />
         <div className="imgDiv">
-          <label>Upload Image:</label>
+          <label className="labelimg">Upload Image:</label>
           <input
             type="file"
             multiple

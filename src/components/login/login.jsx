@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -9,12 +9,16 @@ import Spinner from "./Spinner";
 
 const LoginCompo = () => {
   const [isContainerActive, setIsContainerActive] = useState(false);
+  const [focused, setFocused] = useState(false);
 
   const signUpButton = () => {
     setIsContainerActive(true);
   };
   const signInButton = () => {
     setIsContainerActive(false);
+  };
+  const handleFocus = (e) => {
+    setFocused(true);
   };
 
   /*Register Data */
@@ -159,23 +163,36 @@ const LoginCompo = () => {
                 <i className="fas fa-user"></i>
                 <input
                   type="text"
+                  pattern="^[a-zA-Z0-9 ]{3,16}$"
                   placeholder="Username"
                   name="username"
                   id="username"
+                  focused={focused.toString()}
+                  onBlur={handleFocus}
                   value={username}
                   onChange={onChange}
                 />
+                <span className="singupusermsg">
+                  Username should be 3-16 characters and shouldn't include any
+                  special character!
+                </span>
               </div>
+
               <div className="input-field">
                 <i className="fas fa-envelope"></i>
                 <input
-                  type="text"
+                  type="email"
                   placeholder="Email"
                   id="email"
                   name="email"
                   value={email}
+                  focused={focused.toString()}
+                  onBlur={handleFocus}
                   onChange={onChange}
                 />
+                <span className="singupusermsg">
+                  It should be a vaild email address!
+                </span>
               </div>
               <div className="input-field">
                 <i className="fas fa-lock"></i>
@@ -184,9 +201,16 @@ const LoginCompo = () => {
                   id="password"
                   placeholder="Password"
                   name="password"
+                  pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=\S+$).{8,20}$"
                   value={password}
                   onChange={onChange}
+                  focused={focused.toString()}
+                  onBlur={handleFocus}
                 />
+                <span className="singupusermsg">
+                  Password should be 8-20 characters and include at least 1
+                  letter, 1 number!
+                </span>
               </div>
               <div className="input-field">
                 <i className="fas fa-lock"></i>
@@ -195,9 +219,13 @@ const LoginCompo = () => {
                   placeholder="Confirm Password"
                   id="password2"
                   name="password2"
+                  pattern={formData.password}
                   value={password2}
                   onChange={onChange}
+                  focused={focused.toString()}
+                  onBlur={handleFocus}
                 />
+                <span className="singupusermsg">Passwords don't match!</span>
               </div>
 
               <input type="submit" value="Sign Up" className="logbtn solid" />
