@@ -373,11 +373,10 @@ input:invalid[focused="true"] {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
 }
-/* .posticon .tooltip {
-  font-size: 11px;
-  padding: 0px 8px;
+
+.pendingTxt {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: red;
 }
-.posticon:hover .tooltip.top {
-  width: fit-content;
-  left: 14px;
-} */

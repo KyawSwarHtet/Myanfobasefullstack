@@ -1,9 +1,41 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import Nav from "react-bootstrap/Nav";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { deletePost, getPosts, reset } from "../../features/posts/postSlice";
 
 export default function AdminChue() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+  const { posts, isLoading, isError, message } = useSelector(
+    (state) => state.posts
+  );
+  let usercount = 0;
+  {
+    posts.map((data) => {
+      if (data.postAccept !== true) {
+        return (usercount += 1);
+      }
+    });
+  }
+
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    if (!user) {
+      navigate("/login");
+    }
+    dispatch(getPosts());
+
+    return () => {
+      dispatch(reset());
+    };
+  }, [user._id, navigate, isError, message, dispatch]);
+
   return (
     <>
       <h2>chue</h2>
@@ -12,16 +44,15 @@ export default function AdminChue() {
           <h1>ADMIN PAGE</h1>
         </div>
 
-        <div className="request-user">
-          <Link to="/requestform" className="adminlink">
+        <Link to="/requestform" className="adminlink">
+          <div className="request-user">
             <h4>Post Request from Users</h4>
-          </Link>
-          <Link to="/requestform" className="adminlink">
+
             <p className="count-post">
-              <span>3</span> posts
+              <span>{usercount}</span> posts
             </p>
-          </Link>
-        </div>
+          </div>
+        </Link>
 
         {/* block user */}
         <div className="user-list">

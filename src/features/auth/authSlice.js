@@ -43,6 +43,47 @@ export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
   }
 });
 
+//get User Detail
+export const userDetail = createAsyncThunk(
+  "auth/userdata",
+  async (_, thunkAPI) => {
+    try {
+      //adding token to access user
+      const token = thunkAPI.getState().auth.user.token;
+      console.log("token in userDetail", token);
+      return await authService.userDetailData(token);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+//Update User data
+export const updateUser = createAsyncThunk(
+  "auth/updateuser",
+  async (postData, thunkAPI) => {
+    try {
+      //adding token to access user
+      const token = thunkAPI.getState().auth.user.token;
+      return await authService.updateUserData(postData, token);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 export const logout = createAsyncThunk("auth/logout", async () => {
   await authService.logout();
 });
@@ -88,6 +129,37 @@ export const authSlice = createSlice({
         state.isError = true;
         state.message = action.payload;
         state.user = null;
+      })
+      .addCase(userDetail.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(userDetail.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.user = action.payload;
+        // console.log("action pay load getpost is", action.payload);
+      })
+      .addCase(userDetail.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(updateUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+
+        // state.user.push(action.payload);
+        localStorage.setItem("user", JSON.stringify(action.payload));
+        state.user = action.payload;
+        console.log("user action pay load after update is", user);
+      })
+      .addCase(updateUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
       })
       .addCase(logout.fulfilled, (state) => {
         state.user = null;

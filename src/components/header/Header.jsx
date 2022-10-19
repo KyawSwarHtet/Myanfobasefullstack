@@ -57,6 +57,16 @@ export default function Header() {
               <span className="capitalize">Post</span>
             </Link>
           </li>
+          {user !== null && user.isAdmin === true ? (
+            <li>
+              <Link to="/admin" className="flex hoverclor">
+                <i class="uil uil-user-square"></i>
+                <span className="capitalize">Admin</span>
+              </Link>
+            </li>
+          ) : (
+            " "
+          )}
         </ul>
         <ul className="headersecond">
           <li>
@@ -69,13 +79,25 @@ export default function Header() {
               <span>Eng</span> */}
             <Language label="choose an language" />
           </li>
-          {user ? (
+          {console.log("user in heder is", user)}
+          {user !== null && user.login === true ? (
             <>
               <li>
                 <div className="dorpmenu-container">
                   <div className="login">
                     <div className="profile-img">
-                      <img src="./images/sport/sport1.jpg" alt="" />
+                      {user.profilePicture === [] ||
+                      user.profilePicture.length === 0 ? (
+                        <img
+                          src="./images/userprofile/defaultuserprofile.png"
+                          alt=""
+                        />
+                      ) : (
+                        <img
+                          src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
+                          alt=""
+                        />
+                      )}
                     </div>
                     <i
                       id="loginsetting"
@@ -89,7 +111,7 @@ export default function Header() {
                     id="dropdown-menu"
                     className={` ${open ? "active" : "inactive"}`}
                   >
-                    <h3>kyaw swar</h3>
+                    <h3>{user.username}</h3>
                     <ul>
                       <DropdownItem
                         data={"fa-solid fa-user"}

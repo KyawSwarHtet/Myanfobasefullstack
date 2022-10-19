@@ -65,19 +65,16 @@ export const deletePost = createAsyncThunk(
   }
 );
 
-//Edit post
-export const editPost = createAsyncThunk(
-  "post/edit",
-  async (id, postData, thunkAPI) => {
-    console.log("id from updata is", id);
-    console.log("post data from updata is", postData);
-    console.log("tankAPI is from updata is", thunkAPI);
+//get User Detail
+export const postDetail = createAsyncThunk(
+  "auth/postdata",
+  async (id, thunkAPI) => {
     try {
+      //adding token to access user
       const token = thunkAPI.getState().auth.user.token;
-      console.log("token is ", token);
-      return await postService.editPosts(id, postData, token);
+      console.log("token in userDetail", token);
+      return await postService.postDetailData(id, token);
     } catch (error) {
-      console.log("error is no", postData, "here");
       const message =
         (error.response &&
           error.response.data &&
@@ -93,7 +90,6 @@ export const editPost = createAsyncThunk(
 export const updatePostData = createAsyncThunk(
   "post/edit",
   async (postData, thunkAPI) => {
-    // console.log("id from updata is", id);
     console.log("post Data from editpost is", postData);
     try {
       const token = thunkAPI.getState().auth.user.token;

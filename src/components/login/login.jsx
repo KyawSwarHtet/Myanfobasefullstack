@@ -7,7 +7,7 @@ import { login, register, reset } from "../../features/auth/authSlice";
 import { useEffect } from "react";
 import Spinner from "./Spinner";
 
-const LoginCompo = (props) => {
+const LoginCompo = () => {
   const [isContainerActive, setIsContainerActive] = useState(false);
   const [focused, setFocused] = useState(false);
 
@@ -43,7 +43,8 @@ const LoginCompo = (props) => {
     }
 
     if (isSuccess || user) {
-      navigate("/");
+      setIsContainerActive(false);
+      navigate("/login");
     }
 
     dispatch(reset());
@@ -70,7 +71,6 @@ const LoginCompo = (props) => {
       dispatch(register(userData));
     }
   };
-
   /* login data */
   const [loginData, setLoginData] = useState({
     email: "",
@@ -92,11 +92,17 @@ const LoginCompo = (props) => {
       loginpassword,
     };
     dispatch(login(userData));
+    setLoginData({
+      email: "",
+      password: "",
+    });
+    navigate("/");
   };
 
   if (isLoading) {
     return <Spinner />;
   }
+
   return (
     <>
       <div className={"login-con " + (isContainerActive ? "signupmode" : " ")}>
@@ -221,6 +227,7 @@ const LoginCompo = (props) => {
                 />
                 <span className="singupusermsg">Passwords don't match!</span>
               </div>
+
               <input type="submit" value="Sign Up" className="logbtn solid" />
               <p className="social-text">Or Sign Up with social platforms</p>
               <div className="social-media">

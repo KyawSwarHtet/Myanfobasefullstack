@@ -1,25 +1,53 @@
-import react from "react";
-import { Link } from "react-router-dom";
-import { getMultipleFiles } from "../../data/api";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-
+import { useSelector, useDispatch } from "react-redux";
+import Moment from "react-moment";
 import "./admin.css";
+import { updatePostData } from "../../features/posts/postSlice";
+import Spinner from "../login/Spinner";
+import { deletePost, getPosts, reset } from "../../features/posts/postSlice";
 
 export default function RequestForm() {
-  const [multipleFiles, setMultipleFiles] = useState([]);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  Moment.globalFormat = "D MMM YYYY";
+  const { user } = useSelector((state) => state.auth);
 
-  const getMultipleFilesList = async () => {
-    try {
-      const fileslist = await getMultipleFiles();
-      setMultipleFiles(fileslist);
-      console.log(multipleFiles);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { posts, isLoading, isError, message } = useSelector(
+    (state) => state.posts
+  );
+
+  // console.log("post from redux is", posts);
+
   useEffect(() => {
-    getMultipleFilesList();
-  }, []);
+    if (isError) {
+      console.log(message);
+    }
+    if (!user) {
+      navigate("/login");
+    }
+    dispatch(getPosts());
+
+    return () => {
+      dispatch(reset());
+    };
+  }, [user._id, navigate, isError, message, dispatch]);
+
+  const approveAccetpt = async (id) => {
+    posts.map((data) => {
+      if (data._id === id) {
+        let copyData = Object.assign({}, data);
+        copyData.postAccept = true;
+        console.log("real data", data);
+        console.log("copyData", copyData);
+        dispatch(updatePostData(copyData)).then(() => dispatch(getPosts()));
+      }
+    });
+  };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <>
@@ -38,45 +66,75 @@ export default function RequestForm() {
           <span>Request Form</span>
         </div>
         <span className="admin-span"> </span>
-        {multipleFiles.map((element, index) => (
-          <div key={element._id}>
-            <div className="userpost-table">
-              <Link to="/admindetail" className="link1">
-                <div className="admin-img">
-                  <img
-                    className="adminimg"
-                    src={`http://localhost:8080/${element.files[0].filePath}`}
-                    alt=""
-                  />
-                </div>
-              </Link>
-              <div className="userpost">
-                <Link to="/admindetail" className="adminlink">
-                  <p className="user-title">{element.title}</p>
-                </Link>
-                <Link to="/admindetail" className="link1">
-                  <button className="admin-cate cateTravel">
-                    {element.cateName}
-                  </button>
-                </Link>
+        {posts.length > 0 ? (
+          posts.map((element, index) =>
+            element.postAccept === false ? (
+              <div key={element._id}>
+                <div className="userpost-table">
+                  <Link to="/admindetail" className="link1">
+                    {element.files.length !== 0 ? (
+                      <div className="admin-img">
+                        <img
+                          className="adminimg"
+                          src={`http://localhost:8080/${element.files[0].filePath}`}
+                          alt=""
+                        />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </Link>
+                  <div className="userpost">
+                    <Link
+                      to={`/admindetail/${element._id}`}
+                      className="adminlink"
+                    >
+                      <p className="user-title">{element.title}</p>
+                    </Link>
+                    <Link to={`/${element.cateName}`} className="link1">
+                      <button className="admin-cate cateTravel">
+                        {element.cateName}
+                      </button>
+                    </Link>
 
-                <div className="postman1">
-                  <img src="./images/homeimgs/viedo4.jpg" alt="" />
-                  <span className="profileName1">Paina Ta Kon</span>
-                  <span className="profileDate1">20.3.2022</span>
+                    <div className="postman1">
+                      <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                      <span className="profileName1">{element.username}</span>
+
+                      <span className="profileDate1">
+                        <Moment format="DD/MMM/YYYY">
+                          {element.createdAt}
+                        </Moment>
+                      </span>
+                    </div>
+                  </div>
+                  <div className="admin-button">
+                    <button
+                      className="button1"
+                      onClick={() => approveAccetpt(element._id)}
+                    >
+                      Accept
+                    </button>
+                    <button
+                      className="button2"
+                      onClick={() => dispatch(deletePost(element._id))}
+                    >
+                      Delete
+                    </button>
+                    <Link to={`/admindetail/${element._id}`}>
+                      <button className="button3">view</button>
+                    </Link>
+                  </div>
                 </div>
+                <span className="admin-span2"> </span>
               </div>
-              <div className="admin-button">
-                <button className="button1">Accept</button>
-                <button className="button2">Delete</button>
-                <Link to={`/admindetail/${element._id}`}>
-                  <button className="button3">view</button>
-                </Link>
-              </div>
-            </div>
-            <span className="admin-span2"> </span>
-          </div>
-        ))}
+            ) : (
+              ""
+            )
+          )
+        ) : (
+          <h2>No post here!</h2>
+        )}
       </div>
     </>
   );

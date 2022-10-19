@@ -24,6 +24,34 @@ const login = async (userData) => {
   return response.data;
 };
 
+//get detail data Login user
+const userDetailData = async (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.get(API_URL + "me", config);
+  console.log("auth service response data", response.data);
+  return response.data;
+};
+
+//update user data Login user
+const updateUserData = async (postData, token) => {
+  const resultData = Object.fromEntries(postData.entries());
+  const id = resultData.id;
+  console.log("result data id from auth Service", id);
+  console.log("result data  from auth Service", postData);
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.put(API_URL + `update/${id}`, postData, config);
+
+  return response.data;
+};
+
 //Logout user
 const logout = () => {
   localStorage.removeItem("user");
@@ -32,6 +60,8 @@ const authService = {
   register,
   logout,
   login,
+  userDetailData,
+  updateUserData,
 };
 
 export default authService;
