@@ -16,6 +16,13 @@ export default function CreatePost(props) {
     description: "",
     files: [],
   });
+  const setTextarea = (element, defaultHeight) => {
+    if (element) {
+      const target = element.target ? element.target : element;
+      target.style.height = "auto";
+      target.style.height = `${target.scrollHeight}px`;
+    }
+  };
 
   console.log("initial inpusetstate is", input);
   const [isActive, setIsActive] = useState(false);
@@ -31,6 +38,7 @@ export default function CreatePost(props) {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
+    setTextarea(e, "100px");
   };
 
   const handleSubmit = (e) => {
@@ -128,10 +136,12 @@ export default function CreatePost(props) {
         </div>
 
         <div className="titleDiv">
-          <label htmlFor="titleFormid">Title:</label>
+          <label htmlFor="titleFormid" className="labelDes">
+            Title:
+          </label>
           <textarea
             id="titleFormid"
-            className="titleForm"
+            className="titleForm textdesign"
             placeholder="Type title here..."
             name="title"
             onChange={onChange}
@@ -141,10 +151,12 @@ export default function CreatePost(props) {
           />
         </div>
         <div className="titleDiv">
-          <label htmlFor="descformid">Description:</label>
+          <label htmlFor="descformid" className="labelDes">
+            Description:
+          </label>
           <textarea
             id="descformid"
-            className="titleForm"
+            className="titleForm textdesign"
             placeholder="Type Description here..."
             name="description"
             onChange={onChange}
