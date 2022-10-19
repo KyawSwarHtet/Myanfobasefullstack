@@ -195,6 +195,22 @@ const EditForm = () => {
             />
           </div>
         ))}
+        <div className="gendertitlediv">
+          <span className="gendertitle">Gender</span>
+        </div>
+        <div className="choosediv">
+          <label>Male : </label>
+          <input type="radio" name="gender" value="male" onChange={onChange} />
+          <label>Female : </label>
+          <input
+            name="gender"
+            value="female"
+            onChange={onChange}
+            type="radio"
+          />
+          <label>Other : </label>
+          <input type="radio" name="gender" value="other" onChange={onChange} />
+        </div>
 
         <div className="editbuttondiv">
           <button className="editbutton" onClick={updateBtn}>

@@ -146,13 +146,6 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.editTitle {
-  padding: 3rem;
-  text-align: center;
-}
-.editform {
-  margin-top: 5rem;
-}
 .infoform {
   display: flex;
   gap: 10rem;
@@ -376,11 +369,3 @@ input:invalid[focused="true"] {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
 }
-/* .posticon .tooltip {
-  font-size: 11px;
-  padding: 0px 8px;
-}
-.posticon:hover .tooltip.top {
-  width: fit-content;
-  left: 14px;
-} */
