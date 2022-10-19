@@ -373,3 +373,10 @@ input:invalid[focused="true"] {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
 }
+
+.pendingTxt {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: red;
+}

@@ -93,14 +93,6 @@ const EditForm = () => {
       placeholder: "Date of birth",
       label: "Birthday",
     },
-
-    {
-      id: 5,
-      name: "gender",
-      type: "string",
-      placeholder: "gender",
-      label: "gender",
-    },
     {
       id: 6,
       name: "address",
@@ -173,6 +165,7 @@ const EditForm = () => {
               />
             ) : (
               <img
+                className="userimage"
                 src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
                 alt=""
               />

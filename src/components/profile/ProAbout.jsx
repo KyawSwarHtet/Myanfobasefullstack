@@ -10,7 +10,7 @@ const ProAbout = () => {
       </div>
       <div className="ProAData">
         <h4>{user.username}</h4>
-        <p>{user.bio}</p>
+        <p>" {user.bio} "</p>
         <p>{user.email}</p>
         <p>{user.bod}</p>
         <p>{user.gender}</p>

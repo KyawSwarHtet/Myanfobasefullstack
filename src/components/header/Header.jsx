@@ -86,7 +86,18 @@ export default function Header() {
                 <div className="dorpmenu-container">
                   <div className="login">
                     <div className="profile-img">
-                      <img src="./images/sport/sport1.jpg" alt="" />
+                      {user.profilePicture === [] ||
+                      user.profilePicture.length === 0 ? (
+                        <img
+                          src="./images/userprofile/defaultuserprofile.png"
+                          alt=""
+                        />
+                      ) : (
+                        <img
+                          src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
+                          alt=""
+                        />
+                      )}
                     </div>
                     <i
                       id="loginsetting"

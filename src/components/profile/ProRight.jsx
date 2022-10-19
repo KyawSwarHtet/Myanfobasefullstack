@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "../travelling/travside.css";
+import Moment from "react-moment";
 import Spinner from "../login/Spinner";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import {
@@ -16,7 +17,7 @@ import {
 function ProRight() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  Moment.globalFormat = "D MMM YYYY";
   const { user } = useSelector((state) => state.auth);
 
   const { posts, isLoading, isError, message } = useSelector(
@@ -58,8 +59,11 @@ function ProRight() {
                         <img
                           src={`http://localhost:8080/${element.files[0].filePath}`}
                         />
-
-                        <p className="Travel1 cateTravel">{element.cateName}</p>
+                        <Link to={`/${element.cateName}`} className="link1">
+                          <button className="Travel1 cateTravel">
+                            {element.cateName}
+                          </button>
+                        </Link>
                       </div>
                       <div className="postProfile_info">
                         <h4>{element.title}</h4>
@@ -75,11 +79,40 @@ function ProRight() {
                         </p>
                         <div className="proFilebottom">
                           <div className="postman">
-                            <img src="./images/homeimgs/viedo4.jpg" alt="" />
-                            <span className="profileName">Paina Ta Kon</span>
-                            <span className="profileDate">20.3.2022</span>
+                            <div className=" ">
+                              {user.profilePicture === [] ||
+                              user.profilePicture.length === 0 ? (
+                                <img
+                                  src="./images/userprofile/defaultuserprofile.png"
+                                  alt=""
+                                />
+                              ) : (
+                                <img
+                                  src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
+                                  alt=""
+                                />
+                              )}
+                            </div>
+                            <span className="profileName">
+                              {element.username}
+                            </span>
+                            <span className="profileDate">
+                              <Moment format="DD/MMM/YYYY">
+                                {element.createdAt}
+                              </Moment>
+                            </span>
                           </div>
                           <div className="Probuttom">
+                            {element.postAccept !== true ? (
+                              <div className="posticon1">
+                                <div className="pendingTxt">
+                                  <span>Pending Approve</span>
+                                </div>
+                              </div>
+                            ) : (
+                              ""
+                            )}
+
                             <div className="posticon1">
                               <div className="tooltip1 top">Delete</div>
                               <button
@@ -91,6 +124,7 @@ function ProRight() {
                                 <i className=" uil uil-trash-alt"></i>
                               </button>
                             </div>
+
                             <div className="posticon1">
                               <Link to={`/update/${element._id}`}>
                                 <div className="tooltip1 top">Edit</div>
