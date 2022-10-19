@@ -43,12 +43,7 @@
 .Post-line {
   width: 150px;
 }
-.DeleteP,
-.EditPost {
-  color: #fff;
-  border-radius: 5px;
-  padding: 2px 8px;
-}
+
 .Delcolor {
   background-color: rgb(145, 14, 25);
 }
@@ -60,6 +55,9 @@
   align-items: center;
   justify-content: right;
   gap: 2rem;
+  /* position: absolute; */
+  bottom: 10px;
+  right: 0px;
 }
 .DeleteS {
   color: #fff;
@@ -67,9 +65,17 @@
   padding: 1px 5px;
 }
 .ProAbout {
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
+  border-radius: 5px;
   padding: 20px;
   margin-bottom: 2rem;
+  box-shadow: 0px 0px 3px 2px;
+}
+.postProfile {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 1px;
 }
 .About {
   padding: 20px;
@@ -211,55 +217,170 @@ input:invalid[focused="true"] ~ span {
 input:invalid[focused="true"] {
   border: 1px solid red;
 }
-.genderchoose{
+.genderchoose {
   color: transparent;
 }
 
-.css-1s2u09g-control{
+.css-1s2u09g-control {
   background-color: transparent;
 }
 .genderbox .css-b62m3t-container {
-     position: relative; 
-   /* background: transparent;
+  position: relative;
+  /* background: transparent;
       border: 1px solid gray;
   border-radius: 5px; */
-right: 5.5rem;
- padding: 10px 90px;
-    margin-top: 2rem;
+  right: 5.5rem;
+  padding: 10px 90px;
+  margin-top: 2rem;
 }
-.css-1s2u09g-control input{
-  color: black ;
+.css-1s2u09g-control input {
+  color: black;
 }
 
 .innerboxgender .css-1s2u09g-control {
-   border: 1px solid gray;
-    background: transparent;
+  border: 1px solid gray;
+  background: transparent;
 }
 
-.innerboxgender .css-1f43avz-a11yText-A11yText{
+.innerboxgender .css-1f43avz-a11yText-A11yText {
   border: 1px solid black;
 }
-.gendertitle{
- color: black;
-
+.gendertitle {
+  color: black;
 }
 
-.gendertitlediv{
+.gendertitlediv {
   margin-top: 2rem;
   position: relative;
   right: 7.3rem;
-
 }
-.choosediv{
+.choosediv {
   position: relative;
   right: 3rem;
   margin-top: 1rem;
 }
-.choosediv input{
+.choosediv input {
   margin-left: 10px;
 }
-.choosediv label{
+.choosediv label {
   position: relative;
   bottom: 2px;
   left: 8px;
 }
+
+.Profile-main {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.Profile_img {
+  position: relative;
+}
+.Profile_img img {
+  width: 200px;
+  height: 180px;
+  border-radius: 5px;
+}
+
+.Profile-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+}
+.postProfile_info {
+  width: 90%;
+  padding: 10px;
+  position: relative;
+}
+
+/* post profile button design */
+.posticon1 {
+  position: relative;
+}
+.tooltip1 {
+  font-size: 11px;
+  /* line-height: 3px; */
+  border: 1px solid transparent;
+
+  border-radius: 25px;
+  background-color: orange;
+  padding: 2px 8px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.01);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.6, -0.55, 0.265, 1.55);
+}
+.tooltip1.top::before {
+  content: " ";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  background: #87cac5;
+  bottom: -7px;
+  left: 37%;
+  transform: translateX(-50%) rotate(45deg);
+  /* z-index: -2; */
+}
+.top {
+  position: absolute;
+  bottom: 50px;
+  /* top: 0px; */
+  left: 0px;
+}
+.DeleteP,
+.EditPost {
+  font-size: 20px;
+  color: rgb(15, 9, 9);
+  border-radius: 50%;
+  padding: 2px 8px;
+}
+.DeleteP:hover,
+.EditPost:hover {
+  background: #f83509;
+  color: #fff;
+}
+.posticon1:hover .tooltip1.top {
+  bottom: 40px;
+  /* top: 0px; */
+  left: 0px;
+  background-color: #87cac5;
+  color: #a8132c;
+  opacity: 1;
+  pointer-events: auto;
+}
+.posticon1 button::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.posticon1 button:focus::before {
+  transform: scaleY(1.4) scaleX(1.6);
+  overflow: hidden;
+  opacity: 0;
+}
+.posticon1 button:focus {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.posticon1 button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+/* .posticon .tooltip {
+  font-size: 11px;
+  padding: 0px 8px;
+}
+.posticon:hover .tooltip.top {
+  width: fit-content;
+  left: 14px;
+} */

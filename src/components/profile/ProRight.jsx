@@ -48,20 +48,16 @@ function ProRight() {
           <span className="lasttitleline Post-line"></span>
         </div>
         <div className="sidebar">
-          <div className="Trav-main">
+          <div className="Profile-main">
             {posts.length > 0 ? (
               posts.map((element) =>
                 element.user === user._id ? (
                   <div key={element._id}>
-                    <div className="postTrav">
-                      <div className="Trav_img">
-                        {/* {element.files.map((file) => {
-                          return ( */}
+                    <div className="postProfile">
+                      <div className="Profile_img">
                         <img
                           src={`http://localhost:8080/${element.files[0].filePath}`}
                         />
-                        {/* );
-                        })} */}
 
                         <p className="Travel1 cateTravel">{element.cateName}</p>
                       </div>
@@ -79,18 +75,20 @@ function ProRight() {
                         </p>
 
                         <div className="Probuttom">
-                          <div className="postman">
+                          <div className="posticon1">
+                            <div className="tooltip1 top">Delete</div>
                             <button
                               onClick={() => dispatch(deletePost(element._id))}
-                              className="DeleteP Delcolor"
+                              className="DeleteP "
                             >
-                              Delete <i className=" uil uil-trash-alt"></i>
+                              <i className=" uil uil-trash-alt"></i>
                             </button>
                           </div>
-                          <div className="posticon">
+                          <div className="posticon1">
                             <Link to={`/update/${element._id}`}>
-                              <button className="EditPost Editcolor">
-                                Edit <i className=" uil uil-edit"></i>
+                              <div className="tooltip1 top">Edit</div>
+                              <button className="EditPost">
+                                <i className=" uil uil-edit"></i>
                               </button>
                             </Link>
                           </div>
