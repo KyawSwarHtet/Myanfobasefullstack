@@ -1,6 +1,6 @@
-import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import React, { useState, useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Header from "./components/header/Header";
@@ -41,7 +41,8 @@ import Dynasty from "./pages/history/Dynasty";
 import History from "./pages/history/History";
 import Region from "./pages/history/Region";
 import Religous from "./pages/history/Religous";
-import Home from "./pages/home/Home";
+// import Home from "./pages/home/Home";
+
 import ComedyPage from "./pages/literature/ComedyPage";
 import DramaPage from "./pages/literature/DramaPage";
 import FictionPage from "./pages/literature/FictionPage";
@@ -94,26 +95,77 @@ import UpdateformPage from "./pages/post/UpdateformPage";
 import RequestFormPage from "./pages/adminPage/RequestFormPage";
 import AdminPage from "./pages/adminPage/AdminPage";
 import AdmindetailPage from "./pages/adminDetail/AdminDetailPage";
-import SearchPage from "./pages/searchpage/SearchPage";
+// import SearchPage from "./pages/searchpage/SearchPage";
 import Profile from "./pages/profile/Profile";
 import Aboutpage from "./pages/aboutus/Aboutpage";
 import UsereditForm from "./pages/profile/userEditForm";
+import { useSelector, useDispatch } from "react-redux";
+import { getPosts } from "./features/posts/postSlice";
+const LazyHome = React.lazy(() => import("./pages/home/Home"));
+const LazySearch = React.lazy(() => import("./pages/searchpage/SearchPage"));
 
 function App() {
+  const dispatch = useDispatch();
+  const [getAlluserApp, setGetAllusers] = useState();
+  const [getAllpostApp, setGetAllposts] = useState();
+  const { posts, isError, message } = useSelector((state) => state.posts);
+
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    dispatch(getPosts());
+  }, [isError, message, dispatch]);
+
+  useEffect(() => {
+    const getAlldata = async () => {
+      const reqdata = await fetch(`http://localhost:8080/api/post`);
+      const res = await reqdata.json(); // JSON.parse(json);
+      //   console.log("res data is ", res);
+      return res;
+    };
+    getAlldata().then((data) => {
+      setGetAllposts(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    const getAllusers = async () => {
+      const reqdata = await fetch(`http://localhost:8080/api/users/alluser`);
+      const res = await reqdata.json(); // JSON.parse(json);
+      //   console.log("res data is ", res);
+      return res;
+    };
+    getAllusers().then((data) => {
+      setGetAllusers(data);
+    });
+  }, []);
+ 
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <React.Suspense fallback="Loading....">
+              <LazyHome />
+            </React.Suspense>
+          }
+        />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/technology" element={<TecnologyPages />} />
 
         <Route path="/travel" element={<Travel />} />
-        <Route path="/beauty" element={<Beauty />} />
+        <Route
+          path="/beauty"
+          element={
+            <Beauty getAllusers={getAlluserApp} getAllposts={getAllpostApp} />
+          }
+        />
         <Route path="/entertainment" element={<Entertainment />} />
         <Route path="/technology" element={<TecnologyPages />} />
 
-        <Route path="/Sports" element={<Sport />} />
+        <Route path="/sports" element={<Sport />} />
         <Route path="/football" element={<Footballpage />} />
         <Route path="/boxing" element={<Boxingpage />} />
         <Route path="/chess" element={<Chesspage />} />
@@ -147,7 +199,6 @@ function App() {
         <Route path="/asian" element={<Asianpage />} />
         <Route path="/myanmar" element={<Myanmar />} />
 
-        <Route path="/beauty" element={<Beauty />} />
         <Route path="/healthylife" element={<HealthyLifePage />} />
         <Route path="/science" element={<SciencePage />} />
         <Route path="/lifestyles" element={<Lifestyle />} />
@@ -174,7 +225,15 @@ function App() {
 
         <Route path="/business" element={<Business />} />
 
-        <Route path="/education" element={<Education />} />
+        <Route
+          path="/education"
+          element={
+            <Education
+              getAllusers={getAlluserApp}
+              getAllposts={getAllpostApp}
+            />
+          }
+        />
         <Route path="/university" element={<University />} />
 
         <Route path="/science" element={<SciencePage />} />
@@ -214,7 +273,14 @@ function App() {
 
         <Route path="/requestform" element={<RequestFormPage />} />
         <Route path="/admindetail/:id" element={<AdmindetailPage />} />
-        <Route path="/search" element={<SearchPage />} />
+        <Route
+          path="/search"
+          element={
+            <React.Suspense fallback="Loading....">
+              <LazySearch />
+            </React.Suspense>
+          }
+        />
 
         <Route path="/aboutus" element={<Aboutpage />} />
         <Route path="/editprofile" element={<UsereditForm />} />

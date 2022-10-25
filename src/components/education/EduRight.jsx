@@ -5,7 +5,7 @@ import StaySocial from "../catepagerightbar/StaySocial";
 import Subscribeform from "../catepagerightbar/Subscribeform";
 import Edulast from "./Edulast";
 
-export default function EduRight() {
+export default function EduRight({ getAllposts }) {
   return (
     <div className="allrightbar">
       <Edulast />

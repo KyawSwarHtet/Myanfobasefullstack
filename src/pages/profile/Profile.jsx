@@ -5,7 +5,7 @@ import ProRight from "../../components/profile/ProRight";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "./profile.css";
+import "./profilepage.css";
 export default function Profile() {
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);

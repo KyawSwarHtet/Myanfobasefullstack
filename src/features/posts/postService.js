@@ -16,13 +16,16 @@ const creatPosts = async (postData, token) => {
 };
 
 //Getting All Post
-const getAllPosts = async (token) => {
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-  const response = await axios.get(API_URL, config);
+const getAllPosts = async () => {
+  // const config = {
+  //   headers: {
+  //     Authorization: `Bearer ${token}`,
+  //   },
+  // };
+  /*with checking login token */
+  // const response = await axios.get(API_URL, config);
+  /*without checking login token */
+  const response = await axios.get(API_URL);
   return response.data;
 };
 

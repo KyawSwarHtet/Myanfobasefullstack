@@ -8,7 +8,7 @@ import LastNews from "../../components/lastviedo/LastNews";
 import Viedo from "../../components/Vedio/Viedo";
 import "./home.css";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="HomePageDiv">
       <HomeHeader />
@@ -21,4 +21,6 @@ export default function Home() {
       <Footer />
     </div>
   );
-}
+};
+
+export default Home;

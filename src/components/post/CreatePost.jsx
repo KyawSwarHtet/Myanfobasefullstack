@@ -24,7 +24,7 @@ export default function CreatePost(props) {
     }
   };
 
-  console.log("initial inpusetstate is", input);
+  // console.log("initial inpusetstate is", input);
   const [isActive, setIsActive] = useState(false);
 
   const [listOfCate, setListOfCate] = useState([]);
@@ -66,6 +66,7 @@ export default function CreatePost(props) {
     console.log("Form data from post is", formData);
     dispatch(createPost(formData)).then(() => navigate("/profile"));
   };
+
   const onChangeImg = (e) => {
     setInput((prevState) => ({
       ...prevState,

@@ -87,6 +87,7 @@ export default function Header() {
                   <div className="login">
                     <div className="profile-img">
                       {user.profilePicture === [] ||
+                      user.profilePicture[0] === "" ||
                       user.profilePicture.length === 0 ? (
                         <img
                           src="./images/userprofile/defaultuserprofile.png"

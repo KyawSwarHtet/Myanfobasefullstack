@@ -8,7 +8,9 @@ const ProImg = (props) => {
     <>
       <div className="ProHead">
         <div className="ProImg1">
-          {user.profilePicture === [] || user.profilePicture.length == 0 ? (
+          {user.profilePicture === [] ||
+          user.profilePicture[0] === "" ||
+          user.profilePicture.length === 0 ? (
             <img src="./images/userprofile/defaultuserprofile.png" alt="" />
           ) : (
             <img

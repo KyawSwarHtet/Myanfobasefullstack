@@ -23,7 +23,7 @@ function ProRight() {
   const { posts, isLoading, isError, message } = useSelector(
     (state) => state.posts
   );
-
+  console.log("admin posts", user);
   useEffect(() => {
     if (isError) {
       console.log(message);
@@ -33,9 +33,9 @@ function ProRight() {
     }
     dispatch(getPosts());
 
-    return () => {
-      dispatch(reset());
-    };
+    // return () => {
+    //   dispatch(reset());
+    // };
   }, [user._id, navigate, isError, message, dispatch]);
 
   if (isLoading) {
@@ -60,7 +60,7 @@ function ProRight() {
                           src={`http://localhost:8080/${element.files[0].filePath}`}
                         />
                         <Link to={`/${element.cateName}`} className="link1">
-                          <button className="Travel1 cateTravel">
+                          <button className={`Travel1 cate${element.cateName}`}>
                             {element.cateName}
                           </button>
                         </Link>
@@ -81,6 +81,7 @@ function ProRight() {
                           <div className="postman">
                             <div className=" ">
                               {user.profilePicture === [] ||
+                              user.profilePicture[0] === "" ||
                               user.profilePicture.length === 0 ? (
                                 <img
                                   src="./images/userprofile/defaultuserprofile.png"
@@ -114,7 +115,7 @@ function ProRight() {
                             )}
 
                             <div className="posticon1">
-                              <div className="tooltip1 top">Delete</div>
+                              <div className="tooltip1 topdel">Delete</div>
                               <button
                                 onClick={() =>
                                   dispatch(deletePost(element._id))
@@ -127,7 +128,7 @@ function ProRight() {
 
                             <div className="posticon1">
                               <Link to={`/update/${element._id}`}>
-                                <div className="tooltip1 top">Edit</div>
+                                <div className="tooltip1 topdel">Edit</div>
                                 <button className="EditPost">
                                   <i className=" uil uil-edit"></i>
                                 </button>

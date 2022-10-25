@@ -1,22 +1,21 @@
 import React from "react";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
-import Tecmain from "../../components/catepagerightbar/Tecmain";
 import Entermentbanner from "../../components/enterment/Entermentbanner";
 import Entermentheader from "../../components/enterment/Entermentheader";
+import Entertainmentmain from "../../components/enterment/Entertainmentmain";
+import Entertainmentpopular from "../../components/enterment/Entertainmentpopular";
 import Footer from "../../components/footer/Footer";
-import TechnologyPopular from "../../components/technology/TechnologyPopular";
 
 export default function Entertainment() {
   return (
     <>
-      
-        <Entermentheader />
+      <Entermentheader />
       <Entermentbanner />
       <section className="container">
         <div className="tecbody">
-          <Tecmain />
+          <Entertainmentmain />
           <div className="allRightBar">
-            <TechnologyPopular />
+            <Entertainmentpopular />
             <Latestbar />
           </div>
         </div>

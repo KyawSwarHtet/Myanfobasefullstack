@@ -5,15 +5,21 @@ export default function Eduhead() {
     <>
       <section className="container travel">
         <div className="top">
-          <Link to="/" className="link1">
-            <h4>Home</h4>
-          </Link>
-          <div className="travel-icon">
+          <div className="homelink">
+            <ul>
+              <li>
+                <Link to="/" className="link1">
+                  <h4>Home</h4>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="iconRightArrow">
             <i className="uil uil-angle-right-b"></i>
           </div>
-          <Link to="/" className="link1">
-            <h4>Education</h4>
-          </Link>
+
+          <h4>Education</h4>
         </div>
         <div className="travel-main">
           <h1>Education</h1>
