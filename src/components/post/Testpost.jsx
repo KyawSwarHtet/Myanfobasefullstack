@@ -11,7 +11,7 @@ import { createPost } from "../../features/posts/postSlice";
 
 export default function Testpost(props) {
   const [selected, setSelected] = useState("Choose One");
-  console.log("selected data is", selected);
+  // console.log("selected data is", selected);
   const [selectedId, setSelectedId] = useState(0);
   const [isActive, setIsActive] = useState(false);
 

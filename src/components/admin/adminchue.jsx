@@ -31,9 +31,9 @@ export default function AdminChue() {
     }
     dispatch(getPosts());
 
-    return () => {
-      dispatch(reset());
-    };
+    // return () => {
+    //   dispatch(reset());
+    // };
   }, [user._id, navigate, isError, message, dispatch]);
 
   return (

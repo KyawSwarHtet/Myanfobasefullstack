@@ -28,9 +28,7 @@ export default function RequestForm() {
     }
     dispatch(getPosts());
 
-    return () => {
-      dispatch(reset());
-    };
+   
   }, [user._id, navigate, isError, message, dispatch]);
 
   const approveAccetpt = async (id) => {

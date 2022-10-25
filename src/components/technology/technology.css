@@ -1,6 +1,7 @@
 .top {
   display: flex;
   color: #747474;
+  margin: 0.5rem 0;
 }
 .link1 {
   display: flex;
@@ -19,11 +20,13 @@
   font-weight: 700;
   text-transform: uppercase;
 }
-.technology{
-padding-top: 3rem;}
+.technology {
+  padding-top: 3rem;
+}
 
-ol, ul {
-    padding-left: 0rem;
+ol,
+ul {
+  padding-left: 0rem;
 }
 
 .tec {
@@ -204,6 +207,5 @@ ol, ul {
 .secphoto:hover .robotpara h4.technoloColor,
 .secair:hover .airbudpara h4.technoloColor {
   color: var(--technology-bg);
-     transition: all .3s ease-in-out;
-
+  transition: all 0.3s ease-in-out;
 }

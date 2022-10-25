@@ -1,0 +1,61 @@
+{posts.map((data) => {
+                  if (data.postAccept === true && data.cateName === "Sports") {
+                    // return console.log("data are", data);
+                    return (
+                      <div className="postTrav">
+                        <div className="Trav_img">
+                          <img
+                            src={`http://localhost:8080/${data.files[0].filePath}`}
+                          />
+                          <Link to={`/${data.cateName}`} className="link1">
+                            <button className={`Travel1 cate${data.cateName}`}>
+                              {data.cateName}
+                            </button>
+                          </Link>
+                        </div>
+                        <div className="postTrav_info">
+                          <h4>{data.title}</h4>
+                          <p>{data.description}</p>
+                          <div className="postbuttom">
+                            {data.userprofile === "" ||
+                            data.userprofile[0] === "" ||
+                            data.userprofile.length === 0 ? (
+                              <div className="postman">
+                                <img
+                                  src="./images/userprofile/defaultuserprofile.png"
+                                  alt=""
+                                />
+                                <span className="profileName">
+                                  {data.username}
+                                </span>
+                                <span className="profileDate">
+                                  <Moment format="DD/MMM/YYYY">
+                                    {data.createdAt}
+                                  </Moment>
+                                </span>
+                              </div>
+                            ) : (
+                              <div className="postman">
+                                <img
+                                  src={`http://localhost:8080/${data.userprofile}`}
+                                  alt=""
+                                />
+                                <span className="profileName">
+                                  {data.username}
+                                </span>
+                                <span className="profileDate">
+                                  <Moment format="DD/MMM/YYYY">
+                                    {data.createdAt}
+                                  </Moment>
+                                </span>
+                              </div>
+                            )}
+                            <div className="posticon">
+                              <i className="uil uil-bookmark"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                })}

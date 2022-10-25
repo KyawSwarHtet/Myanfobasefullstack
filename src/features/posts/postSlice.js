@@ -35,8 +35,8 @@ export const createPost = createAsyncThunk(
 export const getPosts = createAsyncThunk("post/getAll", async (_, thunkAPI) => {
   try {
     //adding token to access user
-    const token = thunkAPI.getState().auth.user.token;
-    return await postService.getAllPosts(token);
+    // const token = thunkAPI.getState().auth.user.token;
+    return await postService.getAllPosts();
   } catch (error) {
     const message =
       (error.response && error.response.data && error.response.data.message) ||

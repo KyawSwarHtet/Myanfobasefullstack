@@ -5,13 +5,13 @@ import EduRight from "../../components/education/EduRight";
 import EduSlide from "../../components/education/EduSlide";
 import Footer from "../../components/footer/Footer";
 
-export default function Education() {
+export default function Education({ getAllusers, getAllposts }) {
   return (
     <>
       <Eduhead />
       <Edubanner />
       <section className="container travel1">
-        <EduSlide />
+        <EduSlide getAllusers={getAllusers} getAllposts={getAllposts} />
         <EduRight />
       </section>
       <Footer />

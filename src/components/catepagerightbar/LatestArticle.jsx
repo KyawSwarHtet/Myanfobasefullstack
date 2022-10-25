@@ -1,7 +1,16 @@
 import React from "react";
 import "./latestbar.css";
+import { Link, useNavigate } from "react-router-dom";
+import Moment from "react-moment";
 
-export default function LatestArticle() {
+export default function LatestArticle(props) {
+  // const getAllposts = props.getAllposts;
+  // Moment.globalFormat = "DD MMM YYYY";
+  // let result = [];
+  // for (let i = getAllposts.length - 1; i > getAllposts.length - 11; i--) {
+  //   result.push(getAllposts[i]);
+  // }
+
   return (
     <div className="lastArt">
       <div className="lastnewbar-title">
@@ -14,115 +23,16 @@ export default function LatestArticle() {
             <img src="./images/technology/robothand.jpg" alt="" />
           </div>
           <div className="lastnewinfo">
-            <h4>Where does it come from effective from Exercise ?</h4>
+            <h4>Hello Lates Artilce title</h4>
             <div className="lastnewbuttondate">
-              <span className="Technology2 cateTechnology">Technology</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="article-lastest">
-          <div className="lastnewimg">
-            <img src="./images/technology/smarttech.jpg" alt="" />
-          </div>
-          <div className="lastnewinfo">
-            <h4>Where does it come from effective from Exercise ?</h4>
-            <div className="lastnewbuttondate">
-              <span className="Technology2 cateScience">Science</span>
-              <h5>32.4.2021</h5>
-            </div>
-          </div>
-        </div>
-
-        <div className="article-lastest">
-          <div className="lastnewimg">
-            <img src="./images/technology/techvideoimg.png" alt="" />
-          </div>
-          <div className="lastnewinfo">
-            <h4>Where does it come from effective from Exercise ?</h4>
-            <div className="lastnewbuttondate">
-              <span className="Technology2 cateEntertainment">
-                entertainment
+              {/* <Link to={`/${data.cateName}`}>
+                <button className={` cate${data.cateName}`}>
+                  {data.cateName}
+                </button>
+              </Link> */}
+              <span className="profileDate">
+                {/* <Moment format="DD/MMM/YYYY">23.4.2223</Moment> */}
               </span>
-              <h5>32.4.2021</h5>
-            </div>
-          </div>
-        </div>
-
-        <div className="article-lastest">
-          <div className="lastnewimg">
-            <img src="./images/technology/techcamera.jpg" alt="" />
-          </div>
-          <div className="lastnewinfo">
-            <h4>Where does it come from effective from Exercise ?</h4>
-            <div className="lastnewbuttondate">
-              <span className="Technology2 cateBeauty">beauty</span>
-              <h5>32.4.2021</h5>
-            </div>
-          </div>
-        </div>
-
-        <div className="article-lastest">
-          <div className="lastnewimg">
-            <img src="./images/technology/samsung.jpg" alt="" />
-          </div>
-          <div className="lastnewinfo">
-            <h4>Where does it come from effective from Exercise ?</h4>
-            <div className="lastnewbuttondate">
-              <span className="Technology2 cateHistory">history</span>
-              <h5>32.4.2021</h5>
-            </div>
-          </div>
-        </div>
-
-        <div className="article-lastest">
-          <div className="lastnewimg">
-            <img src="./images/technology/computer3.jpg" alt="" />
-          </div>
-          <div className="lastnewinfo">
-            <h4>Where does it come from effective from Exercise ?</h4>
-            <div className="lastnewbuttondate">
-              <span className="Technology2 cateTravel">Travel</span>
-              <h5>32.4.2021</h5>
-            </div>
-          </div>
-        </div>
-
-        <div className="article-lastest">
-          <div className="lastnewimg">
-            <img src="./images/technology/newspaperad.jpg" alt="" />
-          </div>
-          <div className="lastnewinfo">
-            <h4>Where does it come from effective from Exercise ?</h4>
-            <div className="lastnewbuttondate">
-              <span className="Technology2 cateGovernment">Government</span>
-              <h5>32.4.2021</h5>
-            </div>
-          </div>
-        </div>
-
-        <div className="article-lastest">
-          <div className="lastnewimg">
-            <img src="./images/technology/robothand.jpg" alt="" />
-          </div>
-          <div className="lastnewinfo">
-            <h4>Where does it come from effective from Exercise ?</h4>
-            <div className="lastnewbuttondate">
-              <span className="Technology2 cateHealth">Heal</span>
-              <h5>32.4.2021</h5>
-            </div>
-          </div>
-        </div>
-
-        <div className="article-lastest">
-          <div className="lastnewimg">
-            <img src="./images/technology/phone2.jpg" alt="" />
-          </div>
-          <div className="lastnewinfo">
-            <h4>Where does it come from effective from Exercise ?</h4>
-            <div className="lastnewbuttondate">
-              <span className="Technology2 cateLiterature">literature</span>
-              <h5>32.4.2021</h5>
             </div>
           </div>
         </div>

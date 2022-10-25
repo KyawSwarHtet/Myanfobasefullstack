@@ -310,7 +310,7 @@ input:invalid[focused="true"] {
   pointer-events: none;
   transition: all 0.5s cubic-bezier(0.6, -0.55, 0.265, 1.55);
 }
-.tooltip1.top::before {
+.tooltip1.topdel::before {
   content: " ";
   position: absolute;
   width: 11px;
@@ -321,7 +321,7 @@ input:invalid[focused="true"] {
   transform: translateX(-50%) rotate(45deg);
   /* z-index: -2; */
 }
-.top {
+.topdel {
   position: absolute;
   bottom: 50px;
   /* top: 0px; */
@@ -340,7 +340,7 @@ input:invalid[focused="true"] {
   background: #f83509;
   color: #fff;
 }
-.posticon1:hover .tooltip1.top {
+.posticon1:hover .tooltip1.topdel {
   bottom: 40px;
   /* top: 0px; */
   left: 0px;
