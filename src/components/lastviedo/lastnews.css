@@ -15,6 +15,10 @@
   grid-template-columns: 70% 30%;
   gap: 1rem;
 }
+.postmanProfile {
+  width: 30px;
+  height: 30px;
+}
 span.headerline {
   display: block;
   width: 200px;
@@ -66,9 +70,10 @@ span.headerline {
   margin: 0 25px 0 10px;
 }
 
-.postman img {
-  width: 30px;
-  height: 30px;
+.postmanProfile img {
+  display: block;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
 }
 .profileDate {

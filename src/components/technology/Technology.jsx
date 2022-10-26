@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
 import "./technology.css";
+import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
 
 export default function Technology() {
+  const { posts, isLoading, isError, message } = useSelector(
+    (state) => state.posts
+  );
+  // let length = 0;
+  // for (let i = posts.length - 1; i < posts.length - 4; i--) {
+  //   console.log("this is", i, "times");
+  // }
+
   return (
     <>
       <section className="technology">
@@ -50,8 +60,10 @@ export default function Technology() {
           </p>
         </div>
       </section>
+
       <section className="photo">
         <div className="firstphoto">
+          {/* {} */}
           <div className="tech-firstphoto">
             <img
               className="fbphoto"
@@ -103,6 +115,11 @@ export default function Technology() {
             </div>
           </div>
         </div>
+        {/* (
+          <div className="sidebar">
+            <h4>No Data is Here !!!</h4>
+          </div>
+        ) */}
       </section>
     </>
   );

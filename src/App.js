@@ -140,7 +140,7 @@ function App() {
       setGetAllusers(data);
     });
   }, []);
- 
+
   return (
     <div className="App">
       <Header />
@@ -225,15 +225,7 @@ function App() {
 
         <Route path="/business" element={<Business />} />
 
-        <Route
-          path="/education"
-          element={
-            <Education
-              getAllusers={getAlluserApp}
-              getAllposts={getAllpostApp}
-            />
-          }
-        />
+        <Route path="/education" element={<Education />} />
         <Route path="/university" element={<University />} />
 
         <Route path="/science" element={<SciencePage />} />

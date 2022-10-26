@@ -27,8 +27,6 @@ export default function RequestForm() {
       navigate("/login");
     }
     dispatch(getPosts());
-
-   
   }, [user._id, navigate, isError, message, dispatch]);
 
   const approveAccetpt = async (id) => {
@@ -96,7 +94,21 @@ export default function RequestForm() {
                     </Link>
 
                     <div className="postman1">
-                      <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                      <div className="postmanProfile1">
+                        {element.userprofile === "" ||
+                        element.userprofile[0] === "" ||
+                        element.userprofile.length === 0 ? (
+                          <img
+                            src="./images/userprofile/defaultuserprofile.png"
+                            alt=""
+                          />
+                        ) : (
+                          <img
+                            src={`http://localhost:8080/${element.userprofile}`}
+                            alt=""
+                          />
+                        )}
+                      </div>
                       <span className="profileName1">{element.username}</span>
 
                       <span className="profileDate1">
