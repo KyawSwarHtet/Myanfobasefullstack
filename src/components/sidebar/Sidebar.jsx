@@ -2,7 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Moment from "react-moment";
-import { updatePostData } from "../../features/posts/postSlice";
+// import { updatePostData } from "../../features/getCateData/getCateDatalice";
 import Spinner from "../login/Spinner";
 import Paginate from "../catepagerightbar/Paginate";
 import "../lastviedo/lastnews.css";
@@ -11,36 +11,38 @@ export default function Sidebar(props) {
   const [getCateData, setCateData] = useState();
   const category = props.category;
   Moment.globalFormat = "DD MMM YYYY";
-  const { cate } = useParams();
+  // const { cate } = useParams();
   // const getAllusers = props.getAllusers;
-  // const getAllposts = props.getAllposts;
-  const { posts, isLoading, isError, message } = useSelector(
-    (state) => state.posts
-  );
-  console.log("Education post ", posts);
-  // useEffect(() => {
-  //   const getAlldata = async () => {
-  //     const reqdata = await fetch(`http://localhost:8080/api/postcate/${cate}`);
-  //     const res = await reqdata.json(); // JSON.parse(json);
-  //     //   console.log("res data is ", res);
-  //     return res;
-  //   };
-  //   getAlldata().then((data) => {
-  //     setCateData(data);
-  //   });
-  // }, []);
+  // const getAllgetCateData = props.getAllgetCateData;
+  // const { getCateData, isLoading, isError, message } = useSelector(
+  //   (state) => state.getCateData
+  // );
+  console.log("Education post is ", getCateData);
+  useEffect(() => {
+    const getAlldata = async () => {
+      const reqdata = await fetch(
+        `http://localhost:8080/api/postcate/${category}`
+      );
+      const res = await reqdata.json(); // JSON.parse(json);
+      //   console.log("res data is ", res);
+      return res;
+    };
+    getAlldata().then((data) => {
+      setCateData(data);
+    });
+  }, [category]);
 
-  if (isLoading) {
-    return <Spinner />;
-  }
+  // if (isLoading) {
+  //   return <Spinner />;
+  // }
   return (
     <>
-      {posts ? (
-        posts.length > 0 ? (
+      {getCateData ? (
+        getCateData.length > 0 ? (
           <>
             <div className="sidebar">
               <div className="Trav-main">
-                {posts.map((data) => {
+                {getCateData.map((data) => {
                   if (data.postAccept === true && data.cateName === category) {
                     return (
                       <div className="postTrav">
