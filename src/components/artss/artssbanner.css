@@ -1,0 +1,46 @@
+.artphoto {
+  width: 80%;
+  height: 480px;
+cursor: pointer;
+box-shadow: .65em .65em 1em;
+margin-top: 1rem;
+}
+
+.artss {
+  display: flex;
+}
+.artss h1 {
+    z-index: 6rem;
+  white-space: normal;
+  font-size: 80px;
+  line-height: 90px;
+  font-weight: 400;
+  color: rgb(10, 10, 10);
+  letter-spacing: -5px;
+  font-family: "Playfair Display";
+  margin-left: 3rem;
+  margin-top: 1rem;
+}
+
+.datepara {
+    z-index: 7;
+    white-space: normal;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 300;
+    color: rgb(10, 10, 10);
+    font-family: Poppins;
+    margin-left: 6rem;
+    margin-top: 1rem;
+}
+
+.companypara{
+    white-space: normal;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 300;
+    color: rgb(10, 10, 10);
+    font-family: Poppins;
+    margin-left: 6rem;
+    margin-top: 3rem;
+}

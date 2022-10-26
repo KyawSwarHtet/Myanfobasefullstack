@@ -1,0 +1,9 @@
+.firstphoto:hover h4.literaturecolor {
+  color: var(--literature-bg);
+}
+.robotpara:hover h4.literaturecolor {
+  color: var(--literature-bg);
+}
+.secair:hover h4.literaturecolor {
+  color: var(--literature-bg);
+}

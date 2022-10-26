@@ -1,0 +1,7 @@
+.postDiv {
+  background-image: url("../../../public/images/homeimgs/postbgimage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: fit-content;
+  padding-bottom: 6rem;
+}
