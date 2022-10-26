@@ -5,21 +5,19 @@ import Moment from "react-moment";
 import { updatePostData } from "../../features/posts/postSlice";
 import Spinner from "../login/Spinner";
 import Paginate from "../catepagerightbar/Paginate";
+import "../lastviedo/lastnews.css";
 
 export default function Sidebar(props) {
   const [getCateData, setCateData] = useState();
   const category = props.category;
   Moment.globalFormat = "DD MMM YYYY";
   const { cate } = useParams();
-  const getAllusers = props.getAllusers;
+  // const getAllusers = props.getAllusers;
   // const getAllposts = props.getAllposts;
   const { posts, isLoading, isError, message } = useSelector(
     (state) => state.posts
   );
-
-  console.log("get cate is", category);
-  console.log("pors cate is", category);
-
+  console.log("Education post ", posts);
   // useEffect(() => {
   //   const getAlldata = async () => {
   //     const reqdata = await fetch(`http://localhost:8080/api/postcate/${cate}`);
@@ -31,8 +29,6 @@ export default function Sidebar(props) {
   //     setCateData(data);
   //   });
   // }, []);
-
-  console.log("cate data in beauty  is", posts);
 
   if (isLoading) {
     return <Spinner />;
@@ -63,7 +59,7 @@ export default function Sidebar(props) {
                           <p>{data.description}</p>
                           <div className="postbuttom">
                             <div className="postman">
-                              <div className=" ">
+                              <div className="postmanProfile">
                                 {data.userprofile === "" ||
                                 data.userprofile[0] === "" ||
                                 data.userprofile.length === 0 ? (

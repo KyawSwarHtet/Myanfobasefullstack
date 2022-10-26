@@ -68,7 +68,7 @@ const LoginCompo = () => {
         email,
         password,
       };
-      dispatch(register(userData));
+      dispatch(register(userData)).then(navigate("/login"));
     }
   };
   /* login data */
