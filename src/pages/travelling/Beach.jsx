@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
 import Beabanner from "../../components/travelling/Beach/Beabanner";
 import Beahead from "../../components/travelling/Beach/Beahead";
 import TravRbar from "../../components/travelling/TravRbar";
@@ -14,7 +13,6 @@ export default function Beach() {
         <TravSidebar />
         <TravRbar />
       </section>
-      <Footer />
     </>
   );
 }

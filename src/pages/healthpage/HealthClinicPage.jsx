@@ -24,7 +24,7 @@ export default function HealthClinicPage() {
           </div>
         </section>
       </section>
-      <Footer />
+    
     </>
   );
 }

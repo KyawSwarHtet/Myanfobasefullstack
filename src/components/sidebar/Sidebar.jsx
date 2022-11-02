@@ -2,10 +2,10 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Moment from "react-moment";
+// import "./sidebar.css";
 // import { updatePostData } from "../../features/getCateData/getCateDatalice";
 import Spinner from "../login/Spinner";
 import Paginate from "../catepagerightbar/Paginate";
-import "../lastviedo/lastnews.css";
 
 export default function Sidebar(props) {
   const [getCateData, setCateData] = useState();
@@ -17,7 +17,7 @@ export default function Sidebar(props) {
   // const { getCateData, isLoading, isError, message } = useSelector(
   //   (state) => state.getCateData
   // );
-  console.log("Education post is ", getCateData);
+  // console.log("Education post is ", getCateData);
   useEffect(() => {
     const getAlldata = async () => {
       const reqdata = await fetch(

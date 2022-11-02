@@ -70,7 +70,11 @@ const HomeHeader = () => {
         <div className="first-grid">
           <div className="mask-div">
             <div className="maskimgdiv">
-              <img src="/images/homeimgs/Wear-Mask-2.jpg" alt="" />
+              <img
+                loading="lazy"
+                src="/images/homeimgs/Wear-Mask-2.jpg"
+                alt=""
+              />
             </div>
             <div className="popular-bignew">
               <Link to="/health" className="cateHealth">
@@ -87,7 +91,11 @@ const HomeHeader = () => {
           <div className="SecondDiv">
             <div className="secGridfistphoto">
               <div className="travelpopular">
-                <img src="images/homeimgs/popularland.jpg" alt="" />
+                <img
+                  loading="lazy"
+                  src="images/homeimgs/popularland.jpg"
+                  alt=""
+                />
               </div>
               <div className="popularsec-bg">
                 <div className="popular-secnew">
@@ -102,7 +110,11 @@ const HomeHeader = () => {
             <div className="sec-grid">
               <div className="secGrid2ndphoto">
                 <div className="fashion-img">
-                  <img src="images/homeimgs/fashion.jpg" alt="" />
+                  <img
+                    loading="lazy"
+                    src="images/homeimgs/fashion.jpg"
+                    alt=""
+                  />
                 </div>
                 <div className="popular-thirdnew">
                   <Link to="/beauty" className="cateBeauty">
@@ -113,7 +125,7 @@ const HomeHeader = () => {
               </div>
               <div className="secondGrid3rdphoto">
                 <div className="culture-img">
-                  <img src="images/homeimgs/bg2.jpg" alt="" />
+                  <img loading="lazy" src="images/homeimgs/bg2.jpg" alt="" />
                 </div>
                 <div className="popular-fouthnew">
                   <Link to="/history" className="cateHistory">

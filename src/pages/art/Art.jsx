@@ -1,12 +1,10 @@
-import React from 'react'
-import "./art.css"
-import Artssbanner from '../../components/artss/Artssbanner';
-import Artssheader from '../../components/artss/Artssheader'
-import ArtssMain from '../../components/artss/ArtssMain';
-import ArtssPopular from '../../components/artss/ArtssPopular';
-import Latestbar from '../../components/catepagerightbar/Latestbar';
-import Footer from '../../components/footer/Footer';
-
+import React from "react";
+import "./art.css";
+import Artssbanner from "../../components/artss/Artssbanner";
+import Artssheader from "../../components/artss/Artssheader";
+import ArtssMain from "../../components/artss/ArtssMain";
+import ArtssPopular from "../../components/artss/ArtssPopular";
+import Latestbar from "../../components/catepagerightbar/Latestbar";
 
 export default function Art() {
   return (
@@ -24,7 +22,6 @@ export default function Art() {
           </div>
         </div>
       </section>
-      <Footer/>
     </>
   );
 }

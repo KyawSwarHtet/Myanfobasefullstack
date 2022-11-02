@@ -1,24 +1,40 @@
-import Categorieslider from "../../components/categories/Categorieslider";
+import React, { Suspense } from "react";
 import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
-import HomeEducation from "../../components/homeeducation/homeEducation";
 import HomeHeader from "../../components/homeheadercompo/Homeheader";
-import Homelifestyle from "../../components/homelifestyle/Homelifestyle";
-import LastNews from "../../components/lastviedo/LastNews";
-import Viedo from "../../components/Vedio/Viedo";
-import "./home.css";
 
+import "./home.css";
+const LastNews = React.lazy(() =>
+  import("../../components/lastviedo/LastNews")
+);
+const Homelifestyle = React.lazy(() =>
+  import("../../components/homelifestyle/Homelifestyle")
+);
+const HomeEducation = React.lazy(() =>
+  import("../../components/homeeducation/homeEducation")
+);
+const Viedo = React.lazy(() => import("../../components/Vedio/Viedo"));
+const Categorieslider = React.lazy(() =>
+  import("../../components/categories/Categorieslider")
+);
 const Home = () => {
   return (
     <div className="HomePageDiv">
       <HomeHeader />
-      <LastNews />
-      <Homelifestyle />
-
-      <HomeEducation />
-      <Viedo />
-      <Categorieslider />
-      <Footer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LastNews />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Homelifestyle />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <HomeEducation />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Viedo />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Categorieslider />
+      </Suspense>
     </div>
   );
 };

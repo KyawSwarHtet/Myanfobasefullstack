@@ -1,6 +1,5 @@
 import React from "react";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
-import Footer from "../../components/footer/Footer";
 import ScienceMain from "../../components/science/ScienceMain";
 import SciencePopular from "../../components/science/SciencePopular";
 import Biology from "../../components/science/SubcateScience/Biology";
@@ -17,10 +16,9 @@ export default function BilologyPage() {
           <div className="allRightBar">
             <SciencePopular />
             <Latestbar />
-            </div>
+          </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

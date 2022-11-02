@@ -22,7 +22,7 @@ export default function MedicinePage() {
           </div>
         </section>
       </section>
-      <Footer />
+      
     </>
   );
 }

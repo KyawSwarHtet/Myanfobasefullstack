@@ -4,7 +4,6 @@ import Entermentbanner from "../../components/enterment/Entermentbanner";
 import Entermentheader from "../../components/enterment/Entermentheader";
 import Entertainmentmain from "../../components/enterment/Entertainmentmain";
 import Entertainmentpopular from "../../components/enterment/Entertainmentpopular";
-import Footer from "../../components/footer/Footer";
 
 export default function Entertainment() {
   return (
@@ -20,7 +19,6 @@ export default function Entertainment() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

@@ -14,7 +14,6 @@ const Ministry = () => {
         <GoverLeft />
         <GoverRide />
       </section>
-      <Footer />
     </>
   );
 };

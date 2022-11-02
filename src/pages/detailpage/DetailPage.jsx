@@ -8,7 +8,6 @@ import Latestdetail from "../../components/detailpagecompo/Latestdetail";
 import Latestpho from "../../components/detailpagecompo/Latestpho";
 import RelatedA from "../../components/detailpagecompo/RelatedA";
 import DetailMustRead from "../../components/detailpagecompo/DetailMustRead";
-import Footer from "../../components/footer/Footer";
 
 import "./detailpage.css";
 
@@ -31,7 +30,6 @@ export default function DetailPage() {
       <div className="container">
         <DetailMustRead />
       </div>
-      <Footer />
     </>
   );
 }

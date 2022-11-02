@@ -1,5 +1,5 @@
 import React from "react";
-import "./lifestyle.css"
+import "./lifestyle.css";
 import Lifestyleheader from "../../components/lifestyle/Lifestyleheader";
 import Lifestylebanner from "../../components/lifestyle/Lifestylebanner";
 import Footer from "../../components/footer/Footer";
@@ -21,7 +21,6 @@ export default function Lifestyle() {
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

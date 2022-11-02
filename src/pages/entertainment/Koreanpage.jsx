@@ -1,11 +1,10 @@
-import React from 'react'
-import Latestbar from '../../components/catepagerightbar/Latestbar';
-import Tecmain from '../../components/catepagerightbar/Tecmain';
-import Koreanbanner from '../../components/enterment/entermentsetmenu/korean/Koreanbanner';
-import Koreanheader from '../../components/enterment/entermentsetmenu/korean/Koreanheader';
-import Footer from '../../components/footer/Footer';
-import TechnologyPopular from '../../components/technology/TechnologyPopular';
+import React from "react";
+import Latestbar from "../../components/catepagerightbar/Latestbar";
+import Tecmain from "../../components/catepagerightbar/Tecmain";
+import Koreanbanner from "../../components/enterment/entermentsetmenu/korean/Koreanbanner";
+import Koreanheader from "../../components/enterment/entermentsetmenu/korean/Koreanheader";
 
+import TechnologyPopular from "../../components/technology/TechnologyPopular";
 
 export default function Koreanpage() {
   return (
@@ -23,7 +22,6 @@ export default function Koreanpage() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

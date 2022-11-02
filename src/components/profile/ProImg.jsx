@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./profile.css";
 const ProImg = (props) => {
   const user = props.user;
-  console.log("user is ", user);
+  // console.log("user is ", user);
   return (
     <>
       <div className="ProHead">

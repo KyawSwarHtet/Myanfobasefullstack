@@ -10,7 +10,7 @@ export default function AdvertiseEducation() {
       </div>
       <div className="advTop">
         <div className="advimg">
-          <img src="./images/homeimgs/adver1.jpg" alt="" />
+          <img loading="lazy" src="./images/homeimgs/adver1.jpg" alt="" />
           <span>
             BuyNow<i class="uil uil-angle-right-b"></i>
           </span>
@@ -19,7 +19,7 @@ export default function AdvertiseEducation() {
       </div>
       <div className="advBot">
         <div className="advimg">
-          <img src="./images/homeimgs/adver2.jpg" alt="" />
+          <img loading="lazy" src="./images/homeimgs/adver2.jpg" alt="" />
           <span>
             BuyNow<i class="uil uil-angle-right-b"></i>
           </span>

@@ -14,7 +14,6 @@ export default function Region() {
         <HistSide />
         <HistRight />
       </section>
-      <Footer />
     </>
   );
 }

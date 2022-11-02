@@ -5,8 +5,6 @@ import LuxuryBanner from "../../components/lifestyle/lifestyleSetmenu/luxury/lux
 import LuxuryPopular from "../../components/lifestyle/lifestyleSetmenu/luxury/luxurypopular";
 import LuxurySidebar from "../../components/lifestyle/lifestyleSetmenu/luxury/luxurySidebar";
 
-
-
 export default function LuxuryPage() {
   return (
     <>
@@ -21,8 +19,6 @@ export default function LuxuryPage() {
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }
-

@@ -6,10 +6,6 @@ import HealthPopular from "../../components/health/Healthrightbar";
 import HealthRightbar from "../../components/health/Healthrightbar";
 import HealthSidebar from "../../components/health/Healthsidebar";
 
-
-
-
-
 export default function Healthpage() {
   return (
     <>
@@ -19,12 +15,11 @@ export default function Healthpage() {
         <section className="tecbody">
           <HealthSidebar />
           <div className="allRightBar">
-                      <HealthPopular />
-                      <Latestbar />
+            <HealthPopular />
+            <Latestbar />
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

@@ -14,7 +14,6 @@ export default function Law() {
         <GoverLeft />
         <GoverRide />
       </section>
-      <Footer />
     </>
   );
 }

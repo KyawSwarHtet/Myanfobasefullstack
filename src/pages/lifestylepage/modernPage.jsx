@@ -5,9 +5,6 @@ import ModernBanner from "../../components/lifestyle/lifestyleSetmenu/modern/mod
 import ModernPopular from "../../components/lifestyle/lifestyleSetmenu/modern/modernpopular";
 import ModernSidebar from "../../components/lifestyle/lifestyleSetmenu/modern/modernSidebar";
 
-
-
-
 export default function ModernPage() {
   return (
     <>
@@ -22,7 +19,6 @@ export default function ModernPage() {
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

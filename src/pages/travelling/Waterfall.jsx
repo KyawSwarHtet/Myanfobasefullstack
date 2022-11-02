@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
 import TravRbar from "../../components/travelling/TravRbar";
 import TravSidebar from "../../components/travelling/TravSidebar";
 import Waterbanner from "../../components/travelling/Waterfall/Waterbanner";
@@ -14,7 +13,6 @@ export default function Waterfall() {
         <TravSidebar />
         <TravRbar />
       </section>
-      <Footer />
     </div>
   );
 }

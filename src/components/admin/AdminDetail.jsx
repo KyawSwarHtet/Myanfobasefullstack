@@ -20,14 +20,13 @@ export default function AdminDetail() {
   const { id } = useParams();
   console.log("hhh", id);
   // console.log("vvv", postDetail);
+  const editpostid = async () => {
+    const reqdata = await fetch(`http://localhost:8080/editpost/${id}`);
+    const res = await reqdata.json(); // JSON.parse(json);
+    console.log("res data is ", res);
+    return res;
+  };
   useEffect(() => {
-    const editpostid = async () => {
-      const reqdata = await fetch(`http://localhost:8080/editpost/${id}`);
-      const res = await reqdata.json(); // JSON.parse(json);
-      console.log("res data is ", res);
-      return res;
-    };
-
     editpostid().then((data) => {
       setPostDetail({
         title: data.title,
@@ -70,10 +69,10 @@ export default function AdminDetail() {
           </div>
           <p className="user-desc">{postDetail.description}</p>
         </div>
-        <div className="admindetail-button">
+        {/* <div className="admindetail-button">
           <button className="detail-button1">Accept</button>
           <button className="detail-button2">Delete</button>
-        </div>
+        </div> */}
 
         <div>
           {postDetail.files === [] || postDetail.files.length === 0
