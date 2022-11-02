@@ -14,7 +14,7 @@ export default function Culture() {
         <HistSide />
         <HistRight />
       </section>
-      <Footer />
+    
     </>
   );
 }

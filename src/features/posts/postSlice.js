@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import postService from "./postService";
-import { updatePosts, getPostDetail } from "../../data/api";
 
 const initialState = {
   posts: [],
@@ -14,10 +13,8 @@ const initialState = {
 export const createPost = createAsyncThunk(
   "post/create",
   async (postData, thunkAPI) => {
-    console.log("post Data from create is", postData);
     try {
       const token = thunkAPI.getState().auth.user.token;
-      console.log("token is ", token);
       return await postService.creatPosts(postData, token);
     } catch (error) {
       const message =

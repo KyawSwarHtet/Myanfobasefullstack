@@ -14,7 +14,6 @@ const History = () => {
         <HistSide />
         <HistRight />
       </section>
-      <Footer />
     </>
   );
 };

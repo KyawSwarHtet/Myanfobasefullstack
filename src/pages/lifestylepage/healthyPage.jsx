@@ -21,7 +21,7 @@ export default function HealthyLifePage() {
           </div>
         </section>
       </section>
-      <Footer />
+     
     </>
   );
 }

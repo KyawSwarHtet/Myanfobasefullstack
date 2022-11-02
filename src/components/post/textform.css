@@ -34,6 +34,20 @@
   border-color: #bfbfbf;
   /* margin-top: 20px; */
 }
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 5rem;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  /* row / cols */
+  grid-row: 1 / 2;
+
+  transition: 0.2s 0.7s ease-in-out;
+  gap: 15px;
+}
 .descForm {
   max-height: 200px;
   min-height: 30px;

@@ -8,11 +8,11 @@ export default function TrainingClass() {
     <div className="classTop ">
       <article className="homeclass1">
         <div className="classimg">
-          <img src="./images/homeimgs/school1.jpg" alt="" />
+          <img loading="lazy" src="./images/homeimgs/school1.jpg" alt="" />
         </div>
         <h4>Where can I get some?</h4>
         <div className="postman1">
-          <img src="./images/homeimgs/viedo4.jpg" alt="" />
+          <img loading="lazy" src="./images/homeimgs/viedo4.jpg" alt="" />
           <span className="profileName1">Paina Ta Kon</span>
           <span className="profileDate1">20.3.2022</span>
         </div>
@@ -24,11 +24,11 @@ export default function TrainingClass() {
       </article>
       <article className="homeclass2">
         <div className="classimg">
-          <img src="./images/homeimgs/school3.jpg" alt="" />
+          <img loading="lazy" src="./images/homeimgs/school3.jpg" alt="" />
         </div>
         <h4>Where can I get some?</h4>
         <div className="postman1">
-          <img src="./images/homeimgs/viedo4.jpg" alt="" />
+          <img loading="lazy" src="./images/homeimgs/viedo4.jpg" alt="" />
           <span className="profileName1">Paina Ta Kon</span>
           <span className="profileDate1">20.3.2022</span>
         </div>

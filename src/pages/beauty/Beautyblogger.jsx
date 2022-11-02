@@ -3,7 +3,7 @@ import "./beauty.css";
 import Blogger from "../../components/beauty/setcat/blogger";
 import Bloggerbanner from "../../components/beauty/setcat/Bloggerbanner";
 import Bloggersidebar from "../../components/beauty/setcat/Bloggersidebar";
-import Footer from "../../components/footer/Footer";
+
 import BloggerRightbar from "../../components/beauty/setcat/Bloggerrightbar";
 
 export default function Beautyblogger() {
@@ -17,7 +17,6 @@ export default function Beautyblogger() {
           <BloggerRightbar />
         </section>
       </section>
-      <Footer />
     </>
   );
 }

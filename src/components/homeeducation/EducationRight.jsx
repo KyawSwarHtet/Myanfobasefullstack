@@ -5,7 +5,7 @@ export default function EducationRight() {
   return (
     <div className="wrapper">
       <div className="wrapperimg">
-        <img src="./images/homeimgs/school6.jpg" alt="" />
+        <img loading="lazy" src="./images/homeimgs/school6.jpg" alt="" />
       </div>
       <div className="wrapperinfo">
         <h4>Where does it come from effective from Exercise ?</h4>
@@ -14,7 +14,7 @@ export default function EducationRight() {
       </div>
 
       <div className="wrapperimg">
-        <img src="./images/homeimgs/school5.jpg" alt="" />
+        <img loading="lazy" src="./images/homeimgs/school5.jpg" alt="" />
       </div>
       <div className="wrapperinfo">
         <h4>Where does it come from effective from Exercise ?</h4>

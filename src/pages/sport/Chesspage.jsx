@@ -1,6 +1,5 @@
 import React from "react";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
-import Footer from "../../components/footer/Footer";
 import SportMain from "../../components/sport/SportMain";
 import SportPopular from "../../components/sport/SportPopular";
 import Chessbanner from "../../components/sport/sportsetmenu/chess/Chessbanner";
@@ -22,7 +21,6 @@ export default function Chesspage() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
-  )
+  );
 }

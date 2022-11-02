@@ -4,7 +4,7 @@ import Animeheader from '../../components/artss/artsetmenu/anime/Animeheader'
 import ArtssMain from '../../components/artss/ArtssMain'
 import ArtssPopular from '../../components/artss/ArtssPopular'
 import Latestbar from '../../components/catepagerightbar/Latestbar'
-import Footer from '../../components/footer/Footer'
+
 
 
 export default function Animepage() {
@@ -23,7 +23,7 @@ export default function Animepage() {
           </div>
         </div>
           </section>
-          <Footer/>
+    
     </>
   );
 }

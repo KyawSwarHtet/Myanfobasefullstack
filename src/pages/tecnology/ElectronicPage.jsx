@@ -1,6 +1,5 @@
 import React from "react";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
-import Footer from "../../components/footer/Footer";
 
 import Subcatemain from "../../components/subcategory/Subcatemain";
 import Electronic from "../../components/technology/SubcateTechno/Electronic";
@@ -21,7 +20,6 @@ export default function ElectronicPage() {
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

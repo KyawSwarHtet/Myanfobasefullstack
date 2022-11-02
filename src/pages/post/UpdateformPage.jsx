@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
 import EditPost from "../../components/post/Editpost";
 
 import "./postformpage.css";
@@ -10,7 +9,6 @@ export default function UpdateformPage() {
       <section>
         <EditPost />
       </section>
-      <Footer />
     </>
   );
 }

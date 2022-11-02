@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
 import Pagobanner from "../../components/travelling/Pagoda/Pagobanner";
 import Pagohead from "../../components/travelling/Pagoda/Pagohead";
 import TravRbar from "../../components/travelling/TravRbar";
@@ -14,7 +13,6 @@ export default function Pagoda() {
         <TravSidebar />
         <TravRbar />
       </section>
-      <Footer />
     </>
   );
 }

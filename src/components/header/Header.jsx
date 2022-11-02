@@ -79,7 +79,7 @@ export default function Header() {
               <span>Eng</span> */}
             <Language label="choose an language" />
           </li>
-          {console.log("user in heder is", user)}
+          {/* {console.log("user in heder is", user)} */}
           {user !== null && user.login === true ? (
             <>
               <li>

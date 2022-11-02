@@ -3,7 +3,6 @@ import Edubanner from "../../components/education/Edubanner";
 import Eduhead from "../../components/education/Eduhead";
 import EduRight from "../../components/education/EduRight";
 import EduSlide from "../../components/education/EduSlide";
-import Footer from "../../components/footer/Footer";
 
 export default function Education() {
   return (
@@ -14,7 +13,7 @@ export default function Education() {
         <EduSlide />
         <EduRight />
       </section>
-      <Footer />
+    
     </>
   );
 }
