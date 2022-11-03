@@ -2,7 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Moment from "react-moment";
-// import "./sidebar.css";
+import "./sidebar.css";
 // import { updatePostData } from "../../features/getCateData/getCateDatalice";
 import Spinner from "../login/Spinner";
 import Paginate from "../catepagerightbar/Paginate";
@@ -57,8 +57,13 @@ export default function Sidebar(props) {
                           </Link>
                         </div>
                         <div className="postTrav_info">
-                          <h4>{data.title}</h4>
-                          <p>{data.description}</p>
+                          <Link
+                            to={`/${category}/${data._id}`}
+                            className={`${category}hover`}
+                          >
+                            <h4>{data.title.substring(0, 80)}...</h4>
+                          </Link>
+                          <p>{data.description.substring(0, 100)}...</p>
                           <div className="postbuttom">
                             <div className="postman">
                               <div className="postmanProfile">

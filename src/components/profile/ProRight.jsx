@@ -1,5 +1,5 @@
 import Paginate from "../catepagerightbar/Paginate";
-
+import { Stack, Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -23,7 +23,7 @@ function ProRight() {
   const { posts, isLoading, isError, message } = useSelector(
     (state) => state.posts
   );
-
+  console.log("admin posts", user);
   useEffect(() => {
     if (isError) {
       console.log(message);
@@ -36,7 +36,7 @@ function ProRight() {
     // return () => {
     //   dispatch(reset());
     // };
-  }, [user._id]);
+  }, [user._id, navigate, isError, message, dispatch]);
 
   if (isLoading) {
     return <Spinner />;
@@ -60,26 +60,28 @@ function ProRight() {
                           src={`http://localhost:8080/${element.files[0].filePath}`}
                         />
                         <Link to={`/${element.cateName}`} className="link1">
-                          <button className={`Travel1 cate${element.cateName}`}>
+                          <button
+                            className={`profilecate cate${element.cateName}`}
+                          >
                             {element.cateName}
                           </button>
                         </Link>
                       </div>
                       <div className="postProfile_info">
-                        <h4>{element.title}</h4>
+                        <h4>{element.title.substring(0, 80)}...</h4>
                         <p>
-                          <ReactReadMoreReadLess
+                          {/* <ReactReadMoreReadLess
                             readMoreClassName="readMoreClassName"
                             charLimit={120}
                             readMoreText="...Read More"
                             readLessText="...Read Less"
-                          >
-                            {element.description}
-                          </ReactReadMoreReadLess>
+                          > */}
+                          {element.description.substring(0, 110)}...
+                          {/* </ReactReadMoreReadLess> */}
                         </p>
                         <div className="proFilebottom">
-                          <div className="postman">
-                            <div className="postmanProfile">
+                          <div className="Profilepostman">
+                            <div className="userProfile ">
                               {user.profilePicture === [] ||
                               user.profilePicture[0] === "" ||
                               user.profilePicture.length === 0 ? (

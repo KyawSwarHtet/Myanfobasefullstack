@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../travelling/tbanner.css";
 export default function Histbanner() {
   return (
     <section>

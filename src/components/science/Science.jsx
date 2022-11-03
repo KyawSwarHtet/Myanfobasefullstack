@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../technology/technology.css";
 import "./science.css";
-
+import "../technology/technology.css";
 export default function Science() {
   return (
     <>

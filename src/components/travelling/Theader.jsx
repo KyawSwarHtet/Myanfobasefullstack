@@ -1,5 +1,6 @@
 import React from "react";
 import "./theader.css";
+import "../technology/technology.css";
 import { Link } from "react-router-dom";
 const Theader = () => {
   return (
