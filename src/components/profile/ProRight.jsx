@@ -66,7 +66,12 @@ function ProRight() {
                         </Link>
                       </div>
                       <div className="postProfile_info">
-                        <h4>{element.title}</h4>
+                        <Link
+                          to={`/${element.cateName}/${element._id}`}
+                          className={`${element.cateName}hover`}
+                        >
+                          <h4>{element.title}</h4>
+                        </Link>
                         <p>
                           <ReactReadMoreReadLess
                             readMoreClassName="readMoreClassName"

@@ -154,7 +154,7 @@ const EditForm = () => {
   return (
     <div className="editform">
       <h3 className="editTitle">Edit your profile</h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="formEdit">
         <div className="">
           <div className=" userimgdiv">
             {user.profilePicture === [] || user.profilePicture.length === 0 ? (
