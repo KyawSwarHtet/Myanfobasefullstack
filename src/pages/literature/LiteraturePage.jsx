@@ -1,6 +1,5 @@
 import React from "react";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
-import Footer from "../../components/footer/Footer";
 import Literature from "../../components/literature/Literature";
 import LiteratureMain from "../../components/literature/LiteratureMain";
 import LiteraturePopular from "../../components/literature/LiteraturePopular";
@@ -20,7 +19,6 @@ export default function LiteraturePage() {
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

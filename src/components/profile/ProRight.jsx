@@ -23,7 +23,7 @@ function ProRight() {
   const { posts, isLoading, isError, message } = useSelector(
     (state) => state.posts
   );
-  console.log("admin posts", user);
+
   useEffect(() => {
     if (isError) {
       console.log(message);
@@ -36,7 +36,7 @@ function ProRight() {
     // return () => {
     //   dispatch(reset());
     // };
-  }, [user._id, navigate, isError, message, dispatch]);
+  }, [user._id]);
 
   if (isLoading) {
     return <Spinner />;
@@ -66,7 +66,12 @@ function ProRight() {
                         </Link>
                       </div>
                       <div className="postProfile_info">
-                        <h4>{element.title}</h4>
+                        <Link
+                          to={`/${element.cateName}/${element._id}`}
+                          className={`${element.cateName}hover`}
+                        >
+                          <h4>{element.title}</h4>
+                        </Link>
                         <p>
                           <ReactReadMoreReadLess
                             readMoreClassName="readMoreClassName"
@@ -79,7 +84,7 @@ function ProRight() {
                         </p>
                         <div className="proFilebottom">
                           <div className="postman">
-                            <div className=" ">
+                            <div className="postmanProfile">
                               {user.profilePicture === [] ||
                               user.profilePicture[0] === "" ||
                               user.profilePicture.length === 0 ? (

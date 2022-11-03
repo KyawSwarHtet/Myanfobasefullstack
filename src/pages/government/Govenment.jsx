@@ -14,7 +14,6 @@ export default function Govenment() {
         <GoverLeft />
         <GoverRide />
       </section>
-      <Footer />
     </>
   );
 }

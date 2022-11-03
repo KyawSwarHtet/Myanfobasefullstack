@@ -14,7 +14,7 @@ export default function Dress() {
         <HistSide />
         <HistRight />
       </section>
-      <Footer />
+     
     </>
   );
 }

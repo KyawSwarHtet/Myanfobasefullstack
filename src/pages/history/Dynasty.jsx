@@ -14,7 +14,6 @@ export default function Dynasty() {
         <HistSide />
         <HistRight />
       </section>
-      <Footer />
     </>
   );
 }

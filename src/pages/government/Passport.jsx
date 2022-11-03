@@ -14,7 +14,7 @@ export default function Passport() {
         <GoverLeft />
         <GoverRide />
       </section>
-      <Footer />
+     
     </>
   );
 }

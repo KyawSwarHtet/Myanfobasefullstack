@@ -22,7 +22,7 @@ export default function FamilyPage() {
           </div>
         </section>
       </section>
-      <Footer />
+  
     </>
   );
 }

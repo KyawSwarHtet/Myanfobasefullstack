@@ -5,61 +5,34 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../../features/auth/authSlice";
 import Select from "react-select";
+import { useRef } from "react";
 
-const EditForm = () => {
+const ProfileEdit = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
   // const [userdata, setUserdata] = useState();
 
   const [values, setValues] = useState({
-    username: user.username,
-    address: user.address,
-    bio: user.bio,
-    dob: user.dob,
-    gender: user.gender,
-    email: user.email,
     profilePicture: user.profilePicture,
-    // username: "",
-    // address: "",
-    // bio: "",
-    // dob: "",
-    // gender: "",
-    // email: "",
-    // profilePicture: [],
   });
+
+  const usernameRef = useRef(user.username);
+  const addressRef = useRef(user.address);
+  const bioRef = useRef(user.bio);
+  const dobRef = useRef(user.dob);
+  const emailRef = useRef(user.email);
+  const genderRef = useRef(user.gender);
 
   const userToken = JSON.parse(localStorage.getItem("user"));
   //localhost:8080/api/users/
   console.log("user token is", userToken.token);
 
-  // useEffect(() => {
-  //   const details = async () => {
-  //     const reqdata = await fetch(
-  //       `http://localhost:8080/api/users/detail/${user._id}`
-  //     );
-  //     const res = await reqdata.json(); // JSON.parse(json);
-  //     console.log("user data  res is ", res);
-  //     return res;
-  //   };
-  //   details().then((data) => {
-  //     setUserdata(data);
-  //     setValues({
-  //       username: data.username,
-  //       address: data.address,
-  //       bio: data.bio,
-  //       dob: data.dob,
-  //       gender: data.gender,
-  //       email: data.email,
-  //       profilePicture: data.profilePicture,
-  //     });
-  //   });
-  // }, [user._id]);
-
   console.log("value is", values);
   const inputs = [
     {
       id: 1,
+      ref: usernameRef,
       name: "username",
       type: "text",
       placeholder: "username",
@@ -71,6 +44,7 @@ const EditForm = () => {
     },
     {
       id: 2,
+      ref: emailRef,
       name: "email",
       type: "email",
       placeholder: "email",
@@ -81,6 +55,7 @@ const EditForm = () => {
 
     {
       id: 3,
+      ref: bioRef,
       name: "bio",
       type: "text",
       placeholder: "Bio",
@@ -89,25 +64,19 @@ const EditForm = () => {
     {
       id: 4,
       name: "dob",
+      ref: dobRef,
       type: "date",
       placeholder: "Date of birth",
       label: "Birthday",
     },
     {
       id: 6,
+      ref: addressRef,
       name: "address",
       type: "text",
       placeholder: "address",
       label: "address",
     },
-    // {
-    //   id: 7,
-    //   name: "profilePicture",
-    //   type: "file",
-    //   placeholder: "profileImg",
-    //   errorMessage: "please fill profile image",
-    //   label: "Profile img",
-    // },
   ];
   const onChangeImg = (e) => {
     e.preventDefault();
@@ -123,20 +92,20 @@ const EditForm = () => {
     //   console.log(Object.fromEntries(data.entries()))
   };
 
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  //   const onChange = (e) => {
+  //     setValues({ ...values, [e.target.name]: e.target.value });
+  //   };
 
   const updateBtn = async (e) => {
     // e.preventDefault();
     const formData = new FormData();
     formData.append("id", user._id);
-    formData.append("username", values.username);
-    formData.append("email", values.email);
-    formData.append("bio", values.bio);
-    formData.append("dob", values.dob);
-    formData.append("gender", values.gender);
-    formData.append("address", values.address);
+    formData.append("username", usernameRef.current.value);
+    formData.append("email", emailRef.current.value);
+    formData.append("bio", bioRef.current.value);
+    formData.append("dob", dobRef.current.value);
+    formData.append("gender", genderRef.current.value);
+    formData.append("address", addressRef.current.value);
     formData.append("token", userToken.token);
     for (let i = 0; i < values.profilePicture.length; i++) {
       formData.append("files", values.profilePicture[i]);
@@ -154,7 +123,7 @@ const EditForm = () => {
   return (
     <div className="editform">
       <h3 className="editTitle">Edit your profile</h3>
-      <form onSubmit={handleSubmit} className="formEdit">
+      <form onSubmit={handleSubmit}>
         <div className="">
           <div className=" userimgdiv">
             {user.profilePicture === [] || user.profilePicture.length === 0 ? (
@@ -177,6 +146,7 @@ const EditForm = () => {
             type="file"
             onChange={onChangeImg}
           />
+          {console.log("user ref dat is", usernameRef.current)}
         </div>
         {inputs.map((input) => (
           <div className="infoform">
@@ -184,7 +154,8 @@ const EditForm = () => {
               key={input.id}
               {...input}
               value={values[input.name]}
-              onChange={onChange}
+              ref={input.ref}
+              //   onChange={onChange}
             />
           </div>
         ))}
@@ -193,29 +164,11 @@ const EditForm = () => {
         </div>
         <div className="choosediv">
           <label>Male : </label>
-          <input
-            type="radio"
-            name="gender"
-            checked={values.gender === "male" ? true : false}
-            value="male"
-            onChange={onChange}
-          />
+          <input type="radio" name="gender" value="male" ref={genderRef} />
           <label>Female : </label>
-          <input
-            name="gender"
-            value="female"
-            checked={values.gender === "female" ? true : false}
-            onChange={onChange}
-            type="radio"
-          />
+          <input name="gender" value="female" ref={genderRef} type="radio" />
           <label>Other : </label>
-          <input
-            type="radio"
-            name="gender"
-            checked={values.gender === "other" ? true : false}
-            value="other"
-            onChange={onChange}
-          />
+          <input type="radio" name="gender" value="other" ref={genderRef} />
         </div>
 
         <div className="editbuttondiv">
@@ -228,4 +181,4 @@ const EditForm = () => {
   );
 };
 
-export default EditForm;
+export default ProfileEdit;

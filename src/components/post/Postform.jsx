@@ -8,6 +8,7 @@ import "./textform.css";
 import "./dropdowncate.css";
 import "./postform.css";
 import CreatePost from "./CreatePost";
+import NewPost from "./NewPost";
 
 export default function Postform() {
   //checking user is Login account or not
@@ -68,6 +69,7 @@ export default function Postform() {
           {/* <Testpost getMultipleFile={() => getmultipleFilesList()} /> */}
           {/* <Testpost /> */}
           <CreatePost />
+          {/* <NewPost /> */}
         </div>
 
         {/* <div className="dataShow">

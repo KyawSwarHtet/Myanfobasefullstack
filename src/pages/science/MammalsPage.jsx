@@ -1,6 +1,5 @@
 import React from "react";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
-import Footer from "../../components/footer/Footer";
 import ScienceMain from "../../components/science/ScienceMain";
 import SciencePopular from "../../components/science/SciencePopular";
 import Mammals from "../../components/science/SubcateScience/Mammals";
@@ -20,7 +19,6 @@ export default function MammalsPage() {
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

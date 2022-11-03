@@ -20,7 +20,7 @@ export default function ExercisePage() {
           </div>
         </section>
       </section>
-      <Footer />
+    
     </>
   );
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
 import Moubanner from "../../components/travelling/Mountain/Moubanner";
 import Mouhead from "../../components/travelling/Mountain/Mouhead";
 import TravRbar from "../../components/travelling/TravRbar";
@@ -14,7 +13,6 @@ export default function Mountain() {
         <TravSidebar />
         <TravRbar />
       </section>
-      <Footer />
     </div>
   );
 }
