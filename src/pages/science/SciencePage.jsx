@@ -3,7 +3,6 @@ import "./sciencebody.css";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
 import Science from "../../components/science/Science";
 
-import Footer from "../../components/footer/Footer";
 import ScienceMain from "../../components/science/ScienceMain";
 import ScienceBanner from "../../components/science/ScienceBanner";
 import SciencePopular from "../../components/science/SciencePopular";
@@ -22,7 +21,6 @@ export default function SciencePage() {
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

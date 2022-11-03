@@ -5,10 +5,6 @@ import InfodoctorBanner from "../../components/health/healthsetcat/infoDoctor/in
 import InfodoctorPopular from "../../components/health/healthsetcat/infoDoctor/infodoctorPopular";
 import InfodoctorSiderbar from "../../components/health/healthsetcat/infoDoctor/infodoctorsiderbar";
 
-
-
-
-
 export default function InfodoctorPage() {
   return (
     <>
@@ -23,7 +19,6 @@ export default function InfodoctorPage() {
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

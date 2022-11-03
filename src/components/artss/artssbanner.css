@@ -5,6 +5,10 @@ cursor: pointer;
 box-shadow: .65em .65em 1em;
 margin-top: 1rem;
 }
+.artphoto img{
+  width: 100%;
+  height: 100%;
+}
 
 .artss {
   display: flex;

@@ -1,6 +1,5 @@
 import React from "react";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
-import Footer from "../../components/footer/Footer";
 import LiteratureMain from "../../components/literature/LiteratureMain";
 import LiteraturePopular from "../../components/literature/LiteraturePopular";
 import Romance from "../../components/literature/SubcateLiterature/Romance";
@@ -20,7 +19,6 @@ export default function RomancePage() {
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

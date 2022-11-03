@@ -1,4 +1,6 @@
 import EditForm from "../../components/profile/editform";
+import ProfileEdit from "../../components/profile/ProfileEdit";
+// import ProfileEdit from "../../components/profile/ProfileEdit";
 import "./usersedit.css";
 
 export default function UsereditForm() {
@@ -6,6 +8,7 @@ export default function UsereditForm() {
     <>
       <div className="editprofilepage">
         <EditForm />
+        {/* <ProfileEdit /> */}
       </div>
     </>
   );

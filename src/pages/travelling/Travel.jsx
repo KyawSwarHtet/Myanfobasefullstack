@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
 import Tbanner from "../../components/travelling/Tbanner";
 import Theader from "../../components/travelling/Theader";
 import TravRbar from "../../components/travelling/TravRbar";
@@ -14,7 +13,6 @@ export default function Travel() {
         <TravSidebar />
         <TravRbar />
       </section>
-      <Footer />
     </>
   );
 }

@@ -14,7 +14,6 @@ export default function Religous() {
         <HistSide />
         <HistRight />
       </section>
-      <Footer />
     </>
   );
 }

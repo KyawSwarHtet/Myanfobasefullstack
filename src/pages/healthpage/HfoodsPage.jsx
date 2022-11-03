@@ -19,7 +19,7 @@ export default function Hfoodspage() {
           </div>
         </section>
       </section>
-      <Footer />
+     
     </>
   );
 }

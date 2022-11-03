@@ -1,10 +1,10 @@
-import React from 'react'
-import Latestbar from '../../components/catepagerightbar/Latestbar'
-import Tecmain from '../../components/catepagerightbar/Tecmain'
-import Cartoonbanner from '../../components/enterment/entermentsetmenu/cartoon/Cartoonbanner'
-import Cartoonheader from '../../components/enterment/entermentsetmenu/cartoon/Cartoonheader'
-import Footer from '../../components/footer/Footer'
-import TechnologyPopular from '../../components/technology/TechnologyPopular'
+import React from "react";
+import Latestbar from "../../components/catepagerightbar/Latestbar";
+import Tecmain from "../../components/catepagerightbar/Tecmain";
+import Cartoonbanner from "../../components/enterment/entermentsetmenu/cartoon/Cartoonbanner";
+import Cartoonheader from "../../components/enterment/entermentsetmenu/cartoon/Cartoonheader";
+import Footer from "../../components/footer/Footer";
+import TechnologyPopular from "../../components/technology/TechnologyPopular";
 
 export default function Cartoonpage() {
   return (
@@ -12,6 +12,7 @@ export default function Cartoonpage() {
       <section className="container">
         <Cartoonheader />
       </section>
+      
       <Cartoonbanner />
       <section className="container">
         <div className="tecbody">
@@ -22,7 +23,6 @@ export default function Cartoonpage() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

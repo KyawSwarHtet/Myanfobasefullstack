@@ -14,7 +14,7 @@ export default function Leader() {
         <GoverLeft />
         <GoverRide />
       </section>
-      <Footer />
+    
     </>
   );
 }

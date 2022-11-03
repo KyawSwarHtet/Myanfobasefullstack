@@ -5,7 +5,6 @@ import Businhead from "../../components/business/Businhead";
 import BusinMain from "../../components/business/BusinMain";
 import BusinPopular from "../../components/business/BusinPopular";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
-import Footer from "../../components/footer/Footer";
 
 export default function Business() {
   return (
@@ -22,7 +21,6 @@ export default function Business() {
           </section>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

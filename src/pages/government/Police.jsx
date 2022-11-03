@@ -14,7 +14,6 @@ export default function Police() {
         <GoverLeft />
         <GoverRide />
       </section>
-      <Footer />
     </>
   );
 }

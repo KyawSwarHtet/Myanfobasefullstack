@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./gover.css"
 
 export default function Goverhead() {
   return (

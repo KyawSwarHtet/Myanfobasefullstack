@@ -5,11 +5,6 @@ import YogaBanner from "../../components/health/healthsetcat/yoga/yogabanner";
 import YogaPopular from "../../components/health/healthsetcat/yoga/yogaPopular";
 import YogaSidebar from "../../components/health/healthsetcat/yoga/yogasidebar";
 
-
-
-
-
-
 export default function Yogapage() {
   return (
     <>
@@ -24,7 +19,6 @@ export default function Yogapage() {
           </div>
         </section>
       </section>
-      <Footer />
     </>
   );
 }

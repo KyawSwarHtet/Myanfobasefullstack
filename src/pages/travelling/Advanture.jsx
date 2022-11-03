@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
 import Advbanner from "../../components/travelling/Advanture-trip/Advbanner";
 import Advheader from "../../components/travelling/Advanture-trip/Advheader";
 import TravRbar from "../../components/travelling/TravRbar";
@@ -14,7 +13,6 @@ export default function Advanture() {
         <TravSidebar />
         <TravRbar />
       </section>
-      <Footer />
     </div>
   );
 }

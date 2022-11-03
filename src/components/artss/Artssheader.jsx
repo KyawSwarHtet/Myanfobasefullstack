@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../travelling/theader.css"
 
 export default function Artssheader() {
   return (

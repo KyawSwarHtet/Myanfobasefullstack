@@ -1,6 +1,5 @@
 import React from "react";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
-import Footer from "../../components/footer/Footer";
 import Sportbanner from "../../components/sport/Sportbanner";
 import Sportheader from "../../components/sport/Sportheader";
 import SportMain from "../../components/sport/SportMain";
@@ -21,7 +20,6 @@ export default function Sport() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }

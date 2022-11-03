@@ -20,13 +20,7 @@ const EditForm = () => {
     gender: user.gender,
     email: user.email,
     profilePicture: user.profilePicture,
-    // username: "",
-    // address: "",
-    // bio: "",
-    // dob: "",
-    // gender: "",
-    // email: "",
-    // profilePicture: [],
+   
   });
 
   const userToken = JSON.parse(localStorage.getItem("user"));
@@ -154,8 +148,8 @@ const EditForm = () => {
   return (
     <div className="editform">
       <h3 className="editTitle">Edit your profile</h3>
-      <form onSubmit={handleSubmit}>
-        <div className="">
+      <form onSubmit={handleSubmit} className="formedit">
+        <div className="formdiv">
           <div className=" userimgdiv">
             {user.profilePicture === [] || user.profilePicture.length === 0 ? (
               <img
@@ -193,16 +187,29 @@ const EditForm = () => {
         </div>
         <div className="choosediv">
           <label>Male : </label>
-          <input type="radio" name="gender" value="male" onChange={onChange} />
+          <input
+            type="radio"
+            name="gender"
+            checked={values.gender === "male" ? true : false}
+            value="male"
+            onChange={onChange}
+          />
           <label>Female : </label>
           <input
             name="gender"
             value="female"
+            checked={values.gender === "female" ? true : false}
             onChange={onChange}
             type="radio"
           />
           <label>Other : </label>
-          <input type="radio" name="gender" value="other" onChange={onChange} />
+          <input
+            type="radio"
+            name="gender"
+            checked={values.gender === "other" ? true : false}
+            value="other"
+            onChange={onChange}
+          />
         </div>
 
         <div className="editbuttondiv">

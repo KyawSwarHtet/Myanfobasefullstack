@@ -1,6 +1,7 @@
 import React from "react";
 import Paginate from "../catepagerightbar/Paginate";
-import "../technology/technology.css";
+import "./subcategy.css"
+
 
 export default function Subcatemain() {
   return (
