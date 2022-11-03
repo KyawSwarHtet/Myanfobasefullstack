@@ -6,7 +6,7 @@ import "./admin.css";
 import { updatePostData } from "../../features/posts/postSlice";
 import Spinner from "../login/Spinner";
 import { deletePost, getPosts, reset } from "../../features/posts/postSlice";
-
+import "../profile/profile.css";
 export default function RequestForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -132,7 +132,7 @@ export default function RequestForm() {
                       Delete
                     </button>
                     <Link to={`/admindetail/${element._id}`}>
-                      <button className="button3">view</button>
+                      <button className="button3">View</button>
                     </Link>
                   </div>
                 </div>

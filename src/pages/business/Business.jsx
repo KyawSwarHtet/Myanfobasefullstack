@@ -3,8 +3,7 @@ import "./business.css";
 import Businbenner from "../../components/business/Businbenner";
 import Businhead from "../../components/business/Businhead";
 import BusinMain from "../../components/business/BusinMain";
-import BusinPopular from "../../components/business/BusinPopular";
-import Latestbar from "../../components/catepagerightbar/Latestbar";
+import BusinRight from "../../components/business/BusinRight";
 
 export default function Business() {
   return (
@@ -15,10 +14,7 @@ export default function Business() {
       <section className="container">
         <div className="businbody">
           <BusinMain />
-          <section className="container">
-            <BusinPopular />
-            <Latestbar />
-          </section>
+          <BusinRight />
         </div>
       </section>
     </>

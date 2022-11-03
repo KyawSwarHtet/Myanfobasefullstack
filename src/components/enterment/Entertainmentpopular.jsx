@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../catepagerightbar/latestbar.css";
 export default function Entertainmentpopular() {
   return (
     <div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "../technology/technology.css";
 export default function Goverhead() {
   return (
     <>
@@ -39,7 +39,7 @@ export default function Goverhead() {
           <Link to="/leader">
             <button className="tec">Leader</button>
           </Link>
-         
+
           <Link to="/passport">
             <button className="tec">Passport</button>
           </Link>
@@ -58,5 +58,3 @@ export default function Goverhead() {
     </>
   );
 }
-
-

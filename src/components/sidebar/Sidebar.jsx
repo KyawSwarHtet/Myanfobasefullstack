@@ -61,9 +61,9 @@ export default function Sidebar(props) {
                             to={`/${category}/${data._id}`}
                             className={`${category}hover`}
                           >
-                            <h4>{data.title}</h4>
+                            <h4>{data.title.substring(0, 80)}...</h4>
                           </Link>
-                          <p>{data.description}</p>
+                          <p>{data.description.substring(0, 100)}...</p>
                           <div className="postbuttom">
                             <div className="postman">
                               <div className="postmanProfile">
