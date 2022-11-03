@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+
 const Animepage = React.lazy(() => import("./pages/art/Animepage"));
 const Art = React.lazy(() => import("./pages/art/Art"));
 const Doodlepage = React.lazy(() => import("./pages/art/Doodlepage"));
@@ -139,6 +140,9 @@ const UsereditForm = React.lazy(() => import("./pages/profile/userEditForm"));
 
 const LazyHome = React.lazy(() => import("./pages/home/Home"));
 const LazySearch = React.lazy(() => import("./pages/searchpage/SearchPage"));
+const UserDetailPage = React.lazy(() =>
+  import("./pages/userdetailPage/UserDetailPage")
+);
 
 function App() {
   const dispatch = useDispatch();
@@ -955,6 +959,14 @@ function App() {
           element={
             <React.Suspense fallback="Loading....">
               <UsereditForm />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/:cate/:id"
+          element={
+            <React.Suspense fallback="Loading....">
+              <UserDetailPage />
             </React.Suspense>
           }
         />

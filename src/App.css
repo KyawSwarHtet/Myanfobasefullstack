@@ -42,6 +42,7 @@ body {
 } */
 a {
   text-decoration: none;
+  color: black;
 }
 .container {
   width: var(--container-width-lg);
@@ -209,6 +210,51 @@ h5 {
   padding: 1px 8px;
   font-size: 0.9rem;
 }
+
+/* hover colors */
+.Educationhover:hover {
+  color: var(--education-bg);
+}
+.Entertainmenthover:hover {
+  color: var(--entertainment-bg);
+}
+.Technologyhover:hover {
+  color: var(--technology-bg);
+}
+.Beautyhover:hover {
+  color: var(--beauty-bg);
+}
+.Governmenthover:hover {
+  color: var(--government-bg);
+}
+.Travelhover:hover {
+  color: var(--travel-bg);
+}
+.Historyhover:hover {
+  color: var(--history-bg);
+}
+.Healthhover:hover {
+  color: var(--health-bg);
+}
+.Literaturehover:hover {
+  color: var(--literature-bg);
+}
+.Lifestyleshover:hover {
+  color: var(--lifestyles-bg);
+}
+.Sciencehover:hover {
+  color: var(--science-bg);
+}
+.Sportshover:hover {
+  color: var(--sports-bg);
+}
+.Artshover:hover {
+  color: var(--arts-bg);
+}
+.Businesshover:hover {
+  color: var(--business-bg);
+}
+
 p {
   margin-top: 0;
   margin-bottom: 0 !important;
