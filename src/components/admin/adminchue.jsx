@@ -41,8 +41,7 @@ export default function AdminChue() {
       <h2>chue</h2>
       <div>
         <div className="admin-title">
-          <h1>ADMIN PAGE Page is Page</h1>
-          <h1>ADMIN PAGE Page is Page</h1>
+          <h1>ADMIN PAGE</h1>
         </div>
 
         <Link to="/requestform" className="adminlink">
