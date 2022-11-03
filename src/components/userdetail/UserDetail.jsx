@@ -1,12 +1,12 @@
-import "./admin.css";
-import "../sidebar/sidebar.css";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Moment from "react-moment";
 import Axios from "axios";
+import "./userdetail.css";
+import "../sidebar/sidebar.css";
 
-export default function AdminDetail() {
+export default function UserDetail() {
   Moment.globalFormat = "D MMM YYYY";
   const [postDetail, setPostDetail] = useState({
     title: "",
@@ -14,13 +14,14 @@ export default function AdminDetail() {
     cateName: "",
     cateId: "",
     createdAt: "",
-    username: "",
     userprofile: "",
+    username: "",
     files: [],
   });
 
   const { id } = useParams();
-  console.log("hhh", id);
+  const { cate } = useParams();
+  //   console.log("hhh", id);
   // console.log("vvv", postDetail);
   const editpostid = async () => {
     const reqdata = await fetch(`http://localhost:8080/editpost/${id}`);
@@ -36,10 +37,10 @@ export default function AdminDetail() {
 
   return (
     <>
-      <div className="admindetail">
+      <div className="userdetail">
         <div>
-          <Link to="/requestform" className="adminlink">
-            <span>Request Form</span>
+          <Link to={`/${cate}`} className="userlink">
+            <span>{cate}</span>
           </Link>
 
           <span>
@@ -49,20 +50,16 @@ export default function AdminDetail() {
         </div>
 
         <div className="postdetail">
-          <h3 className="admindetail-title">{postDetail.title} </h3>
-          <button className="admindetail-cate cateTravel">
+          <h3 className="userdetail-title">{postDetail.title} </h3>
+          <button className="userdetail-cate cateTravel">
             {postDetail.cateName}
           </button>
-          {console.log("post detail img is", postDetail)}
           <div className="postman">
             <div className="postmanProfile">
               {postDetail.userprofile === "" ||
               postDetail.userprofile[0] === "" ||
               postDetail.userprofile.length === 0 ? (
-                <img
-                  src="../images/userprofile/defaultuserprofile.png"
-                  alt=""
-                />
+                <img src="./images/userprofile/defaultuserprofile.png" alt="" />
               ) : (
                 <img
                   src={`http://localhost:8080/${postDetail.userprofile}`}
@@ -77,20 +74,20 @@ export default function AdminDetail() {
           </div>
           <p className="user-desc">{postDetail.description}</p>
         </div>
-        {/* <div className="admindetail-button">
+        {/* <div className="userdetail-button">
           <button className="detail-button1">Accept</button>
           <button className="detail-button2">Delete</button>
         </div> */}
 
-        <div>
+        <div className="imgFlex">
           {postDetail.files === [] || postDetail.files.length === 0
             ? console.log("your image is empty")
             : postDetail.files.map((file, index) => {
                 return (
-                  <div className="admindetailimg">
+                  <div className="userdetailimg">
                     {console.log("filePath is", file.filePath)}
                     <img
-                      className="detailimg"
+                      className="detailimguser"
                       src={`http://localhost:8080/${file.filePath}`}
                       alt=" "
                     />
