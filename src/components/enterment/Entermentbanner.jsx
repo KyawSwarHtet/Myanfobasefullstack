@@ -25,7 +25,7 @@ export default function Entermentbanner() {
           <div className="hansoetn">
             <img
               
-              src="./images/homeimgs/hwang-in-yeop.jpg"
+              src="./images/homeimgs/kdrama1.jpeg"
               alt=""
             />
           </div>

@@ -1,0 +1,6 @@
+.tecbody {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  max-width: 1600px;
+  margin-top: 3rem;
+}
