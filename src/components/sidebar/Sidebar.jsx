@@ -1,3 +1,6 @@
+import { Pagination } from "@mui/material";
+
+
 import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -5,12 +8,21 @@ import Moment from "react-moment";
 import "./sidebar.css";
 // import { updatePostData } from "../../features/getCateData/getCateDatalice";
 import Spinner from "../login/Spinner";
-import Paginate from "../catepagerightbar/Paginate";
+
+
 
 export default function Sidebar(props) {
-  const [getCateData, setCateData] = useState();
+  // const [Data, setData] = useState([]);
+  
+  const [currentPage, setcurrentPage] = useState(1);
+  const [itemPerPage, setitemPerPage] = useState(5);
+  const [getCateData, setCateData] = useState([]);
+  console.log(setCateData)
   const category = props.category;
   Moment.globalFormat = "DD MMM YYYY";
+
+
+   
   // const { cate } = useParams();
   // const getAllusers = props.getAllusers;
   // const getAllgetCateData = props.getAllgetCateData;
@@ -18,6 +30,31 @@ export default function Sidebar(props) {
   //   (state) => state.getCateData
   // );
   // console.log("Education post is ", getCateData);
+
+  const pages = [];
+  for (let i = 0; i<=Math.ceil(getCateData.length/itemPerPage); i++) {
+    pages.push(i);    
+  }
+
+  const indexOfLastItem = currentPage * itemPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemPerPage;
+  const currentItems = getCateData.slice(indexOfFirstItem, indexOfLastItem);
+  console.log('current',currentItems)
+
+  //  const handleClick = (event) => {
+  //   setcurrentPage(Number(event.target.id));
+  // };
+ 
+  const renderPageNumbers = pages.map((number) => {
+    console.log('number',number)
+    return (
+      <div key = {number} id={number}>
+        {number}
+        
+       </div>
+     )
+   })
+
   useEffect(() => {
     const getAlldata = async () => {
       const reqdata = await fetch(
@@ -31,18 +68,23 @@ export default function Sidebar(props) {
       setCateData(data);
     });
   }, [category]);
+  //  useEffect(() => {
+  // fetch(`http://localhost:8080/api/postcate/${category}`)
+  //    .then((response) => response.json())
+  //    .then((json) => setCateData(json));
+  // }, [category]);
 
   // if (isLoading) {
   //   return <Spinner />;
   // }
   return (
     <>
-      {getCateData ? (
-        getCateData.length > 0 ? (
+      {currentItems ? (
+        currentItems.length > 0 ? (
           <>
             <div className="sidebar">
               <div className="Trav-main">
-                {getCateData.map((data) => {
+                {currentItems.map((data) => {
                   if (data.postAccept === true && data.cateName === category) {
                     return (
                       <div className="postTrav">
@@ -100,7 +142,14 @@ export default function Sidebar(props) {
                     );
                   }
                 })}
-                <Paginate />
+                <Pagination
+                  count={renderPageNumbers.length}
+                  onChange={(event, value) => setcurrentPage(value)}
+                  color="primary"
+                  variant="outlined"
+                ></Pagination>
+
+                {/* <Paginate /> */}
               </div>
             </div>
           </>
@@ -117,3 +166,6 @@ export default function Sidebar(props) {
     </>
   );
 }
+
+
+

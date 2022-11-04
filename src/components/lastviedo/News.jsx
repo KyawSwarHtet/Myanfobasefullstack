@@ -13,7 +13,9 @@ const News = () => {
             </p>
             <div className="postbuttom">
               <div className="postman">
-                <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                <div className="homeuserimg">
+                  <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                </div>
                 <span className="profileName">Paina Ta Kon</span>
                 <span className="profileDate">20.3.2022</span>
               </div>
@@ -37,7 +39,9 @@ const News = () => {
             </p>
             <div className="postbuttom">
               <div className="postman">
-                <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                <div className="homeuserimg">
+                  <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                </div>
                 <span className="profileName">Paina Ta Kon</span>
                 <span className="profileDate">20.3.2022</span>
               </div>
@@ -60,7 +64,9 @@ const News = () => {
             </p>
             <div className="postbuttom">
               <div className="postman">
-                <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                <div className="homeuserimg">
+                  <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                </div>
                 <span className="profileName">Paina Ta Kon</span>
                 <span className="profileDate">20.3.2022</span>
               </div>
@@ -83,7 +89,9 @@ const News = () => {
             </p>
             <div className="postbuttom">
               <div className="postman">
-                <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                <div className="homeuserimg">
+                  <img src="./images/homeimgs/viedo4.jpg" alt="" />
+                </div>
                 <span className="profileName">Paina Ta Kon</span>
                 <span className="profileDate">20.3.2022</span>
               </div>

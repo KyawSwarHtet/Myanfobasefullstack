@@ -12,6 +12,7 @@ export default function Cartoonpage() {
       <section className="container">
         <Cartoonheader />
       </section>
+      
       <Cartoonbanner />
       <section className="container">
         <div className="tecbody">

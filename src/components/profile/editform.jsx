@@ -20,13 +20,7 @@ const EditForm = () => {
     gender: user.gender,
     email: user.email,
     profilePicture: user.profilePicture,
-    // username: "",
-    // address: "",
-    // bio: "",
-    // dob: "",
-    // gender: "",
-    // email: "",
-    // profilePicture: [],
+   
   });
 
   const userToken = JSON.parse(localStorage.getItem("user"));
@@ -154,8 +148,8 @@ const EditForm = () => {
   return (
     <div className="editform">
       <h3 className="editTitle">Edit your profile</h3>
-      <form onSubmit={handleSubmit} className="formEdit">
-        <div className="">
+      <form onSubmit={handleSubmit} className="formedit">
+        <div className="formdiv">
           <div className=" userimgdiv">
             {user.profilePicture === [] || user.profilePicture.length === 0 ? (
               <img

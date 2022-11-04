@@ -5,7 +5,9 @@ export default function Tbanner() {
     <section>
       <div className="trvel-ban">
         <div className="ban-travel">
-          <img src="./images/travel/ngapali.jpg" alt="" />
+          <div className="t_imagediv">
+            <img src="./images/travel/ngapali.jpg" alt="" />
+          </div>
           <div className="t-info">
             <div className="t-content">
               <h3>Nagapli Beach</h3>
@@ -18,7 +20,9 @@ export default function Tbanner() {
           </div>
         </div>
         <div className="ban-travel">
-          <img src="./images/travel/Hpa-an.png" alt="" />
+          <div className="t_imagediv">
+            <img src="./images/travel/Hpa-an.png" alt="" />
+          </div>
           <div className="t-info">
             <div className="t-content">
               <h3>Kyauk Kalap</h3>
@@ -31,7 +35,10 @@ export default function Tbanner() {
           </div>
         </div>
         <div className="ban-travel">
-          <img src="./images/travel/hkakabrorazi.png" alt="" />
+          <div className="t_imagediv">
+            <img src="./images/travel/hkakabrorazi.png" alt="" />
+          </div>
+
           <div className="t-info">
             <div className="t-content">
               <h3>Hkakabo Razi Ice-Mountain</h3>
@@ -44,7 +51,10 @@ export default function Tbanner() {
           </div>
         </div>
         <div className="ban-travel">
-          <img src="./images/travel/bangan.jpg" alt="" />
+                    <div className="t_imagediv">
+
+            <img src="./images/travel/bangan.jpg" alt="" />
+            </div>
           <div className="t-info">
             <div className="t-content">
               <h3>Bagan</h3>

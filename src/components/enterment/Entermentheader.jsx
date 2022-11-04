@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../technology/technology.css";
+import "./entermentbanner.css"
+
 export default function Entermentheader() {
   return (
     <>
-      <section className="container travel">
+      <section className="enter container">
         <div className="top">
           <div className="homelink">
             <ul>

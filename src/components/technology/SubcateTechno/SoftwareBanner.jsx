@@ -1,4 +1,5 @@
 import React from "react";
+import "../technology.css"
 
 export default function SoftwareBanner() {
   return (
