@@ -124,8 +124,8 @@ const ProfileEdit = () => {
     <div className="editform">
       <h3 className="editTitle">Edit your profile</h3>
       <form onSubmit={handleSubmit}>
-        <div className="">
-          <div className=" userimgdiv">
+        <div className="formdiv">
+          <div className="userimgdiv">
             {user.profilePicture === [] || user.profilePicture.length === 0 ? (
               <img
                 className="userimage"

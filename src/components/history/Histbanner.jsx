@@ -1,11 +1,15 @@
 import React from "react";
-import "../travelling/tbanner.css";
+import "./history.css"
+
 export default function Histbanner() {
   return (
     <section>
       <div className="trvel-ban">
         <div className="ban-travel">
-          <img src="./images/history/Alaungpaya.jpg" alt="" />
+                    <div className="t_imagediv">
+
+            <img src="./images/history/Alaungpaya.jpg" alt="" />
+            </div>
           <div className="t-info">
             <div className="t-content">
               <h3>Alaung Paya</h3>
@@ -18,7 +22,10 @@ export default function Histbanner() {
           </div>
         </div>
         <div className="ban-travel">
-          <img src="./images/history/anawratha_king.jpg" alt="" />
+                    <div className="t_imagediv">
+
+            <img src="./images/history/anawratha_king.jpg" alt="" />
+            </div>
           <div className="t-info">
             <div className="t-content">
               <h3>Anaw Ratha</h3>
@@ -31,7 +38,10 @@ export default function Histbanner() {
           </div>
         </div>
         <div className="ban-travel">
-          <img src="./images/history/Bayinnaung.jpg" alt="" />
+                    <div className="t_imagediv">
+
+            <img src="./images/history/Bayinnaung.jpg" alt="" />
+            </div>
           <div className="t-info">
             <div className="t-content">
               <h3>Ba Yin Naung</h3>
@@ -44,7 +54,10 @@ export default function Histbanner() {
           </div>
         </div>
         <div className="ban-travel">
-          <img src="./images/history/knight.jpg" alt="" />
+                    <div className="t_imagediv">
+
+            <img src="./images/history/knight.jpg" alt="" />
+            </div>
           <div className="t-info">
             <div className="t-content">
               <h3>Knight</h3>

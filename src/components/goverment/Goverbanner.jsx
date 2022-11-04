@@ -1,11 +1,15 @@
 import React from "react";
-import "../travelling/tbanner.css";
+import "./gover.css"
+
 const Goverbanner = () => {
   return (
     <section>
       <div className="trvel-ban">
         <div className="ban-travel">
-          <img src="./images/government/gov1.jpg" alt="" />
+                    <div className="t_imagediv">
+
+            <img src="./images/government/gov1.jpg" alt="" />
+            </div>
           <div className="t-info">
             <div className="t-content">
               <h3>Daw Aung San Su Kyi</h3>
@@ -18,7 +22,10 @@ const Goverbanner = () => {
           </div>
         </div>
         <div className="ban-travel">
-          <img src="./images/government/gov3.jpg" alt="" />
+                    <div className="t_imagediv">
+
+            <img src="./images/government/gov3.jpg" alt="" />
+            </div>
           <div className="t-info">
             <div className="t-content">
               <h3>Superme Court</h3>
@@ -31,7 +38,10 @@ const Goverbanner = () => {
           </div>
         </div>
         <div className="ban-travel">
-          <img src="./images/government/gov6.jpg" alt="" />
+                    <div className="t_imagediv">
+
+            <img src="./images/government/gov6.jpg" alt="" />
+            </div>
           <div className="t-info">
             <div className="t-content">
               <h3>DR. Sar Sar</h3>
@@ -44,7 +54,10 @@ const Goverbanner = () => {
           </div>
         </div>
         <div className="ban-travel">
-          <img src="../images/government/gov8.jpg" alt="" />
+                    <div className="t_imagediv">
+
+            <img src="../images/government/gov8.jpg" alt="" />
+            </div>
           <div className="t-info">
             <div className="t-content">
               <h3>ASEAN, #Reject Min Aung Hlaing</h3>

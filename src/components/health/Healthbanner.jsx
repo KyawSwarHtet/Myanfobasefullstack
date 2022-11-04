@@ -3,7 +3,7 @@ import "./healthbanner.css";
 import "animate.css";
 export default function HealthBanner() {
   return (
-    <section className="beauty-banner container">
+    <section className="beauty-banner">
       <div className="beauty-firstrow">
         <div className="firstrow-firstdiv">
           <div className="blogger-img">

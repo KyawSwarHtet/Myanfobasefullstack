@@ -1,5 +1,4 @@
 import React, { Suspense } from "react";
-import Footer from "../../components/footer/Footer";
 import HomeHeader from "../../components/homeheadercompo/Homeheader";
 
 import "./home.css";
