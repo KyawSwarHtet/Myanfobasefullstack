@@ -1,26 +1,48 @@
 import React from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./educationleftright.css";
-
-export default function EducationLeft() {
+import Moment from "react-moment";
+export default function EducationLeft(props) {
+  const getCateData = props.getData;
+  const category = "Education";
+  Moment.globalFormat = "DD MMM YYYY";
   return (
-    <div className="wrapper">
-      <div className="wrapperimg">
-        <img loading="lazy" src="./images/homeimgs/school2.jpg" alt="" />
-      </div>
-      <div className="wrapperinfo">
-        <h4>Where does it come from effective from Exercise ?</h4>
-        <span className="cateEducation">Education</span>
-        <h5>32.4.2021</h5>
-      </div>
+    <div>
+      {getCateData.length !== 0 ? (
+        getCateData.slice(2, 4).map((data) => {
+          return (
+            <div className="wrapper">
+              <div className="wrapperimg">
+                <img
+                  src={`http://localhost:8080/${data.files[0].filePath}`}
+                  alt=""
+                />
+              </div>
+              <div className="wrapperinfo">
+                <Link
+                  to={`/${category}/${data._id}`}
+                  className={`${category}hover`}
+                >
+                  <h4>{data.title.substring(0, 30)}...</h4>
+                </Link>
+                <Link to={`/${category}`} className="link1">
+                  <button className={`cateEducation cate${category}`}>
+                    {category}
+                  </button>
+                </Link>
 
-      <div className="wrapperimg">
-        <img loading="lazy" src="./images/homeimgs/school3.jpg" alt="" />
-      </div>
-      <div className="wrapperinfo">
-        <h4>Where does it come from effective from Exercise ?</h4>
-        <span className="cateEducation">Education</span>
-        <h5>32.4.2021</h5>
-      </div>
+                <h5>
+                  <Moment format="DD/MMM/YYYY">{data.createdAt}</Moment>
+                </h5>
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        <div>
+          <h4>Loading...!</h4>
+        </div>
+      )}
     </div>
   );
 }

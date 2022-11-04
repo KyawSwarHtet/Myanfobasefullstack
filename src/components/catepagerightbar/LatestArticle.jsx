@@ -39,34 +39,36 @@ export default function LatestArticle(props) {
         <div className="lastnewbar-body sidebar1">
           {lastposts.length !== 0 ? (
             lastposts.map((data) => {
-              return (
-                <div className="article-lastest">
-                  <div className="lastnewimg">
-                    <img
-                      src={`http://localhost:8080/${data.files[0].filePath}`}
-                      alt=""
-                    />
-                  </div>
-                  <div className="lastnewinfo">
-                    <Link
-                      to={`/${data.cateName}/${data._id}`}
-                      className={`${data.cateName}hover`}
-                    >
-                      <h4>{data.title}</h4>
-                    </Link>
-                    <div className="lastnewbuttondate">
-                      <Link to={`/${data.cateName}`}>
-                        <button className={` cate${data.cateName}`}>
-                          {data.cateName}
-                        </button>
+              if (data.postAccept === true) {
+                return (
+                  <div className="article-lastest">
+                    <div className="lastnewimg">
+                      <img
+                        src={`http://localhost:8080/${data.files[0].filePath}`}
+                        alt=""
+                      />
+                    </div>
+                    <div className="lastnewinfo">
+                      <Link
+                        to={`/${data.cateName}/${data._id}`}
+                        className={`${data.cateName}hover`}
+                      >
+                        <h4>{data.title}</h4>
                       </Link>
-                      <span className="profileDate">
-                        <Moment format="DD/MMM/YYYY">{data.createdAt}</Moment>
-                      </span>
+                      <div className="lastnewbuttondate">
+                        <Link to={`/${data.cateName}`}>
+                          <button className={` cate${data.cateName}`}>
+                            {data.cateName}
+                          </button>
+                        </Link>
+                        <span className="profileDate">
+                          <Moment format="DD/MMM/YYYY">{data.createdAt}</Moment>
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
+                );
+              }
             })
           ) : (
             <div>

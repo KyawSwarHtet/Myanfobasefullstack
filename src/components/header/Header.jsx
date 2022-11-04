@@ -89,15 +89,19 @@ export default function Header() {
                       {user.profilePicture === [] ||
                       user.profilePicture[0] === "" ||
                       user.profilePicture.length === 0 ? (
-                        <img
-                          src="./images/userprofile/defaultuserprofile.png"
-                          alt=""
-                        />
+                        <Link to={"/profile"}>
+                          <img
+                            src="./images/userprofile/defaultuserprofile.png"
+                            alt=""
+                          />
+                        </Link>
                       ) : (
-                        <img
-                          src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
-                          alt=""
-                        />
+                        <Link to={"/profile"}>
+                          <img
+                            src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
+                            alt=""
+                          />
+                        </Link>
                       )}
                     </div>
                     <i

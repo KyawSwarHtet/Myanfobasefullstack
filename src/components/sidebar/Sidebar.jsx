@@ -43,7 +43,7 @@ export default function Sidebar(props) {
             <div className="sidebar">
               <div className="Trav-main">
                 {getCateData.map((data) => {
-                  if (data.postAccept === true && data.cateName === category) {
+                  if (data.cateName === category) {
                     return (
                       <div className="postTrav">
                         <div className="Trav_img">

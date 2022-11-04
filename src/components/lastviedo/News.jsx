@@ -1,103 +1,102 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Moment from "react-moment";
 import "./lastnews.css";
 const News = () => {
+  const [lastposts, setLastPosts] = useState("");
+  const [visible, setVisible] = useState(4);
+  Moment.globalFormat = "DD MMM YYYY";
+
+  const showMore = () => {
+    setVisible((prevValue) => prevValue + 2);
+  };
+  console.log("visible initilal  is", visible);
+  const getAlldata = async () => {
+    const reqdata = await fetch(`http://localhost:8080/api/lastposts`);
+    const res = await reqdata.json(); // JSON.parse(json);
+    //   console.log("res data is ", res);
+    return res;
+  };
+
+  useEffect(() => {
+    getAlldata().then((data) => {
+      setLastPosts(data);
+    });
+  }, []);
+
   return (
     <>
       <div className="newspart">
-        <div className="news">
-          <div className="news_info ent_hover">
-            <h4>18 Top Fall Fashion Trends from New York Fashion</h4>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been
-            </p>
-            <div className="postbuttom">
-              <div className="postman">
-                <img src="./images/homeimgs/viedo4.jpg" alt="" />
-                <span className="profileName">Paina Ta Kon</span>
-                <span className="profileDate">20.3.2022</span>
-              </div>
-              <div className="posticon">
-                <i className="uil uil-bookmark"></i>
-              </div>
-            </div>
+        {lastposts.length !== 0 ? (
+          lastposts.slice(0, visible).map((data) => {
+            console.log("data is", data);
+            if (data.postAccept === true) {
+              return (
+                <>
+                  <div className="news">
+                    <div className="news_info ent_hover">
+                      <Link
+                        to={`/${data.cateName}/${data._id}`}
+                        className={`${data.cateName}hover`}
+                      >
+                        <h4>{data.title}</h4>
+                      </Link>
+                      <p>{data.description}</p>
+                      <div className="postbuttom">
+                        <div className="postman">
+                          <div className="postmanProfile">
+                            {data.userprofile === "" ||
+                            data.userprofile[0] === "" ||
+                            data.userprofile.length === 0 ? (
+                              <img
+                                src="./images/userprofile/defaultuserprofile.png"
+                                alt=""
+                              />
+                            ) : (
+                              <img
+                                src={`http://localhost:8080/${data.userprofile}`}
+                                alt=""
+                              />
+                            )}
+                          </div>
+                          <span className="profileName">{data.username}</span>
+                          <span className="profileDate">
+                            <Moment format="DD/MMM/YYYY">
+                              {data.createdAt}
+                            </Moment>
+                          </span>
+                        </div>
+                        <div className="posticon">
+                          <i className="uil uil-bookmark"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="news_img">
+                      <img
+                        src={`http://localhost:8080/${data.files[0].filePath}`}
+                        alt=""
+                      />
+                      <Link to={`/${data.cateName}`} className="link1">
+                        <button
+                          className={`entertainment cate${data.cateName}`}
+                        >
+                          {data.cateName}
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </>
+              );
+            }
+          })
+        ) : (
+          <div>
+            <h4>Loading ....</h4>
           </div>
-          <div className="news_img">
-            <img src="./images/homeimgs/viedo3.jpg" alt="" />
-            <p className="entertainment cateEntertainment">Entertainment</p>
-          </div>
-        </div>
-        <div className="news">
-          <div className="news_info science_hover">
-            <h4>18 Top Fall Fashion Trends from New York Fashion</h4>
-
-            <p>
-              All of the Best Looks From New York Fashion Week Fall/Winter
-              2021.…
-            </p>
-            <div className="postbuttom">
-              <div className="postman">
-                <img src="./images/homeimgs/viedo4.jpg" alt="" />
-                <span className="profileName">Paina Ta Kon</span>
-                <span className="profileDate">20.3.2022</span>
-              </div>
-              <div className="posticon">
-                <i className="uil uil-bookmark"></i>
-              </div>
-            </div>
-          </div>
-          <div className="news_img">
-            <img src="./images/homeimgs/science.jpg" alt="" />
-            <p className="science cateScience">Science</p>
-          </div>
-        </div>
-        <div className="news">
-          <div className="news_info government_hover">
-            <h4>18 Top Fall Fashion Trends from New York Fashion</h4>
-            <p>
-              All of the Best Looks From New York Fashion Week Fall/Winter
-              2021.…
-            </p>
-            <div className="postbuttom">
-              <div className="postman">
-                <img src="./images/homeimgs/viedo4.jpg" alt="" />
-                <span className="profileName">Paina Ta Kon</span>
-                <span className="profileDate">20.3.2022</span>
-              </div>
-              <div className="posticon">
-                <i className="uil uil-bookmark"></i>
-              </div>
-            </div>
-          </div>
-          <div className="news_img">
-            <img src="./images/homeimgs/political.jpg" alt="" />
-            <p className="Newsdiv cateGovernment">Government</p>
-          </div>
-        </div>
-        <div className="news">
-          <div className="news_info technology_hover">
-            <h4>18 Top Fall Fashion Trends from New York Fashion</h4>
-            <p>
-              All of the Best Looks From New York Fashion Week Fall/Winter
-              2021.…
-            </p>
-            <div className="postbuttom">
-              <div className="postman">
-                <img src="./images/homeimgs/viedo4.jpg" alt="" />
-                <span className="profileName">Paina Ta Kon</span>
-                <span className="profileDate">20.3.2022</span>
-              </div>
-              <div className="posticon">
-                <i className="uil uil-bookmark"></i>
-              </div>
-            </div>
-          </div>
-          <div className="news_img">
-            <img src="./images/homeimgs/technology.jpg" alt="" />
-            <p className="Technology cateTechnology">Technology</p>
-          </div>
-        </div>
-        <button className="btn btnlast">Show More</button>
+        )}
+        <button onClick={showMore} className="btn btnlast">
+          Show More
+        </button>
       </div>
     </>
   );
