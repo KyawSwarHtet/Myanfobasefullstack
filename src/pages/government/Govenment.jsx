@@ -4,7 +4,7 @@ import Goverbanner from "../../components/goverment/Goverbanner";
 import Goverhead from "../../components/goverment/Goverhead";
 import GoverLeft from "../../components/goverment/GoverLeft";
 import GoverRide from "../../components/goverment/GoverRide";
-
+import "../travelling/travel.css";
 export default function Govenment() {
   return (
     <>

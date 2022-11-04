@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "../technology/technology.css";
 export default function Goverhead() {
   return (
     <>
@@ -24,30 +24,30 @@ export default function Goverhead() {
           <Link to="/Home">Home</Link>
         </li>
       </ul> */}
-          <h4>Government</h4>
+          <h4>History</h4>
         </div>
         <div className="sectop">
-          <h1>Government</h1>
+          <h1>History</h1>
         </div>
-        
-          <div className="button">
-            <Link to="/culture">
-              <button className="tec">Culture</button>
-            </Link>
-            <Link to="/dynasty">
-              <button className="tec">Dynasty</button>
-            </Link>
-            <Link to="/religion">
-              <button className="tec">Religion</button>
-            </Link>
-            <Link to="/dress">
-              <button className="tec">Dress Code</button>
-            </Link>
-            <Link to="/region">
-              <button className="tec">Region & State</button>
-            </Link>
-          </div>
-        
+
+        <div className="button">
+          <Link to="/culture">
+            <button className="tec">Culture</button>
+          </Link>
+          <Link to="/dynasty">
+            <button className="tec">Dynasty</button>
+          </Link>
+          <Link to="/religion">
+            <button className="tec">Religion</button>
+          </Link>
+          <Link to="/dress">
+            <button className="tec">Dress Code</button>
+          </Link>
+          <Link to="/region">
+            <button className="tec">Region & State</button>
+          </Link>
+        </div>
+
         <div className="para">
           <p>
             Modern technology has become a total phenomenon for civilization,

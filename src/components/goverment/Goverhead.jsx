@@ -40,7 +40,7 @@ export default function Goverhead() {
           <Link to="/leader">
             <button className="tec">Leader</button>
           </Link>
-         
+
           <Link to="/passport">
             <button className="tec">Passport</button>
           </Link>
@@ -59,5 +59,3 @@ export default function Goverhead() {
     </>
   );
 }
-
-

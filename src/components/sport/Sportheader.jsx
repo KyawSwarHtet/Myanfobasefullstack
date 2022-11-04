@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "../technology/technology.css";
 export default function Sportheader() {
   return (
     <>
@@ -57,6 +57,3 @@ export default function Sportheader() {
     </>
   );
 }
-
-
-

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../business/business.css";
 export default function Edubanner() {
   return (
     <>

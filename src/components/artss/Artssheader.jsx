@@ -5,7 +5,7 @@ import "../travelling/theader.css"
 export default function Artssheader() {
   return (
     <>
-      <section className="container travel">
+      <section className="container artsection">
         <div className="top">
           <div className="homelink">
             <ul>
@@ -46,7 +46,6 @@ export default function Artssheader() {
           <Link to="/painting">
             <button className="tec">painting</button>
           </Link>
-          
         </div>
         <div className="para">
           <p>
