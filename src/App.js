@@ -139,6 +139,9 @@ const UsereditForm = React.lazy(() => import("./pages/profile/userEditForm"));
 
 const LazyHome = React.lazy(() => import("./pages/home/Home"));
 const LazySearch = React.lazy(() => import("./pages/searchpage/SearchPage"));
+const UserDetailPage = React.lazy(() =>
+  import("./pages/userdetailPage/UserDetailPage")
+);
 
 function App() {
   const dispatch = useDispatch();
@@ -955,6 +958,14 @@ function App() {
           element={
             <React.Suspense fallback="Loading....">
               <UsereditForm />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/:cate/:id"
+          element={
+            <React.Suspense fallback="Loading....">
+              <UserDetailPage />
             </React.Suspense>
           }
         />

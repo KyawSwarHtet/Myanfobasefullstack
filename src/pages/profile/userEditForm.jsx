@@ -1,5 +1,4 @@
 import EditForm from "../../components/profile/editform";
-import ProfileEdit from "../../components/profile/ProfileEdit";
 // import ProfileEdit from "../../components/profile/ProfileEdit";
 import "./usersedit.css";
 
