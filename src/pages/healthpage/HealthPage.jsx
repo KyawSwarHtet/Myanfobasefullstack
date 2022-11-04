@@ -6,6 +6,7 @@ import HealthPopular from "../../components/health/Healthrightbar";
 import HealthRightbar from "../../components/health/Healthrightbar";
 import HealthSidebar from "../../components/health/Healthsidebar";
 import "../tecnology/tecnologyPage.css";
+import "./health.css";
 export default function Healthpage() {
   return (
     <>
