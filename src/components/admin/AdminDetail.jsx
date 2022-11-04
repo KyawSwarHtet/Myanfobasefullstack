@@ -82,7 +82,7 @@ export default function AdminDetail() {
           <button className="detail-button2">Delete</button>
         </div> */}
 
-        <div>
+        <div className="adminDetailImg">
           {postDetail.files === [] || postDetail.files.length === 0
             ? console.log("your image is empty")
             : postDetail.files.map((file, index) => {

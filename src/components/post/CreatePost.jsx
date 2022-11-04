@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import { Box, TextField, MenuItem } from "@mui/material";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -7,9 +8,8 @@ import "./textform.css";
 import "./postform.css";
 import "./dropdowncate.css";
 import { createPost } from "../../features/posts/postSlice";
-import { useRef } from "react";
 
-export default function NewPost(props) {
+export default function CreatePost(props) {
   const [input, setInput] = useState({
     cateName: "Choose One",
     cateId: "0",
@@ -17,9 +17,6 @@ export default function NewPost(props) {
     description: "",
     files: [],
   });
-  const titleRef = useRef(null);
-  const descRef = useRef(null);
-
   const setTextarea = (element, defaultHeight) => {
     if (element) {
       const target = element.target ? element.target : element;
@@ -28,36 +25,60 @@ export default function NewPost(props) {
     }
   };
 
+  // console.log("initial inpusetstate is", input);
   const [isActive, setIsActive] = useState(false);
 
   const [listOfCate, setListOfCate] = useState([]);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const [error, setError] = useState(null);
+  const setlimitChar = (e) => {
+    console.log("title:", e.target.value);
+    console.log("length:", e.target.value.length);
+    if (e.target.value.length > 20) {
+      e.preventDefault();
+      setError("Character limit exceeded");
+    } else {
+      setError(null);
+    }
+  };
+  const onChange = (e) => {
+    e.preventDefault();
+    setInput((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+    setTextarea(e, "100px");
+    setlimitChar(e);
+  };
+  const [categ, setcateg] = useState(" ");
+  const handleCatge = (e) => {
+    setcateg(e.target.value);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
       input.files === [] ||
       input.files.length === 0 ||
-      titleRef.current.value.length === 0 ||
+      input.description.length === 0 ||
       input.cateId == 0 ||
-      descRef.current.value.length == 0
+      input.title.length == 0
     ) {
       return alert("please fill all data");
     }
-
+    // const formData = new FormData(e.target);
+    // console.log("Form Data from submit", Object.fromEntries(data.entries()));
     const formData = new FormData();
-    formData.append("title", titleRef.current.value);
+    formData.append("title", input.title);
     formData.append("cateId", input.cateId);
     formData.append("cateName", input.cateName);
-    formData.append("description", descRef.current.value);
+    formData.append("description", input.description);
     for (let i = 0; i < input.files.length; i++) {
       formData.append("files", input.files[i]);
     }
-    titleRef.current.value = "";
-    descRef.current.value = "";
 
+    console.log("Form data from post is", formData);
     dispatch(createPost(formData)).then(() => navigate("/profile"));
   };
 
@@ -93,7 +114,7 @@ export default function NewPost(props) {
   }, []);
 
   return (
-    <div className="formDiv" key="">
+    <div className="formDiv">
       <form
         onSubmit={handleSubmit}
         className="postForm"
@@ -139,12 +160,13 @@ export default function NewPost(props) {
             className="titleForm textdesign"
             placeholder="Type title here..."
             name="title"
-            ref={titleRef}
+            onChange={onChange}
+            maxLength="100"
+            value={input.title}
             rows={1}
             required
           />
         </div>
-        {console.log("data is", titleRef)}
         <div className="titleDiv">
           <label htmlFor="descformid" className="labelDes">
             Description:
@@ -154,8 +176,9 @@ export default function NewPost(props) {
             className="titleForm textdesign"
             placeholder="Type Description here..."
             name="description"
-            ref={descRef}
+            onChange={onChange}
             rows={1}
+            value={input.description}
             required
           />
         </div>
@@ -172,5 +195,3 @@ export default function NewPost(props) {
     </div>
   );
 }
-
-//

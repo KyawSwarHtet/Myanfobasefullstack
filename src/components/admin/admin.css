@@ -15,6 +15,7 @@
   height: 100%;
   margin-top: 7%;
 }
+
 .postmanProfile1 {
   width: 30px;
   height: 30px;
@@ -28,13 +29,12 @@
 }
 
 .admin-img {
-  width: 30%;
-  height: 5rem;
+  width: 90%;
+  height: 90%;
 }
 
 .admin-button .button1 {
   margin-top: 10px;
-  margin-right: 2rem;
   padding: 10px 15px;
   background-color: rgb(73, 188, 245);
 }
@@ -49,11 +49,15 @@
   background-color: rgb(39, 176, 73);
 }
 .admin-button {
-  margin-top: 7%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  gap: 2rem;
 }
 .userpost-table {
   display: grid;
-  grid-template-columns: 30% 50% 20%;
+  grid-template-columns: 15% 45% 30%;
+  gap: 1rem;
 }
 
 .admin-span {
@@ -76,6 +80,11 @@
 .admindetail {
   margin-top: 6rem;
 }
+.adminDetailImg {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
 .admindetailimg {
   width: 100%;
   height: 100%;
@@ -83,7 +92,7 @@
 
 .detailimg {
   width: 50%;
-  height: 20rem;
+  height: 15rem;
   margin-left: 25%;
 }
 .admindetail-cate {
@@ -113,7 +122,9 @@
   background-color: rgb(238, 30, 15);
 }
 
-.postdetail .postman1 {
+.postman1 {
+  display: flex;
+  gap: 1rem;
   margin-top: 1rem;
 }
 .adminlink {

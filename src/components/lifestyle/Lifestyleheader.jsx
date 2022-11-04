@@ -1,6 +1,7 @@
 import React from "react";
 import "../technology/technology.css";
 import { Link } from "react-router-dom";
+import "../technology/technology.css";
 const Lifestyleheader = () => {
   return (
     <>
