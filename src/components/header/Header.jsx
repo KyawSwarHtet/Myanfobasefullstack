@@ -49,7 +49,7 @@ export default function Header() {
               <i class="uil uil-list-ul"></i>
               <span className="capitalize">Menu</span>
             </div>
-            {dropdown && <Dropdown className="dropdownWrap" />}
+            {dropdown && <Dropdown user={user} className="dropdownWrap" />}
           </li>
           <li>
             <Link to="/post" className="flex hoverclor">

@@ -1,13 +1,12 @@
 import React from "react";
 import Axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import "./textform.css";
 import "./postform.css";
 import "./dropdowncate.css";
 import { createPost } from "../../features/posts/postSlice";
-import { useRef } from "react";
 
 export default function NewPost(props) {
   const [input, setInput] = useState({

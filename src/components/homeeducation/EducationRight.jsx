@@ -7,7 +7,7 @@ export default function EducationRight(props) {
   const category = "Education";
   Moment.globalFormat = "DD MMM YYYY";
 
-  console.log("edu right", getCateData);
+ 
   return (
     <div>
       {getCateData.length !== 0 ? (
