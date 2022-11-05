@@ -51,9 +51,11 @@ export default function UserDetail() {
 
         <div className="postdetail">
           <h3 className="userdetail-title">{postDetail.title} </h3>
-          <button className="userdetail-cate cateTravel">
-            {postDetail.cateName}
-          </button>
+          <Link to={`/${postDetail.cateName}`} className="link1">
+            <button className={` cate${postDetail.cateName}`}>
+              {postDetail.cateName}
+            </button>
+          </Link>
           <div className="postman">
             <div className="postmanProfile">
               {postDetail.userprofile === "" ||

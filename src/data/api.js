@@ -44,3 +44,22 @@ export const deletePosts = async (id) => {
     throw error;
   }
 };
+
+//add category
+export const Addcategory = async (data) => {
+  try {
+    await axios.post(apiUrl + "category", data);
+  } catch (error) {
+    throw error;
+  }
+};
+
+//get category
+export const getCategory = async () => {
+  try {
+    const { data } = await axios.get(apiUrl + "category");
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
