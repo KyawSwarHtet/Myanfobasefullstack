@@ -45,11 +45,6 @@ export default function Sidebar(props) {
       setCateData(data);
     });
   }, [category]);
-  //  useEffect(() => {
-  // fetch(`http://localhost:8080/api/postcate/${category}`)
-  //    .then((response) => response.json())
-  //    .then((json) => setCateData(json));
-  // }, [category]);
 
   console.log("current page", currentItems);
 
