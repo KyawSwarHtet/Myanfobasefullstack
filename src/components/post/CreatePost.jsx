@@ -26,7 +26,7 @@ export default function NewPost(props) {
       target.style.height = `${target.scrollHeight}px`;
     }
   };
-
+  console.log("stringaldkla");
   const [isActive, setIsActive] = useState(false);
 
   const [listOfCate, setListOfCate] = useState([]);
@@ -81,7 +81,7 @@ export default function NewPost(props) {
 
   useEffect(() => {
     // Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
-    Axios.get("http://localhost:8080/readcate")
+    Axios.get("http://localhost:8080/api/category")
       .then((response) => {
         setListOfCate(response.data);
         console.log("categories inside", response.data);
@@ -141,6 +141,7 @@ export default function NewPost(props) {
             ref={titleRef}
             rows={1}
             required
+            onChange={setTextarea}
           />
         </div>
         {console.log("data is", titleRef)}
@@ -156,6 +157,7 @@ export default function NewPost(props) {
             ref={descRef}
             rows={1}
             required
+            onChange={setTextarea}
           />
         </div>
         <br />
