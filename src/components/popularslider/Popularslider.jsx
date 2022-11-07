@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { themeContext } from "../../Context";
+import { useContext } from "react";
 
 import "./popularslider.css";
 
@@ -13,6 +15,8 @@ import "./popularslider.css";
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Popularslider() {
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
   return (
     <>
       <Swiper
@@ -30,55 +34,55 @@ export default function Popularslider() {
         className="Popularswiper container"
       >
         <SwiperSlide>
-          <p>
+          <p className={darkMode ? "popular-white" : "popular-dark"}>
             "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit..."
           </p>
         </SwiperSlide>
         <SwiperSlide>
-          <p>
+          <p className={darkMode ? "popular-white" : "popular-dark"}>
             "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit..."
           </p>
         </SwiperSlide>
         <SwiperSlide>
-          <p>
+          <p className={darkMode ? "popular-white" : "popular-dark"}>
             "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit..."
           </p>
         </SwiperSlide>
         <SwiperSlide>
-          <p>
+          <p className={darkMode ? "popular-white" : "popular-dark"}>
             "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit..."
           </p>
         </SwiperSlide>
         <SwiperSlide>
-          <p>
+          <p className={darkMode ? "popular-white" : "popular-dark"}>
             "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit..."
           </p>
         </SwiperSlide>
         <SwiperSlide>
-          <p>
+          <p className={darkMode ? "popular-white" : "popular-dark"}>
             "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit..."
           </p>
         </SwiperSlide>
         <SwiperSlide>
-          <p>
+          <p className={darkMode ? "popular-white" : "popular-dark"}>
             "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit..."
           </p>
         </SwiperSlide>
         <SwiperSlide>
-          <p>
+          <p className={darkMode ? "popular-white" : "popular-dark"}>
             "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit..."
           </p>
         </SwiperSlide>
         <SwiperSlide>
-          <p>
+          <p className={darkMode ? "popular-white" : "popular-dark"}>
             "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
             consectetur, adipisci velit..."
           </p>

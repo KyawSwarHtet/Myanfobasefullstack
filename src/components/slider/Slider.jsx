@@ -8,7 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
+import { themeContext } from "../../Context";
+import { useContext } from "react";
 import "./slider.css";
 
 // import required modules
@@ -16,8 +17,11 @@ import { Pagination, Navigation } from "swiper";
 import { categories } from "../categories/categoriesarray";
 
 export default function Slider() {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   return (
     <>
+      
       <span className="swipper-bottom-line"></span>
       <Swiper
         id="SliderTop"
@@ -33,11 +37,16 @@ export default function Slider() {
       >
         {categories.map((cate) => {
           return (
-            <SwiperSlide>
-              <Link to={cate.path} className="main-cat">
-                <p>{cate.title}</p>
-              </Link>
-            </SwiperSlide>
+            <div className="darkslide">
+              <SwiperSlide>
+                <Link
+                  to={cate.path}
+                  className={darkMode ? "main-catwhite" : "main-catblack"}
+                >
+                  <p>{cate.title}</p>
+                </Link>
+              </SwiperSlide>
+            </div>
           );
         })}
       </Swiper>

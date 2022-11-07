@@ -7,6 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import { themeContext } from "./Context";
+import { useContext } from "react";
 const Animepage = React.lazy(() => import("./pages/art/Animepage"));
 const Art = React.lazy(() => import("./pages/art/Art"));
 const Doodlepage = React.lazy(() => import("./pages/art/Doodlepage"));
@@ -179,9 +181,14 @@ function App() {
       setGetAllusers(data);
     });
   }, []);
-
+ const theme = useContext(themeContext);
+ const darkMode = theme.state.darkMode;
   return (
-    <div className="App">
+    <div className="App"
+      style={{
+        background: darkMode ? "#1a1a1a" : "white",
+        color: darkMode ? "white" : "#1a1a1a",
+    }}>
       <Header />
       <Routes>
         <Route

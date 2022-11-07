@@ -1,6 +1,5 @@
 import { Pagination } from "@mui/material";
 
-
 import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,21 +7,20 @@ import Moment from "react-moment";
 import "./sidebar.css";
 // import { updatePostData } from "../../features/getCateData/getCateDatalice";
 import Spinner from "../login/Spinner";
-
-
-
+import { themeContext } from "../../Context";
+import { useContext } from "react";
 export default function Sidebar(props) {
   // const [Data, setData] = useState([]);
-  
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
+
   const [currentPage, setcurrentPage] = useState(1);
   const [itemPerPage, setitemPerPage] = useState(5);
   const [getCateData, setCateData] = useState([]);
-  console.log(setCateData)
+  console.log(setCateData);
   const category = props.category;
   Moment.globalFormat = "DD MMM YYYY";
 
-
-   
   // const { cate } = useParams();
   // const getAllusers = props.getAllusers;
   // const getAllgetCateData = props.getAllgetCateData;
@@ -32,28 +30,27 @@ export default function Sidebar(props) {
   // console.log("Education post is ", getCateData);
 
   const pages = [];
-  for (let i = 0; i<=Math.ceil(getCateData.length/itemPerPage); i++) {
-    pages.push(i);    
+  for (let i = 0; i <= Math.ceil(getCateData.length / itemPerPage); i++) {
+    pages.push(i);
   }
 
   const indexOfLastItem = currentPage * itemPerPage;
   const indexOfFirstItem = indexOfLastItem - itemPerPage;
   const currentItems = getCateData.slice(indexOfFirstItem, indexOfLastItem);
-  console.log('current',currentItems)
+  console.log("current", currentItems);
 
   //  const handleClick = (event) => {
   //   setcurrentPage(Number(event.target.id));
   // };
- 
+
   const renderPageNumbers = pages.map((number) => {
-    console.log('number',number)
+    console.log("number", number);
     return (
-      <div key = {number} id={number}>
+      <div key={number} id={number}>
         {number}
-        
-       </div>
-     )
-   })
+      </div>
+    );
+  });
 
   useEffect(() => {
     const getAlldata = async () => {
@@ -87,7 +84,10 @@ export default function Sidebar(props) {
                 {currentItems.map((data) => {
                   if (data.postAccept === true && data.cateName === category) {
                     return (
-                      <div className="postTrav">
+                      <div
+                        id={darkMode ? "sidebar-white" : "sidebar-black"}
+                        className="postTrav"
+                      >
                         <div className="Trav_img">
                           <img
                             src={`http://localhost:8080/${data.files[0].filePath}`}
@@ -101,9 +101,11 @@ export default function Sidebar(props) {
                         <div className="postTrav_info">
                           <Link
                             to={`/${category}/${data._id}`}
-                            className={`${category}hover`}
+                            id={`${category}hover`}
                           >
-                            <h4>{data.title.substring(0, 80)}...</h4>
+                            <h4 className="colorh4">
+                              {data.title.substring(0, 80)}...
+                            </h4>
                           </Link>
                           <p>{data.description.substring(0, 100)}...</p>
                           <div className="postbuttom">
@@ -166,6 +168,3 @@ export default function Sidebar(props) {
     </>
   );
 }
-
-
-

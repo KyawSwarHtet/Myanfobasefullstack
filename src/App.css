@@ -9,6 +9,8 @@
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap");
 :root {
+  --background-sec: #0d0c0d;
+
   --background-main: #fff;
   --entertainment-bg: rgb(245, 188, 213, 0.948);
   --technology-bg: rgb(211 153 7);
@@ -42,7 +44,7 @@ body {
 } */
 a {
   text-decoration: none;
-  color: black;
+  /* color: black; */
 }
 .container {
   width: var(--container-width-lg);
@@ -212,46 +214,46 @@ h5 {
 }
 
 /* hover colors */
-.Educationhover:hover {
+#Educationhover:hover {
   color: var(--education-bg);
 }
-.Entertainmenthover:hover {
+#Entertainmenthover:hover {
   color: var(--entertainment-bg);
 }
-.Technologyhover:hover {
+#Technologyhover:hover {
   color: var(--technology-bg);
 }
-.Beautyhover:hover {
+#Beautyhover:hover {
   color: var(--beauty-bg);
 }
-.Governmenthover:hover {
+#Governmenthover:hover {
   color: var(--government-bg);
 }
-.Travelhover:hover {
+#Travelhover:hover {
   color: var(--travel-bg);
 }
-.Historyhover:hover {
+#Historyhover:hover {
   color: var(--history-bg);
 }
-.Healthhover:hover {
+#Healthhover:hover {
   color: var(--health-bg);
 }
-.Literaturehover:hover {
+#Literaturehover:hover {
   color: var(--literature-bg);
 }
-.Lifestyleshover:hover {
+#Lifestyleshover:hover {
   color: var(--lifestyles-bg);
 }
-.Sciencehover:hover {
+#Sciencehover:hover {
   color: var(--science-bg);
 }
-.Sportshover:hover {
+#Sportshover:hover {
   color: var(--sports-bg);
 }
-.Artshover:hover {
+#Artshover:hover {
   color: var(--arts-bg);
 }
-.Businesshover:hover {
+#Businesshover:hover {
   color: var(--business-bg);
 }
 
@@ -303,4 +305,8 @@ dl {
 .btnactive {
   background-color: var(--technology-bg) !important;
   color: black !important;
+}
+
+[data-theme="dark"] {
+  --background: black;
 }

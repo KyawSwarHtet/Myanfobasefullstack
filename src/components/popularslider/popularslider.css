@@ -24,8 +24,8 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
-
+  /* background: #fff; */
+/* color: #000; */
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,8 +48,18 @@ body {
   top: 29px;
   left: -6px;
 }
+
 .Popularswiper .swiper-button-next {
   position: absolute;
   top: 29px;
   right: -6px;
+}
+
+
+.popular-white{
+  color: #fff;
+}
+
+.popular-dark{
+  color: #000;
 }

@@ -1,0 +1,38 @@
+.toggle {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  color: black !important;
+  justify-content: space-between;
+  border: 3px solid black;
+  border-radius: 1rem;
+  cursor: pointer;
+  position: relative;
+  /* padding: 2px; */
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  margin-right: 7.7rem;
+  margin-left: -2px;
+}
+.toggle h5 {
+  /* margin-left: 2.7rem; */
+  margin-left: 43px;
+  transition: all 500ms;
+  /* color: black; */
+  color: #555555;
+  background-color: transparent;
+}
+.toggle > * {
+  width: 1rem;
+  height: 1rem;
+  color: black;
+}
+.t_button {
+  border-radius: 90%;
+  background: black;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
