@@ -15,9 +15,13 @@
   grid-template-columns: 70% 30%;
   gap: 1rem;
 }
+
 .postmanProfile {
   width: 30px;
   height: 30px;
+}
+.postmanProfile img {
+  border-radius: 50%;
 }
 span.headerline {
   display: block;

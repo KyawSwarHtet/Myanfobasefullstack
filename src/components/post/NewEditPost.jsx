@@ -101,7 +101,7 @@ export default function NewEditPost() {
 
   useEffect(() => {
     // Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
-    Axios.get("http://localhost:8080/readcate")
+    Axios.get("http://localhost:8080/api/category")
       .then((response) => {
         setListOfCate(response.data);
         // console.log("categories inside", response.data);
@@ -156,8 +156,8 @@ export default function NewEditPost() {
                     <option value={input.cateName}>
                       {/* {selected === 0 ? editpost.cateName : selected} */}
                       {input.cateName}
-                      <i class="fa-solid fa-square-caret-down"></i>
                     </option>
+                    <i class="fa-solid fa-square-caret-down"></i>
                   </div>
                   {isActive && (
                     <div className="dropdown-content">
@@ -191,6 +191,7 @@ export default function NewEditPost() {
                   rows={1}
                   //   value={titleRef.current.value}
                   ref={titleRef}
+                  onChange={setTextarea}
                   required
                 />
               </div>
@@ -205,6 +206,7 @@ export default function NewEditPost() {
                   //   value={descRef.current.value}
                   placeholder="Type Description here..."
                   ref={descRef}
+                  onChange={setTextarea}
                   rows={1}
                   required
                 />
