@@ -1,7 +1,16 @@
 .LifestyleSect {
   max-width: 1600px;
 }
-
+.postmanProfile1 {
+  width: 30px;
+  height: 30px;
+}
+.postmanProfile1 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
 .lifestyles h1 {
   font-size: 15px;
   border-bottom: #f18510 3px solid;
@@ -193,12 +202,17 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+.honeyImg {
+  width: 80%;
+  height: 140px;
+  margin: auto;
+}
 
 .honey-1 img,
 .honey-2 img,
 .honey-3 img {
   display: block;
-  width: 90%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -206,6 +220,8 @@
 .honey-2,
 .honey-3 {
   display: grid;
+  height: 150px;
+  margin-bottom: 1rem;
   grid-template-columns: 50% 50%;
 }
 
