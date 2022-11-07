@@ -78,7 +78,7 @@ export default function Lifestylenew() {
                   </span>
                 </div>
 
-                <p>{getCateData[0].description.substring(0, 250)}...</p>
+                <p>{getCateData[0].description.substring(0, 160)}...</p>
               </div>
             </div>
           </div>
@@ -100,9 +100,9 @@ export default function Lifestylenew() {
                         to={`/${category}/${data._id}`}
                         className={`${category}hover`}
                       >
-                        <h4>{data.title.substring(0, 50)}...</h4>
+                        <h4>{data.title.substring(0, 30)}...</h4>
                       </Link>
-                      <p>{data.description.substring(0, 180)}...</p>
+                      <p>{data.description.substring(0, 110)}...</p>
                     </div>
                   </div>
                 );

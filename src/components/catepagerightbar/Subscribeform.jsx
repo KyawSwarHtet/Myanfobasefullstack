@@ -9,7 +9,7 @@ export default function Subscribeform() {
           <span className="subunderline"></span>
         </div>
         <div className="email-form">
-          <input type="text" placeholder="E-mail address" />
+          <input id="email-form-darkmode" type="text" placeholder="E-mail address" />
         </div>
         <div className="email-button">
           <button className="wantit">I WANT IT</button>

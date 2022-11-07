@@ -3,8 +3,12 @@ import Slider from "../slider/Slider.jsx";
 import "./homeheader.css";
 import "swiper/css/bundle";
 import Popularslider from "../popularslider/Popularslider.jsx";
+import { themeContext } from "../../Context";
+import { useContext } from "react";
 
 const HomeHeader = () => {
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
   return (
     <>
       <section className="homeheader">
@@ -59,7 +63,9 @@ const HomeHeader = () => {
 
       <section className="popular-header container">
         <div className="popular-title">
-          <h2>Popular Now</h2>
+          <h2 className={darkMode ? " populartitle-white" : "populartitle-black"}>
+            Popular Now
+          </h2>
           <span className="popular-now-line"></span>
         </div>
         <div className="popular-p">
