@@ -86,7 +86,8 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: transparent;
+  /* background: #fff; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -118,8 +119,8 @@ body {
 }
 .cates-swiper .swiperbody {
   padding: 7px 8px 2rem;
-  background-color: rgb(245 243 243);
-
+  /* background-color: rgb(245 243 243); */
+/* background-color: transparent; */
   transition: all 0.5s ease-in-out;
   position: relative;
 }
@@ -150,6 +151,7 @@ body {
   /* overflow: hidden; */
 }
 .per-cate:hover .swiperbody {
+  color: #000;
   background-color: rgb(231 227 227);
 }
 .cate-para-line {

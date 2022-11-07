@@ -13,6 +13,7 @@
 
 .imgDiv {
   /* margin-top: 20px; */
+  color: black;
   width: 80%;
   display: grid;
   grid-template-columns: 17% 83%;
@@ -117,6 +118,7 @@ form {
   padding: 4rem 0 2rem;
 }
 .labelDes {
+  color: black;
   /* position: absolute;
   top: 0;
   left: 0; */
