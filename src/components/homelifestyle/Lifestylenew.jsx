@@ -1,88 +1,124 @@
-import React from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Moment from "react-moment";
 import "./homelifestyle.css";
 
 export default function Lifestylenew() {
+  const [getCateData, setCateData] = useState("");
+  const category = "Lifestyles";
+  Moment.globalFormat = "DD MMM YYYY";
+
+  useEffect(() => {
+    const getAlldata = async () => {
+      const reqdata = await fetch(
+        `http://localhost:8080/api/postcate/${category}`
+      );
+      const res = await reqdata.json(); // JSON.parse(json);
+      //   console.log("res data is ", res);
+      return res;
+    };
+    getAlldata().then((data) => {
+      setCateData(data);
+    });
+  }, [category]);
+
+  // console.log("get all posts are", getCateData);
+
   return (
     <div className="thaw-1">
-      <div className="part-1">
-        <div className="photo-exercise">
-          <div className="exercise-photo">
-            <img
-              className="photo-ex1"
-              src="images/homeimgs/lifestyle.jpeg"
-              alt=""
-            />
-            <button className="life-exbtn cateLifestyles ">Lifestyles</button>
-          </div>
-          <div className="paragraph">
-            <h2>
-              Where does it come from effective from everyday regular Exercise?
-            </h2>
-            <div className="postman1">
-              <img src="./images/homeimgs/viedo4.jpg" alt="" />
-              <span className="profileName1">Paina Ta Kon</span>
-              <span className="profileDate1">20.3.2022</span>
+      {getCateData.length !== 0 ? (
+        <>
+          <div className="part-1">
+            <div className="photo-exercise">
+              <div className="exercise-photo">
+                <img
+                  className="photo-ex1"
+                  src={`http://localhost:8080/${getCateData[0].files[0].filePath}`}
+                  alt=""
+                />
+                <Link to={`/${category}`} className="link1">
+                  <button
+                    className={`life-exbtn cateLifestyles cate${category}`}
+                  >
+                    {category}
+                  </button>
+                </Link>
+              </div>
+              <div className="paragraph">
+                <Link
+                  to={`/${category}/${getCateData[0]._id}`}
+                  className={`${category}hover`}
+                >
+                  <h2>{getCateData[0].title.substring(0, 70)}...</h2>
+                </Link>
+                <div className="postman1">
+                  <div className="postmanProfile1">
+                    {getCateData[0].userprofile === "" ||
+                    getCateData[0].userprofile[0] === "" ||
+                    getCateData[0].userprofile.length === 0 ? (
+                      <img
+                        src="./images/userprofile/defaultuserprofile.png"
+                        alt=""
+                      />
+                    ) : (
+                      <img
+                        src={`http://localhost:8080/${getCateData[0].userprofile}`}
+                        alt=""
+                      />
+                    )}
+                  </div>
+                  <span className="profileName1">
+                    {getCateData[0].username}
+                  </span>
+                  <span className="profileDate1">
+                    <Moment format="DD/MMM/YYYY">
+                      {getCateData[0].createdAt}
+                    </Moment>
+                  </span>
+                </div>
+
+                <p>{getCateData[0].description.substring(0, 160)}...</p>
+              </div>
             </div>
-            <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              kfijik distribution of letters, as opposed to using 'Content here,
-              content here', making it look like readable English.
-            </p>
           </div>
-        </div>
-      </div>
 
-      <div className="honey">
-        <div className="honey-1">
-          <img
-            className="sunset-photo"
-            src="images/homeimgs/lifestyle2.jpg"
-            alt=""
-          />
-          <div className="honey-paragraph">
-            <h1>Why do we use it?</h1>
-            <p>
-              a long established fact that a reader will be distracted by the
-              readable content of a page when looking at its layout. The point
-              of using Lorem Ipsum is that it has a more
-            </p>
+          <div className="honey">
+            {getCateData.length !== 0 ? (
+              getCateData.slice(1, 4).map((data, index) => {
+                return (
+                  <div className="honey-1">
+                    <div className="honeyImg">
+                      <img
+                        className="sunset-photo"
+                        src={`http://localhost:8080/${data.files[0].filePath}`}
+                        alt=""
+                      />
+                    </div>
+                    <div className="honey-paragraph">
+                      <Link
+                        to={`/${category}/${data._id}`}
+                        className={`${category}hover`}
+                      >
+                        <h4>{data.title.substring(0, 30)}...</h4>
+                      </Link>
+                      <p>{data.description.substring(0, 110)}...</p>
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <div>
+                <h4>There has No Data or Loading !</h4>
+              </div>
+            )}
           </div>
+        </>
+      ) : (
+        <div>
+          <h4> Loading !</h4>
         </div>
-
-        <div className="honey-2">
-          <img
-            className="food-photo"
-            src="images/homeimgs/lifestyle4.jpg"
-            alt=""
-          />
-          <div className="food-paragraph">
-            <h1>Why do we use it?</h1>
-            <p>
-              a long established fact that a reader will be distracted by the
-              readable content of a page when looking at its layout. The point
-              of using Lorem Ipsum is that it has a more
-            </p>
-          </div>
-        </div>
-
-        <div className="honey-3">
-          <img
-            className="camera-photo"
-            src="images/homeimgs/lifestyle3.jpg"
-            alt=""
-          />
-          <div className="camera-paragraph">
-            <h1>Why do we use it?</h1>
-            <p>
-              a long established fact that a reader will be distracted by the
-              readable content of a page when looking at its layout. The point
-              of using Lorem Ipsum is that it has a more
-            </p>
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 }

@@ -8,6 +8,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 .wrapper .wrapperimg {
   width: 100%;
@@ -20,12 +21,12 @@ img {
 .wrapperinfo h4:hover {
   color: #00a79d;
 }
-.wrapperinfo span {
+.wrapperinfo button {
   display: inline-block;
   margin: 0.8rem 0;
   /* background-color: aqua; */
 }
-.wrapperinfo span:hover {
+.wrapperinfo button:hover {
   background-color: #00a79d;
   color: black;
 }

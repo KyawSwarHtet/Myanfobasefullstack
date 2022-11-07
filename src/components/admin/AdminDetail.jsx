@@ -50,9 +50,11 @@ export default function AdminDetail() {
 
         <div className="postdetail">
           <h3 className="admindetail-title">{postDetail.title} </h3>
-          <button className="admindetail-cate cateTravel">
-            {postDetail.cateName}
-          </button>
+          <Link to={`/${postDetail.cateName}`} className="link1">
+            <button className={` cate${postDetail.cateName}`}>
+              {postDetail.cateName}
+            </button>
+          </Link>
           {console.log("post detail img is", postDetail)}
           <div className="postman">
             <div className="postmanProfile">

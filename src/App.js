@@ -9,6 +9,10 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import { themeContext } from "./Context";
 import { useContext } from "react";
+
+const AddCategoriesPage = React.lazy(() =>
+  import("./pages/categories/AddCategoriesPage")
+);
 const Animepage = React.lazy(() => import("./pages/art/Animepage"));
 const Art = React.lazy(() => import("./pages/art/Art"));
 const Doodlepage = React.lazy(() => import("./pages/art/Doodlepage"));
@@ -973,6 +977,14 @@ function App() {
           element={
             <React.Suspense fallback="Loading....">
               <UserDetailPage />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/addcate"
+          element={
+            <React.Suspense fallback="Loading....">
+              <AddCategoriesPage />
             </React.Suspense>
           }
         />

@@ -301,7 +301,21 @@ dl {
 ::-webkit-scrollbar-thumb {
   background-color: rgb(179, 179, 179);
 }
-
+.editbutton {
+  /* padding: 10px 40px 10px 40px;
+  background-color: rgba(97, 157, 240, 0.895);
+  border-radius: 10px; */
+  width: 150px;
+  height: 49px;
+  border-radius: 49px;
+  cursor: pointer;
+  background-color: #2889a3;
+  color: #ffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  transition: all 0.5s;
+}
 .btnactive {
   background-color: var(--technology-bg) !important;
   color: black !important;
