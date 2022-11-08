@@ -1,20 +1,6 @@
-import React, { useRef, useState, useEffect, useMemo } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import React from "react";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import "./categories.css";
-
-// import required modules
-import { Pagination, Navigation } from "swiper";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-
-export default function Categorieslider() {
+export default function CategoryCount() {
   const [categories, setCategories] = useState("");
   const { posts } = useSelector((state) => state.posts);
 
