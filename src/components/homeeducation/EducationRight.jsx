@@ -7,7 +7,6 @@ export default function EducationRight(props) {
   const category = "Education";
   Moment.globalFormat = "DD MMM YYYY";
 
- 
   return (
     <div>
       {getCateData.length !== 0 ? (
@@ -23,7 +22,7 @@ export default function EducationRight(props) {
               <div className="wrapperinfo">
                 <Link
                   to={`/${category}/${data._id}`}
-                  className={`${category}hover`}
+                  className={`colorBlack ${category}hover`}
                 >
                   <h4>{data.title.substring(0, 30)}...</h4>
                 </Link>

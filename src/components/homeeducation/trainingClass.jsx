@@ -41,7 +41,7 @@ export default function TrainingClass() {
               </div>
               <Link
                 to={`/${category}/${data._id}`}
-                className={`${category}hover`}
+                className={`colorBlack ${category}hover`}
               >
                 <h4>{data.title.substring(0, 50)}...</h4>
               </Link>

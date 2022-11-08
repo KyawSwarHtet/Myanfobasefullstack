@@ -14,9 +14,7 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-.classTop h4:hover {
-  color: var(--technology-bg);
-}
+
 .classTop .classimg {
   width: 100%;
   height: 270px;
@@ -28,8 +26,8 @@ img {
 .homeclass2 h4 {
   margin-top: 0.5rem;
 }
-.homeclass2 h4{
-  margin-top: .5rem;
+.homeclass2 h4 {
+  margin-top: 0.5rem;
 }
 /* .classTop h2:hover {
   color: #00a79d;

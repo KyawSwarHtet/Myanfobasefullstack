@@ -37,7 +37,7 @@ const News = () => {
                     <div className="news_info ent_hover">
                       <Link
                         to={`/${data.cateName}/${data._id}`}
-                        className={`${data.cateName}hover`}
+                        className={`colorBlack ${data.cateName}hover`}
                       >
                         <h4>{data.title.substring(0, 50)}...</h4>
                       </Link>

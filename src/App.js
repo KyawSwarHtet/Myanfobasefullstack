@@ -185,14 +185,17 @@ function App() {
       setGetAllusers(data);
     });
   }, []);
- const theme = useContext(themeContext);
- const darkMode = theme.state.darkMode;
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   return (
-    <div className="App"
+    <div
+      className="App"
+      id={darkMode? 'blackMode':'whiteMode'}
       style={{
         background: darkMode ? "#1a1a1a" : "white",
         color: darkMode ? "white" : "#1a1a1a",
-    }}>
+      }}
+    >
       <Header />
       <Routes>
         <Route

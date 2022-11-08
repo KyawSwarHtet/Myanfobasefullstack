@@ -48,7 +48,7 @@ export default function Lifestylenew() {
               <div className="paragraph">
                 <Link
                   to={`/${category}/${getCateData[0]._id}`}
-                  className={`${category}hover`}
+                  className={`colorBlack ${category}hover`}
                 >
                   <h2>{getCateData[0].title.substring(0, 70)}...</h2>
                 </Link>
@@ -98,7 +98,7 @@ export default function Lifestylenew() {
                     <div className="honey-paragraph">
                       <Link
                         to={`/${category}/${data._id}`}
-                        className={`${category}hover`}
+                        className={`colorBlack ${category}hover`}
                       >
                         <h4>{data.title.substring(0, 30)}...</h4>
                       </Link>

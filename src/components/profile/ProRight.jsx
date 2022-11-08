@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "../travelling/travside.css";
+import "../../App.css";
 import Moment from "react-moment";
 import Spinner from "../login/Spinner";
 import ReactReadMoreReadLess from "react-read-more-read-less";
@@ -70,7 +71,7 @@ function ProRight() {
                       <div className="postProfile_info">
                         <Link
                           to={`/${element.cateName}/${element._id}`}
-                          className={`${element.cateName}hover`}
+                          className={`colorBlack ${element.cateName}hover`}
                         >
                           <h4>{element.title.substring(0, 50)}...</h4>
                         </Link>

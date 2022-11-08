@@ -21,7 +21,7 @@ export default function EducationLeft(props) {
               <div className="wrapperinfo">
                 <Link
                   to={`/${category}/${data._id}`}
-                  className={`${category}hover`}
+                  className={`colorBlack ${category}hover`}
                 >
                   <h4>{data.title.substring(0, 30)}...</h4>
                 </Link>
