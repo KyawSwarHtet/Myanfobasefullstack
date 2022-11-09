@@ -8,13 +8,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
+import { themeContext } from "../../Context";
+import { useContext } from "react";
 import "./slider.css";
 
 // import required modules
 import { Pagination, Navigation } from "swiper";
 
 export default function Slider() {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   const [categories, setCategories] = useState("");
   const getAlldata = async () => {
     const reqdata = await fetch(`http://localhost:8080/api/category`);
@@ -46,11 +49,16 @@ export default function Slider() {
         {categories.length !== 0 ? (
           categories.map((cate) => {
             return (
-              <SwiperSlide>
-                <Link to={cate.catename} className="main-cat">
-                  <p>{cate.catename}</p>
-                </Link>
-              </SwiperSlide>
+              <div className="darkslide">
+                <SwiperSlide>
+                  <Link
+                    to={cate.catename}
+                    className={darkMode ? "main-catwhite" : "main-catblack"}
+                  >
+                    <p>{cate.catename}</p>
+                  </Link>
+                </SwiperSlide>
+              </div>
             );
           })
         ) : (

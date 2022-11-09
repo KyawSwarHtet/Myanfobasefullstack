@@ -4,7 +4,6 @@ import Moment from "react-moment";
 import "./lastnews.css";
 const News = () => {
   const [lastposts, setLastPosts] = useState("");
-  console.log('gello',lastposts)
   const [visible, setVisible] = useState(4);
   Moment.globalFormat = "DD MMM YYYY";
 
@@ -40,9 +39,9 @@ const News = () => {
                         to={`/${data.cateName}/${data._id}`}
                         className={`${data.cateName}hover`}
                       >
-                        <h4>{data.title}</h4>
+                        <h4>{data.title.substring(0, 50)}...</h4>
                       </Link>
-                      <p>{data.description}</p>
+                      <p>{data.description.substring(0, 130)}...</p>
                       <div className="postbuttom">
                         <div className="postman">
                           <div className="postmanProfile">
@@ -69,8 +68,6 @@ const News = () => {
                         </div>
                         <div className="posticon">
                           <i className="uil uil-bookmark"></i>
-
-                          
                         </div>
                       </div>
                     </div>

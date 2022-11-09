@@ -5,6 +5,7 @@ import Language from "./dropdown/Language";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../../features/auth/authSlice";
 import "./header.css";
+import Toggle from "../toggle/Toggle";
 
 export default function Header() {
   const [dropdown, setDropdown] = useState(false);
@@ -128,10 +129,11 @@ export default function Header() {
                         text={"Edit Profile"}
                         pathLink={"/editprofile"}
                       />
-                      <DropdownItem
+                      {/* <DropdownItem
                         data={"fa-solid fa-circle-half-stroke"}
                         text={"Dark Mode"}
-                      />
+                      /> */}
+                      <Toggle/>
 
                       <li className="dropdownItem">
                         <i class="fa-solid fa-right-from-bracket"></i>

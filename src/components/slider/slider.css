@@ -106,8 +106,15 @@ body {
   line-height: 1;
   margin-right: 1rem;
 } */
-.main-cat {
+.main-catwhite {
+  color: #fff;
+  /* color: black; */
+  font-size: 1rem;
+  font-weight: bold;
+}
+.main-catblack {
   color: black;
+  /* color: black; */
   font-size: 1rem;
   font-weight: bold;
 }
@@ -116,14 +123,17 @@ body {
   height: 50px;
 }
 .swiper-button-next .cat-text {
+ 
   right: 0px;
   left: auto;
 }
 #SliderTop .swiper-button-prev {
+
   position: absolute;
   /* align-items: center; */
   top: 18px;
 }
+
 #SliderTop .swiper-button-next {
   position: absolute;
   top: 18px;
@@ -131,3 +141,5 @@ body {
 #SliderTop p {
   margin-left: 12px;
 }
+
+

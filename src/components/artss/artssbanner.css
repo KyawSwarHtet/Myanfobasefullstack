@@ -26,7 +26,8 @@
   font-size: 80px;
   line-height: 90px;
   font-weight: 400;
-  color: rgb(10, 10, 10);
+  color: #777777;
+  /* color: rgb(10, 10, 10); */
   letter-spacing: -5px;
   font-family: "Playfair Display";
   margin-left: 3rem;
@@ -39,7 +40,7 @@
   font-size: 16px;
   line-height: 28px;
   font-weight: 300;
-  color: rgb(10, 10, 10);
+  color: #777777;
   font-family: Poppins;
   margin-left: 6rem;
   margin-top: 1rem;
@@ -50,7 +51,7 @@
   font-size: 16px;
   line-height: 28px;
   font-weight: 300;
-  color: rgb(10, 10, 10);
+  color: #777777;
   font-family: Poppins;
   margin-left: 6rem;
   margin-top: 3rem;
