@@ -1,7 +1,6 @@
 import React from "react";
 import Axios from "axios";
-import { Box, TextField, MenuItem } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import "./textform.css";
@@ -103,7 +102,7 @@ export default function CreatePost(props) {
 
   useEffect(() => {
     // Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
-    Axios.get("http://localhost:8080/readcate")
+    Axios.get("http://localhost:8080/api/category")
       .then((response) => {
         setListOfCate(response.data);
         console.log("categories inside", response.data);

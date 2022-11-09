@@ -1,42 +1,82 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./latestbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import Moment from "react-moment";
+import { useState } from "react";
 
 export default function LatestArticle(props) {
-  // const getAllposts = props.getAllposts;
-  // Moment.globalFormat = "DD MMM YYYY";
-  // let result = [];
-  // for (let i = getAllposts.length - 1; i > getAllposts.length - 11; i--) {
-  //   result.push(getAllposts[i]);
+  const [lastposts, setLastPosts] = useState("");
+  // {
+  // title: "",
+  // cateName: "",
+  // createdAt: "",
+  // files: [],
   // }
 
+  const getAlldata = async () => {
+    const reqdata = await fetch(`http://localhost:8080/api/lastposts`);
+    const res = await reqdata.json(); // JSON.parse(json);
+    //   console.log("res data is ", res);
+    return res;
+  };
+
+  useEffect(() => {
+    getAlldata().then((data) => {
+      setLastPosts(data);
+    });
+  }, []);
+
+  console.log("latest post length is", lastposts.length);
+  console.log("latest post is", lastposts);
   return (
-    <div className="lastArt">
-      <div className="lastnewbar-title">
-        <h2>Latest Articles</h2>
-        <span className="lasttitleline"></span>
-      </div>
-      <div className="lastnewbar-body sidebar1">
-        <div className="article-lastest">
-          <div className="lastnewimg">
-            <img src="./images/technology/robothand.jpg" alt="" />
-          </div>
-          <div className="lastnewinfo">
-            <h4>Hello Lates Artilce title</h4>
-            <div className="lastnewbuttondate">
-              {/* <Link to={`/${data.cateName}`}>
-                <button className={` cate${data.cateName}`}>
-                  {data.cateName}
-                </button>
-              </Link> */}
-              <span className="profileDate">
-                {/* <Moment format="DD/MMM/YYYY">23.4.2223</Moment> */}
-              </span>
+    lastposts && (
+      <div className="lastArt">
+        <div className="lastnewbar-title">
+          <h2>Latest Articles</h2>
+          <span className="lasttitleline"></span>
+        </div>
+
+        <div className="lastnewbar-body sidebar1">
+          {lastposts.length !== 0 ? (
+            lastposts.map((data) => {
+              if (data.postAccept === true) {
+                return (
+                  <div className="article-lastest">
+                    <div className="lastnewimg">
+                      <img
+                        src={`http://localhost:8080/${data.files[0].filePath}`}
+                        alt=""
+                      />
+                    </div>
+                    <div className="lastnewinfo">
+                      <Link
+                        to={`/${data.cateName}/${data._id}`}
+                        className={`${data.cateName}hover`}
+                      >
+                        <h4>{data.title}</h4>
+                      </Link>
+                      <div className="lastnewbuttondate">
+                        <Link to={`/${data.cateName}`}>
+                          <button className={` cate${data.cateName}`}>
+                            {data.cateName}
+                          </button>
+                        </Link>
+                        <span className="profileDate">
+                          <Moment format="DD/MMM/YYYY">{data.createdAt}</Moment>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            })
+          ) : (
+            <div>
+              <h3>No data here</h3>
             </div>
-          </div>
+          )}
         </div>
       </div>
-    </div>
+    )
   );
 }

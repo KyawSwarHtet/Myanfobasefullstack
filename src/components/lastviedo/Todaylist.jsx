@@ -1,13 +1,15 @@
-import React from "react";
+import * as React from "react";
 import "./lastnews.css";
 
 const Todaylist = () => {
+  
   return (
     <>
       <div className="todaylist">
         <div className="CurrencyExchange">
           <h3>Today Currency Exchange</h3>
-          {/* <span className="underline1"></span> */}
+         
+          <span className="underline1"></span> 
           <div className="today">
             <div className="foreignmoney">
               <img src="./images/homeimgs/usd.jpg" alt="" />
