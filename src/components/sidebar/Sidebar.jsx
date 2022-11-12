@@ -1,4 +1,4 @@
-import { Pagination } from "@mui/material";
+import { Pagination, } from "@mui/material";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
@@ -13,7 +13,8 @@ import { useContext } from "react";
   const darkMode = theme.state.darkMode;
   const [currentPage, setcurrentPage] = useState(1);
   const [itemPerPage, setitemPerPage] = useState(5);
-  const [getCateData, setCateData] = useState([]);
+    const [getCateData, setCateData] = useState([]);
+    const [Favlist, setFavlist] = useState(false)
   console.log("get cate Data", getCateData);
   const category = props.category;
   Moment.globalFormat = "DD MMM YYYY";
@@ -48,7 +49,11 @@ import { useContext } from "react";
     });
   }, [category]);
 
-  console.log("current page", currentItems);
+    console.log("current page", currentItems);
+    
+    const handleChange = (event) => {
+      setFavlist(event.target.checked);
+    };
 
   return (
     <>
@@ -120,6 +125,7 @@ import { useContext } from "react";
                           <div className="posticon">
                             <i className="uil uil-bookmark"></i>
                           </div>
+                          
                         </div>
                       </div>
                     
