@@ -28,7 +28,8 @@ export default function DropdownCate({
   // ];
 
   useEffect(() => {
-    Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
+    Axios.get("https://desolate-hollows-16342.herokuapp.com/api/category")
+      // Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
       .then((response) => {
         setListOfCate(response.data);
         console.log("categories inside", response.data);

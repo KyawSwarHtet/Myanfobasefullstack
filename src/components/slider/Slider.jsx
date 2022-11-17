@@ -20,7 +20,10 @@ export default function Slider() {
   const darkMode = theme.state.darkMode;
   const [categories, setCategories] = useState("");
   const getAlldata = async () => {
-    const reqdata = await fetch(`http://localhost:8080/api/category`);
+    const reqdata = await fetch(
+      `https://desolate-hollows-16342.herokuapp.com/api/category`
+    );
+    // const reqdata = await fetch(`http://localhost:8080/api/category`);
     const res = await reqdata.json(); // JSON.parse(json);
     //   console.log("res data is ", res);
     return res;

@@ -1,4 +1,5 @@
 import Latestbar from "../../components/catepagerightbar/Latestbar";
+import PopularNews from "../../components/catepagerightbar/PopularNews";
 import Footer from "../../components/footer/Footer";
 import HealthBanner from "../../components/health/Healthbanner";
 import HealthHeader from "../../components/health/Healthheader";
@@ -16,7 +17,8 @@ export default function Healthpage() {
         <section className="tecbody">
           <HealthSidebar />
           <div className="allRightBar">
-            <HealthPopular />
+            {/* <HealthPopular /> */}
+            <PopularNews />
             <Latestbar />
           </div>
         </section>

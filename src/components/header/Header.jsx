@@ -99,7 +99,8 @@ export default function Header() {
                       ) : (
                         <Link to={"/profile"}>
                           <img
-                            src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
+                            src={`https://desolate-hollows-16342.herokuapp.com/${user.profilePicture[0].filePath}`}
+                            // src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
                             alt=""
                           />
                         </Link>
@@ -133,7 +134,11 @@ export default function Header() {
                         data={"fa-solid fa-circle-half-stroke"}
                         text={"Dark Mode"}
                       /> */}
+<<<<<<< HEAD
                       <Toggle/>
+=======
+                      <Toggle />
+>>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
 
                       <li className="dropdownItem">
                         <i class="fa-solid fa-right-from-bracket"></i>

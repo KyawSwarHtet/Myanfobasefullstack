@@ -1,5 +1,6 @@
 import React from "react";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
+import PopularNews from "../../components/catepagerightbar/PopularNews";
 import Sportbanner from "../../components/sport/Sportbanner";
 import Sportheader from "../../components/sport/Sportheader";
 import SportMain from "../../components/sport/SportMain";
@@ -15,7 +16,8 @@ export default function Sport() {
         <div className="sportbody">
           <SportMain />
           <div className="allRightBar">
-            <SportPopular />
+            {/* <SportPopular /> */}
+            <PopularNews />
             <Latestbar />
           </div>
         </div>

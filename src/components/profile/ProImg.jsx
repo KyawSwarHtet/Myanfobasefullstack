@@ -14,7 +14,8 @@ const ProImg = (props) => {
             <img src="./images/userprofile/defaultuserprofile.png" alt="" />
           ) : (
             <img
-              src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
+              src={`https://desolate-hollows-16342.herokuapp.com/${user.profilePicture[0].filePath}`}
+              // src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
               alt=""
             />
           )}

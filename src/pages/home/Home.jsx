@@ -15,6 +15,9 @@ const Viedo = React.lazy(() => import("../../components/Vedio/Viedo"));
 const Categorieslider = React.lazy(() =>
   import("../../components/categories/Categorieslider")
 );
+const CategoryCount = React.lazy(() =>
+  import("../../components/categories/CategoryCount")
+);
 const Home = () => {
   return (
     <div className="HomePageDiv">
@@ -32,7 +35,8 @@ const Home = () => {
         <Viedo />
       </Suspense>
       <Suspense fallback={<div>Loading...</div>}>
-        <Categorieslider />
+        {/* <Categorieslider /> */}
+        <CategoryCount />
       </Suspense>
     </div>
   );

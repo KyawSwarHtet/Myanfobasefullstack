@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const apiUrl = "https://desolate-hollows-16342.herokuapp.com/api/";
-const apiUrl = "http://localhost:8080/api/";
+const apiUrl = "https://desolate-hollows-16342.herokuapp.com/api/";
+// const apiUrl = "http://localhost:8080/api/";
 
 export const multipleFilesUpload = async (data) => {
   try {

@@ -1,7 +1,12 @@
 import React from "react";
 import "./toggle.css";
+<<<<<<< HEAD
 import Sun from "@iconscout/react-unicons/icons/uil-sun";
 import Moon from "@iconscout/react-unicons/icons/uil-moon";
+=======
+// import Sun from "@iconscout/react-unicons/icons/uil-sun";
+// import Moon from "@iconscout/react-unicons/icons/uil-moon";
+>>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
 import { themeContext } from "../../Context";
 import { useContext } from "react";
 
@@ -18,8 +23,13 @@ function Toggle() {
       onClick={handleClick}
       style={darkMode ? { left: "0px" } : { right: "0px" }}
     >
+<<<<<<< HEAD
       <Moon />
       <Sun />
+=======
+      {/* <Moon />
+      <Sun /> */}
+>>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
 
       <div
         className="t_button"

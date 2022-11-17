@@ -12,7 +12,8 @@ export default function Lifestylenew() {
   useEffect(() => {
     const getAlldata = async () => {
       const reqdata = await fetch(
-        `http://localhost:8080/api/postcate/${category}`
+        `https://desolate-hollows-16342.herokuapp.com/api/postcate/${category}`
+        // `http://localhost:8080/api/postcate/${category}`
       );
       const res = await reqdata.json(); // JSON.parse(json);
       //   console.log("res data is ", res);
@@ -34,7 +35,8 @@ export default function Lifestylenew() {
               <div className="exercise-photo">
                 <img
                   className="photo-ex1"
-                  src={`http://localhost:8080/${getCateData[0].files[0].filePath}`}
+                  src={`https://desolate-hollows-16342.herokuapp.com/${getCateData[0].files[0].filePath}`}
+                  // src={`http://localhost:8080/${getCateData[0].files[0].filePath}`}
                   alt=""
                 />
                 <Link to={`/${category}`} className="link1">
@@ -48,7 +50,7 @@ export default function Lifestylenew() {
               <div className="paragraph">
                 <Link
                   to={`/${category}/${getCateData[0]._id}`}
-                  className={`${category}hover`}
+                  className={`colorBlack ${category}hover`}
                 >
                   <h2>{getCateData[0].title.substring(0, 70)}...</h2>
                 </Link>
@@ -63,7 +65,8 @@ export default function Lifestylenew() {
                       />
                     ) : (
                       <img
-                        src={`http://localhost:8080/${getCateData[0].userprofile}`}
+                        src={`https://desolate-hollows-16342.herokuapp.com/${getCateData[0].userprofile}`}
+                        // src={`http://localhost:8080/${getCateData[0].userprofile}`}
                         alt=""
                       />
                     )}
@@ -91,14 +94,15 @@ export default function Lifestylenew() {
                     <div className="honeyImg">
                       <img
                         className="sunset-photo"
-                        src={`http://localhost:8080/${data.files[0].filePath}`}
+                        src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
+                        // src={`http://localhost:8080/${data.files[0].filePath}`}
                         alt=""
                       />
                     </div>
                     <div className="honey-paragraph">
                       <Link
                         to={`/${category}/${data._id}`}
-                        className={`${category}hover`}
+                        className={`colorBlack ${category}hover`}
                       >
                         <h4>{data.title.substring(0, 30)}...</h4>
                       </Link>

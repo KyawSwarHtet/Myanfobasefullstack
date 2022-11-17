@@ -6,7 +6,7 @@ import Axios from "axios";
 import "./userdetail.css";
 import "../sidebar/sidebar.css";
 
-export default function UserDetail() {
+export default function UserDetailWithCount() {
   Moment.globalFormat = "D MMM YYYY";
   const [postDetail, setPostDetail] = useState("");
 

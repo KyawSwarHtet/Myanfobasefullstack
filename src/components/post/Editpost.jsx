@@ -64,7 +64,10 @@ export default function EditPost() {
 
   useEffect(() => {
     const editpostid = async () => {
-      const reqdata = await fetch(`http://localhost:8080/editpost/${id}`);
+      const reqdata = await fetch(
+        `https://desolate-hollows-16342.herokuapp.com/editpost/${id}`
+      );
+      // const reqdata = await fetch(`http://localhost:8080/editpost/${id}`);
       const res = await reqdata.json(); // JSON.parse(json);
       console.log("res data is ", res);
       return res;
@@ -86,8 +89,8 @@ export default function EditPost() {
   const [listOfCate, setListOfCate] = useState([]);
 
   useEffect(() => {
-    // Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
-    Axios.get("http://localhost:8080/api/category")
+    Axios.get("https://desolate-hollows-16342.herokuapp.com/api/category")
+      // Axios.get("http://localhost:8080/api/category")
       .then((response) => {
         setListOfCate(response.data);
         // console.log("categories inside", response.data);
@@ -120,7 +123,7 @@ export default function EditPost() {
   return (
     <>
       {editpost && (
-        <div className="postDiv">
+        <div className="postDiv" key={editpost._id}>
           <div className="postbg updateheader">
             <h2>Update your information</h2>
           </div>
@@ -223,7 +226,8 @@ export default function EditPost() {
                     <div className="imgDiv1">
                       {/* {console.log("file path is", file.filePath)} */}
                       <img
-                        src={`http://localhost:8080/${file.filePath}`}
+                        src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}
+                        // src={`http://localhost:8080/${file.filePath}`}
                         height="200"
                         alt={`${file.cateName}`}
                         // src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}

@@ -5,6 +5,7 @@ import Artssheader from "../../components/artss/Artssheader";
 import ArtssMain from "../../components/artss/ArtssMain";
 import ArtssPopular from "../../components/artss/ArtssPopular";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
+import PopularNews from "../../components/catepagerightbar/PopularNews";
 
 export default function Art() {
   return (
@@ -17,7 +18,8 @@ export default function Art() {
         <div className="artbody">
           <ArtssMain />
           <div className="allRightBar">
-            <ArtssPopular />
+            {/* <ArtssPopular /> */}
+            <PopularNews />
             <Latestbar />
           </div>
         </div>

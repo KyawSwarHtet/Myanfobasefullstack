@@ -1,5 +1,6 @@
 import React from "react";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
+import PopularNews from "../../components/catepagerightbar/PopularNews";
 import Entermentbanner from "../../components/enterment/Entermentbanner";
 import Entermentheader from "../../components/enterment/Entermentheader";
 import Entertainmentmain from "../../components/enterment/Entertainmentmain";
@@ -14,7 +15,8 @@ export default function Entertainment() {
         <div className="tecbody">
           <Entertainmentmain />
           <div className="allRightBar">
-            <Entertainmentpopular />
+            {/* <Entertainmentpopular /> */}
+            <PopularNews />
             <Latestbar />
           </div>
         </div>

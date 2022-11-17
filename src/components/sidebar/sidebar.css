@@ -62,23 +62,39 @@
   color: black;
 } */
 
+<<<<<<< HEAD
 #sidebar-white .postTrav_info a {
   color: white;
 }
+=======
+/* #sidebar-white .postTrav_info a {
+  color: white;
+} */
+>>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
 
 /* #sidebar-white a:hover {
   color: red;
 } */
 
+<<<<<<< HEAD
 #sidebar-black .postTrav_info a {
   color: black;
 }
+=======
+/* #sidebar-black .postTrav_info a {
+  color: black;
+} */
+>>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
 /* #sidebar-black a:hover {
   color: blue;
 } */
 
 /* hover colors */
+<<<<<<< HEAD
 .postTrav_info #Educationhover:hover {
+=======
+/* .postTrav_info #Educationhover:hover {
+>>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
   color: var(--education-bg);
 }
 .postTrav_info #Entertainmenthover:hover {
@@ -119,4 +135,8 @@
 }
 .postTrav_info #Businesshover:hover {
   color: var(--business-bg);
+<<<<<<< HEAD
 }
+=======
+} */
+>>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d

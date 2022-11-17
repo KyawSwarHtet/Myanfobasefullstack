@@ -42,10 +42,22 @@ body {
 /* .body-color {
   background: var(--background-main) !important;
 } */
+
 a {
   text-decoration: none;
+<<<<<<< HEAD
   /* color: black; */
+=======
 }
+
+#whiteMode .colorBlack {
+  color: black;
+>>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
+}
+#blackMode .colorBlack {
+  color: white;
+}
+
 .container {
   width: var(--container-width-lg);
   margin: 0 auto;
@@ -214,6 +226,7 @@ h5 {
 }
 
 /* hover colors */
+<<<<<<< HEAD
 #Educationhover:hover {
   color: var(--education-bg);
 }
@@ -254,6 +267,62 @@ h5 {
   color: var(--arts-bg);
 }
 #Businesshover:hover {
+=======
+#whiteMode .Educationhover:hover,
+#blackMode .Educationhover:hover {
+  color: var(--education-bg);
+}
+#whiteMode .Entertainmenthover:hover,
+#blackMode .Entertainmenthover:hover {
+  color: var(--entertainment-bg);
+}
+#whiteMode .Technologyhover:hover,
+#blackMode .Technologyhover:hover {
+  color: var(--technology-bg);
+}
+#whiteMode .Beautyhover:hover,
+#blackMode .Beautyhover:hover {
+  color: var(--beauty-bg);
+}
+#whiteMode .Governmenthover:hover,
+#blackMode .Governmenthover:hover {
+  color: var(--government-bg);
+}
+#whiteMode .Travelhover:hover,
+#blackMode .Travelhover:hover {
+  color: var(--travel-bg);
+}
+#whiteMode .Historyhover:hover,
+#blackMode .Historyhover:hover {
+  color: var(--history-bg);
+}
+#whiteMode .Healthhover:hover,
+#blackMode .Healthhover:hover {
+  color: var(--health-bg);
+}
+#whiteMode .Literaturehover:hover,
+#blackMode .Literaturehover:hover {
+  color: var(--literature-bg);
+}
+#whiteMode .Lifestyleshover:hover,
+#blackMode .Lifestyleshover:hover {
+  color: var(--lifestyles-bg);
+}
+#whiteMode .Sciencehover:hover,
+#blackMode .Sciencehover:hover {
+  color: var(--science-bg);
+}
+#whiteMode .Sportshover:hover,
+#blackMode .Sportshover:hover {
+  color: var(--sports-bg);
+}
+#whiteMode .Artshover:hover,
+#blackMode .Artshover:hover {
+  color: var(--arts-bg);
+}
+#whiteMode .Businesshover:hover,
+#blackMode .Businesshover:hover {
+>>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
   color: var(--business-bg);
 }
 
@@ -286,6 +355,7 @@ dl {
   position: sticky;
   top: 50px;
 }
+
 .sidebar1 {
   height: calc(60vh - 50px);
   overflow-y: scroll;

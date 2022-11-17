@@ -6,6 +6,7 @@ import Footer from "../../components/footer/Footer";
 import Lifestylesidebar from "../../components/lifestyle/Lifestylesidebar";
 import LifestyPopular from "../../components/lifestyle/Lifestylerightbar";
 import Latestbar from "../../components/catepagerightbar/Latestbar";
+import PopularNews from "../../components/catepagerightbar/PopularNews";
 
 export default function Lifestyle() {
   return (
@@ -16,7 +17,8 @@ export default function Lifestyle() {
         <section className="tecbody">
           <Lifestylesidebar />
           <div className="allRightBar">
-            <LifestyPopular />
+            {/* <LifestyPopular /> */}
+            <PopularNews />
             <Latestbar />
           </div>
         </section>
