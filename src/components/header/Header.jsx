@@ -134,11 +134,7 @@ export default function Header() {
                         data={"fa-solid fa-circle-half-stroke"}
                         text={"Dark Mode"}
                       /> */}
-<<<<<<< HEAD
-                      <Toggle/>
-=======
                       <Toggle />
->>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
 
                       <li className="dropdownItem">
                         <i class="fa-solid fa-right-from-bracket"></i>

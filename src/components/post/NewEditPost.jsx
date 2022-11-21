@@ -104,14 +104,9 @@ export default function NewEditPost() {
   console.log("desc ref is", descRef.current);
 
   useEffect(() => {
-<<<<<<< HEAD
-    // Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
-    Axios.get("http://localhost:8080/api/category")
-=======
    
     Axios.get("https://desolate-hollows-16342.herokuapp.com/api/category")
       // Axios.get("http://localhost:8080/api/category")
->>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
       .then((response) => {
         setListOfCate(response.data);
         // console.log("categories inside", response.data);

@@ -163,7 +163,8 @@
  transition: all .3s ease-in-out;
 }
 .mask-div {
-  margin-right: 0.5rem;
+  /* margin-right: 0.5rem; */
+  /* padding-right: .5rem; */
   overflow: hidden;
   position: relative;
 }
@@ -185,6 +186,7 @@ transition: all .5s ease-in-out;
     transform: perspective(1000px) translateZ(150px);
 
 }
+
 .mask-div .popular-bignew {
     position: absolute;
     bottom: 0rem;
@@ -217,7 +219,7 @@ transition: all .5s ease-in-out;
     position: absolute;
     bottom: 0rem;
     /* left: 20px; */
-    width: 100%;
+    width: 98%;
     padding-top: 1rem;
     box-shadow: inset 5px -134px 56px -77px rgb(14 13 13 / 81%);
     padding-bottom: 1rem;
@@ -247,6 +249,8 @@ transform: perspective(1000px) translateZ(150px);
 }
 .secGridfistphoto .travelpopular{
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 .fashion-img img{
    transition: all .5s ease-in-out;
@@ -261,7 +265,11 @@ transform: perspective(1000px) translateZ(150px);
 }
 .secGrid2ndphoto .fashion-img{
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
+
+
 .culture-img img{
    transition: all .5s ease-in-out;
  display: block;
@@ -275,7 +283,10 @@ transform: perspective(1000px) translateZ(150px);
 }
 .secondGrid3rdphoto .culture-img{
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
+
 /* 
 .popular-secnew p:hover {
   color: var(--health-bg);
@@ -284,11 +295,13 @@ transform: perspective(1000px) translateZ(150px);
     position: absolute;
     bottom: 0rem;
     /* left: 20px; */
-    width: 100%;
-    padding-top: 1rem;
-    box-shadow: inset 2px -48px 22px 0px rgb(14 13 13 / 81%);
-    padding-bottom: 1rem;
+    width: 95%;
+    padding-top: .5rem;
+    box-shadow: inset 8px -24px 13px 2px rgb(14 13 13 / 81%);
+    padding-bottom: .5rem;
     padding-left: 30px;
+    margin-right: .5rem;
+
 }
 .popular-thirdnew p {
   color: white;
@@ -303,10 +316,10 @@ transform: perspective(1000px) translateZ(150px);
     position: absolute;
     bottom: 0rem;
     /* left: 20px; */
-    width: 100%;
-    padding-top: 1rem;
-    box-shadow: inset -3px -44px 18px 4px rgb(14 13 13 / 81%);
-    padding-bottom: 1rem;
+    width: 95%;
+    padding-top: .5rem;
+    box-shadow: inset 8px -24px 13px 2px rgb(14 13 13 / 81%);
+    padding-bottom: .5rem;
     padding-left: 30px;
 }
 .popular-fouthnew p {
@@ -325,22 +338,15 @@ transform: perspective(1000px) translateZ(150px);
   transition: all 6s ease-in-out;
 }
 
-.sec-grid {
-  /* display: grid;
-  grid-template-columns: 50% 50%; 
-   gap: 0.5rem; */
-}
-.sec-grid .secGrid2ndphoto {
+
+ .sec-grid .secGrid2ndphoto {
   position: relative;
+
 }
 .sec-grid .secondGrid3rdphoto {
   position: relative;
 }
-.first-grid .SecondDiv {
-  /* display: grid;
-  grid-template-rows: 60% 40%;
-   gap: 0.5rem;  */
-}
+
 
 .secGridfistphoto:hover .popular-secnew p {
   color: var(--travel-bg);
@@ -389,4 +395,10 @@ transform: perspective(1000px) translateZ(150px);
 }
 .populartitle-black{
   color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .bignewsdesc{
+    display: none;
+  }
 }

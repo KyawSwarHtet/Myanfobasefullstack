@@ -53,9 +53,9 @@ export default function Sidebar(props) {
 
     console.log("current page", currentItems);
     
-    const handleChange = (event) => {
-      setFavlist(event.target.checked);
-    };
+    // const handleChange = (event) => {
+    //   setFavlist(event.target.checked);
+    // };
 
   return (
     <>
@@ -121,7 +121,8 @@ export default function Sidebar(props) {
                           
                         </div>
                       </div>
-                    </div>
+                      </div>
+                    
                   );
                 }
               })}
@@ -142,8 +143,6 @@ export default function Sidebar(props) {
           <h4>No Data is Here !!!</h4>
         </div>
       )}
-        </>
-        
-);
-      
+    </>
+  );
 }

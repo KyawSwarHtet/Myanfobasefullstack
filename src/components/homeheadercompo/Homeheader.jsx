@@ -5,7 +5,37 @@ import "swiper/css/bundle";
 import Popularslider from "../popularslider/Popularslider.jsx";
 import { themeContext } from "../../Context";
 import { useContext } from "react";
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@material-ui/core";
+
+
+
+const themeC = createTheme();
+
+themeC.typography.h6 = {
+  fontSize: "1.2rem",
+  "@media (min-width:600px)": {
+    fontSize: "1rem",
+  },
+  [themeC.breakpoints.up("md")]: {
+    fontSize: "1.5rem",
+  },
+};
+
+
+// import {
+//   createTheme,
+//   responsiveFontSizes,
+//   MuiThemeProvider,
+//   Typography
+// } from '@material-ui/core';
+
+
+// let themeFont = createTheme();
+// themeFont = responsiveFontSizes(themeFont);
+
+
+
 
 const HomeHeader = () => {
   const theme = useContext(themeContext);
@@ -77,11 +107,11 @@ const HomeHeader = () => {
       </section>
 
       <section className="popular-body container">
-        <div className="first-grid">
-          <Box>
-            <Container maxWidth="lg">
-              <Grid container direction="row">
-                <Grid item md={8} sm={12}>
+        <Box>
+          <div className="first-grid">
+            <Container maxWidth="xl">
+              <Grid container direction="row" spacing={1}>
+                <Grid item md={7.6} sm={12} xs={12}>
                   <div className="mask-div">
                     <div className="maskimgdiv">
                       <img
@@ -94,72 +124,104 @@ const HomeHeader = () => {
                       <Link to="/health" className="cateHealth">
                         <span className="health_button">Health</span>
                       </Link>
-                      <h4>Where can I get some?</h4>
-                      <p>
+                      <Typography theme={themeC} variant="h6" color="white">
+                        Where can I get some People is good or not?
+                       
+                      </Typography>
+                      <Typography
+                        variant="p"
+                        color="white"
+                        className="bignewsdesc"
+                      >
                         popular-health Lorem Ipsum is simply dummy text of the
                         printing and typesetting industry. Lorem Ipsum has been
                         the industry's standard dummy text ever since the 1500s,
-                      </p>
+                      </Typography>
                     </div>
                   </div>
                 </Grid>
-                <Grid item md={4}>
+                <Grid item md={4.4} sm={12} xs={12}>
                   <div className="SecondDiv">
-                    <Grid container direction="column">
-                      <Grid item md={9}>
-                        <div className="secGridfistphoto">
-                          <div className="travelpopular">
-                            <img
-                              loading="lazy"
-                              src="images/homeimgs/popularland.jpg"
-                              alt=""
-                            />
-                          </div>
-                          <div className="popularsec-bg">
-                            <div className="popular-secnew">
-                              <Link to="/travel" className="cateTravel">
-                                Travel
-                              </Link>
-                              <p>Where can I get some?</p>
-                            </div>
+                    <Grid container direction="row" spacing={1}>
+                      <Grid
+                        item
+                        md={12}
+                        sm={4}
+                        xs={12}
+                        className="secGridfistphoto"
+                      >
+                        {/* <div className="secGridfistphoto"> */}
+                        <div className="travelpopular">
+                          <img
+                            loading="lazy"
+                            src="images/homeimgs/popularland.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <div className="popularsec-bg">
+                          <div className="popular-secnew">
+                            <Link to="/travel" className="cateTravel">
+                              Travel
+                            </Link>
+                            <br></br>
+                            <Typography variant="p" color="white">
+                              Where can I get some?
+                            </Typography>
                           </div>
                         </div>
+                        {/* </div> */}
                       </Grid>
-                      <Grid item md={6}>
+                      <Grid item md={12} sm={8} xs={12}>
                         <div className="sec-grid">
-                          <Grid container direction="row">
-                            <Grid item md={6} paddingRight paddingTop>
-                              <div className="secGrid2ndphoto">
-                                <div className="fashion-img">
-                                  <img
-                                    loading="lazy"
-                                    src="images/homeimgs/fashion.jpg"
-                                    alt=""
-                                  />
-                                </div>
-                                <div className="popular-thirdnew">
-                                  <Link to="/beauty" className="cateBeauty">
-                                    Beauty
-                                  </Link>
-                                  <p>Where can I get some?</p>
-                                </div>
+                          <Grid container direction="row" spacing={1}>
+                            <Grid
+                              item
+                              md={6}
+                              sm={6}
+                              xs={12}
+                              className="secGrid2ndphoto"
+                            >
+                              <div className="fashion-img">
+                                <img
+                                  loading="lazy"
+                                  src="images/art/art6.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="popular-thirdnew">
+                                <Link to="/beauty" className="cateBeauty">
+                                  Beauty
+                                </Link>
+                                <br></br>
+
+                                <Typography variant="p" color="white">
+                                  Where can I get some?
+                                </Typography>
                               </div>
                             </Grid>
-                            <Grid item md={6} paddingTop>
-                              <div className="secondGrid3rdphoto">
-                                <div className="culture-img">
-                                  <img
-                                    loading="lazy"
-                                    src="images/homeimgs/bg2.jpg"
-                                    alt=""
-                                  />
-                                </div>
-                                <div className="popular-fouthnew">
-                                  <Link to="/history" className="cateHistory">
-                                    History
-                                  </Link>
-                                  <p>Where can I get some?</p>
-                                </div>
+                            <Grid
+                              item
+                              md={6}
+                              sm={6}
+                              xs={12}
+                              className="secondGrid3rdphoto"
+                            >
+                              <div className="culture-img">
+                                <img
+                                  loading="lazy"
+                                  src="images/homeimgs/bg2.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="popular-fouthnew">
+                                <Link to="/history" className="cateHistory">
+                                  History
+                                </Link>
+                                <br></br>
+
+                                <Typography variant="p" color="white">
+                                  Where can I get some?
+                                </Typography>
                               </div>
                             </Grid>
                           </Grid>
@@ -170,8 +232,8 @@ const HomeHeader = () => {
                 </Grid>
               </Grid>
             </Container>
-          </Box>
-        </div>
+          </div>
+        </Box>
       </section>
     </>
   );

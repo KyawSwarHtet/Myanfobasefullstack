@@ -8,6 +8,7 @@ const Savepost = () => {
         <span className="savetitleline Post-line"></span>
       </div>
       <div className="savenewbar-body sidebar1">
+        
         <div className="article-save">
           <div className="savenewimg">
             <img src="./images/science/scienceinfo3.jpg" alt="" />

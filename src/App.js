@@ -188,16 +188,6 @@ function App() {
       setGetAllusers(data);
     });
   }, []);
-<<<<<<< HEAD
- const theme = useContext(themeContext);
- const darkMode = theme.state.darkMode;
-  return (
-    <div className="App"
-      style={{
-        background: darkMode ? "#1a1a1a" : "white",
-        color: darkMode ? "white" : "#1a1a1a",
-    }}>
-=======
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
   return (
@@ -209,7 +199,6 @@ function App() {
         color: darkMode ? "white" : "#1a1a1a",
       }}
     >
->>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
       <Header />
       <Routes>
         <Route

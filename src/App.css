@@ -45,14 +45,10 @@ body {
 
 a {
   text-decoration: none;
-<<<<<<< HEAD
-  /* color: black; */
-=======
 }
 
 #whiteMode .colorBlack {
   color: black;
->>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
 }
 #blackMode .colorBlack {
   color: white;
@@ -226,48 +222,6 @@ h5 {
 }
 
 /* hover colors */
-<<<<<<< HEAD
-#Educationhover:hover {
-  color: var(--education-bg);
-}
-#Entertainmenthover:hover {
-  color: var(--entertainment-bg);
-}
-#Technologyhover:hover {
-  color: var(--technology-bg);
-}
-#Beautyhover:hover {
-  color: var(--beauty-bg);
-}
-#Governmenthover:hover {
-  color: var(--government-bg);
-}
-#Travelhover:hover {
-  color: var(--travel-bg);
-}
-#Historyhover:hover {
-  color: var(--history-bg);
-}
-#Healthhover:hover {
-  color: var(--health-bg);
-}
-#Literaturehover:hover {
-  color: var(--literature-bg);
-}
-#Lifestyleshover:hover {
-  color: var(--lifestyles-bg);
-}
-#Sciencehover:hover {
-  color: var(--science-bg);
-}
-#Sportshover:hover {
-  color: var(--sports-bg);
-}
-#Artshover:hover {
-  color: var(--arts-bg);
-}
-#Businesshover:hover {
-=======
 #whiteMode .Educationhover:hover,
 #blackMode .Educationhover:hover {
   color: var(--education-bg);
@@ -322,7 +276,6 @@ h5 {
 }
 #whiteMode .Businesshover:hover,
 #blackMode .Businesshover:hover {
->>>>>>> be1b7d450b53b811e95d1af37e540a31b0305f6d
   color: var(--business-bg);
 }
 
