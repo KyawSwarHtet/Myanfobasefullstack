@@ -2,30 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../technology/technology.css";
 import "../travelling/theader.css";
+import { Box, Breadcrumbs, Typography, Stack } from "@mui/material";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 export default function Eduhead() {
   return (
     <>
       <section className="container travel">
-        <div className="top">
-          <div className="homelink">
-            <ul>
-              <li>
-                <Link to="/" className="link1">
-                  <h4>Home</h4>
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <Box sx={{ marginButtom: "10px" }}>
+          <Breadcrumbs
+            aria-aria-label="breadcrumb"
+            separator={<NavigateNextIcon fontSize="small" />}
+          >
+            <Link to="/" className="link1" fontSize="25px">
+              <Typography color={"black"}>Home</Typography>
+            </Link>
+            <Typography>Education</Typography>
+          </Breadcrumbs>
+        </Box>
+        <Typography
+          variant="h1"
+          fontSize={30}
+          fontWeight={700}
+          textTransform="uppercase"
+          sx={{ marginTop: "10px" }}
+        >
+          Education
+        </Typography>
 
-          <div className="iconRightArrow">
-            <i className="uil uil-angle-right-b"></i>
-          </div>
-
-          <h4>Education</h4>
-        </div>
-        <div className="travel-main">
-          <h1>Education</h1>
-        </div>
         <div className="button">
           <Link to="/university">
             <button className="tec">University & Collage</button>
@@ -43,14 +46,20 @@ export default function Eduhead() {
             <button className="tec">Equality-Education </button>
           </Link>
         </div>
-        <div className="para">
-          <p>
-            We've reviewed our advice for Myanmar. We continue to advise you 'do
-            not travel' to Myanmar due to ongoing civil unrest and armed
-            conflict. If it's safe to do so, leave Myanmar via commercial
-            airline. Remain aware of the security environment at all times.
-          </p>
-        </div>
+        <Typography
+          variant="body1"
+          fontFamily={("Open Sans", "Open Sans Regular", "sans - serif")}
+          fontStyle={"italic"}
+          align={"justify"}
+          sx={{ marginTop: "18px", color: "#777" }}
+        >
+          Modern technology has become a total phenomenon for civilization, the
+          defining force of a new social order in which efficiency is no longer
+          an option but a necessity imposed on all human activity.
+          tttttttttttttt ttttttttttttttttttttttt
+          ttttttttttttttttttttttttttttttttttttt
+          tttttttttttttttttttttttttttttttttttttttttttttttttttttt
+        </Typography>
       </section>
     </>
   );

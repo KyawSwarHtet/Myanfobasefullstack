@@ -1,4 +1,4 @@
-import { Pagination } from "@mui/material";
+import { Pagination, Grid } from "@mui/material";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
@@ -52,6 +52,10 @@ export default function Sidebar(props) {
   }, [category]);
 
   console.log("current page", currentItems);
+
+  // const handleChange = (event) => {
+  //   setFavlist(event.target.checked);
+  // };
 
   return (
     <>

@@ -2,6 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./homeheader.css";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@material-ui/core";
+
+const themeC = createTheme();
+
+themeC.typography.h6 = {
+  fontSize: "1.2rem",
+  "@media (min-width:600px)": {
+    fontSize: "1rem",
+  },
+  [themeC.breakpoints.up("md")]: {
+    fontSize: "1.5rem",
+  },
+};
 
 export default function PopularHome() {
   const [lastposts, setLastPosts] = useState("");
@@ -22,106 +36,166 @@ export default function PopularHome() {
   }, []);
 
   return (
-    <div>
+    <>
       {lastposts && (
         <section className="popular-body container">
-          <div className="first-grid">
-            <div className="mask-div">
-              <div className="maskimgdiv">
-                <img
-                  src={`https://desolate-hollows-16342.herokuapp.com/${lastposts[0].files[0].filePath}`}
-                  alt=""
-                />
-              </div>
-              <div className="popular-bignew">
-                <Link to={`/${lastposts[0].cateName}`}>
-                  <button className={`cate${lastposts[0].cateName}`}>
-                    {lastposts[0].cateName}
-                  </button>
-                </Link>
-                <Link
-                  to={`/${lastposts[0].cateName}/${lastposts[0]._id}`}
-                  className={`whiteColor ${lastposts[0].cateName}hover`}
-                >
-                  <h4>{lastposts[0].title.substring(0, 80)}...</h4>
-                </Link>
+          <Box>
+            <div className="first-grid">
+              <Container maxWidth="xl">
+                <Grid container direction="row" spacing={1}>
+                  <Grid item md={7.6} sm={12} xs={12}>
+                    <div className="mask-div">
+                      <div className="maskimgdiv">
+                        <img
+                          src={`https://desolate-hollows-16342.herokuapp.com/${lastposts[0].files[0].filePath}`}
+                          alt=""
+                        />
+                      </div>
+                      <div className="popular-bignew">
+                        <Link to={`/${lastposts[0].cateName}`}>
+                          <button className={`cate${lastposts[0].cateName}`}>
+                            {lastposts[0].cateName}
+                          </button>
+                        </Link>
+                        <Link
+                          to={`/${lastposts[0].cateName}/${lastposts[0]._id}`}
+                          className={`whiteColor ${lastposts[0].cateName}hover`}
+                        >
+                          <Typography theme={themeC} variant="h6" color="white">
+                            {lastposts[0].title.substring(0, 80)}...
+                          </Typography>
+                        </Link>
 
-                <p>{lastposts[0].description.substring(0, 80)}...</p>
-              </div>
-            </div>
-            <div className="SecondDiv">
-              <div className="secGridfistphoto">
-                <div className="travelpopular">
-                  <img
-                    src={`https://desolate-hollows-16342.herokuapp.com/${lastposts[1].files[0].filePath}`}
-                    alt=""
-                  />
-                </div>
-                <div className="popularsec-bg">
-                  <div className="popular-secnew">
-                    <Link to={`/${lastposts[1].cateName}`}>
-                      <button className={`cate${lastposts[1].cateName}`}>
-                        {lastposts[1].cateName}
-                      </button>
-                    </Link>
-                    <Link
-                      to={`/${lastposts[1].cateName}/${lastposts[1]._id}`}
-                      className={`whiteColor ${lastposts[1].cateName}hover`}
-                    >
-                      <h4>{lastposts[1].title.substring(0, 80)}...</h4>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+                        <Typography
+                          variant="p"
+                          color="white"
+                          className="bignewsdesc"
+                        >
+                          {lastposts[0].description.substring(0, 80)}...
+                        </Typography>
+                      </div>
+                    </div>
+                  </Grid>
+                  <Grid item md={4.4} sm={12} xs={12}>
+                    <div className="SecondDiv">
+                      <Grid container direction="column">
+                        <Grid
+                          item
+                          md={8}
+                          sm={4}
+                          xs={12}
+                          className="secGridfistphoto"
+                        >
+                          {/* <div className="secGridfistphoto"> */}
+                          <div className="travelpopular">
+                            <img
+                              src={`https://desolate-hollows-16342.herokuapp.com/${lastposts[1].files[0].filePath}`}
+                              alt=""
+                            />
+                          </div>
+                          <div className="popularsec-bg">
+                            <div className="popular-secnew">
+                              <Link to={`/${lastposts[1].cateName}`}>
+                                <button
+                                  className={`cate${lastposts[1].cateName}`}
+                                >
+                                  {lastposts[1].cateName}
+                                </button>
+                              </Link>
+                              <Link
+                                to={`/${lastposts[1].cateName}/${lastposts[1]._id}`}
+                                className={`whiteColor ${lastposts[1].cateName}hover`}
+                              >
+                                <br></br>
+                                <Typography variant="p" color="white">
+                                  {lastposts[1].title.substring(0, 80)}...
+                                </Typography>
+                              </Link>
+                            </div>
+                          </div>
+                          {/* </div> */}
+                        </Grid>
+                        <Grid item md={4} sm={8} xs={12}>
+                          <div className="sec-grid">
+                            <Grid container direction="row" spacing={1}>
+                              <Grid
+                                item
+                                md={6}
+                                sm={6}
+                                xs={12}
+                                className="secGrid2ndphoto"
+                              >
+                                <div className="fashion-img">
+                                  <img
+                                    src={`https://desolate-hollows-16342.herokuapp.com/${lastposts[2].files[0].filePath}`}
+                                    alt=""
+                                  />
+                                </div>
+                                <div className="popular-thirdnew">
+                                  <Link to={`/${lastposts[2].cateName}`}>
+                                    <button
+                                      className={`cate${lastposts[2].cateName}`}
+                                    >
+                                      {lastposts[2].cateName}
+                                    </button>
+                                  </Link>
+                                  <Link
+                                    to={`/${lastposts[2].cateName}/${lastposts[2]._id}`}
+                                    className={`whiteColor ${lastposts[2].cateName}hover`}
+                                  >
+                                    <br></br>
 
-              <div className="sec-grid">
-                <div className="secGrid2ndphoto">
-                  <div className="fashion-img">
-                    <img
-                      src={`https://desolate-hollows-16342.herokuapp.com/${lastposts[2].files[0].filePath}`}
-                      alt=""
-                    />
-                  </div>
-                  <div className="popular-thirdnew">
-                    <Link to={`/${lastposts[2].cateName}`}>
-                      <button className={`cate${lastposts[2].cateName}`}>
-                        {lastposts[2].cateName}
-                      </button>
-                    </Link>
-                    <Link
-                      to={`/${lastposts[2].cateName}/${lastposts[2]._id}`}
-                      className={`whiteColor ${lastposts[2].cateName}hover`}
-                    >
-                      <h4>{lastposts[2].title.substring(0, 50)}...</h4>
-                    </Link>
-                  </div>
-                </div>
-                <div className="secondGrid3rdphoto">
-                  <div className="culture-img">
-                    <img
-                      src={`https://desolate-hollows-16342.herokuapp.com/${lastposts[3].files[0].filePath}`}
-                      alt=""
-                    />
-                  </div>
-                  <div className="popular-fouthnew">
-                    <Link to={`/${lastposts[3].cateName}`}>
-                      <button className={`cate${lastposts[3].cateName}`}>
-                        {lastposts[3].cateName}
-                      </button>
-                    </Link>
-                    <Link
-                      to={`/${lastposts[3].cateName}/${lastposts[3]._id}`}
-                      className={`whiteColor ${lastposts[3].cateName}hover`}
-                    >
-                      <h4>{lastposts[3].title.substring(0, 50)}...</h4>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+                                    <Typography variant="p" color="white">
+                                      {lastposts[2].title.substring(0, 50)}...
+                                    </Typography>
+                                  </Link>
+                                </div>
+                              </Grid>
+                              <Grid
+                                item
+                                md={6}
+                                sm={6}
+                                xs={12}
+                                className="secondGrid3rdphoto"
+                              >
+                                <div className="culture-img">
+                                  <img
+                                    src={`https://desolate-hollows-16342.herokuapp.com/${lastposts[3].files[0].filePath}`}
+                                    alt=""
+                                  />
+                                </div>
+                                <div className="popular-fouthnew">
+                                  <Link to={`/${lastposts[3].cateName}`}>
+                                    <button
+                                      className={`cate${lastposts[3].cateName}`}
+                                    >
+                                      {lastposts[3].cateName}
+                                    </button>
+                                  </Link>
+                                  <Link
+                                    to={`/${lastposts[3].cateName}/${lastposts[3]._id}`}
+                                    className={`whiteColor ${lastposts[3].cateName}hover`}
+                                  >
+                                    <br></br>
+
+                                    <Typography variant="p" color="white">
+                                      {lastposts[3].title.substring(0, 50)}...
+                                    </Typography>
+                                  </Link>
+                                </div>
+                              </Grid>
+                            </Grid>
+                          </div>
+                        </Grid>
+                      </Grid>
+                    </div>
+                  </Grid>
+                </Grid>
+              </Container>
             </div>
-          </div>
+          </Box>
         </section>
       )}
-    </div>
+    </>
   );
 }

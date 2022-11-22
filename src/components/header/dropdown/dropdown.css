@@ -5,15 +5,15 @@
 }
 .categoriessub {
   position: absolute;
-  top: 62px;
-  left: -38px;
+  top: 50px;
+  left: -60px;
   width: 700px;
   height: 250px;
   background-color: #15568e;
   /* width: fit-content; */
   justify-items: center;
   display: grid;
-
+  z-index: 1;
   grid-template-columns: repeat(3, 1fr);
 }
 .categoriessub.clicked {
@@ -27,7 +27,9 @@
 
   align-self: auto;
 }
-
+.nav-item h5 {
+  color: white;
+}
 ul .catgitems:hover h5 {
   color: rgb(239, 145, 13);
 }

@@ -2,24 +2,32 @@ import React from "react";
 import "./theader.css";
 import "../technology/technology.css";
 import { Link } from "react-router-dom";
+import { Box, Breadcrumbs, Typography, Stack } from "@mui/material";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 const Theader = () => {
   return (
     <>
       <section className="container travel">
-        <div className="top">
-          <Link to="/" className="link1">
-            <h4>Home</h4>
-          </Link>
-          <div className="travel-icon">
-            <i className="uil uil-angle-right-b"></i>
-          </div>
-          <Link to="/" className="link1">
-            <h4>Travel</h4>
-          </Link>
-        </div>
-        <div className="travel-main">
-          <h1>Travel</h1>
-        </div>
+        <Box sx={{ marginButtom: "10px" }}>
+          <Breadcrumbs
+            aria-aria-label="breadcrumb"
+            separator={<NavigateNextIcon fontSize="small" />}
+          >
+            <Link to="/" className="link1" fontSize="25px">
+              <Typography color={"black"}>Home</Typography>
+            </Link>
+            <Typography>Travel</Typography>
+          </Breadcrumbs>
+        </Box>
+        <Typography
+          variant="h1"
+          fontSize={30}
+          fontWeight={700}
+          textTransform="uppercase"
+          sx={{ marginTop: "10px" }}
+        >
+          Tralvel
+        </Typography>
         <div className="Catabutton">
           <Link to="/pagoda">
             <button className="tec">Pagoda</button>
@@ -37,14 +45,20 @@ const Theader = () => {
             <button className="tec">Advanture trip</button>
           </Link>
         </div>
-        <div className="para">
-          <p>
-            We've reviewed our advice for Myanmar. We continue to advise you 'do
-            not travel' to Myanmar due to ongoing civil unrest and armed
-            conflict. If it's safe to do so, leave Myanmar via commercial
-            airline. Remain aware of the security environment at all times.
-          </p>
-        </div>
+        <Typography
+          variant="body1"
+          fontFamily={("Open Sans", "Open Sans Regular", "sans - serif")}
+          fontStyle={"italic"}
+          align={"justify"}
+          sx={{ marginTop: "18px", color: "#777" }}
+        >
+          Modern technology has become a total phenomenon for civilization, the
+          defining force of a new social order in which efficiency is no longer
+          an option but a necessity imposed on all human activity.
+          tttttttttttttt ttttttttttttttttttttttt
+          ttttttttttttttttttttttttttttttttttttt
+          tttttttttttttttttttttttttttttttttttttttttttttttttttttt
+        </Typography>
       </section>
     </>
   );

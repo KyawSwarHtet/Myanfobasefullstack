@@ -39,7 +39,7 @@
   color: #747474;
 }
 .travel {
-  padding-top: 6rem;
+  padding-top: 0rem;
 }
 .travel-main h1 {
   font-size: 30px;
@@ -47,10 +47,10 @@
   font-weight: 700;
   text-transform: uppercase;
 }
-.t_imagediv{
+.t_imagediv {
   height: 25rem;
 }
-.t_imagediv img{
+.t_imagediv img {
   width: 100%;
   height: 100%;
 }

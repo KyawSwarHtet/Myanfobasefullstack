@@ -21,7 +21,7 @@
   text-transform: uppercase;
 }
 .technology {
-  padding-top: 3rem;
+  padding-top: 10px;
 }
 
 ol,
@@ -59,9 +59,7 @@ ul {
 } */
 .firstphoto {
   position: relative;
-  margin-right: 1rem;
   overflow: hidden;
-  height: inherit;
 }
 .firstpara {
   position: absolute;
@@ -103,26 +101,36 @@ ul {
 }
 
 .photo {
-  display: grid;
-  grid-template-columns: 65% 35%;
-  height: 480px;
-  margin-bottom: 3rem;
+  /* display: grid;
+  grid-template-columns: 65% 35%; */
 }
 .secphoto {
-  display: grid;
-  grid-template-rows: 49% 49%;
+  /* display: grid;
+  grid-template-rows: 49% 49%; */
   height: inherit;
-  gap: 2%;
+  /* gap: 2%; */
 }
 .secrobot {
   position: relative;
+  height: 240px;
 }
-.firstphoto .tech-firstphoto {
+.firstphoto {
   width: 100%;
   height: 100%;
 }
-
+.firstphoto .tech-firstphoto {
+  width: 100%;
+  height: 30.5rem;
+}
+.fbphoto {
+  width: 100%;
+  height: 100%;
+}
 .secphoto .tecsecdiv-firstphoto {
+  width: 100%;
+  height: 15rem;
+}
+.robotphoto {
   width: 100%;
   height: 100%;
 }
@@ -148,6 +156,7 @@ ul {
 } */
 .secair {
   position: relative;
+  height: 240px;
 }
 .airbudpara {
   position: absolute;
@@ -171,9 +180,12 @@ ul {
 
 .secair .tec-lastbannerphotos {
   width: 100%;
+  height: 15rem;
+}
+.airbudphoto {
+  width: 100%;
   height: 100%;
 }
-
 .tech-firstphoto img,
 .secrobot img {
   transition: all 0.5s ease-in-out;
@@ -197,7 +209,7 @@ ul {
   transform: perspective(1000px) translateZ(150px);
 }
 .firstphoto .tech-firstphoto,
-.secphoto .secrobot {
+.secrobot {
   overflow: hidden;
 }
 .secair .tec-lastbannerphotos {
@@ -208,4 +220,24 @@ ul {
 .secair:hover .airbudpara h4.technoloColor {
   color: var(--technology-bg);
   transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+  .firstpara p {
+    display: none;
+  }
+
+  .firstpara {
+    position: absolute;
+
+    padding-top: 1rem;
+    box-shadow: inset 10px -109px 30px 4px rgba(24 23 23 / 81%);
+    padding-bottom: 1rem;
+    padding-left: 40px;
+    top: 12rem;
+  }
+  .firstphoto .tech-firstphoto {
+    width: 100%;
+    height: 20rem;
+  }
 }

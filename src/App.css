@@ -347,3 +347,16 @@ dl {
 [data-theme="dark"] {
   --background: black;
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: var(--container-width-sm);
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    width: var(--container-width-md);
+    margin: 0 auto;
+  }
+}
