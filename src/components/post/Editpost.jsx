@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { updatePosts, getPostDetail, UpdateData } from "../../data/api";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Axios from "axios";
 import "./textform.css";
 import "./postform.css";
@@ -19,6 +19,8 @@ export default function EditPost() {
     cateId: "",
     files: [],
   });
+
+  const { categories } = useSelector((state) => state.categories);
 
   const setTextarea = (element, defaultHeight) => {
     if (element) {
@@ -86,20 +88,7 @@ export default function EditPost() {
   }, [id]);
 
   const [isActive, setIsActive] = useState(false);
-  const [listOfCate, setListOfCate] = useState([]);
 
-  useEffect(() => {
-    Axios.get("https://desolate-hollows-16342.herokuapp.com/api/category")
-      // Axios.get("http://localhost:8080/api/category")
-      .then((response) => {
-        setListOfCate(response.data);
-        // console.log("categories inside", response.data);
-      })
-      .catch(() => {
-        alert("Awww, it didn't work at getting data");
-      });
-  }, []);
-  // console.log("input before formdata is", input.files[0]);
   const updateBtn = async (e) => {
     // e.preventDefault();
     const formData = new FormData();
@@ -150,19 +139,22 @@ export default function EditPost() {
                   </div>
                   {isActive && (
                     <div className="dropdown-content">
-                      {listOfCate.map((option) => (
-                        <div
-                          onClick={(e) =>
-                            onChangeCateId(option._id)(
-                              onChangeCate(option.catename)(setIsActive(false))
-                            )
-                          }
-                          // onChange={onChange}
-                          className="dropdown-item"
-                        >
-                          {option.catename}
-                        </div>
-                      ))}
+                      {categories &&
+                        categories.map((option) => (
+                          <div
+                            onClick={(e) =>
+                              onChangeCateId(option._id)(
+                                onChangeCate(option.catename)(
+                                  setIsActive(false)
+                                )
+                              )
+                            }
+                            // onChange={onChange}
+                            className="dropdown-item"
+                          >
+                            {option.catename}
+                          </div>
+                        ))}
                     </div>
                   )}
                 </div>

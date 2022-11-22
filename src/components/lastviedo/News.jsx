@@ -10,7 +10,7 @@ const News = () => {
   const showMore = () => {
     setVisible((prevValue) => prevValue + 2);
   };
-  console.log("visible initilal  is", visible);
+  // console.log("visible initilal  is", visible);
   const getAlldata = async () => {
     const reqdata = await fetch(
       `https://desolate-hollows-16342.herokuapp.com/api/lastposts`
@@ -32,7 +32,6 @@ const News = () => {
       <div className="newspart">
         {lastposts.length !== 0 ? (
           lastposts.slice(0, visible).map((data) => {
-            console.log("data is", data);
             if (data.postAccept === true) {
               return (
                 <>
@@ -70,9 +69,9 @@ const News = () => {
                             </Moment>
                           </h5>
                         </div>
-                        <div className="posticon">
+                        {/* <div className="posticon">
                           <i className="uil uil-bookmark"></i>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <div className="news_img">

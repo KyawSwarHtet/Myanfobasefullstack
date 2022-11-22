@@ -198,3 +198,9 @@
   padding: 0rem;
   color: black;
 }
+.saveItem {
+  display: flex;
+  margin-left: 10rem;
+  gap: 4rem;
+  cursor: pointer;
+}

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { useSelector, useDispatch } from "react-redux";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -18,21 +18,7 @@ import { Pagination, Navigation } from "swiper";
 export default function Slider() {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
-  const [categories, setCategories] = useState("");
-  const getAlldata = async () => {
-    const reqdata = await fetch(
-      `https://desolate-hollows-16342.herokuapp.com/api/category`
-    );
-    // const reqdata = await fetch(`http://localhost:8080/api/category`);
-    const res = await reqdata.json(); // JSON.parse(json);
-    //   console.log("res data is ", res);
-    return res;
-  };
-  useEffect(() => {
-    getAlldata().then((data) => {
-      setCategories(data);
-    });
-  }, []);
+  const { categories } = useSelector((state) => state.categories);
 
   return (
     <>
@@ -49,7 +35,7 @@ export default function Slider() {
         modules={[Pagination, Navigation]}
         className="cat-text"
       >
-        {categories.length !== 0 ? (
+        {categories && categories.length !== 0 ? (
           categories.map((cate) => {
             return (
               <div className="darkslide">

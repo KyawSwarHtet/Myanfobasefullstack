@@ -12,6 +12,7 @@ const HomeEducation = React.lazy(() =>
   import("../../components/homeeducation/homeEducation")
 );
 const Viedo = React.lazy(() => import("../../components/Vedio/Viedo"));
+
 const Categorieslider = React.lazy(() =>
   import("../../components/categories/Categorieslider")
 );

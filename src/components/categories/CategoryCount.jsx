@@ -77,7 +77,7 @@ export default function CategoryCount() {
       `https://desolate-hollows-16342.herokuapp.com/api/catecount`
     );
     const res = await reqdata.json(); // JSON.parse(json);
-    //   console.log("res data is ", res);
+
     return res;
   };
   useEffect(() => {
@@ -85,8 +85,6 @@ export default function CategoryCount() {
       setCategories(data);
     });
   }, [posts]);
-
-  console.log("aggreadt fun is", categories);
 
   return (
     <>

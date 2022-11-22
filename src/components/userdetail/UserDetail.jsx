@@ -5,6 +5,7 @@ import Moment from "react-moment";
 import Axios from "axios";
 import "./userdetail.css";
 import "../sidebar/sidebar.css";
+import SavePost from "../sidebar/SavePost";
 
 export default function UserDetail() {
   Moment.globalFormat = "D MMM YYYY";
@@ -72,6 +73,8 @@ export default function UserDetail() {
               <span className="profileDate">
                 <Moment format="DD/MMM/YYYY">{postDetail.createdAt}</Moment>
               </span>
+
+              <SavePost getCateData={postDetail} />
             </div>
             <p className="user-desc">{postDetail.description}</p>
           </div>

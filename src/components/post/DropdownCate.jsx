@@ -12,21 +12,6 @@ export default function DropdownCate({
   const [isActive, setIsActive] = useState(false);
   const [listOfCate, setListOfCate] = useState([]);
 
-  // const options = [
-  //   "Entertainment",
-  //   "Tehnology",
-  //   "Beauty",
-  //   "Government",
-  //   "Travel",
-  //   "History",
-  //   "Health",
-  //   "Lierature",
-  //   "Lifestyles",
-  //   "Science",
-  //   "Sports",
-  //   "Arts",
-  // ];
-
   useEffect(() => {
     Axios.get("https://desolate-hollows-16342.herokuapp.com/api/category")
       // Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")

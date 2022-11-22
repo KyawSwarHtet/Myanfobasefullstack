@@ -6,13 +6,6 @@ import { useState } from "react";
 
 export default function PopularNews(props) {
   const [lastposts, setLastPosts] = useState("");
-  // {
-  // title: "",
-  // cateName: "",
-  // createdAt: "",
-  // files: [],
-  // }
-
   const getAlldata = async () => {
     const reqdata = await fetch(
       `https://desolate-hollows-16342.herokuapp.com/api/popular`
@@ -28,9 +21,6 @@ export default function PopularNews(props) {
       setLastPosts(data);
     });
   }, []);
-
-  console.log("latest post length is", lastposts.length);
-  console.log("latest post is", lastposts);
   return (
     lastposts && (
       <div className="lastArt">
