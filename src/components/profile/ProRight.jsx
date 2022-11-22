@@ -34,10 +34,6 @@ function ProRight() {
       navigate("/login");
     }
     dispatch(getPosts());
-
-    // return () => {
-    //   dispatch(reset());
-    // };
   }, [user._id, navigate, isError, message, dispatch]);
 
   if (isLoading) {
@@ -59,7 +55,6 @@ function ProRight() {
                     <Grid
                       my={2}
                       container
-                      // spacing={2}
                       sx={{
                         margin: "auto",
                         boxShadow: "rgb(177 195 209) -2px 2px 8px 5px",
