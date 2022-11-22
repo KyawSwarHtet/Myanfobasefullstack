@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./gover.css"
+
 import "../technology/technology.css";
 import "../travelling/theader.css";
 import { Box, Breadcrumbs, Typography, Stack } from "@mui/material";

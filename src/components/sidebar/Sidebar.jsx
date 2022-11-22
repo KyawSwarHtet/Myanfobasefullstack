@@ -54,6 +54,10 @@ export default function Sidebar(props) {
 
   console.log("current page", currentItems);
 
+  // const handleChange = (event) => {
+  //   setFavlist(event.target.checked);
+  // };
+
   return (
     <>
       {currentItems.length > 0 ? (
@@ -68,15 +72,34 @@ export default function Sidebar(props) {
                         id={darkMode ? "sidebar-white" : "sidebar-black"}
                         className="postTrav"
                       >
-                        <div className="Trav_img">
-                          <img
-                            src={`http://localhost:8080/${data.files[0].filePath}`}
-                          />
-                          <Link to={`/${data.cateName}`} className="link1">
-                            <button className={`Travel1 cate${data.cateName}`}>
-                              {data.cateName}
-                            </button>
-                          </Link>
+                        <h4 className="colorh4">
+                          {data.title.substring(0, 80)}...
+                        </h4>
+                      </Link>
+                      <p>{data.description.substring(0, 100)}...</p>
+                      <div className="postbuttom">
+                        <div className="postman">
+                          <div className="postmanProfile">
+                            {data.userprofile === "" ||
+                            data.userprofile[0] === "" ||
+                            data.userprofile.length === 0 ? (
+                              <img
+                                src="./images/userprofile/defaultuserprofile.png"
+                                alt=""
+                              />
+                            ) : (
+                              <img
+                                src={`http://localhost:8080/${data.userprofile}`}
+                                alt=""
+                              />
+                            )}
+                          </div>
+                          <span className="profileName">{data.username}</span>
+                          <h5 className="profileDate">
+                            <Moment format="DD/MMM/YYYY">
+                              {data.createdAt}
+                            </Moment>
+                          </h5>
                         </div>
                         <div className="postTrav_info">
                           <Link

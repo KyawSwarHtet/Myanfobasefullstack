@@ -5,6 +5,22 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { Box, Breadcrumbs, Typography, Stack } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+
+import { Container } from "@mui/material";
+import { createTheme } from "@material-ui/core";
+
+const theme = createTheme();
+
+theme.typography.h4 = {
+  fontSize: "1.5rem",
+  "@media (min-width:600px)": {
+    fontSize: "1rem",
+  },
+  [theme.breakpoints.up("md")]: {
+    fontSize: "1.2rem",
+  },
+};
+
 export default function Technology() {
   const { posts, isLoading, isError, message } = useSelector(
     (state) => state.posts
@@ -70,80 +86,95 @@ export default function Technology() {
         </Typography>
       </section>
 
-      <section className="container ">
-        <Grid
-          my={2}
-          container
-          sx={{ margin: "auto", width: "100%", height: "480px" }}
-          spacing={2}
-        >
-          <Grid xs={12} sm={7.8}>
-            <div className="firstphoto">
-              <div className="tech-firstphoto">
-                <img
-                  className="fbphoto"
-                  src="./images/homeimgs/technology.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="firstpara">
-                <button className="cateTechnology">Technology</button>
-                <h4 className="technoloColor">
-                  How to Mark yourself 'Safe' on Socials Media
-                </h4>
-                <p>
-                  Modern technology has become a total phenomenon for
-                  civilization, the defining force of a new social order in
-                  which efficiency is no longer an option but a necessity
-                  imposed on all human activity.
-                </p>
-              </div>
-            </div>
-          </Grid>
-          <Grid xs={12} sm={4.2}>
-            <Grid
-              my={2}
-              container
-              sx={{ margin: "auto", width: "100%", height: "480px" }}
-              spacing={2}
-            >
-              <Grid item xs={12} sx={{ height: "240px" }}>
-                <div className="secrobot">
-                  <div className="tecsecdiv-firstphoto">
-                    <img
-                      className="robotphoto"
-                      src="./images/homeimgs/techhyperx.jpg"
-                      alt=""
-                    />
+      <section>
+        <Box>
+          <div className="photo">
+            <Container maxWidth="xl">
+              <Grid container direction="row" spacing={1}>
+                <Grid item lg={8} md={12} sm={12}>
+                  <div className="firstphoto">
+                    <div className="tech-firstphoto">
+                      <img
+                        className="fbphoto"
+                        src="./images/literature/literaturebanner1.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div className="firstpara">
+                      <button className="cateLiterature">Literature</button>
+
+                      <Typography
+                        className="literaturecolor"
+                        variant="h4"
+                        color="white"
+                      >
+                        How to Mark yourself 'Safe' on Socials Media
+                      </Typography>
+                      <p>
+                        Modern technology has become a total phenomenon for
+                        civilization, the defining force of a new social order
+                        in which efficiency is no longer an option but a
+                        necessity imposed on all human activity.
+                      </p>
+                    </div>
                   </div>
-                  <div className="robotpara">
-                    <button className="cateTechnology">Technology</button>
-                    <h4 className="technoloColor">
-                      Corsair HS80 RGB Wireless Gaming Headset Review
-                    </h4>
+                </Grid>
+                <Grid item lg={4} md={12}>
+                  <div className="secphoto">
+                    <Grid container direction="row" spacing={1}>
+                      <Grid item lg={12} md={6} xs={12}>
+                        <div className="secrobot">
+                          <div className="tecsecdiv-firstphoto">
+                            <img
+                              className="robotphoto"
+                              src="./images/literature/literaturebanner2.jpg"
+                              alt=""
+                            />
+                          </div>
+                          <div className="robotpara">
+                            <button className="cateLiterature">
+                              Literature
+                            </button>
+                            <Typography
+                              className="literaturecolor"
+                              variant="h4"
+                              color="white"
+                            >
+                              Corsair HS80 RGB Wirless Gaming Headset Review
+                            </Typography>
+                          </div>
+                        </div>
+                      </Grid>
+                      <Grid item lg={12} md={6} xs={12}>
+                        <div className="secair">
+                          <div className="tec-lastbannerphotos">
+                            <img
+                              className="airbudphoto"
+                              src="./images/science/sciencebanner11.jpg"
+                              alt=""
+                            />
+                          </div>
+                          <div className="airbudpara">
+                            <button className="cateLiterature">
+                              Literature
+                            </button>
+                            <Typography
+                              className="literaturecolor"
+                              variant="h4"
+                              color="white"
+                            >
+                              Corsair HS80 RGB Wirless Gaming Headset Review
+                            </Typography>
+                          </div>
+                        </div>
+                      </Grid>
+                    </Grid>
                   </div>
-                </div>
+                </Grid>
               </Grid>
-              <Grid item xs={12} sx={{ height: "240px" }}>
-                <div className="secair">
-                  <div className="tec-lastbannerphotos">
-                    <img
-                      className="airbudphoto"
-                      src="./images/homeimgs/techkeyboard.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="airbudpara">
-                    <button className="cateTechnology">Technology</button>
-                    <h4 className="technoloColor">
-                      Corsair HS80 RGB Wirless Gaming Headset Review
-                    </h4>
-                  </div>
-                </div>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
+            </Container>
+          </div>
+        </Box>
       </section>
     </>
   );

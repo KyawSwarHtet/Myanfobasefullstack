@@ -146,16 +146,15 @@
   font-size: 1rem;
 }
 .mask-div {
-  margin-right: 0.5rem;
+  /* margin-right: 0.5rem; */
+  /* padding-right: .5rem; */
   overflow: hidden;
   position: relative;
 }
-/* .mask-div:hover .popular-bignew p{
- color: var(--health-bg);
- transition: all .3s ease-in-out;
-} */
 .mask-div .maskimgdiv {
   overflow: hidden;
+  width: 100%;
+  height: 30.5rem;
 }
 .maskimgdiv img {
   transition: all 0.5s ease-in-out;
@@ -186,7 +185,7 @@
   position: absolute;
   bottom: 0rem;
   /* left: 20px; */
-  width: 100%;
+  width: 97%;
   padding-top: 1rem;
   box-shadow: inset 5px -134px 56px -77px rgb(14 13 13 / 81%);
   padding-bottom: 1rem;
@@ -213,9 +212,7 @@
 .travelpopular img:hover {
   transform: perspective(1000px) translateZ(150px);
 }
-.secGridfistphoto .travelpopular {
-  overflow: hidden;
-}
+
 .fashion-img img {
   transition: all 0.5s ease-in-out;
   display: block;
@@ -228,55 +225,38 @@
 }
 .secGrid2ndphoto .fashion-img {
   overflow: hidden;
-}
-.culture-img img {
-  transition: all 0.5s ease-in-out;
-  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-.culture-img img:hover {
-  transform: perspective(1000px) translateZ(150px);
-}
-.secondGrid3rdphoto .culture-img {
-  overflow: hidden;
-}
-.fashion-img img {
-  transition: all 0.5s ease-in-out;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.fashion-img img:hover {
-  transform: perspective(1000px) translateZ(150px);
-}
-.secGrid2ndphoto .fashion-img {
-  overflow: hidden;
-}
-.culture-img img {
-  transition: all 0.5s ease-in-out;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.culture-img img:hover {
-  transform: perspective(1000px) translateZ(150px);
-}
-.secondGrid3rdphoto .culture-img {
-  overflow: hidden;
 }
 
+.culture-img img {
+  transition: all 0.5s ease-in-out;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.culture-img img:hover {
+  transform: perspective(1000px) translateZ(150px);
+}
+.secGridfistphoto .travelpopular {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* 
+.popular-secnew p:hover {
+  color: var(--health-bg);
+} */
 .popular-thirdnew {
   position: absolute;
   bottom: 0rem;
   /* left: 20px; */
-  width: 100%;
-  padding-top: 1rem;
-  box-shadow: inset 2px -48px 22px 0px rgb(14 13 13 / 81%);
-  padding-bottom: 1rem;
+  width: 97%;
+  padding-top: 0.5rem;
+  box-shadow: inset 8px -24px 13px 2px rgb(14 13 13 / 81%);
+  padding-bottom: 0.5rem;
   padding-left: 30px;
 }
 .popular-thirdnew p {
@@ -289,10 +269,10 @@
   position: absolute;
   bottom: 0rem;
   /* left: 20px; */
-  width: 100%;
-  padding-top: 1rem;
-  box-shadow: inset -3px -44px 18px 4px rgb(14 13 13 / 81%);
-  padding-bottom: 1rem;
+  width: 97%;
+  padding-top: 0.5rem;
+  box-shadow: inset 8px -24px 13px 2px rgb(14 13 13 / 81%);
+  padding-bottom: 0.5rem;
   padding-left: 30px;
 }
 .popular-fouthnew p {
@@ -302,27 +282,20 @@
 }
 
 .first-grid {
-  display: grid;
-  grid-template-columns: 60% 40%;
+  /* display: grid;
+  grid-template-columns: 60% 40%; */
   overflow: hidden;
   transition: all 6s ease-in-out;
 }
 
 .sec-grid {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 0.5rem;
+  padding-top: 8px;
 }
 .sec-grid .secGrid2ndphoto {
   position: relative;
 }
 .sec-grid .secondGrid3rdphoto {
   position: relative;
-}
-.first-grid .SecondDiv {
-  display: grid;
-  grid-template-rows: 60% 40%;
-  gap: 0.5rem;
 }
 
 .secGridfistphoto:hover .popular-secnew p {
@@ -337,16 +310,18 @@
   color: var(--history-bg);
   transition: all 0.3s ease-in-out;
 }
-.SecondDiv .secGridfistphoto {
+.secGridfistphoto {
   position: relative;
 }
 .secGridfistphoto .travelpopular {
   width: 100%;
-  height: 100%;
+  height: 20rem;
+  overflow: hidden;
 }
+
 .secGrid2ndphoto .fashion-img {
   width: 100%;
-  height: 100%;
+  height: 10rem;
 }
 .secGrid2ndphoto .fashion-img image {
   display: block;
@@ -355,7 +330,7 @@
 }
 .secondGrid3rdphoto .culture-img {
   width: 100%;
-  height: 100%;
+  height: 10rem;
 }
 .secondGrid3rdphoto .culture-img img {
   display: block;
@@ -368,4 +343,10 @@
 }
 .populartitle-black {
   color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .bignewsdesc {
+    display: none;
+  }
 }
