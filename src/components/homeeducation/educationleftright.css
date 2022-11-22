@@ -18,18 +18,16 @@ img {
   line-height: 1.5rem;
   font-size: 1.2rem;
 }
-.wrapperinfo h4:hover {
-  color: #00a79d;
-}
+
 .wrapperinfo button {
   display: inline-block;
   margin: 0.8rem 0;
   /* background-color: aqua; */
 }
-.wrapperinfo button:hover {
+/* .wrapperinfo button:hover {
   background-color: #00a79d;
   color: black;
-}
+} */
 .wrapperinfo h5 {
   font-weight: 700;
 }

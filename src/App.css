@@ -42,10 +42,18 @@ body {
 /* .body-color {
   background: var(--background-main) !important;
 } */
+
 a {
   text-decoration: none;
-  /* color: black; */
 }
+
+#whiteMode .colorBlack {
+  color: black;
+}
+#blackMode .colorBlack {
+  color: white;
+}
+
 .container {
   width: var(--container-width-lg);
   margin: 0 auto;
@@ -214,46 +222,60 @@ h5 {
 }
 
 /* hover colors */
-#Educationhover:hover {
+#whiteMode .Educationhover:hover,
+#blackMode .Educationhover:hover {
   color: var(--education-bg);
 }
-#Entertainmenthover:hover {
+#whiteMode .Entertainmenthover:hover,
+#blackMode .Entertainmenthover:hover {
   color: var(--entertainment-bg);
 }
-#Technologyhover:hover {
+#whiteMode .Technologyhover:hover,
+#blackMode .Technologyhover:hover {
   color: var(--technology-bg);
 }
-#Beautyhover:hover {
+#whiteMode .Beautyhover:hover,
+#blackMode .Beautyhover:hover {
   color: var(--beauty-bg);
 }
-#Governmenthover:hover {
+#whiteMode .Governmenthover:hover,
+#blackMode .Governmenthover:hover {
   color: var(--government-bg);
 }
-#Travelhover:hover {
+#whiteMode .Travelhover:hover,
+#blackMode .Travelhover:hover {
   color: var(--travel-bg);
 }
-#Historyhover:hover {
+#whiteMode .Historyhover:hover,
+#blackMode .Historyhover:hover {
   color: var(--history-bg);
 }
-#Healthhover:hover {
+#whiteMode .Healthhover:hover,
+#blackMode .Healthhover:hover {
   color: var(--health-bg);
 }
-#Literaturehover:hover {
+#whiteMode .Literaturehover:hover,
+#blackMode .Literaturehover:hover {
   color: var(--literature-bg);
 }
-#Lifestyleshover:hover {
+#whiteMode .Lifestyleshover:hover,
+#blackMode .Lifestyleshover:hover {
   color: var(--lifestyles-bg);
 }
-#Sciencehover:hover {
+#whiteMode .Sciencehover:hover,
+#blackMode .Sciencehover:hover {
   color: var(--science-bg);
 }
-#Sportshover:hover {
+#whiteMode .Sportshover:hover,
+#blackMode .Sportshover:hover {
   color: var(--sports-bg);
 }
-#Artshover:hover {
+#whiteMode .Artshover:hover,
+#blackMode .Artshover:hover {
   color: var(--arts-bg);
 }
-#Businesshover:hover {
+#whiteMode .Businesshover:hover,
+#blackMode .Businesshover:hover {
   color: var(--business-bg);
 }
 
@@ -286,6 +308,7 @@ dl {
   position: sticky;
   top: 50px;
 }
+
 .sidebar1 {
   height: calc(60vh - 50px);
   overflow-y: scroll;
@@ -323,4 +346,17 @@ dl {
 
 [data-theme="dark"] {
   --background: black;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: var(--container-width-sm);
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    width: var(--container-width-md);
+    margin: 0 auto;
+  }
 }

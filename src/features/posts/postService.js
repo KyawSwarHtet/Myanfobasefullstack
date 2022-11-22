@@ -1,11 +1,12 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/post/";
+const API_URL = "https://desolate-hollows-16342.herokuapp.com/api/post/";
+// const API_URL = "http://localhost:8080/api/post/";
 
 //Create new Post
 const creatPosts = async (postData, token) => {
-  console.log("data from createPost Service is", postData);
-  console.log("Token from createPost Service is", token);
+  // console.log("data from createPost Service is", postData);
+  // console.log("Token from createPost Service is", token);
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -53,13 +54,16 @@ const editPosts = async (postData, token) => {
     console.log("id from clik butten is", postData._id);
     id = postData._id;
     const response = await axios.put(API_URL + `admin/${id}`, postData, config);
-    console.log("response data after update in Service", response.data);
+    console.log("response data after update admin in Service", response.data);
     return response.data;
   } else {
     const resultData = Object.fromEntries(postData.entries());
     id = resultData.id;
     const response = await axios.put(API_URL + id, postData, config);
-    console.log("response data after update in Service", response.data);
+    console.log(
+      "response data after not admin update in Service",
+      response.data
+    );
     return response.data;
   }
 };

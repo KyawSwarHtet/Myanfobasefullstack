@@ -14,14 +14,15 @@ export default function EducationLeft(props) {
             <div className="wrapper">
               <div className="wrapperimg">
                 <img
-                  src={`http://localhost:8080/${data.files[0].filePath}`}
+                  src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
+                  // src={`http://localhost:8080/${data.files[0].filePath}`}
                   alt=""
                 />
               </div>
               <div className="wrapperinfo">
                 <Link
                   to={`/${category}/${data._id}`}
-                  className={`${category}hover`}
+                  className={`colorBlack ${category}hover`}
                 >
                   <h4>{data.title.substring(0, 30)}...</h4>
                 </Link>

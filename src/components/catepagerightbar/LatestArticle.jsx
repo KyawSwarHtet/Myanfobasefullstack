@@ -14,7 +14,10 @@ export default function LatestArticle(props) {
   // }
 
   const getAlldata = async () => {
-    const reqdata = await fetch(`http://localhost:8080/api/lastposts`);
+    const reqdata = await fetch(
+      `https://desolate-hollows-16342.herokuapp.com/api/lastposts`
+    );
+    // const reqdata = await fetch(`http://localhost:8080/api/lastposts`);
     const res = await reqdata.json(); // JSON.parse(json);
     //   console.log("res data is ", res);
     return res;
@@ -44,16 +47,17 @@ export default function LatestArticle(props) {
                   <div className="article-lastest">
                     <div className="lastnewimg">
                       <img
-                        src={`http://localhost:8080/${data.files[0].filePath}`}
+                        // src={`http://localhost:8080/${data.files[0].filePath}`}
+                        src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
                         alt=""
                       />
                     </div>
                     <div className="lastnewinfo">
                       <Link
                         to={`/${data.cateName}/${data._id}`}
-                        className={`${data.cateName}hover`}
+                        className={`colorBlack ${data.cateName}hover`}
                       >
-                        <h4>{data.title}</h4>
+                        <h4>{data.title.substring(0, 50)}...</h4>
                       </Link>
                       <div className="lastnewbuttondate">
                         <Link to={`/${data.cateName}`}>
@@ -61,9 +65,9 @@ export default function LatestArticle(props) {
                             {data.cateName}
                           </button>
                         </Link>
-                        <span className="profileDate">
+                        <h5 className="profileDate">
                           <Moment format="DD/MMM/YYYY">{data.createdAt}</Moment>
-                        </span>
+                        </h5>
                       </div>
                     </div>
                   </div>

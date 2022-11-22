@@ -1,9 +1,9 @@
 import React from "react";
 import "./beautybanner.css";
-import "animate.css"
-export default function Beautybanner () {
+import "animate.css";
+export default function Beautybanner() {
   return (
-    <section className="beauty-banner ">
+    <section className="container beauty-banner ">
       <div className="beauty-firstrow">
         <div className="firstrow-firstdiv">
           <div className="blogger-img">
@@ -75,9 +75,7 @@ export default function Beautybanner () {
           </div>
           <div className="natural-p">
             <div className="natural-para">
-              <h4 className="animate__fadeOut">
-                Lorem ipsum dolor sit amet.
-              </h4>
+              <h4 className="animate__fadeOut">Lorem ipsum dolor sit amet.</h4>
             </div>
           </div>
         </div>

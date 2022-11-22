@@ -2,34 +2,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../technology/technology.css";
 import "../travelling/theader.css";
+import { Box, Breadcrumbs, Typography, Stack } from "@mui/material";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 export default function Sportheader() {
   return (
     <>
       <section className="container travel">
-        <div className="top">
-          <div className="homelink">
-            <ul>
-              <li>
-                <Link to="/" className="link1">
-                  <h4>Home</h4>
-                </Link>
-              </li>
-            </ul>
-          </div>
-          {/* <h4>Home</h4> */}
-          <div className="icon">
-            <i className="uil uil-angle-right-b"></i>
-          </div>
-          {/* <ul>
-        <li>
-          <Link to="/Home">Home</Link>
-        </li>
-      </ul> */}
-          <h4>Sport</h4>
-        </div>
-        <div className="sectop">
-          <h1>Sport</h1>
-        </div>
+        <Box sx={{ marginButtom: "10px" }}>
+          <Breadcrumbs
+            aria-aria-label="breadcrumb"
+            separator={<NavigateNextIcon fontSize="small" />}
+          >
+            <Link to="/" className="link1" fontSize="25px">
+              <Typography color={"black"}>Home</Typography>
+            </Link>
+            <Typography>Sport</Typography>
+          </Breadcrumbs>
+        </Box>
+        <Typography
+          variant="h1"
+          fontSize={30}
+          fontWeight={700}
+          textTransform="uppercase"
+          sx={{ marginTop: "10px" }}
+        >
+          Sport
+        </Typography>
         <div className="Catabutton">
           <Link to="/football">
             <button className="tec">football</button>
@@ -47,13 +45,20 @@ export default function Sportheader() {
             <button className="tec">gamming</button>
           </Link>
         </div>
-        <div className="para">
-          <p>
-            Modern technology has become a total phenomenon for civilization,
-            the defining force of a new social order in which efficiency is no
-            longer an option but a necessity imposed on all human activity.
-          </p>
-        </div>
+        <Typography
+          variant="body1"
+          fontFamily={("Open Sans", "Open Sans Regular", "sans - serif")}
+          fontStyle={"italic"}
+          align={"justify"}
+          sx={{ marginTop: "18px", color: "#777" }}
+        >
+          Modern technology has become a total phenomenon for civilization, the
+          defining force of a new social order in which efficiency is no longer
+          an option but a necessity imposed on all human activity.
+          tttttttttttttt ttttttttttttttttttttttt
+          ttttttttttttttttttttttttttttttttttttt
+          tttttttttttttttttttttttttttttttttttttttttttttttttttttt
+        </Typography>
       </section>
     </>
   );

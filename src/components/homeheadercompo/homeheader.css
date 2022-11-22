@@ -7,7 +7,7 @@
   padding-bottom: 1rem;
 }
 .homeheader {
-  padding-top: 5rem;
+  padding-top: 0rem;
   margin-bottom: 1rem;
 }
 .home-banner-detail h1 {
@@ -105,28 +105,7 @@
   width: 100%;
   border-top: black 3px solid;
 }
-/* .categories {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-top: 1rem;
-  border-top: 2px solid black;
-}
-.total-cat {
-  display: flex;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  border-bottom: 2px solid #f18510;
-}
-.total-cat h5 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-  font-size: 1rem;
-}
-.cat-arrow-btn {
-  background-color: transparent;
-  font-size: 2rem;
-  margin-top: -0.2rem;
-} */
+
 .popular-header {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -153,14 +132,18 @@
   max-width: 1600px;
 }
 
-.popular-bignew h4{
+.whiteColor {
   color: white;
-    font-size: 25px;
-    margin-top: 0.5rem;
 }
-.mask-div:hover .popular-bignew h4{
-  color: var(--health-bg);
- transition: all .3s ease-in-out;
+
+.popular-bignew h4 {
+  font-size: 25px;
+  margin-top: 0.5rem;
+}
+.popular-secnew h4,
+.popular-thirdnew h4,
+.popular-fouthnew h4 {
+  font-size: 1rem;
 }
 .mask-div {
   margin-right: 0.5rem;
@@ -171,57 +154,43 @@
  color: var(--health-bg);
  transition: all .3s ease-in-out;
 } */
-.mask-div .maskimgdiv{
+.mask-div .maskimgdiv {
   overflow: hidden;
 }
-.maskimgdiv img{
-transition: all .5s ease-in-out;
- display: block;
+.maskimgdiv img {
+  transition: all 0.5s ease-in-out;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.maskimgdiv img:hover{
-    transform: perspective(1000px) translateZ(150px);
-
+.maskimgdiv img:hover {
+  transform: perspective(1000px) translateZ(150px);
 }
 .mask-div .popular-bignew {
-    position: absolute;
-    bottom: 0rem;
-    /* left: 40px; */
-    padding-top: 1rem;
-    box-shadow: inset 29px -106px 49px -28px rgb(14 13 13 / 81%);
-    padding-bottom: 1rem;
-    padding-left: 40px;
+  position: absolute;
+  bottom: 0rem;
+  /* left: 40px; */
+  padding-top: 1rem;
+  box-shadow: inset 29px -106px 49px -28px rgb(14 13 13 / 81%);
+  padding-bottom: 1rem;
+  padding-left: 40px;
 }
-/* 
-.mask-div .popular-bignew p:hover {
-  color: var(--health-bg);
-} */
 
 .popular-bignew p {
   color: white;
   width: 100%;
 }
-/* 
-.popular-bignew:hover {
-  color: var(--health-bg);
-} */
-
-.popular-health:hover {
-  background: var(--health-bg);
-  color: black;
-}
 
 .popular-secnew {
-    position: absolute;
-    bottom: 0rem;
-    /* left: 20px; */
-    width: 100%;
-    padding-top: 1rem;
-    box-shadow: inset 5px -134px 56px -77px rgb(14 13 13 / 81%);
-    padding-bottom: 1rem;
-    padding-left: 30px;
+  position: absolute;
+  bottom: 0rem;
+  /* left: 20px; */
+  width: 100%;
+  padding-top: 1rem;
+  box-shadow: inset 5px -134px 56px -77px rgb(14 13 13 / 81%);
+  padding-bottom: 1rem;
+  padding-left: 30px;
 }
 .popularsec-bg {
   width: 100%;
@@ -234,61 +203,81 @@ transition: all .5s ease-in-out;
   font-family: "Ultra";
 }
 
-.travelpopular img{
-  transition: all .5s ease-in-out;
- display: block;
+.travelpopular img {
+  transition: all 0.5s ease-in-out;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.travelpopular img:hover{
-transform: perspective(1000px) translateZ(150px);
-
-}
-.secGridfistphoto .travelpopular{
-  overflow: hidden;
-}
-.fashion-img img{
-   transition: all .5s ease-in-out;
- display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.fashion-img img:hover{
-transform: perspective(1000px) translateZ(150px);
-
-}
-.secGrid2ndphoto .fashion-img{
-  overflow: hidden;
-}
-.culture-img img{
-   transition: all .5s ease-in-out;
- display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.culture-img img:hover{
+.travelpopular img:hover {
   transform: perspective(1000px) translateZ(150px);
-
 }
-.secondGrid3rdphoto .culture-img{
+.secGridfistphoto .travelpopular {
   overflow: hidden;
 }
-/* 
-.popular-secnew p:hover {
-  color: var(--health-bg);
-} */
+.fashion-img img {
+  transition: all 0.5s ease-in-out;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fashion-img img:hover {
+  transform: perspective(1000px) translateZ(150px);
+}
+.secGrid2ndphoto .fashion-img {
+  overflow: hidden;
+}
+.culture-img img {
+  transition: all 0.5s ease-in-out;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.culture-img img:hover {
+  transform: perspective(1000px) translateZ(150px);
+}
+.secondGrid3rdphoto .culture-img {
+  overflow: hidden;
+}
+.fashion-img img {
+  transition: all 0.5s ease-in-out;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fashion-img img:hover {
+  transform: perspective(1000px) translateZ(150px);
+}
+.secGrid2ndphoto .fashion-img {
+  overflow: hidden;
+}
+.culture-img img {
+  transition: all 0.5s ease-in-out;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.culture-img img:hover {
+  transform: perspective(1000px) translateZ(150px);
+}
+.secondGrid3rdphoto .culture-img {
+  overflow: hidden;
+}
+
 .popular-thirdnew {
-    position: absolute;
-    bottom: 0rem;
-    /* left: 20px; */
-    width: 100%;
-    padding-top: 1rem;
-    box-shadow: inset 2px -48px 22px 0px rgb(14 13 13 / 81%);
-    padding-bottom: 1rem;
-    padding-left: 30px;
+  position: absolute;
+  bottom: 0rem;
+  /* left: 20px; */
+  width: 100%;
+  padding-top: 1rem;
+  box-shadow: inset 2px -48px 22px 0px rgb(14 13 13 / 81%);
+  padding-bottom: 1rem;
+  padding-left: 30px;
 }
 .popular-thirdnew p {
   color: white;
@@ -296,18 +285,15 @@ transform: perspective(1000px) translateZ(150px);
   font-family: "Ultra";
 }
 
-/* .popular-thirdnew p:hover {
-  color: var(--health-bg);
-} */
 .popular-fouthnew {
-    position: absolute;
-    bottom: 0rem;
-    /* left: 20px; */
-    width: 100%;
-    padding-top: 1rem;
-    box-shadow: inset -3px -44px 18px 4px rgb(14 13 13 / 81%);
-    padding-bottom: 1rem;
-    padding-left: 30px;
+  position: absolute;
+  bottom: 0rem;
+  /* left: 20px; */
+  width: 100%;
+  padding-top: 1rem;
+  box-shadow: inset -3px -44px 18px 4px rgb(14 13 13 / 81%);
+  padding-bottom: 1rem;
+  padding-left: 30px;
 }
 .popular-fouthnew p {
   color: white;
@@ -315,9 +301,6 @@ transform: perspective(1000px) translateZ(150px);
   font-family: "Ultra";
 }
 
-/* .popular-fouthnew p:hover {
-  color: var(--health-bg);
-} */
 .first-grid {
   display: grid;
   grid-template-columns: 60% 40%;
@@ -344,18 +327,15 @@ transform: perspective(1000px) translateZ(150px);
 
 .secGridfistphoto:hover .popular-secnew p {
   color: var(--travel-bg);
-     transition: all .3s ease-in-out;
-
+  transition: all 0.3s ease-in-out;
 }
-.secGrid2ndphoto:hover .popular-thirdnew p{
+.secGrid2ndphoto:hover .popular-thirdnew p {
   color: var(--beauty-bg);
-       transition: all .3s ease-in-out;
-
+  transition: all 0.3s ease-in-out;
 }
-.secondGrid3rdphoto:hover .popular-fouthnew p{
+.secondGrid3rdphoto:hover .popular-fouthnew p {
   color: var(--history-bg);
-       transition: all .3s ease-in-out;
-
+  transition: all 0.3s ease-in-out;
 }
 .SecondDiv .secGridfistphoto {
   position: relative;
@@ -383,10 +363,9 @@ transform: perspective(1000px) translateZ(150px);
   height: 100%;
 }
 
-
 .populartitle-white {
   color: #fff;
 }
-.populartitle-black{
+.populartitle-black {
   color: black;
 }

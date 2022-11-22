@@ -123,10 +123,12 @@ body {
   height: 50px;
 }
 .swiper-button-next .cat-text {
+ 
   right: 0px;
   left: auto;
 }
 #SliderTop .swiper-button-prev {
+
   position: absolute;
   /* align-items: center; */
   top: 18px;
@@ -139,3 +141,5 @@ body {
 #SliderTop p {
   margin-left: 12px;
 }
+
+

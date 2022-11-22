@@ -23,7 +23,10 @@ export default function AdminDetail() {
   console.log("hhh", id);
   // console.log("vvv", postDetail);
   const editpostid = async () => {
-    const reqdata = await fetch(`http://localhost:8080/editpost/${id}`);
+    const reqdata = await fetch(
+      `https://desolate-hollows-16342.herokuapp.com/editpost/${id}`
+    );
+    // const reqdata = await fetch(`http://localhost:8080/editpost/${id}`);
     const res = await reqdata.json(); // JSON.parse(json);
     console.log("res data is ", res);
     return res;
@@ -67,7 +70,7 @@ export default function AdminDetail() {
                 />
               ) : (
                 <img
-                  src={`http://localhost:8080/${postDetail.userprofile}`}
+                  src={`https://desolate-hollows-16342.herokuapp.com/${postDetail.userprofile}`}
                   alt=""
                 />
               )}
@@ -93,7 +96,7 @@ export default function AdminDetail() {
                     {console.log("filePath is", file.filePath)}
                     <img
                       className="detailimg"
-                      src={`http://localhost:8080/${file.filePath}`}
+                      src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}
                       alt=" "
                     />
                   </div>

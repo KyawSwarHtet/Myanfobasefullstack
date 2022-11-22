@@ -3,30 +3,32 @@ import { Link } from "react-router-dom";
 import "../technology/technology.css";
 import "./science.css";
 import "../technology/technology.css";
+import { Box, Breadcrumbs, Typography, Stack } from "@mui/material";
+import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 export default function Science() {
   return (
     <>
       <section className="technology">
-        <div className="top">
-          <div className="homelink">
-            <ul>
-              <li>
-                <Link to="/" className="link1">
-                  <h4>Home</h4>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="iconRightArrow">
-            <i className="uil uil-angle-right-b"></i>
-          </div>
-
-          <h4>Science</h4>
-        </div>
-        <div className="sectop">
-          <h1>Science</h1>
-        </div>
+        <Box sx={{ marginButtom: "10px" }}>
+          <Breadcrumbs
+            aria-aria-label="breadcrumb"
+            separator={<NavigateNextIcon fontSize="small" />}
+          >
+            <Link to="/" className="link1" fontSize="25px">
+              <Typography color={"black"}>Home</Typography>
+            </Link>
+            <Typography>Science</Typography>
+          </Breadcrumbs>
+        </Box>
+        <Typography
+          variant="h1"
+          fontSize={30}
+          fontWeight={700}
+          textTransform="uppercase"
+          sx={{ marginTop: "10px" }}
+        >
+          Science
+        </Typography>
         <div className="Catabutton">
           <Link to="/astronomy">
             <button className="tec">Astronomy</button>
@@ -53,16 +55,20 @@ export default function Science() {
             <button className="tec">Mammals</button>
           </Link>
         </div>
-        <div className="para">
-          <p>
-            How can the sky be blue one day and stormy the next? Why do heavy
-            objects tend to fall downwards when dropped? How are birds able to
-            fly (and why can't I do the same?)? Human beings have long been
-            curious about the world in which we live, striving to identify
-            connections among the phenomenons we witness and to understand how
-            it all works.
-          </p>
-        </div>
+        <Typography
+          variant="body1"
+          fontFamily={("Open Sans", "Open Sans Regular", "sans - serif")}
+          fontStyle={"italic"}
+          align={"justify"}
+          sx={{ marginTop: "18px", color: "#777" }}
+        >
+          Modern technology has become a total phenomenon for civilization, the
+          defining force of a new social order in which efficiency is no longer
+          an option but a necessity imposed on all human activity.
+          tttttttttttttt ttttttttttttttttttttttt
+          ttttttttttttttttttttttttttttttttttttt
+          tttttttttttttttttttttttttttttttttttttttttttttttttttttt
+        </Typography>
       </section>
     </>
   );

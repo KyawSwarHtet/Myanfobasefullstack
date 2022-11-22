@@ -21,7 +21,7 @@
   text-transform: uppercase;
 }
 .technology {
-  padding-top: 3rem;
+  padding-top: 10px;
 }
 
 ol,
@@ -116,13 +116,18 @@ ul {
 }
 .secrobot {
   position: relative;
+  height: 240px;
+}
+.firstphoto {
+  width: 100%;
+  height: 100%;
 }
 .firstphoto .tech-firstphoto {
   width: 100%;
   height: 100%;
 }
 
-.secphoto .tecsecdiv-firstphoto {
+.tecsecdiv-firstphoto {
   width: 100%;
   height: 100%;
 }
@@ -148,6 +153,7 @@ ul {
 } */
 .secair {
   position: relative;
+  height: 240px;
 }
 .airbudpara {
   position: absolute;
@@ -197,7 +203,7 @@ ul {
   transform: perspective(1000px) translateZ(150px);
 }
 .firstphoto .tech-firstphoto,
-.secphoto .secrobot {
+.secrobot {
   overflow: hidden;
 }
 .secair .tec-lastbannerphotos {
