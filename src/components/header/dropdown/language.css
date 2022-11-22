@@ -4,3 +4,8 @@ select {
   color: black;
   font-size: 30px;
 }
+.labalimg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

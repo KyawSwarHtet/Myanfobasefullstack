@@ -1,8 +1,8 @@
 import React from "react";
 import "./beautybanner.css";
-import "animate.css"
+import "animate.css";
 import { Box, Container, Grid, Typography } from "@mui/material";
-export default function Beautybanner () {
+export default function Beautybanner() {
   return (
     <section className="wholebanner">
       <Box>

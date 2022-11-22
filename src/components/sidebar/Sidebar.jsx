@@ -1,4 +1,4 @@
-import { Pagination, } from "@mui/material";
+import { Pagination, Grid } from "@mui/material";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
@@ -9,6 +9,7 @@ import "../../App.css";
 import Spinner from "../login/Spinner";
 import { themeContext } from "../../Context";
 import { useContext } from "react";
+import SavePost from "./SavePost";
 
 export default function Sidebar(props) {
   const theme = useContext(themeContext);
@@ -51,11 +52,11 @@ export default function Sidebar(props) {
     });
   }, [category]);
 
-    console.log("current page", currentItems);
-    
-    // const handleChange = (event) => {
-    //   setFavlist(event.target.checked);
-    // };
+  console.log("current page", currentItems);
+
+  // const handleChange = (event) => {
+  //   setFavlist(event.target.checked);
+  // };
 
   return (
     <>
@@ -64,26 +65,12 @@ export default function Sidebar(props) {
           <div className="sidebar">
             <div className="Trav-main">
               {currentItems.map((data) => {
-                return (
-                  <div
-                    id={darkMode ? "sidebar-white" : "sidebar-black"}
-                    className="postTrav"
-                  >
-                    <div className="Trav_img">
-                      <img
-                        src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
-                        // src={`http://localhost:8080/${data.files[0].filePath}`}
-                      />
-                      <Link to={`/${data.cateName}`} className="link1">
-                        <button className={`Travel1 cate${data.cateName}`}>
-                          {data.cateName}
-                        </button>
-                      </Link>
-                    </div>
-                    <div className="postTrav_info">
-                      <Link
-                        to={`/${category}/${data._id}`}
-                        className={`colorBlack ${category}hover`}
+                if (data.postAccept === true && data.cateName === category) {
+                  return (
+                    <>
+                      {/* <div
+                        id={darkMode ? "sidebar-white" : "sidebar-black"}
+                        className="postTrav"
                       >
                         <h4 className="colorh4">
                           {data.title.substring(0, 80)}...
@@ -114,13 +101,130 @@ export default function Sidebar(props) {
                             </Moment>
                           </h5>
                         </div>
+                        <div className="postTrav_info">
+                          <Link
+                            to={`/${category}/${data._id}`}
+                            id={`${category}hover`}
+                          >
+                            <h4 className="colorh4">
+                              {data.title.substring(0, 80)}...
+                            </h4>
+                          </Link>
+                          <p>{data.description.substring(0, 100)}...</p>
+                          <div className="postbuttom">
+                            <div className="postman">
+                              <div className="postmanProfile">
+                                {data.userprofile === "" ||
+                                data.userprofile[0] === "" ||
+                                data.userprofile.length === 0 ? (
+                                  <img
+                                    src="./images/userprofile/defaultuserprofile.png"
+                                    alt=""
+                                  />
+                                ) : (
+                                  <img
+                                    src={`http://localhost:8080/${data.userprofile}`}
+                                    alt=""
+                                  />
+                                )}
+                              </div>
+                              <span className="profileName">
+                                {data.username}
+                              </span>
+                              <span className="profileDate">
+                                <Moment format="DD/MMM/YYYY">
+                                  {data.createdAt}
+                                </Moment>
+                              </span>
+                            </div>
+                            <span className="profileName">{data.username}</span>
+                            <h5 className="profileDate">
+                              <Moment format="DD/MMM/YYYY">
+                                {data.createdAt}
+                              </Moment>
+                            </h5>
+                          </div>
+                          <div className="posticon">
+                            {data && <SavePost getCateData={data} />}
+                          </div>
+                          <span className="profileName">{data.username}</span>
+                          <h5 className="profileDate">
+                            <Moment format="DD/MMM/YYYY">
+                              {data.createdAt}
+                            </Moment>
+                          </h5>
+                        </div>
                         <div className="posticon">
                           {/* {data && <SavePost getCateData={data} />} */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
+
+                      <Grid
+                        container
+                        my={2}
+                        sx={{ margin: "0px", width: "100%" }}
+                        spacing={3}
+                        id={darkMode ? "sidebar-white" : "sidebar-black"}
+                      >
+                        <Grid item xs={12} sm={3} xl={2} md={3}>
+                          <div className="Trav_img">
+                            <img
+                              src={`http://localhost:8080/${data.files[0].filePath}`}
+                            />
+                            <Link to={`/${data.cateName}`} className="link1">
+                              <button
+                                className={`Travel1 cate${data.cateName}`}
+                              >
+                                {data.cateName}
+                              </button>
+                            </Link>
+                          </div>
+                        </Grid>
+                        <Grid item xs={12} sm={9} xl={9} md={9}>
+                          <div className="postTrav_info">
+                            <Link
+                              to={`/${category}/${data._id}`}
+                              id={`${category}hover`}
+                            >
+                              <h4 className="colorh4">
+                                {data.title.substring(0, 80)}...
+                              </h4>
+                            </Link>
+                            <p>{data.description.substring(0, 100)}...</p>
+                            <div className="postbuttom">
+                              <div className="postman">
+                                <div className="postmanProfile">
+                                  {data.userprofile === "" ||
+                                  data.userprofile[0] === "" ||
+                                  data.userprofile.length === 0 ? (
+                                    <img
+                                      src="./images/userprofile/defaultuserprofile.png"
+                                      alt=""
+                                    />
+                                  ) : (
+                                    <img
+                                      src={`http://localhost:8080/${data.userprofile}`}
+                                      alt=""
+                                    />
+                                  )}
+                                </div>
+                                <span className="profileName">
+                                  {data.username}
+                                </span>
+                                <span className="profileDate">
+                                  <Moment format="DD/MMM/YYYY">
+                                    {data.createdAt}
+                                  </Moment>
+                                </span>
+                              </div>
+                              <div className="posticon">
+                                {/* {data && <SavePost getCateData={data} />} */}
+                              </div>
+                            </div>
+                          </div>
+                        </Grid>
+                      </Grid>
+                    </>
+                  );
+                }
               })}
               <Pagination
                 count={renderPageNumbers.length}
@@ -128,11 +232,10 @@ export default function Sidebar(props) {
                 color="primary"
                 variant="outlined"
               ></Pagination>
-            
+
               {/* <Paginate /> */}
+            </div>
           </div>
-          </div>
-          
         </>
       ) : (
         <div className="sidebar">

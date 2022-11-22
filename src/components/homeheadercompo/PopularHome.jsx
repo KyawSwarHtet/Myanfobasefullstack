@@ -78,7 +78,7 @@ export default function PopularHome() {
                   </Grid>
                   <Grid item md={4.4} sm={12} xs={12}>
                     <div className="SecondDiv">
-                      <Grid container direction="column" >
+                      <Grid container direction="column">
                         <Grid
                           item
                           md={8}
@@ -199,7 +199,3 @@ export default function PopularHome() {
     </>
   );
 }
-
-
-
-  

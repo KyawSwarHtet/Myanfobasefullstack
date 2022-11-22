@@ -6,22 +6,24 @@ import Science from "../../components/science/Science";
 import ScienceMain from "../../components/science/ScienceMain";
 import ScienceBanner from "../../components/science/ScienceBanner";
 import SciencePopular from "../../components/science/SciencePopular";
-import PopularNews from "../../components/catepagerightbar/PopularNews";
-
+import { Grid } from "@mui/material";
 export default function SciencePage() {
   return (
     <>
-      <section className="container">
+      <div className="container">
         <Science />
         <ScienceBanner />
-        <section className="sciencebody">
-          <ScienceMain />
-          <div className="allRightBar">
-            {/* <SciencePopular /> */}
-            <PopularNews />
+      </div>
+      <section className="container">
+        <Grid my={2} container>
+          <Grid item xs={12} xl={8.4} md={8.4}>
+            <ScienceMain />
+          </Grid>
+          <Grid item xs={12} xl={3.6} md={3.6}>
+            <SciencePopular />
             <Latestbar />
-          </div>
-        </section>
+          </Grid>
+        </Grid>
       </section>
     </>
   );

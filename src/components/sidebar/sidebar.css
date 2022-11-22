@@ -36,7 +36,7 @@
   border-radius: 50%;
 }
 .Trav_img img {
-  width: 250px;
+  width: 100%;
   height: 180px;
 }
 .postTrav_info {
@@ -51,7 +51,7 @@
 .Travel1 {
   position: absolute;
   bottom: 20px;
-  right: 20px;
+  right: -10px;
 }
 .filled {
   color: red;
@@ -59,32 +59,66 @@
 .unfilled {
   color: blue;
 }
-
-/* #sidebar-white {
+@media screen and (max-width: 900px) {
+  .postTrav_info {
+    width: 100%;
+  }
+  .Trav-main {
+    gap: 0rem;
+  }
+  .sidebar {
+    height: calc(150vh - 50px);
+  }
+  .sidebar1 {
+    height: calc(90vh - 50px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .Travel1 {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    width: 20%;
+  }
+  .Trav-main {
+    gap: 0rem;
+  }
+  .sidebar {
+    height: calc(200vh - 50px);
+    top: 50px;
+  }
+  .postTrav_info {
+    width: 100%;
+  }
+  .Trav_img {
+    padding: 0 2rem;
+  }
+}
+#sidebar-white {
   color: #fff;
-} */
+}
 
-/* #sidebar-black {
+#sidebar-black {
   color: black;
-} */
+}
 
-/* #sidebar-white .postTrav_info a {
+#sidebar-white .postTrav_info a {
   color: white;
-} */
+}
 
-/* #sidebar-white a:hover {
+#sidebar-white a:hover {
   color: red;
-} */
+}
 
-/* #sidebar-black .postTrav_info a {
+#sidebar-black .postTrav_info a {
   color: black;
-} */
-/* #sidebar-black a:hover {
+}
+#sidebar-black a:hover {
   color: blue;
-} */
+}
 
 /* hover colors */
-/* .postTrav_info #Educationhover:hover {
+.postTrav_info #Educationhover:hover {
   color: var(--education-bg);
 }
 .postTrav_info #Entertainmenthover:hover {
@@ -125,4 +159,4 @@
 }
 .postTrav_info #Businesshover:hover {
   color: var(--business-bg);
-} */
+}

@@ -1,23 +1,22 @@
-.mainetn {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-left: 5rem;
+.mainetn1 {
+  width: 90%;
+  margin: auto;
 }
 .firstetn {
   position: relative;
-  width: 80%;
- overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 .hansoetn {
   width: 100%;
   height: 520px;
-   transition: all 0.5s;
+  transition: all 0.5s;
 }
-.hansoetn img{
+.hansoetn img {
   width: 100%;
   height: 100%;
 }
-.hansoetn_P{
+.hansoetn_P {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -32,20 +31,20 @@
   transform: translate(-100%);
   transition: all 0.5s;
 }
-.hansoetn_P p{
+.hansoetn_P p {
   text-transform: capitalize;
   margin: 0;
   font-size: 15px;
   text-align: center;
 }
-.firstetn:hover .hansoetn_P{
-    transform: translate(0%);
+.firstetn:hover .hansoetn_P {
+  transform: translate(0%);
 }
-.firstetn:hover .hansoetn{
+.firstetn:hover .hansoetn {
   transform: scale(1.4) rotate(-15deg);
 }
-.secetn{
-  width: 80%;
+.secetn {
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -53,13 +52,13 @@
 .moneyheist {
   width: 100%;
   height: 520px;
-   transition: all 0.5s;
+  transition: all 0.5s;
 }
-.moneyheist img{
+.moneyheist img {
   width: 100%;
   height: 100%;
 }
-.moneyheist_P{
+.moneyheist_P {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -74,22 +73,21 @@
   transform: translate(-100%);
   transition: all 0.5s;
 }
-.moneyheist_P p{
+.moneyheist_P p {
   text-transform: capitalize;
   margin: 0;
   font-size: 15px;
   text-align: center;
 }
-.secetn:hover .moneyheist_P{
+.secetn:hover .moneyheist_P {
   transform: translate(0%);
 }
-.secetn:hover .moneyheist{
+.secetn:hover .moneyheist {
   transform: scale(1.4) rotate(-15deg);
 }
 
-
-.thirdetn{
-  width: 80%;
+.thirdetn {
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -98,11 +96,11 @@
   height: 520px;
   transition: all 0.5s;
 }
-.jurassic img{
+.jurassic img {
   width: 100%;
   height: 100%;
 }
-.jurassic_P{
+.jurassic_P {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -117,17 +115,17 @@
   transform: translate(-100%);
   transition: all 0.5s;
 }
-.jurassic_P p{
+.jurassic_P p {
   text-transform: capitalize;
   margin: 0;
   font-size: 15px;
   text-align: center;
 }
-.thirdetn:hover .jurassic_P{
-    transform: translate(0%);
+.thirdetn:hover .jurassic_P {
+  transform: translate(0%);
 }
-.thirdetn:hover .jurassic{
-    transform: scale(1.4) rotate(-15deg);
+.thirdetn:hover .jurassic {
+  transform: scale(1.4) rotate(-15deg);
 }
 
 .top {
@@ -153,7 +151,7 @@
   text-transform: uppercase;
 }
 .technology {
-  padding-top: 3rem;
+  padding-top: 0rem;
 }
 
 ol,
@@ -186,6 +184,35 @@ ul {
   color: #777;
   margin-top: 18px;
 }
-.enter{
-  padding-top: 6rem;
+.enter {
+  padding-top: 10px;
+}
+@media screen and (max-width: 600px) {
+  .thirdetn {
+    display: none;
+  }
+  .hansoetn {
+    height: 450px;
+  }
+  .moneyheist {
+    height: 450px;
+  }
+  .css-ewqgs-MuiGrid-root {
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  .css-sr5gqk-MuiGrid-root {
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 1050px) {
+  .css-sr5gqk-MuiGrid-root {
+    gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 1050px) and (max-width: 1400px) {
+  .css-sr5gqk-MuiGrid-root {
+    gap: 2.2rem;
+  }
 }

@@ -27,7 +27,7 @@
 .lastnewbar-body .article-lastest {
   display: grid;
   grid-template-columns: 30% 60%;
-  gap: 10%;
+  gap: 5%;
 }
 .lastnewinfo {
   display: grid;

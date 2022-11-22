@@ -45,7 +45,7 @@
   height: 30px;
   border-radius: 50%;
 }
-.headersecond .subscribebtn {
+.subscribebtn {
   border: 2px solid white;
   padding: 8px 17px;
   border-radius: 4px;
@@ -55,24 +55,26 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.headersecond .subscribebtn:hover {
+.subscribebtn:hover {
   background-color: rgb(255, 174, 0);
   color: black;
 }
-
+.navli {
+  padding: 0 2rem;
+}
 .language {
   display: flex;
   align-items: center;
   /* gap: 0.5rem; */
 }
-nav .flex {
+.flex {
   display: flex;
   align-items: center;
+  gap: 5px;
   height: 4.5rem;
 }
-nav .hoverclor:hover {
+a .hoverclor:hover {
   color: rgb(239, 145, 13);
-
   border-radius: 4px;
 }
 .dorpmenu-container {
@@ -106,6 +108,7 @@ nav .hoverclor:hover {
   visibility: visible;
   transform: translateY(0);
   transition: all 0.5s ease;
+  z-index: 1;
 }
 #dropdown-menu.inactive {
   opacity: 0;

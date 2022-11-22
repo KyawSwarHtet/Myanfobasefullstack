@@ -16,7 +16,7 @@ function Toggle() {
     <div
       className="toggle"
       onClick={handleClick}
-      style={darkMode ? { left: "0px" } : { right: "0px" }}
+      style={darkMode ? { right: "0px" } : { left: "0px" }}
     >
       {/* <Moon />
       <Sun /> */}
@@ -24,7 +24,7 @@ function Toggle() {
       <div
         className="t_button"
         // onClick={handleClick}
-        style={darkMode ? { left: "2px" } : { right: "2px" }}
+        style={darkMode ? { right: "2px" } : { left: "2px" }}
       ></div>
       <h5>DarkMode</h5>
     </div>

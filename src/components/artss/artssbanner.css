@@ -1,18 +1,18 @@
 .artphoto {
-  width: 80%;
+  width: 100%;
   height: 480px;
   cursor: pointer;
   box-shadow: 0.65em 0.65em 1em;
   margin-top: 1rem;
 }
 .artsection {
-  padding-top: 6rem;
+  padding-top: 10px;
 }
 .artphoto img {
   width: 100%;
   height: 100%;
 }
-.artphoto img{
+.artphoto img {
   width: 100%;
   height: 100%;
 }
@@ -20,7 +20,7 @@
 .artss {
   display: flex;
 }
-.artss h1 {
+.artpara h1 {
   z-index: 6rem;
   white-space: normal;
   font-size: 80px;
@@ -55,4 +55,29 @@
   font-family: Poppins;
   margin-left: 6rem;
   margin-top: 3rem;
+}
+@media screen and (max-width: 810px) {
+  .datepara {
+    font-size: 14px;
+    margin-left: 5rem;
+    margin-top: 0.5rem;
+  }
+  .companypara {
+    font-size: 14px;
+    margin-left: 5rem;
+    margin-top: 2rem;
+  }
+  .artpara h1 {
+    font-size: 60px;
+    line-height: 60px;
+    margin-left: 3rem;
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .artphoto {
+    width: 80%;
+    height: 400px;
+    margin: auto;
+  }
 }
