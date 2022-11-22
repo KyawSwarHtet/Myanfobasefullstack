@@ -44,7 +44,7 @@ const DetailPage = React.lazy(() => import("./pages/detailpage/DetailPage"));
 const Business = React.lazy(() => import("./pages/business/Business"));
 const Education = React.lazy(() => import("./pages/education/Education"));
 const University = React.lazy(() => import("./pages/education/University"));
-const Govenment = React.lazy(() => import("./pages/government/Govenment"));
+const Government = React.lazy(() => import("./pages/government/Govenment"));
 const Law = React.lazy(() => import("./pages/government/Law"));
 const Leader = React.lazy(() => import("./pages/government/Leader"));
 const Ministry = React.lazy(() => import("./pages/government/Ministry"));
@@ -148,6 +148,9 @@ const LazySearch = React.lazy(() => import("./pages/searchpage/SearchPage"));
 const UserDetailPage = React.lazy(() =>
   import("./pages/userdetailPage/UserDetailPage")
 );
+// const DetailWithCount = React.lazy(() =>
+//   import("./pages/userdetailPage/DetailWithCount")
+// );
 
 function App() {
   const dispatch = useDispatch();
@@ -185,14 +188,17 @@ function App() {
       setGetAllusers(data);
     });
   }, []);
- const theme = useContext(themeContext);
- const darkMode = theme.state.darkMode;
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
   return (
-    <div className="App"
+    <div
+      className="App"
+      id={darkMode ? "blackMode" : "whiteMode"}
       style={{
         background: darkMode ? "#1a1a1a" : "white",
         color: darkMode ? "white" : "#1a1a1a",
-    }}>
+      }}
+    >
       <Header />
       <Routes>
         <Route
@@ -563,10 +569,10 @@ function App() {
         />
 
         <Route
-          path="/govenment"
+          path="/government"
           element={
             <React.Suspense fallback="Loading....">
-              <Govenment />
+              <Government />
             </React.Suspense>
           }
         />
@@ -980,6 +986,14 @@ function App() {
             </React.Suspense>
           }
         />
+        {/* <Route
+          path="/detail/:cate/:id"
+          element={
+            <React.Suspense fallback="Loading....">
+              <DetailWithCount />
+            </React.Suspense>
+          }
+        /> */}
         <Route
           path="/addcate"
           element={

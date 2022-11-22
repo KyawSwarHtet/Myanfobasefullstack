@@ -1,18 +1,24 @@
 .titlecategory {
   font-size: 20px;
   margin: 0.25rem 0;
-
-  /* color: rgb(0, 55, 255); */
+  background-color: #9bc9c9;
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
 }
 .enterCate {
   padding-top: 6rem;
+}
+.removeBtn {
+  padding: 0.3rem 0.5rem;
+  background-color: rgb(230 140 140);
+  border-radius: 5px;
 }
 
 .cateUl {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 .labelCate {
   margin: 2rem 1rem;
@@ -38,4 +44,11 @@
   position: absolute;
   top: 121px;
   right: 380px;
+}
+
+.cateList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 7rem;
 }

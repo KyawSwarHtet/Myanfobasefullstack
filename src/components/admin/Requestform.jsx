@@ -72,7 +72,8 @@ export default function RequestForm() {
                       <div className="admin-img">
                         <img
                           className="adminimg"
-                          src={`http://localhost:8080/${element.files[0].filePath}`}
+                          // src={`http://localhost:8080/${element.files[0].filePath}`}
+                          src={`https://desolate-hollows-16342.herokuapp.com/${element.files[0].filePath}`}
                           alt=""
                         />
                       </div>
@@ -104,7 +105,8 @@ export default function RequestForm() {
                           />
                         ) : (
                           <img
-                            src={`http://localhost:8080/${element.userprofile}`}
+                            // src={`http://localhost:8080/${element.userprofile}`}
+                            src={`https://desolate-hollows-16342.herokuapp.com/${element.userprofile}`}
                             alt=""
                           />
                         )}

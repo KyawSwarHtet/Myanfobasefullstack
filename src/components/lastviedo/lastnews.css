@@ -85,7 +85,7 @@ span.headerline {
   border-radius: 50%;
 }
 .profileDate {
-  font-size: 12px;
+  /* font-size: 12px; */
 }
 .news_info {
   width: 70%;
@@ -93,9 +93,6 @@ span.headerline {
 /* .news_info h4:hover {
   color: var(--entertainment-bg);
 } */
-.news:hover .ent_hover h4 {
-  color: var(--entertainment-bg);
-}
 
 .news_img img {
   width: 220px;
@@ -248,3 +245,10 @@ span.headerline {
   background-color: #f18510;
   margin-bottom: 1rem;
 } */
+
+
+/* favlist */
+
+.addfav{
+  font-size: 1rem;
+}

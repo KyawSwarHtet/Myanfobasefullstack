@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import "./categories.css";
 
 // import required modules
@@ -14,7 +13,7 @@ import { Pagination, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export default function Categorieslider() {
+export default function CategoryCount() {
   const [categories, setCategories] = useState("");
   const { posts } = useSelector((state) => state.posts);
 
@@ -72,21 +71,13 @@ export default function Categorieslider() {
     },
   ];
 
-  const CateArr = [];
-
-  if (categories.length !== 0) {
-    categories.map((data) => {
-      CateArr.push({ category: data.catename, count: 0 });
-    });
-  }
-
   const getAlldata = async () => {
-    // const reqdata = await fetch(`http://localhost:8080/api/category`);
+    // const reqdata = await fetch(`http://localhost:8080/api/catecount`);
     const reqdata = await fetch(
-      `https://desolate-hollows-16342.herokuapp.com/api/category`
+      `https://desolate-hollows-16342.herokuapp.com/api/catecount`
     );
     const res = await reqdata.json(); // JSON.parse(json);
-    //   console.log("res data is ", res);
+
     return res;
   };
   useEffect(() => {
@@ -94,25 +85,6 @@ export default function Categorieslider() {
       setCategories(data);
     });
   }, [posts]);
-
-  const PostMemo = (posts) => {
-    if (posts.length !== 0) {
-      posts.map((data, index) => {
-        if (CateArr.length !== 0) {
-          CateArr.map((cate) => {
-            if (cate.category == data.cateName && data.postAccept === true) {
-              ++cate.count;
-            }
-          });
-        }
-      });
-    }
-    return CateArr;
-  };
-  const countChange = useMemo(() => {
-    return PostMemo(posts);
-  }, [categories]);
-  console.log("Coun SSS", countChange);
 
   return (
     <>
@@ -134,8 +106,8 @@ export default function Categorieslider() {
             modules={[Pagination, Navigation]}
             className="cates-swiper"
           >
-            {countChange.length !== 0 ? (
-              countChange.map((cate, index) => {
+            {categories.length !== 0 ? (
+              categories.map((cate, index) => {
                 return (
                   <SwiperSlide className="cate-swiper">
                     <div className="per-cate">
@@ -144,10 +116,10 @@ export default function Categorieslider() {
                       </div>
 
                       <div className="swiperbody">
-                        <h3>{cate.category}</h3>
+                        <h3>{cate._id}</h3>
                         <h5>{cate.count} Articles</h5>
 
-                        <Link to={cate.category}>
+                        <Link to={cate._id}>
                           <span>C</span>heck Here
                         </Link>
                       </div>

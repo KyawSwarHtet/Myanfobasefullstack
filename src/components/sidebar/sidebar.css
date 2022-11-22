@@ -53,6 +53,12 @@
   bottom: 20px;
   right: 20px;
 }
+.filled {
+  color: red;
+}
+.unfilled {
+  color: blue;
+}
 
 /* #sidebar-white {
   color: #fff;
@@ -62,23 +68,23 @@
   color: black;
 } */
 
-#sidebar-white .postTrav_info a {
+/* #sidebar-white .postTrav_info a {
   color: white;
-}
+} */
 
 /* #sidebar-white a:hover {
   color: red;
 } */
 
-#sidebar-black .postTrav_info a {
+/* #sidebar-black .postTrav_info a {
   color: black;
-}
+} */
 /* #sidebar-black a:hover {
   color: blue;
 } */
 
 /* hover colors */
-.postTrav_info #Educationhover:hover {
+/* .postTrav_info #Educationhover:hover {
   color: var(--education-bg);
 }
 .postTrav_info #Entertainmenthover:hover {
@@ -119,4 +125,4 @@
 }
 .postTrav_info #Businesshover:hover {
   color: var(--business-bg);
-}
+} */

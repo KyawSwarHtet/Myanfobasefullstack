@@ -6,6 +6,7 @@ import Science from "../../components/science/Science";
 import ScienceMain from "../../components/science/ScienceMain";
 import ScienceBanner from "../../components/science/ScienceBanner";
 import SciencePopular from "../../components/science/SciencePopular";
+import PopularNews from "../../components/catepagerightbar/PopularNews";
 
 export default function SciencePage() {
   return (
@@ -16,7 +17,8 @@ export default function SciencePage() {
         <section className="sciencebody">
           <ScienceMain />
           <div className="allRightBar">
-            <SciencePopular />
+            {/* <SciencePopular /> */}
+            <PopularNews />
             <Latestbar />
           </div>
         </section>

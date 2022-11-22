@@ -13,7 +13,8 @@ export default function TrainingClass() {
 
   const getAlldata = async () => {
     const reqdata = await fetch(
-      `http://localhost:8080/api/postcate/${category}`
+      `https://desolate-hollows-16342.herokuapp.com/api/postcate/${category}`
+      // `http://localhost:8080/api/postcate/${category}`
     );
     const res = await reqdata.json(); // JSON.parse(json);
     //   console.log("res data is ", res);
@@ -35,13 +36,14 @@ export default function TrainingClass() {
             <article className="homeclass1">
               <div className="classimg">
                 <img
-                  src={`http://localhost:8080/${data.files[0].filePath}`}
+                  src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
+                  // src={`http://localhost:8080/${data.files[0].filePath}`}
                   alt=""
                 />
               </div>
               <Link
                 to={`/${category}/${data._id}`}
-                className={`${category}hover`}
+                className={`colorBlack ${category}hover`}
               >
                 <h4>{data.title.substring(0, 50)}...</h4>
               </Link>
@@ -56,7 +58,8 @@ export default function TrainingClass() {
                     />
                   ) : (
                     <img
-                      src={`http://localhost:8080/${data.userprofile}`}
+                      src={`https://desolate-hollows-16342.herokuapp.com/${data.userprofile}`}
+                      // src={`http://localhost:8080/${data.userprofile}`}
                       alt=""
                     />
                   )}

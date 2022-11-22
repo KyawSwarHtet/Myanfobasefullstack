@@ -1,43 +1,33 @@
-.beauty-firstrow {
-  display: grid;
-  grid-template-rows: 70% 30%;
-  height: 40rem;
-}
+
+  
 .beauty-banner {
-  display: grid;
-  grid-template-columns: 70% 30%;
-  height: 40rem;
-  width: 100%;
-}
-.low-photos {
-  display: grid;
-  grid-template-columns: 50% 50%;
+   width: 100%;
 }
 
 .firstrow-firstdiv .blogger-img {
   width: 100%;
-  height: 100%;
+  height: 30rem;
 }
 
 .firstrow-secdiv .skincare-img {
   width: 100%;
-  height: 190px;
+  height: 15rem;
 }
 .firstrow-thirddiv .makeup-img {
   width: 100%;
-  height: 190px;
+  height: 15rem;
 }
 .secrow-firstdiv .beauty-img {
   width: 100%;
-  height: 100%;
+  height: 15rem;
 }
 .secrow-secdiv .clinic-img {
   width: 100%;
-  height: 100%;
+  height: 15rem;
 }
 .secrow-thirddiv .natural-img {
   width: 100%;
-  height: 100%;
+  height: 15rem;
 }
 .skincare-img img {
   width: 100%;
@@ -204,12 +194,19 @@
   left: 1rem;
   font-size: 18px;
 }
-.ban-secrow {
-  display: grid;
-  grid-template-rows: 70% 30%;
-  height: 40rem;
+
+
+
+@media screen and (max-width: 1200px) {
+  .ban-secrow{
+    display: none;
+  }
 }
-.seccol-firstdiv {
-  display: grid;
-  grid-template-rows: 50% 50%;
+@media screen and (max-width: 600px) {
+  .blogger-p p{
+    display: none;
+  }
+  .firstrow-firstdiv .blogger-img {
+  height: 20rem;
+}
 }

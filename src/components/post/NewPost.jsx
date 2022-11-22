@@ -9,7 +9,7 @@ import "./dropdowncate.css";
 import { createPost } from "../../features/posts/postSlice";
 import { useRef } from "react";
 
-export default function CreatePost(props) {
+export default function NewPost(props) {
   const [input, setInput] = useState({
     cateName: "Choose One",
     cateId: "0",
@@ -91,8 +91,8 @@ export default function CreatePost(props) {
   };
 
   useEffect(() => {
-    // Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
-    Axios.get("http://localhost:8080/readcate")
+    Axios.get("https://desolate-hollows-16342.herokuapp.com/readcate")
+      // Axios.get("http://localhost:8080/readcate")
       .then((response) => {
         setListOfCate(response.data);
         console.log("categories inside", response.data);

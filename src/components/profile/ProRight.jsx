@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import "../travelling/travside.css";
+import "../../App.css";
 import Moment from "react-moment";
 import Spinner from "../login/Spinner";
 import ReactReadMoreReadLess from "react-read-more-read-less";
@@ -43,7 +44,7 @@ function ProRight() {
   }
   return (
     <>
-      <div>
+      <div key={user._id}>
         <div className="lastnewbar-title">
           <h2 className="capitalize">My Posts</h2>
           <span className="lasttitleline Post-line"></span>
@@ -57,7 +58,8 @@ function ProRight() {
                     <div className="postProfile">
                       <div className="Profile_img">
                         <img
-                          src={`http://localhost:8080/${element.files[0].filePath}`}
+                          src={`https://desolate-hollows-16342.herokuapp.com/${element.files[0].filePath}`}
+                          // src={`http://localhost:8080/${element.files[0].filePath}`}
                         />
                         <Link to={`/${element.cateName}`} className="link1">
                           <button
@@ -70,7 +72,7 @@ function ProRight() {
                       <div className="postProfile_info">
                         <Link
                           to={`/${element.cateName}/${element._id}`}
-                          className={`${element.cateName}hover`}
+                          className={`colorBlack ${element.cateName}hover`}
                         >
                           <h4>{element.title.substring(0, 50)}...</h4>
                         </Link>
@@ -96,7 +98,8 @@ function ProRight() {
                                 />
                               ) : (
                                 <img
-                                  src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
+                                  src={`https://desolate-hollows-16342.herokuapp.com/${user.profilePicture[0].filePath}`}
+                                  // src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
                                   alt=""
                                 />
                               )}

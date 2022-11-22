@@ -74,7 +74,8 @@ function SearchArticle() {
                 <div className="product-img">
                   {/* {element.files.map((file,index)=>( */}
                   <img
-                    src={`http://localhost:8080/${element.files[0].filePath}`}
+                    src={`https://desolate-hollows-16342.herokuapp.com/${element.files[0].filePath}`}
+                    // src={`http://localhost:8080/${element.files[0].filePath}`}
                     className="card-img-top img-responsive "
                     alt="img"
                   />
