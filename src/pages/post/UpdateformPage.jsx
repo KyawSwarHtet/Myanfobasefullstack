@@ -8,8 +8,8 @@ export default function UpdateformPage() {
   return (
     <>
       <section>
-        {/* <EditPost /> */}
-        <NewEditPost />
+        <EditPost />
+        {/* <NewEditPost /> */}
       </section>
     </>
   );

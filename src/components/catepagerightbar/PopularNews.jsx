@@ -4,20 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import Moment from "react-moment";
 import { useState } from "react";
 
-export default function LatestArticle(props) {
+export default function PopularNews(props) {
   const [lastposts, setLastPosts] = useState("");
-  // {
-  // title: "",
-  // cateName: "",
-  // createdAt: "",
-  // files: [],
-  // }
-
   const getAlldata = async () => {
     const reqdata = await fetch(
-      `https://desolate-hollows-16342.herokuapp.com/api/lastposts`
+      `https://desolate-hollows-16342.herokuapp.com/api/popular`
     );
-    // const reqdata = await fetch(`http://localhost:8080/api/lastposts`);
+    // const reqdata = await fetch(`http://localhost:8080/api/popular`);
     const res = await reqdata.json(); // JSON.parse(json);
     //   console.log("res data is ", res);
     return res;
@@ -28,14 +21,11 @@ export default function LatestArticle(props) {
       setLastPosts(data);
     });
   }, []);
-
-  console.log("latest post length is", lastposts.length);
-  console.log("latest post is", lastposts);
   return (
     lastposts && (
       <div className="lastArt">
         <div className="lastnewbar-title">
-          <h2>Latest Articles</h2>
+          <h2>The Most Popular News</h2>
           <span className="lasttitleline"></span>
         </div>
 

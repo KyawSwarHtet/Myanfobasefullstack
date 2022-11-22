@@ -1,33 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DropdownItems } from "./dropdownItem";
+
 import "./dropdown.css";
 
 export default function Dropdown(props) {
   const user = props.user;
+  const categories = props.categories;
   const [dropdown, setDropdown] = useState(false);
-  const [categories, setCategories] = useState("");
-  console.log("user is", user);
-  const getAlldata = async () => {
-    const reqdata = await fetch(`http://localhost:8080/api/category`);
-    const res = await reqdata.json(); // JSON.parse(json);
-    //   console.log("res data is ", res);
-    return res;
-  };
-  useEffect(() => {
-    getAlldata().then((data) => {
-      setCategories(data);
-    });
-  }, []);
-
-  // console.log("cate gorie data", categories);
 
   return (
     <ul
       className={dropdown ? "categoriessub clicked" : "categoriessub"}
       onClick={() => setDropdown(!dropdown)}
     >
-      {categories.length !== 0 ? (
+      {categories && categories.length !== 0 ? (
         categories.map((item) => {
           return (
             <li key={item._id} className="catgitems">

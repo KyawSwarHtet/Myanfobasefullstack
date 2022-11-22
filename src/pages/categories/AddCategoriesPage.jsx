@@ -1,38 +1,51 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Addcategory, getCategory } from "../../data/api";
+import { useSelector, useDispatch } from "react-redux";
 import "./addcategories.css";
+import {
+  createCate,
+  deleteCate,
+  getCate,
+} from "../../features/categories/categorySlice";
 export default function AddCategoriesPage() {
-  const [categories, setCategories] = useState("");
   const category = useRef(null);
   const [count, setCount] = useState(0);
+  const dispatch = useDispatch();
 
   const AddCategory = (e) => {
     e.preventDefault();
     setCount((prev) => prev + 1);
     const catename = { catename: category.current.value };
 
-    Addcategory(catename);
+    // Addcategory(catename);
+    dispatch(createCate(catename));
     category.current.value = "";
   };
 
-  const getAlldata = async () => {
-    const reqdata = await fetch(`http://localhost:8080/api/category`);
-    const res = await reqdata.json(); // JSON.parse(json);
-    //   console.log("res data is ", res);
-    return res;
-  };
+  const { categories, isLoading, isError, message } = useSelector(
+    (state) => state.categories
+  );
+
   useEffect(() => {
-    getAlldata().then((data) => {
-      setCategories(data);
-    });
+    dispatch(getCate());
   }, [count]);
 
   return (
     <div className="enterCate gridCate ">
       <ul className="cateUl">
-        {categories.length !== 0 ? (
+        {categories && categories.length !== 0 ? (
           categories.map((data) => {
-            return <li className="titlecategory">{data.catename}</li>;
+            return (
+              <div className="cateList">
+                <li className="titlecategory">{data.catename}</li>
+                <button
+                  className="removeBtn"
+                  onClick={() => dispatch(deleteCate(data))}
+                >
+                  Remove
+                </button>
+              </div>
+            );
           })
         ) : (
           <div>

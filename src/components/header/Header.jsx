@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Dropdown from "./dropdown/Dropdown";
 import Language from "./dropdown/Language";
@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../../features/auth/authSlice";
 import "./header.css";
 import Toggle from "../toggle/Toggle";
+import { getCate } from "../../features/categories/categorySlice";
 
 export default function Header() {
   const [dropdown, setDropdown] = useState(false);
@@ -19,6 +20,16 @@ export default function Header() {
     dispatch(reset());
     navigate("/");
   };
+
+  const { categories, isLoading, isError, message } = useSelector(
+    (state) => state.categories
+  );
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    dispatch(getCate());
+  }, []);
 
   return (
     <div className="headercolor">
@@ -50,7 +61,13 @@ export default function Header() {
               <i class="uil uil-list-ul"></i>
               <span className="capitalize">Menu</span>
             </div>
-            {dropdown && <Dropdown user={user} className="dropdownWrap" />}
+            {dropdown && (
+              <Dropdown
+                user={user}
+                categories={categories && categories}
+                className="dropdownWrap"
+              />
+            )}
           </li>
           <li>
             <Link to="/post" className="flex hoverclor">
@@ -99,7 +116,8 @@ export default function Header() {
                       ) : (
                         <Link to={"/profile"}>
                           <img
-                            src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
+                            src={`https://desolate-hollows-16342.herokuapp.com/${user.profilePicture[0].filePath}`}
+                            // src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
                             alt=""
                           />
                         </Link>
@@ -133,7 +151,7 @@ export default function Header() {
                         data={"fa-solid fa-circle-half-stroke"}
                         text={"Dark Mode"}
                       /> */}
-                      <Toggle/>
+                      <Toggle />
 
                       <li className="dropdownItem">
                         <i class="fa-solid fa-right-from-bracket"></i>

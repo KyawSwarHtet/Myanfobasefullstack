@@ -44,7 +44,7 @@ function ProRight() {
   }
   return (
     <>
-      <div>
+      <div key={user._id}>
         <div className="lastnewbar-title">
           <h2 className="capitalize">My Posts</h2>
           <span className="lasttitleline Post-line"></span>
@@ -58,7 +58,8 @@ function ProRight() {
                     <div className="postProfile">
                       <div className="Profile_img">
                         <img
-                          src={`http://localhost:8080/${element.files[0].filePath}`}
+                          src={`https://desolate-hollows-16342.herokuapp.com/${element.files[0].filePath}`}
+                          // src={`http://localhost:8080/${element.files[0].filePath}`}
                         />
                         <Link to={`/${element.cateName}`} className="link1">
                           <button
@@ -97,7 +98,8 @@ function ProRight() {
                                 />
                               ) : (
                                 <img
-                                  src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
+                                  src={`https://desolate-hollows-16342.herokuapp.com/${user.profilePicture[0].filePath}`}
+                                  // src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
                                   alt=""
                                 />
                               )}
