@@ -59,73 +59,6 @@
 .unfilled {
   color: blue;
 }
-
-/* #sidebar-white {
-  color: #fff;
-} */
-
-/* #sidebar-black {
-  color: black;
-} */
-
-/* #sidebar-white .postTrav_info a {
-  color: white;
-} */
-
-/* #sidebar-white a:hover {
-  color: red;
-} */
-
-/* #sidebar-black .postTrav_info a {
-  color: black;
-} */
-/* #sidebar-black a:hover {
-  color: blue;
-} */
-
-/* hover colors */
-/* .postTrav_info #Educationhover:hover {
-  color: var(--education-bg);
-}
-.postTrav_info #Entertainmenthover:hover {
-  color: var(--entertainment-bg);
-}
-.postTrav_info #Technologyhover:hover {
-  color: var(--technology-bg);
-}
-.postTrav_info #Beautyhover:hover {
-  color: var(--beauty-bg);
-}
-.postTrav_info #Governmenthover:hover {
-  color: var(--government-bg);
-}
-.postTrav_info #Travelhover:hover {
-  color: var(--travel-bg);
-}
-.postTrav_info #Historyhover:hover {
-  color: var(--history-bg);
-}
-.postTrav_info #Healthhover:hover {
-  color: var(--health-bg);
-}
-.postTrav_info #Literaturehover:hover {
-  color: var(--literature-bg);
-}
-.postTrav_info #Lifestyleshover:hover {
-  color: var(--lifestyles-bg);
-}
-.postTrav_info #Sciencehover:hover {
-  color: var(--science-bg);
-}
-.postTrav_info #Sportshover:hover {
-  color: var(--sports-bg);
-}
-.postTrav_info #Artshover:hover {
-  color: var(--arts-bg);
-}
-.postTrav_info #Businesshover:hover {
-  color: var(--business-bg);
-}
 @media screen and (max-width: 900px) {
   .postTrav_info {
     width: 100%;
@@ -161,38 +94,31 @@
     padding: 0 2rem;
   }
 }
-.filled {
-  color: red;
-}
-.unfilled {
-  color: blue;
-}
-
-/* #sidebar-white {
+#sidebar-white {
   color: #fff;
-} */
+}
 
-/* #sidebar-black {
+#sidebar-black {
   color: black;
-} */
+}
 
-/* #sidebar-white .postTrav_info a {
+#sidebar-white .postTrav_info a {
   color: white;
-} */
+}
 
-/* #sidebar-white a:hover {
+#sidebar-white a:hover {
   color: red;
-} */
+}
 
-/* #sidebar-black .postTrav_info a {
+#sidebar-black .postTrav_info a {
   color: black;
-} */
-/* #sidebar-black a:hover {
+}
+#sidebar-black a:hover {
   color: blue;
-} */
+}
 
 /* hover colors */
-/* .postTrav_info #Educationhover:hover {
+.postTrav_info #Educationhover:hover {
   color: var(--education-bg);
 }
 .postTrav_info #Entertainmenthover:hover {
@@ -233,4 +159,4 @@
 }
 .postTrav_info #Businesshover:hover {
   color: var(--business-bg);
-} */
+}
