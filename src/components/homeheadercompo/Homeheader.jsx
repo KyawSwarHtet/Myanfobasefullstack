@@ -45,7 +45,7 @@ const HomeHeader = () => {
           <h2
             className={darkMode ? " populartitle-white" : "populartitle-black"}
           >
-            Popular Now Now
+            Popular Now
           </h2>
           <span className="popular-now-line"></span>
         </div>

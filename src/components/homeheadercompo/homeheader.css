@@ -361,4 +361,13 @@ transform: perspective(1000px) translateZ(150px);
   .bignewsdesc{
     display: none;
   }
+  .mask-div .maskimgdiv {
+  
+  height: 10rem;
+}
+.secGridfistphoto .travelpopular {
+ 
+  height: 10rem;
+
+}
 }
