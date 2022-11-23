@@ -18,7 +18,7 @@ export default function Entertainment() {
             <Entertainmentmain />
           </Grid>
           <Grid item xs={12} xl={3.6} md={3.6}>
-            <Entertainmentpopular />
+            <PopularNews />
             <Latestbar />
           </Grid>
         </Grid>

@@ -8,7 +8,6 @@ export default function Dropdown(props) {
   const user = props.user;
   const categories = props.categories;
   const [dropdown, setDropdown] = useState(false);
-  console.log("user is", user);
 
   return (
     <ul

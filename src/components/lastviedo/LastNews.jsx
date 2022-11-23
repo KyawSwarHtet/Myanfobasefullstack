@@ -1,3 +1,4 @@
+import { Box, Container, Grid } from "@mui/material";
 import React from "react";
 import "./lastnews.css";
 import News from "./News";
@@ -9,10 +10,20 @@ const LastNews = () => {
       <h2>Lastest News</h2>
       <span className="headerline"></span>
       <div className="NewsSec">
-        <div className="lastnew">
-          <News />
-          <Todaylist />
-        </div>
+        <Box>
+          <div className="lastnew">
+            <Container maxWidth="xl">
+              <Grid container direction="row" spacing={1}>
+                <Grid item md={7}>
+                  <News />
+                </Grid>
+                <Grid item md={5}>
+                  <Todaylist />
+                </Grid>
+              </Grid>
+            </Container>
+          </div>
+        </Box>
       </div>
     </section>
   );

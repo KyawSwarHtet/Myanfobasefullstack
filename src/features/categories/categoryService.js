@@ -25,15 +25,12 @@ const getCateService = async () => {
 
 //Delete category
 const deleteCateService = async (id, token) => {
-  console.log("dat from delet service id", id);
-  console.log("dat from delet service token", token);
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
   const response = await axios.post(API_URL + "delCate", id, config);
-  console.log("response data", response.data);
   return response.data;
 };
 

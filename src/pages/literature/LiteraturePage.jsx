@@ -19,7 +19,7 @@ export default function LiteraturePage() {
             <LiteratureMain />
           </Grid>
           <Grid item xs={12} xl={3.6} md={3.6}>
-            <LiteraturePopular />
+            <PopularNews />
             <Latestbar />
           </Grid>
         </Grid>

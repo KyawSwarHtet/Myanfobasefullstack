@@ -51,10 +51,10 @@ export const getCate = createAsyncThunk(
 //Delete post
 export const deleteCate = createAsyncThunk(
   "category/remove",
-  async (id, thunkAPI) => {
+  async (data, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
-      return await cateService.deleteCateService(id, token);
+      return await cateService.deleteCateService(data, token);
     } catch (error) {
       const message =
         (error.response &&
@@ -110,7 +110,6 @@ export const cateSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.categories = state.categories.filter((category) => {
-          console.log("cate delete ", category._id);
           return category._id !== action.payload.id;
         });
       })

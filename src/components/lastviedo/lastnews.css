@@ -11,9 +11,9 @@
   align-items: center; */
   /* display: flex;
   justify-content: space-between; */
-  display: grid;
+  /* display: grid;
   grid-template-columns: 70% 30%;
-  gap: 1rem;
+  gap: 1rem; */
 }
 
 .postmanProfile {

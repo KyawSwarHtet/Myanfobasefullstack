@@ -40,7 +40,7 @@ export default function AddCategoriesPage() {
                 <li className="titlecategory">{data.catename}</li>
                 <button
                   className="removeBtn"
-                  onClick={() => dispatch(deleteCate(data._id))}
+                  onClick={() => dispatch(deleteCate(data))}
                 >
                   Remove
                 </button>

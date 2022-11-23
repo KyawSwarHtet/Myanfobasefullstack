@@ -3,7 +3,6 @@ import PopularNews from "../../components/catepagerightbar/PopularNews";
 import Footer from "../../components/footer/Footer";
 import HealthBanner from "../../components/health/Healthbanner";
 import HealthHeader from "../../components/health/Healthheader";
-import HealthPopular from "../../components/health/Healthrightbar";
 import HealthRightbar from "../../components/health/Healthrightbar";
 import HealthSidebar from "../../components/health/Healthsidebar";
 import "../tecnology/tecnologyPage.css";
@@ -21,7 +20,7 @@ export default function Healthpage() {
             <HealthSidebar />
           </Grid>
           <Grid item xs={12} xl={3.6} md={3.6}>
-            <HealthPopular />
+            <PopularNews />
             <Latestbar />
           </Grid>
         </Grid>

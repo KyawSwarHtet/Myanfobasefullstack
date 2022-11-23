@@ -18,7 +18,7 @@ export default function Sport() {
             <SportMain />
           </Grid>
           <Grid item xs={12} xl={3.6} md={3.6}>
-            <SportPopular />
+            <PopularNews />
             <Latestbar />
           </Grid>
         </Grid>

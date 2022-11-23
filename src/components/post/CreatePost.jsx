@@ -152,7 +152,13 @@ export default function CreatePost(props) {
         <br />
         <div className="imgDiv">
           <label>Upload Image:</label>
-          <input type="file" name="files" multiple onChange={onChangeImg} />
+          <input
+            type="file"
+            name="files"
+            required
+            multiple
+            onChange={onChangeImg}
+          />
         </div>
         <button type="submit" className="postButton">
           Post
