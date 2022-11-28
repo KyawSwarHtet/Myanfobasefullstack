@@ -31,15 +31,16 @@ span.headerline {
   margin-bottom: 1rem;
 }
 .newspart {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2rem; */
   width: 100%;
 }
 .news {
-  display: flex;
+  margin-bottom: 2rem;
+  /* display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 100%; */
   /*
    margin: 2rem 0; */
 }

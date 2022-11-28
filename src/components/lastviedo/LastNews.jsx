@@ -13,11 +13,11 @@ const LastNews = () => {
         <Box>
           <div className="lastnew">
             <Container maxWidth="xl">
-              <Grid container direction="row" spacing={1}>
-                <Grid item md={7}>
+              <Grid container direction="row" spacing={12}>
+                <Grid item xl={8} lg={8} md={12} sm={12} xs={12}>
                   <News />
                 </Grid>
-                <Grid item md={5}>
+              <Grid item xl={4} lg={4} md={12} sm={12} xs={12}>
                   <Todaylist />
                 </Grid>
               </Grid>

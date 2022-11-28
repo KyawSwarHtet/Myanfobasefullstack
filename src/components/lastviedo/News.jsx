@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Moment from "react-moment";
 import "./lastnews.css";
+import { Container, Grid, Box } from "@mui/material";
 const News = () => {
   const [lastposts, setLastPosts] = useState("");
   const [visible, setVisible] = useState(4);
@@ -35,60 +36,73 @@ const News = () => {
             if (data.postAccept === true) {
               return (
                 <>
-                  <div className="news">
-                    <div className="news_info ent_hover">
-                      <Link
-                        to={`/${data.cateName}/${data._id}`}
-                        className={`colorBlack ${data.cateName}hover`}
-                      >
-                        <h4>{data.title.substring(0, 50)}...</h4>
-                      </Link>
-                      <p>{data.description.substring(0, 130)}...</p>
-                      <div className="postbuttom">
-                        <div className="postman">
-                          <div className="postmanProfile">
-                            {data.userprofile === "" ||
-                            data.userprofile[0] === "" ||
-                            data.userprofile.length === 0 ? (
-                              <img
-                                src="./images/userprofile/defaultuserprofile.png"
-                                alt=""
-                              />
-                            ) : (
-                              <img
-                                src={`https://desolate-hollows-16342.herokuapp.com/${data.userprofile}`}
-                                // src={`http://localhost:8080/${data.userprofile}`}
-                                alt=""
-                              />
-                            )}
-                          </div>
-                          <span className="profileName">{data.username}</span>
-                          <h5 className="profileDate">
-                            <Moment format="DD/MMM/YYYY">
-                              {data.createdAt}
-                            </Moment>
-                          </h5>
-                        </div>
-                        {/* <div className="posticon">
+                  <Box>
+                    <div className="news">
+                      <Container maxWidth="xl">
+                        <Grid container direction="row" spacing={1}>
+                          <Grid item xl={8} lg={8} md={8} sm={8} xs={12}>
+                            <div className="news_info ent_hover">
+                              <Link
+                                to={`/${data.cateName}/${data._id}`}
+                                className={`colorBlack ${data.cateName}hover`}
+                              >
+                                <h4>{data.title.substring(0, 50)}...</h4>
+                              </Link>
+                              <p>{data.description.substring(0, 130)}...</p>
+                              <div className="postbuttom">
+                                <div className="postman">
+                                  <div className="postmanProfile">
+                                    {data.userprofile === "" ||
+                                    data.userprofile[0] === "" ||
+                                    data.userprofile.length === 0 ? (
+                                      <img
+                                        src="./images/userprofile/defaultuserprofile.png"
+                                        alt=""
+                                      />
+                                    ) : (
+                                      <img
+                                        src={`https://desolate-hollows-16342.herokuapp.com/${data.userprofile}`}
+                                        // src={`http://localhost:8080/${data.userprofile}`}
+                                        alt=""
+                                      />
+                                    )}
+                                  </div>
+                                  <span className="profileName">
+                                    {data.username}
+                                  </span>
+                                  <h5 className="profileDate">
+                                    <Moment format="DD/MMM/YYYY">
+                                      {data.createdAt}
+                                    </Moment>
+                                  </h5>
+                                </div>
+                                {/* <div className="posticon">
                           <i className="uil uil-bookmark"></i>
                         </div> */}
-                      </div>
+                              </div>
+                            </div>
+                          </Grid>
+
+                          <Grid item xl={4} lg={4} md={4} sm={4} xs={12}>
+                            <div className="news_img">
+                              <img
+                                src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
+                                // src={`http://localhost:8080/${data.files[0].filePath}`}
+                                alt=""
+                              />
+                              <Link to={`/${data.cateName}`} className="link1">
+                                <button
+                                  className={`entertainment cate${data.cateName}`}
+                                >
+                                  {data.cateName}
+                                </button>
+                              </Link>
+                            </div>
+                          </Grid>
+                        </Grid>
+                      </Container>
                     </div>
-                    <div className="news_img">
-                      <img
-                        src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
-                        // src={`http://localhost:8080/${data.files[0].filePath}`}
-                        alt=""
-                      />
-                      <Link to={`/${data.cateName}`} className="link1">
-                        <button
-                          className={`entertainment cate${data.cateName}`}
-                        >
-                          {data.cateName}
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
+                  </Box>
                 </>
               );
             }
@@ -102,6 +116,7 @@ const News = () => {
           Show More
         </button>
       </div>
+      
     </>
   );
 };
