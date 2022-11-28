@@ -3,19 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./homeheader.css";
 import { Box, Container, Grid, Typography } from "@mui/material";
-// import { createTheme, responsiveFontSizes } from "@material-ui/core";
 
-// const themeC = createTheme();
-
-// themeC.typography.h6 = {
-//   fontSize: "1.2rem",
-//   "@media (min-width:600px)": {
-//     fontSize: "1rem",
-//   },
-//   [themeC.breakpoints.up("md")]: {
-//     fontSize: "1.5rem",
-//   },
-// };
 
 export default function PopularHome() {
   const [lastposts, setLastPosts] = useState("");
