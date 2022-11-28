@@ -4,20 +4,7 @@ import "../technology/technology.css";
 import "./literature.css";
 import "../technology/technology.css";
 import { Box, Container, Grid, Typography} from "@mui/material";
-import { createTheme } from "@material-ui/core";
 
-
-const theme = createTheme();
-
-theme.typography.h4 = {
-  fontSize: "1.5rem",
-  "@media (min-width:600px)": {
-    fontSize: "1rem",
-  },
-  [theme.breakpoints.up("md")]: {
-    fontSize: "1.2rem",
-  },
-};
 
 
 export default function Literature() {

@@ -254,7 +254,7 @@
   /* left: 20px; */
   width: 97%;
   padding-top: 0.5rem;
-  box-shadow: inset 8px -24px 13px 2px rgb(14 13 13 / 81%);
+  box-shadow: inset 5px -134px 56px -77px rgb(14 13 13 / 81%);
   padding-bottom: 0.5rem;
   padding-left: 30px;
 }
@@ -270,7 +270,7 @@
   /* left: 20px; */
   width: 97%;
   padding-top: 0.5rem;
-  box-shadow: inset 8px -24px 13px 2px rgb(14 13 13 / 81%);
+  box-shadow: inset 5px -134px 56px -77px rgb(14 13 13 / 81%);
   padding-bottom: 0.5rem;
   padding-left: 30px;
 }
@@ -348,4 +348,13 @@
   .bignewsdesc {
     display: none;
   }
+  .mask-div .maskimgdiv {
+  
+  height: 10rem;
+}
+.secGridfistphoto .travelpopular {
+ 
+  height: 10rem;
+
+}
 }

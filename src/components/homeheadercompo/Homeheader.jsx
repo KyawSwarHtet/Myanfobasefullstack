@@ -15,7 +15,7 @@ const HomeHeader = () => {
       <section className="homeheader">
         <div className="home-banner">
           <div className="home-banner-detail">
-            <h1>MyanfobasE</h1>
+            <h1>MyanfobasSE</h1>
             <h3>MYANMAR INFORMATION BASE</h3>
             <div className="search-banner">
               <Link to="/search">

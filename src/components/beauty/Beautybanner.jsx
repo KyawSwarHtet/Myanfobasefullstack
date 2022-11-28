@@ -4,7 +4,7 @@ import "animate.css";
 import { Box, Container, Grid, Typography } from "@mui/material";
 export default function Beautybanner() {
   return (
-    <section className="wholebanner">
+    <section className="container wholebanner">
       <Box>
         <div className="beauty-banner ">
           <Container maxWidth="xl">
