@@ -4,7 +4,6 @@ import Tecmain from "../../components/catepagerightbar/Tecmain";
 import "./tecnologyPage.css";
 import { Grid } from "@mui/material";
 
-import TechnologyPopular from "../../components/technology/TechnologyPopular";
 import PopularNews from "../../components/catepagerightbar/PopularNews";
 export default function TecnologyPages() {
   return (
