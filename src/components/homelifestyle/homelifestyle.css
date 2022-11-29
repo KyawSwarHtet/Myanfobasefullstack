@@ -95,9 +95,9 @@
 } */
 
 #lifestyles-New {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 70% 30%;
-  gap: 1rem;
+  gap: 1rem; */
 }
 
 .sunset-photo {

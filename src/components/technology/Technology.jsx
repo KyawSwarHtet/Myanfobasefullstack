@@ -7,19 +7,6 @@ import { Box, Breadcrumbs, Typography, Stack } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 
 import { Container } from "@mui/material";
-import { createTheme } from "@material-ui/core";
-
-const theme = createTheme();
-
-theme.typography.h4 = {
-  fontSize: "1.5rem",
-  "@media (min-width:600px)": {
-    fontSize: "1rem",
-  },
-  [theme.breakpoints.up("md")]: {
-    fontSize: "1.2rem",
-  },
-};
 
 export default function Technology() {
   const { posts, isLoading, isError, message } = useSelector(
@@ -86,7 +73,7 @@ export default function Technology() {
         </Typography>
       </section>
 
-      <section>
+      <section className="container">
         <Box>
           <div className="photo">
             <Container maxWidth="xl">
