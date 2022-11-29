@@ -34,8 +34,7 @@ export const getCate = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       //adding token to access user
-      const token = thunkAPI.getState().auth.user.token;
-      return await cateService.getCateService(data, token);
+      return await cateService.getCateService();
     } catch (error) {
       const message =
         (error.response &&
