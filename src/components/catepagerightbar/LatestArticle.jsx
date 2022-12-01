@@ -6,12 +6,6 @@ import { useState } from "react";
 
 export default function LatestArticle(props) {
   const [lastposts, setLastPosts] = useState("");
-  // {
-  // title: "",
-  // cateName: "",
-  // createdAt: "",
-  // files: [],
-  // }
 
   const getAlldata = async () => {
     const reqdata = await fetch(
@@ -48,7 +42,7 @@ export default function LatestArticle(props) {
                     <div className="lastnewimg">
                       <img
                         // src={`http://localhost:8080/${data.files[0].filePath}`}
-                        src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
+                        src={data.files[0].filePath}
                         alt=""
                       />
                     </div>

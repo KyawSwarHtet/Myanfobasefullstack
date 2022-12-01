@@ -155,7 +155,8 @@ export default function Header() {
                       ) : (
                         <Link to={"/profile"}>
                           <img
-                            src={`https://desolate-hollows-16342.herokuapp.com/${user.profilePicture[0].filePath}`}
+                            src={user.profilePicture[0].filePath}
+                            // src={`https://desolate-hollows-16342.herokuapp.com/${user.profilePicture[0].filePath}`}
                             // src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
                             alt=""
                           />

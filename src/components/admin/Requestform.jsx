@@ -73,7 +73,8 @@ export default function RequestForm() {
                         <img
                           className="adminimg"
                           // src={`http://localhost:8080/${element.files[0].filePath}`}
-                          src={`https://desolate-hollows-16342.herokuapp.com/${element.files[0].filePath}`}
+                          // src={`https://desolate-hollows-16342.herokuapp.com/${element.files[0].filePath}`}
+                          src={element.files[0].filePath}
                           alt=""
                         />
                       </div>
@@ -106,7 +107,8 @@ export default function RequestForm() {
                         ) : (
                           <img
                             // src={`http://localhost:8080/${element.userprofile}`}
-                            src={`https://desolate-hollows-16342.herokuapp.com/${element.userprofile}`}
+                            // src={`https://desolate-hollows-16342.herokuapp.com/${element.userprofile}`}
+                            src={element.userprofile}
                             alt=""
                           />
                         )}

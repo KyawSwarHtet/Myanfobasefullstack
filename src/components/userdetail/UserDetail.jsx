@@ -63,7 +63,8 @@ export default function UserDetail() {
                   />
                 ) : (
                   <img
-                    src={`https://desolate-hollows-16342.herokuapp.com/${postDetail.userprofile}`}
+                    src={postDetail.userprofile}
+                    // src={`https://desolate-hollows-16342.herokuapp.com/${postDetail.userprofile}`}
                     // src={`http://localhost:8080/${postDetail.userprofile}`}
                     alt=""
                   />
@@ -92,7 +93,8 @@ export default function UserDetail() {
                       {console.log("filePath is", file.filePath)}
                       <img
                         className="detailimguser"
-                        src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}
+                        src={file.filePath}
+                        // src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}
                         // src={`http://localhost:8080/${file.filePath}`}
                         alt=" "
                       />

@@ -35,7 +35,8 @@ export default function Lifestylenew() {
               <div className="exercise-photo">
                 <img
                   className="photo-ex1"
-                  src={`https://desolate-hollows-16342.herokuapp.com/${getCateData[0].files[0].filePath}`}
+                  src={getCateData[0].files[0].filePath}
+                  // src={`https://desolate-hollows-16342.herokuapp.com/${getCateData[0].files[0].filePath}`}
                   // src={`http://localhost:8080/${getCateData[0].files[0].filePath}`}
                   alt=""
                 />
@@ -65,7 +66,8 @@ export default function Lifestylenew() {
                       />
                     ) : (
                       <img
-                        src={`https://desolate-hollows-16342.herokuapp.com/${getCateData[0].userprofile}`}
+                        src={getCateData[0].userprofile}
+                        // src={`https://desolate-hollows-16342.herokuapp.com/${getCateData[0].userprofile}`}
                         // src={`http://localhost:8080/${getCateData[0].userprofile}`}
                         alt=""
                       />
@@ -94,7 +96,8 @@ export default function Lifestylenew() {
                     <div className="honeyImg">
                       <img
                         className="sunset-photo"
-                        src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
+                        src={data.files[0].filePath}
+                        // src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
                         // src={`http://localhost:8080/${data.files[0].filePath}`}
                         alt=""
                       />

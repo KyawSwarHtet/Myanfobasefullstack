@@ -66,9 +66,7 @@ export default function EditPost() {
 
   useEffect(() => {
     const editpostid = async () => {
-      const reqdata = await fetch(
-        `https://desolate-hollows-16342.herokuapp.com/editpost/${id}`
-      );
+      const reqdata = await fetch( `https://desolate-hollows-16342.herokuapp.com/editpost/${id}` );
       // const reqdata = await fetch(`http://localhost:8080/editpost/${id}`);
       const res = await reqdata.json(); // JSON.parse(json);
       console.log("res data is ", res);
@@ -218,7 +216,8 @@ export default function EditPost() {
                     <div className="imgDiv1">
                       {/* {console.log("file path is", file.filePath)} */}
                       <img
-                        src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}
+                        src={file.filePath}
+                        // src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}
                         // src={`http://localhost:8080/${file.filePath}`}
                         height="200"
                         alt={`${file.cateName}`}

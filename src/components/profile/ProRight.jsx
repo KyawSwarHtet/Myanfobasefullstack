@@ -65,7 +65,8 @@ function ProRight() {
                       <Grid item xs={12} sm={4.2}>
                         <div className="Profile_img">
                           <img
-                            src={`https://desolate-hollows-16342.herokuapp.com/${element.files[0].filePath}`}
+                            src={`${element.files[0].filePath}`}
+                            // src={`https://desolate-hollows-16342.herokuapp.com/${element.files[0].filePath}`}
                             // src={`http://localhost:8080/${element.files[0].filePath}`}
                           />
                           <Link to={`/${element.cateName}`} className="link1">
@@ -107,7 +108,8 @@ function ProRight() {
                                   />
                                 ) : (
                                   <img
-                                    src={`https://desolate-hollows-16342.herokuapp.com/${user.profilePicture[0].filePath}`}
+                                    src={user.profilePicture[0].filePath}
+                                    // src={`https://desolate-hollows-16342.herokuapp.com/${user.profilePicture[0].filePath}`}
                                     // src={`http://localhost:8080/${user.profilePicture[0].filePath}`}
                                     alt=""
                                   />
