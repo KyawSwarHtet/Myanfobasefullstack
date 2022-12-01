@@ -65,7 +65,8 @@ const Savepost = () => {
                 <div className="article-save">
                   <div className="savenewimg">
                     <img
-                      src={`https://desolate-hollows-16342.herokuapp.com/${data.files}`}
+                      src={data.files}
+                      // src={`https://desolate-hollows-16342.herokuapp.com/${data.files}`}
                       alt=""
                     />
                   </div>
@@ -88,7 +89,7 @@ const Savepost = () => {
                         onClick={() => RemoveFav(data.postId)}
                         className="DeleteS Delcolor"
                       >
-                        <i class="uil uil-bookmark">saved</i>
+                        <i class="uil uil-bookmark">remove</i>
                       </div>
                     </div>
                   </div>

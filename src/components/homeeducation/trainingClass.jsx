@@ -36,7 +36,8 @@ export default function TrainingClass() {
             <article className="homeclass1">
               <div className="classimg">
                 <img
-                  src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
+                  src={data.files[0].filePath}
+                  // src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
                   // src={`http://localhost:8080/${data.files[0].filePath}`}
                   alt=""
                 />
@@ -58,7 +59,8 @@ export default function TrainingClass() {
                     />
                   ) : (
                     <img
-                      src={`https://desolate-hollows-16342.herokuapp.com/${data.userprofile}`}
+                      src={data.userprofile}
+                      // src={`https://desolate-hollows-16342.herokuapp.com/${data.userprofile}`}
                       // src={`http://localhost:8080/${data.userprofile}`}
                       alt=""
                     />

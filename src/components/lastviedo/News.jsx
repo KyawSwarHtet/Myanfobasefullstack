@@ -61,7 +61,8 @@ const News = () => {
                                       />
                                     ) : (
                                       <img
-                                        src={`https://desolate-hollows-16342.herokuapp.com/${data.userprofile}`}
+                                        src={data.userprofile}
+                                        // src={`https://desolate-hollows-16342.herokuapp.com/${data.userprofile}`}
                                         // src={`http://localhost:8080/${data.userprofile}`}
                                         alt=""
                                       />
@@ -86,7 +87,8 @@ const News = () => {
                           <Grid item xl={4} lg={4} md={4} sm={4} xs={12}>
                             <div className="news_img">
                               <img
-                                src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
+                                src={data.files[0].filePath}
+                                // src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
                                 // src={`http://localhost:8080/${data.files[0].filePath}`}
                                 alt=""
                               />
@@ -116,7 +118,6 @@ const News = () => {
           Show More
         </button>
       </div>
-      
     </>
   );
 };

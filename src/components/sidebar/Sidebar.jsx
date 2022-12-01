@@ -167,7 +167,8 @@ export default function Sidebar(props) {
                         <Grid item xs={12} sm={3} xl={2} md={3}>
                           <div className="Trav_img">
                             <img
-                              src={`http://localhost:8080/${data.files[0].filePath}`}
+                              src={data.files[0].filePath}
+                              // src={`http://localhost:8080/${data.files[0].filePath}`}
                             />
                             <Link to={`/${data.cateName}`} className="link1">
                               <button
@@ -201,7 +202,8 @@ export default function Sidebar(props) {
                                     />
                                   ) : (
                                     <img
-                                      src={`http://localhost:8080/${data.userprofile}`}
+                                      src={data.userprofile}
+                                      // src={`http://localhost:8080/${data.userprofile}`}
                                       alt=""
                                     />
                                   )}

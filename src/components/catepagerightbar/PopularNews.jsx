@@ -38,7 +38,8 @@ export default function PopularNews(props) {
                     <div className="lastnewimg">
                       <img
                         // src={`http://localhost:8080/${data.files[0].filePath}`}
-                        src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
+                        // src={`https://desolate-hollows-16342.herokuapp.com/${data.files[0].filePath}`}
+                        src={data.files[0].filePath}
                         alt=""
                       />
                     </div>
