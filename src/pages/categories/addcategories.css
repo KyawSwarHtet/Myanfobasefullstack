@@ -1,0 +1,54 @@
+.titlecategory {
+  font-size: 20px;
+  margin: 0.25rem 0;
+  background-color: #9bc9c9;
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
+}
+.enterCate {
+  padding-top: 6rem;
+}
+.removeBtn {
+  padding: 0.3rem 0.5rem;
+  background-color: rgb(230 140 140);
+  border-radius: 5px;
+}
+
+.cateUl {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.labelCate {
+  margin: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.label1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.inputCate {
+  width: 500px;
+  height: 50px;
+  border: 1px solid rgb(205, 155, 155);
+  padding: 1rem 0 1rem 1rem;
+  font-size: 1rem;
+}
+.secondDivcate {
+  position: relative;
+}
+.btnalign {
+  position: absolute;
+  top: 121px;
+  right: 380px;
+}
+
+.cateList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 7rem;
+}

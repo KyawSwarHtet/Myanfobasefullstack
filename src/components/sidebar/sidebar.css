@@ -1,0 +1,162 @@
+.Trav-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.postTrav {
+  display: grid;
+  grid-template-columns: 35% 65%;
+}
+.Trav_img {
+  position: relative;
+}
+.postbuttom {
+  /* display: flex;
+  justify-content: left; */
+  display: grid;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+  position: relative;
+}
+.postman {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  gap: 1rem;
+}
+.postmanProfile {
+  width: 30px;
+  height: 30px;
+}
+.postmanProfile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.Trav_img img {
+  width: 100%;
+  height: 180px;
+}
+.postTrav_info {
+  width: 90%;
+}
+.postTrav_info h4 {
+  margin-bottom: 0;
+}
+.postTrav_info p {
+  margin-bottom: 0;
+}
+.Travel1 {
+  position: absolute;
+  bottom: 20px;
+  right: -10px;
+}
+.filled {
+  color: red;
+}
+.unfilled {
+  color: blue;
+}
+@media screen and (max-width: 900px) {
+  .postTrav_info {
+    width: 100%;
+  }
+  .Trav-main {
+    gap: 0rem;
+  }
+  .sidebar {
+    height: calc(150vh - 50px);
+  }
+  .sidebar1 {
+    height: calc(90vh - 50px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .Travel1 {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    width: 20%;
+  }
+  .Trav-main {
+    gap: 0rem;
+  }
+  .sidebar {
+    height: calc(200vh - 50px);
+    top: 50px;
+  }
+  .postTrav_info {
+    width: 100%;
+  }
+  .Trav_img {
+    padding: 0 2rem;
+  }
+}
+#sidebar-white {
+  color: #fff;
+}
+
+#sidebar-black {
+  color: black;
+}
+
+#sidebar-white .postTrav_info a {
+  color: white;
+}
+
+#sidebar-white a:hover {
+  color: red;
+}
+
+#sidebar-black .postTrav_info a {
+  color: black;
+}
+#sidebar-black a:hover {
+  color: blue;
+}
+
+/* hover colors */
+.postTrav_info #Educationhover:hover {
+  color: var(--education-bg);
+}
+.postTrav_info #Entertainmenthover:hover {
+  color: var(--entertainment-bg);
+}
+.postTrav_info #Technologyhover:hover {
+  color: var(--technology-bg);
+}
+.postTrav_info #Beautyhover:hover {
+  color: var(--beauty-bg);
+}
+.postTrav_info #Governmenthover:hover {
+  color: var(--government-bg);
+}
+.postTrav_info #Travelhover:hover {
+  color: var(--travel-bg);
+}
+.postTrav_info #Historyhover:hover {
+  color: var(--history-bg);
+}
+.postTrav_info #Healthhover:hover {
+  color: var(--health-bg);
+}
+.postTrav_info #Literaturehover:hover {
+  color: var(--literature-bg);
+}
+.postTrav_info #Lifestyleshover:hover {
+  color: var(--lifestyles-bg);
+}
+.postTrav_info #Sciencehover:hover {
+  color: var(--science-bg);
+}
+.postTrav_info #Sportshover:hover {
+  color: var(--sports-bg);
+}
+.postTrav_info #Artshover:hover {
+  color: var(--arts-bg);
+}
+.postTrav_info #Businesshover:hover {
+  color: var(--business-bg);
+}

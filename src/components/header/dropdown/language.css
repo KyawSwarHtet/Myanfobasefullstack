@@ -1,0 +1,11 @@
+select {
+  width: 100px;
+  height: 30px;
+  color: black;
+  font-size: 30px;
+}
+.labalimg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

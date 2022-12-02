@@ -1,0 +1,176 @@
+.detailbannerimg {
+  width: 100%;
+  height: 450px;
+}
+.detailbannerimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bannerSection {
+  width: 90%;
+  max-width: 1600px;
+}
+.firstLetter::first-letter {
+  font-size: 5em;
+  font-weight: 700;
+  line-height: 0.8;
+  float: left;
+  line-height: 0.68;
+  margin: 0.05em 0.2em 0 0;
+  font-style: normal;
+}
+
+.bannerdiv {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 9% 89%;
+  gap: 2%;
+}
+.detailcontainer {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+.paragraph2 {
+  margin-top: 1rem;
+}
+.paragraph3 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.9em;
+  /* font-family: "Lobster", cursive; */
+  /* font-family: "Lobster", cursive; */
+  font-family: "Secular One", sans-serif;
+}
+.writerName {
+  display: block;
+  font-style: italic;
+  /* margin: auto; */
+  text-align: center;
+  position: relative;
+  font-size: 1.2em;
+  margin: 1rem 0 1.5rem 0;
+}
+span.writerName::before {
+  content: " ";
+  width: 35px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 14px;
+  left: 325px;
+}
+
+.navShare {
+  display: block;
+  text-align: center;
+}
+
+.leftNavicons {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* justify-content: center; */
+  row-gap: 0.7rem;
+  font-size: 1rem;
+}
+
+.facebokicon {
+  color: #89abfc;
+}
+
+.twittericon {
+  color: #60d2f5;
+}
+.emailicon {
+  color: #efab68;
+}
+.printericon {
+  color: #4082f1;
+}
+
+.buttonNav span {
+  display: block;
+  /* align-items: center; */
+  text-align: center;
+  line-height: 17px;
+  font-weight: 500;
+}
+.buttonNav span:last-child {
+  margin-bottom: 20px;
+}
+
+.buttonNav span:nth-child(2) {
+  margin-top: 8px;
+}
+
+.wrapperNav .buttonNav {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  /* float: left; */
+  margin: 0 5px;
+
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+  transition: all 1s ease;
+}
+.wrapperNav .buttonNav .iconNav {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+
+  text-align: center;
+  /* background: rgb(151 153 177 / 18%); */
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+.wrapperNav .buttonNav .iconNav i {
+  line-height: 50px;
+}
+
+.wrapperNav .buttonNav:nth-child(1):hover .iconNav {
+  background: #4267b2;
+}
+.wrapperNav .buttonNav:nth-child(2):hover .iconNav {
+  background: #60d2f5;
+}
+.wrapperNav .buttonNav:nth-child(3):hover .iconNav {
+  background: #efab68;
+}
+.wrapperNav .buttonNav:nth-child(4):hover .iconNav {
+  background: #4082f1;
+}
+.wrapperNav .buttonNav:nth-child(1):hover .iconNav i,
+.wrapperNav .buttonNav:nth-child(2):hover .iconNav i,
+.wrapperNav .buttonNav:nth-child(3):hover .iconNav i,
+.wrapperNav .buttonNav:nth-child(4):hover .iconNav i {
+  color: #fff;
+}
+
+.wrapperNav .buttonNav:nth-child(1):hover span {
+  color: #4267b2;
+}
+.wrapperNav .buttonNav:nth-child(2):hover span {
+  color: #60d2f5;
+}
+.wrapperNav .buttonNav:nth-child(3):hover span {
+  color: #efab68;
+}
+.wrapperNav .buttonNav:nth-child(4):hover span {
+  color: #4082f1;
+}
+
+.wrapperNav .buttonNav:hover {
+  height: 210px;
+  /* height: max-content; */
+}

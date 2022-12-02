@@ -1,0 +1,21 @@
+.travel-top {
+  display: flex;
+  color: #747474;
+}
+.travel {
+  padding-top: 10px;
+}
+.travel-main h1 {
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 600px) {
+  .ban-travel {
+    height: 15rem;
+  }
+  .t_imagediv {
+    height: 15rem;
+  }
+}

@@ -1,0 +1,11 @@
+.Prosection {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 4rem;
+  max-width: 1600px;
+}
+@media screen and (max-width: 600px) {
+  .leftbar {
+    display: none;
+  }
+}

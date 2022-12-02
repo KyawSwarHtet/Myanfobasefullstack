@@ -1,0 +1,131 @@
+.titleDiv,
+.descDiv {
+  position: relative;
+  margin-top: 2rem;
+  width: 80%;
+  /* display: grid; */
+  /* grid-template-columns: 17% 83%; */
+  align-items: center;
+}
+.descDiv {
+  margin-top: 1.5rem;
+}
+
+.imgDiv {
+  /* margin-top: 20px; */
+  color: black;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 17% 83%;
+  align-items: center;
+}
+
+.titleForm {
+  max-height: 250px;
+  min-height: 38px;
+  width: 100%;
+  height: 59px;
+  display: block;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  border-color: #bfbfbf;
+  /* margin-top: 20px; */
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 5rem;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  /* row / cols */
+  grid-row: 1 / 2;
+
+  transition: 0.2s 0.7s ease-in-out;
+  gap: 15px;
+}
+.descForm {
+  max-height: 200px;
+  min-height: 30px;
+  width: 100%;
+  height: 50px;
+  display: block;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  border-color: #bfbfbf;
+}
+
+.descArea {
+  max-height: 450px;
+  min-height: 150px;
+  /* box-sizing: border-box; */
+
+  width: 100%;
+  height: 59px;
+  display: block;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  border-color: #bfbfbf;
+  /* margin-top: 1.5rem; */
+}
+
+.descForm:is(:focus, :valid) {
+  border-width: 2px;
+  border-color: #4671ea;
+  padding: 14px;
+}
+
+.descForm::-webkit-scrollbar {
+  width: 1px;
+}
+
+.Dataresult {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0px 0px 0.5rem 5rem;
+}
+.updatedata,
+.closedata {
+  padding: 3px 8px;
+}
+.textdesign {
+  background: transparent;
+  border-bottom: 1px solid rgb(190 233 244);
+  transition: 0.5s linear;
+}
+.textdesign:focus,
+.textdesign:valid {
+  padding: 20px 10px;
+  background: rgb(190 233 244);
+  margin-top: 30px;
+}
+.updateheader {
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+.labelDes {
+  color: black;
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  font-size: 20px;
+  font-weight: bold;
+}
+.labelimg {
+  font-size: 20px;
+  font-weight: bold;
+}

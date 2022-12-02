@@ -1,0 +1,34 @@
+.lifestyle-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+.lifebanner-img {
+  width: 100%;
+  padding: 0.5rem;
+  transition: 1s;
+}
+.lifebanner-img img {
+  width: 100%;
+  height: 100%;
+  height: 15rem;
+  border-radius: 15px;
+}
+.lifebanner-img:hover {
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  transform: scale(1.1);
+  z-index: 2;
+}
+@media screen and (max-width: 600px) {
+  .lifebanner-img1 {
+    display: none;
+  }
+  .lifebanner-img2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .lifebanner-img2 {
+    display: none;
+  }
+}
