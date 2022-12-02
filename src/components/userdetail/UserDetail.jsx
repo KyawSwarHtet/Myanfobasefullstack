@@ -32,7 +32,7 @@ export default function UserDetail() {
   console.log("detail form viewcount is", postDetail.viewcount);
   return (
     <>
-      {postDetail && (
+      {postDetail && postDetail.length !== 0 ? (
         <div className="userdetail" key={id}>
           <div>
             <Link to={`/${cate}`} className="userlink">
@@ -102,6 +102,10 @@ export default function UserDetail() {
                   );
                 })}
           </div>
+        </div>
+      ) : (
+        <div>
+          <h4>Loading...</h4>
         </div>
       )}
     </>
