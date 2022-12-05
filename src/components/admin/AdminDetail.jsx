@@ -70,8 +70,7 @@ export default function AdminDetail() {
                 />
               ) : (
                 <img
-                  // src={`https://desolate-hollows-16342.herokuapp.com/${postDetail.userprofile}`}
-                  src={postDetail.userprofile}
+                  src={`https://desolate-hollows-16342.herokuapp.com/${postDetail.userprofile}`}
                   alt=""
                 />
               )}
@@ -97,8 +96,7 @@ export default function AdminDetail() {
                     {console.log("filePath is", file.filePath)}
                     <img
                       className="detailimg"
-                      // src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}
-                      src={file.filePath}
+                      src={`https://desolate-hollows-16342.herokuapp.com/${file.filePath}`}
                       alt=" "
                     />
                   </div>

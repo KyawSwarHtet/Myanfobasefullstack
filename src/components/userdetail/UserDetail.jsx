@@ -21,10 +21,8 @@ export default function UserDetail() {
   }, []);
 
   const editpostid = async () => {
-    const reqdata = await fetch(
-      `https://desolate-hollows-16342.herokuapp.com/detailwithview/${id}`
-    );
-    // const reqdata = await fetch(`http://localhost:8080/detailwithview/${id}`);
+    // const reqdata = await fetch(`https://desolate-hollows-16342.herokuapp.com/detailwithview/${id}`);
+    const reqdata = await fetch(`http://localhost:8080/detailwithview/${id}`);
     const res = await reqdata.json(); // JSON.parse(json);
     console.log("res data is ", res);
     return res;
@@ -32,7 +30,7 @@ export default function UserDetail() {
   console.log("detail form viewcount is", postDetail.viewcount);
   return (
     <>
-      {postDetail && postDetail.length !== 0 ? (
+      {postDetail && (
         <div className="userdetail" key={id}>
           <div>
             <Link to={`/${cate}`} className="userlink">
@@ -102,10 +100,6 @@ export default function UserDetail() {
                   );
                 })}
           </div>
-        </div>
-      ) : (
-        <div>
-          <h4>Loading...</h4>
         </div>
       )}
     </>

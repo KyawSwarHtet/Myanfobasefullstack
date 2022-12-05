@@ -13,8 +13,8 @@ export default function TrainingClass() {
 
   const getAlldata = async () => {
     const reqdata = await fetch(
-      `https://desolate-hollows-16342.herokuapp.com/api/postcate/${category}`
-      // `http://localhost:8080/api/postcate/${category}`
+      // `https://desolate-hollows-16342.herokuapp.com/api/postcate/${category}`
+      `http://localhost:8080/api/postcate/${category}`
     );
     const res = await reqdata.json(); // JSON.parse(json);
     //   console.log("res data is ", res);

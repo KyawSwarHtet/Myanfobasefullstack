@@ -7,10 +7,10 @@ import { useState } from "react";
 export default function PopularNews(props) {
   const [lastposts, setLastPosts] = useState("");
   const getAlldata = async () => {
-    const reqdata = await fetch(
-      `https://desolate-hollows-16342.herokuapp.com/api/popular`
-    );
-    // const reqdata = await fetch(`http://localhost:8080/api/popular`);
+    // const reqdata = await fetch(
+    //   `https://desolate-hollows-16342.herokuapp.com/api/popular`
+    // );
+    const reqdata = await fetch(`http://localhost:8080/api/popular`);
     const res = await reqdata.json(); // JSON.parse(json);
     //   console.log("res data is ", res);
     return res;

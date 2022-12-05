@@ -89,7 +89,7 @@ const Savepost = () => {
                         onClick={() => RemoveFav(data.postId)}
                         className="DeleteS Delcolor"
                       >
-                        <i class="uil uil-bookmark">remove</i>
+                        <i class="uil uil-bookmark">saved</i>
                       </div>
                     </div>
                   </div>
