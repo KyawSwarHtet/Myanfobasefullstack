@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/category/";
-// const API_URL = "https://desolate-hollows-16342.herokuapp.com/api/category/";
+// const API_URL = "http://localhost:8080/api/category/";
+const API_URL = "https://desolate-hollows-16342.herokuapp.com/api/category/";
 
 //Create new Category
 const creatCateService = async (postData, token) => {

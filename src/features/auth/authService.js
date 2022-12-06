@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/users/";
-// const API_URL = "https://desolate-hollows-16342.herokuapp.com/api/users/";
+// const API_URL = "http://localhost:8080/api/users/";
+const API_URL = "https://desolate-hollows-16342.herokuapp.com/api/users/";
 
 //Register user
 const register = async (userData) => {
